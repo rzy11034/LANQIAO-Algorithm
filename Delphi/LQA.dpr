@@ -8,7 +8,8 @@
 uses
   System.SysUtils,
   LQA.Main in 'Source\LQA.Main.pas',
-  LQA.Utils in 'Source\LQA.Utils.pas';
+  LQA.Utils in 'Source\LQA.Utils.pas',
+  LQA.Case01_00_位运算 in 'Source\Case01\LQA.Case01_00_位运算.pas';
 
 begin
   try

@@ -1,0 +1,25 @@
+﻿program LQA;
+
+{$mode objfpc}{$H+}
+
+uses
+ {$IFDEF UNIX}
+  cthreads,
+ {$ENDIF}
+  Classes,
+  SysUtils,
+  LQA.Utils,
+  LQA.Main,
+  LQA.Case01_00_BitwiseOperation;
+
+begin
+  try
+    Run;
+    TLAUtils.DrawLine;
+    Writeln(END_OF_PROGRAM_EN);
+    Readln;
+  except
+    on E: Exception do
+      Writeln(E.ClassName, ': ', E.Message);
+  end;
+end.

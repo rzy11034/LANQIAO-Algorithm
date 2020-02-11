@@ -1,16 +1,18 @@
 ﻿unit LQA.Main;
 
+{$mode objfpc}{$H+}
+
 interface
 
 uses
-  System.SysUtils;
+  Classes,
+  SysUtils;
 
 procedure Run;
 
 implementation
 
-uses
-  LQA.Case01_00_位运算;
+uses LQA.Case01_00_BitwiseOperation;
 
 procedure Run;
 begin
