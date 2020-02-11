@@ -50,19 +50,22 @@ begin
   a := b xor a;
 end;
 
+// 不用判断语句，求数值的绝对值
+function IntAbs(x: integer): integer;
+var
+  y: integer;
+begin
+  y := -(x shr 31);
+  Result := (x xor y) - y;
+end;
+
 procedure Main;
 var
-  a, b: integer;
+  i, x:integer;
 begin
-  //BitwiseShift;
-  //WriteLn(IsOdd(1));
-
-  WriteLn(IsOneOrZero(99, 6));
-
-  a := 1;
-  b := 99;
-  SwapInt(a, b);
-  WriteLn;
+  x:=-12;
+  i := x shr 31;
+  WriteLn(i);
 end;
 
 end.

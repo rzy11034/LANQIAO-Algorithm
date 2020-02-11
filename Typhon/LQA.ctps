@@ -9,16 +9,19 @@
         <Filename Value="LQA.ppr"/>
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
-        <CursorPos X="34" Y="13"/>
-        <UsageCount Value="34"/>
+        <TopLine Value="7"/>
+        <CursorPos X="6" Y="19"/>
+        <UsageCount Value="44"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\LQA.Utils.pas"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <CursorPos X="27" Y="20"/>
-        <UsageCount Value="34"/>
+        <TopLine Value="22"/>
+        <CursorPos X="18" Y="29"/>
+        <UsageCount Value="44"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -27,158 +30,93 @@
         <EditorIndex Value="3"/>
         <TopLine Value="2"/>
         <CursorPos X="38" Y="15"/>
-        <UsageCount Value="34"/>
+        <UsageCount Value="44"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="49"/>
-        <CursorPos Y="62"/>
-        <UsageCount Value="33"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="54"/>
+        <CursorPos X="10" Y="67"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\01 位运算\unit1.pas"/>
-        <UnitName Value="Unit1"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="75" Y="14"/>
-        <UsageCount Value="19"/>
       </Unit>
       <Unit>
         <Filename Value="目录.txt"/>
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
-        <CursorPos X="14" Y="2"/>
-        <SyntaxHighlighter Value="FreePascal"/>
-        <UsageCount Value="32"/>
+        <CursorPos X="20" Y="3"/>
+        <SyntaxHighlighter Value="PO"/>
+        <UsageCount Value="42"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit>
+      <Unit>
+        <Filename Value="Source\01 位运算\unit1.pas"/>
+        <UnitName Value="Unit1"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="75" Y="14"/>
+        <UsageCount Value="18"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\mathh.inc"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="93"/>
+        <CursorPos X="14" Y="106"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\genmath.inc"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="149"/>
+        <CursorPos X="10" Y="158"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\innr.inc"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="117"/>
+        <CursorPos X="4" Y="130"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\codetyphon\fpcsrc\rtl\win\sysdl.inc"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="50"/>
+        <CursorPos X="10" Y="50"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\codetyphon\fpcsrc\rtl\i386\i386.inc"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="181"/>
+        <CursorPos X="11" Y="206"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case01\LQA.Case01_01_AnUniquePairOfNumbers.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="15" Y="10"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="29">
+    <JumpHistory HistoryIndex="1">
       <Position>
         <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="38" TopLine="31"/>
+        <Caret Line="64" Column="12" TopLine="49"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="39" TopLine="31"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="40" TopLine="31"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="42" TopLine="31"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="50" Column="27" TopLine="31"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="38" TopLine="31"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="39" TopLine="31"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="40" TopLine="31"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="50" Column="27" TopLine="31"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="38" TopLine="31"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="39" TopLine="31"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="40" TopLine="31"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="42" TopLine="31"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="38" TopLine="31"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="39" TopLine="31"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="40" TopLine="31"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="48" TopLine="37"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="49" TopLine="37"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="50" TopLine="37"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="48" TopLine="37"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="49" TopLine="37"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="50" TopLine="37"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="51" Column="5" TopLine="46"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="62" TopLine="46"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="63" TopLine="47"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="64" TopLine="48"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="46" Column="23" TopLine="46"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="62" TopLine="46"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="63" TopLine="47"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="64" TopLine="48"/>
+        <Filename Value="LQA.ppr"/>
+        <Caret Line="19" Column="6" TopLine="7"/>
       </Position>
     </JumpHistory>
     <RunParams>

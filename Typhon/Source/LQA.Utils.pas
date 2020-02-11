@@ -12,9 +12,10 @@ type
   UChar = char;
   UString = string;
 
-  TLAUtils = class
+  TUtils = class
   public
     class procedure DrawLine;
+
   end;
 
 resourcestring
@@ -25,7 +26,7 @@ implementation
 
 { TLAUtils }
 
-class procedure TLAUtils.DrawLine;
+class procedure TUtils.DrawLine;
 var
   i: integer;
 begin

@@ -14,7 +14,7 @@ uses
 begin
   try
     Run;
-    TLAUtils.DrawLine;
+    TUtils.DrawLine;
     Writeln(END_OF_PROGRAM_EN);
     Readln;
   except

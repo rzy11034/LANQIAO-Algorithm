@@ -10,12 +10,13 @@ uses
   SysUtils,
   LQA.Utils,
   LQA.Main,
-  LQA.Case01_00_BitwiseOperation;
+  LQA.Case01_00_BitwiseOperation,
+  LQA.Case01_01_AnUniquePairOfNumbers;
 
 begin
   try
     Run;
-    TLAUtils.DrawLine;
+    TUtils.DrawLine;
     Writeln(END_OF_PROGRAM_EN);
     Readln;
   except
