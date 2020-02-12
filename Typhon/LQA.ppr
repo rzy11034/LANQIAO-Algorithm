@@ -11,12 +11,14 @@ uses
   LQA.Utils,
   LQA.Main,
   LQA.Case01_00_BitwiseOperation,
-  LQA.Case01_01_AnUniquePairOfNumbers;
+  LQA.Case01_01_AnUniquePairOfNumbers,
+  LQA.Case01_02_FindTheSingleNumber,
+  LQA.Case01_03_FindTheNumberOfOnesInBinary;
 
 begin
   try
     Run;
-    TUtils.DrawLine;
+    TUtils_Obj.DrawLine('-');
     Writeln(END_OF_PROGRAM_EN);
     Readln;
   except

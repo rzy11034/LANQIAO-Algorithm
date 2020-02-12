@@ -179,7 +179,9 @@
         </DelphiCompile>
         <DCCReference Include="Source\LQA.Main.pas"/>
         <DCCReference Include="Source\LQA.Utils.pas"/>
-        <DCCReference Include="Source\Case01\LQA.Case01_00_位运算.pas"/>
+        <DCCReference Include="Source\Case01_位运算\LQA.Case01_00_位运算.pas"/>
+        <DCCReference Include="Source\Case01_位运算\LQA.Case01_01_唯一成对的数.pas"/>
+        <DCCReference Include="Source\Case01_位运算\LQA.Case01_02_找出落单的那个数.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -935,6 +937,7 @@
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">False</Platform>
             </Platforms>
+            <ModelSupport>False</ModelSupport>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>

@@ -9,14 +9,20 @@ uses
   SysUtils;
 
 type
-  UChar = char;
-  UString = string;
+  UChar = widechar;
+  UString = UnicodeString;
 
-  TUtils = class
+  TArr_int = array of integer;
+  TArr2D_int = array of array of integer;
+
+  generic TUtils<T> = class
   public
-    class procedure DrawLine;
-
+    class procedure DrawLine(c: UChar; times: integer = 70);
+    class procedure Swap(var a, b: T);
   end;
+
+  TUtils_Obj = specialize TUtils<TObject>;
+  TUtils_Int = specialize TUtils<integer>;
 
 resourcestring
   END_OF_PROGRAM_EN = 'Press any key to continue...';
@@ -26,15 +32,24 @@ implementation
 
 { TLAUtils }
 
-class procedure TUtils.DrawLine;
+class procedure TUtils.DrawLine(c: UChar; times: integer = 70);
 var
   i: integer;
 begin
-  for i := 0 to 70 do
+  for i := 0 to times do
   begin
-    Write('-');
+    Write(c);
   end;
   Writeln;
+end;
+
+class procedure TUtils.Swap(var a, b: T);
+var
+  tmp: T;
+begin
+  tmp := a;
+  a := b;
+  b := tmp;
 end;
 
 end.

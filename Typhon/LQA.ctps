@@ -9,56 +9,76 @@
         <Filename Value="LQA.ppr"/>
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="7"/>
-        <CursorPos X="6" Y="19"/>
-        <UsageCount Value="44"/>
+        <TopLine Value="4"/>
+        <CursorPos X="38" Y="19"/>
+        <UsageCount Value="58"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\LQA.Utils.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="22"/>
-        <CursorPos X="18" Y="29"/>
-        <UsageCount Value="44"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="21"/>
+        <CursorPos X="22" Y="39"/>
+        <UsageCount Value="58"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\LQA.Main.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="2"/>
-        <CursorPos X="38" Y="15"/>
-        <UsageCount Value="44"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="47" Y="15"/>
+        <UsageCount Value="58"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="54"/>
-        <CursorPos X="10" Y="67"/>
-        <UsageCount Value="43"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="18" Y="67"/>
+        <UsageCount Value="57"/>
       </Unit>
       <Unit>
         <Filename Value="目录.txt"/>
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
-        <CursorPos X="20" Y="3"/>
+        <CursorPos X="23" Y="5"/>
         <SyntaxHighlighter Value="PO"/>
-        <UsageCount Value="42"/>
+        <UsageCount Value="56"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="None"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case01\LQA.Case01_01_AnUniquePairOfNumbers.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="24" Y="18"/>
+        <UsageCount Value="39"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case01\LQA.Case01_02_FindTheSingleNumber.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="15"/>
+        <CursorPos X="37" Y="27"/>
+        <UsageCount Value="28"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case01\LQA.Case01_03_FindTheNumberOfOnesInBinary.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="5" Y="49"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\01 位运算\unit1.pas"/>
         <UnitName Value="Unit1"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="75" Y="14"/>
-        <UsageCount Value="18"/>
+        <UsageCount Value="17"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\mathh.inc"/>
@@ -66,7 +86,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="93"/>
         <CursorPos X="14" Y="106"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\genmath.inc"/>
@@ -74,7 +94,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="149"/>
         <CursorPos X="10" Y="158"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\innr.inc"/>
@@ -82,7 +102,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="117"/>
         <CursorPos X="4" Y="130"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\win\sysdl.inc"/>
@@ -90,7 +110,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="50"/>
         <CursorPos X="10" Y="50"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="8"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\i386\i386.inc"/>
@@ -98,25 +118,49 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="181"/>
         <CursorPos X="11" Y="206"/>
+        <UsageCount Value="8"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\systemh.inc"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="857"/>
+        <CursorPos X="15" Y="874"/>
         <UsageCount Value="9"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case01\LQA.Case01_01_AnUniquePairOfNumbers.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="4"/>
-        <CursorPos X="15" Y="10"/>
-        <UsageCount Value="25"/>
-        <Loaded Value="True"/>
+        <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\system.inc"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="728"/>
+        <CursorPos X="3" Y="731"/>
+        <UsageCount Value="9"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="1">
+    <JumpHistory HistoryIndex="5">
       <Position>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <Caret Line="64" Column="12" TopLine="49"/>
+        <Filename Value="LQA.ppr"/>
+        <Caret Line="19" Column="20" TopLine="3"/>
       </Position>
       <Position>
         <Filename Value="LQA.ppr"/>
-        <Caret Line="19" Column="6" TopLine="7"/>
+        <Caret Line="19" Column="16" TopLine="5"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\LQA.Utils.pas"/>
+        <Caret Line="48" Column="10" TopLine="31"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case01\LQA.Case01_03_FindTheNumberOfOnesInBinary.pas"/>
+        <Caret Line="18" Column="4"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case01\LQA.Case01_03_FindTheNumberOfOnesInBinary.pas"/>
+        <Caret Line="31" Column="24" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\LQA.Utils.pas"/>
+        <Caret Line="20" Column="45" TopLine="13"/>
       </Position>
     </JumpHistory>
     <RunParams>

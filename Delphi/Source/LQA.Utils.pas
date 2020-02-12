@@ -10,11 +10,17 @@ type
   UChar = Char;
   UString = string;
 
-  TUtils = class
+  TArr_int = TArray<integer>;
+  TArr2D_int = TArray<TArray<integer>>;
+
+  TUtils<T> = class
   public
-    class procedure DrawLine;
-    class procedure Swap(var a, b: integer);
+    class procedure DrawLine(c: UChar);
+    class procedure Swap(var a, b: T);
   end;
+
+  TUtils_Obj = TUtils<TObject>;
+  TUtils_Int = TUtils<integer>;
 
 resourcestring
   END_OF_PROGRAM_EN = 'Press any key to continue...';
@@ -24,15 +30,24 @@ implementation
 
 { TLAUtils }
 
-class procedure TUtils.DrawLine;
+class procedure TUtils<T>.DrawLine(c: UChar);
 var
   i: integer;
 begin
   for i := 0 to 70 do
   begin
-    Write('-');
+    write(c);
   end;
   Writeln;
+end;
+
+class procedure TUtils<T>.Swap(var a, b: T);
+var
+  tmp: T;
+begin
+  tmp := a;
+  a := b;
+  b := tmp;
 end;
 
 end.
