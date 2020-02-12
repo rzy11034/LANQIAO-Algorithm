@@ -13,7 +13,9 @@ uses
   LQA.Case01_00_BitwiseOperation,
   LQA.Case01_01_AnUniquePairOfNumbers,
   LQA.Case01_02_FindTheSingleNumber,
-  LQA.Case01_03_FindTheNumberOfOnesInBinary;
+  LQA.Case01_03_FindTheNumberOfOnesInBinary,
+  LQA.Case01_04_IsIt2ToTheIntegerPower,
+  LQA.Case01_05_SwapTheParityBits, LQA.Case01_06_BinaryRealNumber;
 
 begin
   try

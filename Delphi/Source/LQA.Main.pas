@@ -10,7 +10,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case01_02_找出落单的那个数;
+  LQA.Case01_06_二进制小数;
 
 procedure Run;
 begin

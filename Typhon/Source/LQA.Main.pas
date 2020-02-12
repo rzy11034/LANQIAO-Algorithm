@@ -12,7 +12,7 @@ procedure Run;
 
 implementation
 
-uses LQA.Case01_03_FindTheNumberOfOnesInBinary;
+uses LQA.Case01_06_BinaryRealNumber;
 
 procedure Run;
 begin

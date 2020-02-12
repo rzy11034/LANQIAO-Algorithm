@@ -15,7 +15,7 @@ type
 
   TUtils<T> = class
   public
-    class procedure DrawLine(c: UChar);
+    class procedure DrawLine(c: UChar; times: integer = 70);
     class procedure Swap(var a, b: T);
   end;
 
@@ -30,11 +30,11 @@ implementation
 
 { TLAUtils }
 
-class procedure TUtils<T>.DrawLine(c: UChar);
+class procedure TUtils<T>.DrawLine(c: UChar; times: integer);
 var
   i: integer;
 begin
-  for i := 0 to 70 do
+  for i := 0 to times do
   begin
     write(c);
   end;

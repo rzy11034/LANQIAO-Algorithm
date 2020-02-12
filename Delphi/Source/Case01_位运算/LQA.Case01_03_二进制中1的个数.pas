@@ -1,12 +1,6 @@
-﻿unit LQA.Case01_03_FindTheNumberOfOnesInBinary;
-
-{$mode objfpc}{$H+}
+﻿unit LQA.Case01_03_二进制中1的个数;
 
 interface
-
-uses
-  Classes,
-  SysUtils;
 
 procedure Main;
 

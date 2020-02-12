@@ -64,6 +64,7 @@ end;
 procedure Main;
 begin
   AnUniquePairOfNumbers;
+  Exit
 end;
 
 end.
