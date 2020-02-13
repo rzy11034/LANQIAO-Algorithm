@@ -12,7 +12,7 @@ procedure Run;
 
 implementation
 
-uses LQA.Case02_00_WhatIsRecursion;
+uses LQA.Case02_01_XiaoBaiGoesUpTheStairs;
 
 procedure Run;
 begin

@@ -87,11 +87,11 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\LQA.Utils.pas"/>
+        <Filename Value="Source\LQA.Main.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\LQA.Main.pas"/>
+        <Filename Value="Source\LQA.Utils.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
@@ -99,29 +99,20 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="目录.txt"/>
-        <FRMtype Value="0"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
         <Filename Value="Source\Case01\LQA.Case01_01_AnUniquePairOfNumbers.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="LQA.Case01_02_AnUniquePairOfNumbers"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01\LQA.Case01_02_FindTheSingleNumber.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="LQA.Case01_03_FindTheSingleNumber"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01\LQA.Case01_03_FindTheNumberOfOnesInBinary.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="LQA.Case01_04_FindTheNumberOfOnesInBinary"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01\LQA.Case01_04_IsIt2ToTheIntegerPower.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="LQA.Case01_05_IsIt2ToTheIntegerPower"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01\LQA.Case01_05_SwapTheParityBits.pas"/>
@@ -132,7 +123,20 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
+        <Filename Value="Source\Case02\LQA.Case02_00_TowerOfHanoi.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
         <Filename Value="Source\Case02\LQA.Case02_00_WhatIsRecursion.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case02\LQA.Case02_01_XiaoBaiGoesUpTheStairs.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="目录.txt"/>
+        <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>

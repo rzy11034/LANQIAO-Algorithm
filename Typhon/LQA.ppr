@@ -8,15 +8,18 @@ uses
  {$ENDIF}
   Classes,
   SysUtils,
-  LQA.Utils,
   LQA.Main,
+  LQA.Utils,
+  LQA.Case02_00_TowerOfHanoi,
+  LQA.Case02_00_WhatIsRecursion,
+  LQA.Case02_01_XiaoBaiGoesUpTheStairs,
   LQA.Case01_00_BitwiseOperation,
   LQA.Case01_01_AnUniquePairOfNumbers,
   LQA.Case01_02_FindTheSingleNumber,
   LQA.Case01_03_FindTheNumberOfOnesInBinary,
   LQA.Case01_04_IsIt2ToTheIntegerPower,
-  LQA.Case01_05_SwapTheParityBits, LQA.Case01_06_BinaryRealNumber,
-LQA.Case02_00_WhatIsRecursion;
+  LQA.Case01_05_SwapTheParityBits,
+  LQA.Case01_06_BinaryRealNumber;
 
 begin
   try

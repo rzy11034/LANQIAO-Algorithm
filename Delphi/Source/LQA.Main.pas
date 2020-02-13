@@ -10,7 +10,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case02_00_什么是递归;
+  LQA.Case02_01_汉诺塔;
 
 procedure Run;
 begin
