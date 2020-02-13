@@ -12,7 +12,7 @@ procedure Run;
 
 implementation
 
-uses LQA.Case01_06_BinaryRealNumber;
+uses LQA.Case02_00_WhatIsRecursion;
 
 procedure Run;
 begin

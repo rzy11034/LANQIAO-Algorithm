@@ -10,7 +10,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case01_06_二进制小数;
+  LQA.Case02_00_什么是递归;
 
 procedure Run;
 begin

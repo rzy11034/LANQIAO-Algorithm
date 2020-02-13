@@ -4,7 +4,8 @@ interface
 
 uses
   System.SysUtils,
-  System.Classes;
+  System.Classes,
+  System.Rtti;
 
 type
   UChar = Char;
@@ -14,9 +15,12 @@ type
   TArr2D_int = TArray<TArray<integer>>;
 
   TUtils<T> = class
+  private type
+    TArr_T = array of T;
   public
     class procedure DrawLine(c: UChar; times: integer = 70);
     class procedure Swap(var a, b: T);
+    class procedure PrintArray(arr: TArr_T);
   end;
 
   TUtils_Obj = TUtils<TObject>;
@@ -39,6 +43,21 @@ begin
     write(c);
   end;
   Writeln;
+end;
+
+class procedure TUtils<T>.PrintArray(arr: TArr_T);
+var
+  i: integer;
+begin
+  write('[');
+  for i := 0 to high(arr) do
+  begin
+    if i <> high(arr) then
+      write(TValue.From<T>(arr[i]).ToString, ', ')
+    else
+      write(TValue.From<T>(arr[i]).ToString);
+  end;
+  write(']');
 end;
 
 class procedure TUtils<T>.Swap(var a, b: T);

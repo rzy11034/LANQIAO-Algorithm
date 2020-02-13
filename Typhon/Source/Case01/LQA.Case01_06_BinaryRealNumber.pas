@@ -47,8 +47,7 @@ end;
 
 procedure Main;
 begin
-  //BinaryRealNumber;
-  WriteLn(61 mod 12)
+  BinaryRealNumber;
 end;
 
 end.
