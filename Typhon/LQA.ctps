@@ -9,25 +9,26 @@
         <Filename Value="LQA.ppr"/>
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="7"/>
-        <CursorPos X="21" Y="20"/>
-        <UsageCount Value="20"/>
+        <TopLine Value="10"/>
+        <CursorPos X="23" Y="30"/>
+        <UsageCount Value="31"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\LQA.Main.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="3"/>
-        <CursorPos X="32" Y="15"/>
-        <UsageCount Value="20"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="58" Y="15"/>
+        <UsageCount Value="31"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\LQA.Utils.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="16"/>
-        <UsageCount Value="20"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="109"/>
+        <CursorPos X="32" Y="67"/>
+        <UsageCount Value="31"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -37,7 +38,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="31"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01\LQA.Case01_01_AnUniquePairOfNumbers.pas"/>
@@ -46,7 +47,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="31"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01\LQA.Case01_02_FindTheSingleNumber.pas"/>
@@ -55,16 +56,15 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="31"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01\LQA.Case01_03_FindTheNumberOfOnesInBinary.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="20"/>
+        <TopLine Value="33"/>
+        <CursorPos X="20" Y="44"/>
+        <UsageCount Value="31"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01\LQA.Case01_04_IsIt2ToTheIntegerPower.pas"/>
@@ -73,7 +73,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="31"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01\LQA.Case01_05_SwapTheParityBits.pas"/>
@@ -82,7 +82,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="31"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01\LQA.Case01_06_BinaryRealNumber.pas"/>
@@ -91,51 +91,188 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="31"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case02\LQA.Case02_00_TowerOfHanoi.pas"/>
+        <Filename Value="Source\Case02\LQA.Case02_01_TowerOfHanoi.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="31"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case02\LQA.Case02_00_WhatIsRecursion.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="20"/>
+        <TopLine Value="143"/>
+        <CursorPos X="20" Y="165"/>
+        <UsageCount Value="31"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case02\LQA.Case02_01_XiaoBaiGoesUpTheStairs.pas"/>
+        <Filename Value="Source\Case02\LQA.Case02_02_XiaoBaiGoesUpTheStairs.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="10"/>
-        <CursorPos X="24" Y="27"/>
-        <UsageCount Value="20"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="16"/>
+        <CursorPos X="22" Y="34"/>
+        <UsageCount Value="31"/>
       </Unit>
       <Unit>
         <Filename Value="目录.txt"/>
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
+        <CursorPos X="26" Y="15"/>
         <SyntaxHighlighter Value="PO"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="31"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit>
+      <Unit>
+        <Filename Value="Source\Case02\LQA.Case02_03_RotateTheMinimumNumberOfTheArray.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="46"/>
+        <CursorPos X="28" Y="14"/>
+        <UsageCount Value="31"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case02\LQA.Case02_04_FindInAnSpecialOrderedArray.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="37"/>
+        <CursorPos X="28" Y="68"/>
+        <UsageCount Value="28"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="48"/>
+        <CursorPos X="54" Y="69"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+      </Unit>
     </Units>
-    <JumpHistory>
+    <JumpHistory HistoryIndex="29">
       <Position>
-        <Filename Value="Source\LQA.Main.pas"/>
-        <Caret Line="15" Column="32"/>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="29" Column="13" TopLine="11"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="37" TopLine="27"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="39" TopLine="27"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="40" TopLine="27"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="41" TopLine="27"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="66" Column="18" TopLine="50"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="37" TopLine="26"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="39" TopLine="26"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="40" TopLine="26"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="41" TopLine="26"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="37" TopLine="26"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="39" TopLine="26"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="40" TopLine="26"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="41" TopLine="26"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="42" TopLine="26"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="27" TopLine="23"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="48" TopLine="37"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="50" TopLine="37"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="52" TopLine="37"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="53" TopLine="37"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="52" TopLine="37"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="53" TopLine="37"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="48" TopLine="28"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="50" TopLine="31"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="52" TopLine="36"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="53" TopLine="36"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="52" TopLine="36"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="53" TopLine="36"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="52" TopLine="36"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Caret Line="33" Column="52" TopLine="20"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -143,4 +280,11 @@
       <Modes ActiveMode=""/>
     </RunParams>
   </ProjectSession>
+  <Debugging>
+    <Watches>
+      <Item>
+        <Expression Value="RET"/>
+      </Item>
+    </Watches>
+  </Debugging>
 </CONFIG>

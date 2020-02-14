@@ -15,12 +15,12 @@ type
 
   TArr_int = array of integer;
   TArr2D_int = array of array of integer;
+  TArr_str = array of UString;
 
   generic TUtils<T> = class
   private type
     TArr_T = array of T;
   public
-    class procedure DrawLine(c: UChar; times: integer = 70);
     class procedure Swap(var a, b: T);
     class procedure PrintArray(arr: TArr_T);
   end;
@@ -38,11 +38,36 @@ type
     property Length: integer read __getLength;
   end;
 
+procedure DrawLineBlockEnd;
+procedure DrawLineProgramEnd;
+
 resourcestring
   END_OF_PROGRAM_EN = 'Press any key to continue...';
   END_OF_PROGRAM_CH = '按任意键继续...';
 
 implementation
+
+procedure DrawLineBlockEnd;
+var
+  i: integer;
+begin
+  for i := 0 to 10 do
+  begin
+    Write('-');
+  end;
+  Writeln;
+end;
+
+procedure DrawLineProgramEnd;
+var
+  i: integer;
+begin
+  for i := 0 to 70 do
+  begin
+    Write('=');
+  end;
+  Writeln;
+end;
 
 { TUnicodeStringHelper }
 
@@ -76,21 +101,16 @@ end;
 
 { TLAUtils }
 
-class procedure TUtils.DrawLine(c: UChar; times: integer = 70);
-var
-  i: integer;
-begin
-  for i := 0 to times do
-  begin
-    Write(c);
-  end;
-  Writeln;
-end;
-
 class procedure TUtils.PrintArray(arr: TArr_T);
 var
   i: integer;
 begin
+  if arr = nil then
+  begin
+    WriteLn('Cannot print an empty array!');
+    Exit;
+  end;
+
   Write('[');
   for i := 0 to High(arr) do
   begin
@@ -99,7 +119,7 @@ begin
     else
       Write(arr[i].ToString);
   end;
-  Write(']');
+  Write(']'#10);
 end;
 
 class procedure TUtils.Swap(var a, b: T);

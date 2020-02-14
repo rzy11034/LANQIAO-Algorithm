@@ -1,4 +1,4 @@
-﻿unit LQA.Case02_01_小白上楼梯;
+﻿unit LQA.Case02_02_小白上楼梯;
 
 interface
 
@@ -31,7 +31,7 @@ begin
     Write('输入阶梯数：');
     ReadLn(n);
     WriteLn('共有', Func(n), '种走法。');
-    TUtils_Obj.DrawLine('=', 10);
+    DrawLineBlockEnd;
   end;
 end;
 

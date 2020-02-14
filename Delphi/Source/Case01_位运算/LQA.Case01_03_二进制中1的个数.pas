@@ -25,7 +25,7 @@ begin
       Inc(Count);
   end;
   WriteLn(Count);
-  TUtils_Obj.DrawLine('=', 10);
+  DrawLineBlockEnd;
 
   // 2
   Count := 0;
@@ -35,7 +35,7 @@ begin
       Inc(Count);
   end;
   WriteLn(Count);
-  TUtils_Obj.DrawLine('=', 10);
+  DrawLineBlockEnd;
 
   // 3
   Count := 0;

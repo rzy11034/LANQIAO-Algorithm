@@ -12,7 +12,7 @@ procedure Run;
 
 implementation
 
-uses LQA.Case02_01_XiaoBaiGoesUpTheStairs;
+uses LQA.Case02_05_LongestContinuousIncreasingSubsequence;
 
 procedure Run;
 begin

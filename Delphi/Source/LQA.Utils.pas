@@ -13,12 +13,12 @@ type
 
   TArr_int = TArray<integer>;
   TArr2D_int = TArray<TArray<integer>>;
+  TArr_str = TArray<UString>;
 
   TUtils<T> = class
   private type
     TArr_T = array of T;
   public
-    class procedure DrawLine(c: UChar; times: integer = 70);
     class procedure Swap(var a, b: T);
     class procedure PrintArray(arr: TArr_T);
   end;
@@ -26,38 +26,58 @@ type
   TUtils_Obj = TUtils<TObject>;
   TUtils_Int = TUtils<integer>;
 
+procedure DrawLineBlockEnd;
+procedure DrawLineProgramEnd;
+
 resourcestring
   END_OF_PROGRAM_EN = 'Press any key to continue...';
   END_OF_PROGRAM_CH = '按任意键继续...';
 
 implementation
 
-{ TLAUtils }
-
-class procedure TUtils<T>.DrawLine(c: UChar; times: integer);
+procedure DrawLineBlockEnd;
 var
   i: integer;
 begin
-  for i := 0 to times do
+  for i := 0 to 10 do
   begin
-    write(c);
+    Write('-');
   end;
   Writeln;
 end;
+
+procedure DrawLineProgramEnd;
+var
+  i: integer;
+begin
+  for i := 0 to 70 do
+  begin
+    Write('=');
+  end;
+  Writeln;
+end;
+
+{ TLAUtils }
 
 class procedure TUtils<T>.PrintArray(arr: TArr_T);
 var
   i: integer;
 begin
-  write('[');
+  if arr = nil then
+  begin
+    Writeln('Cannot print an empty array!');
+    Exit;
+  end;
+
+  Write('[');
   for i := 0 to high(arr) do
   begin
     if i <> high(arr) then
-      write(TValue.From<T>(arr[i]).ToString, ', ')
+      Write(TValue.From<T>(arr[i]).ToString, ', ')
     else
-      write(TValue.From<T>(arr[i]).ToString);
+      Write(TValue.From<T>(arr[i]).ToString);
   end;
-  write(']');
+  Write(']'#10);
 end;
 
 class procedure TUtils<T>.Swap(var a, b: T);

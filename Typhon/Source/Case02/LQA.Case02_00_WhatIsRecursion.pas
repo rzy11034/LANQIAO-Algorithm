@@ -145,24 +145,24 @@ var
   tmpArr: TArr_int;
 begin
   WriteLn('求5的阶乘: ', F1(5));
-  TUtils_Obj.DrawLine('=', 10);
+  DrawLineBlockEnd;
 
   Write('打印i到j: ');
   F2(8, 10);
   WriteLn;
-  TUtils_Obj.DrawLine('=', 10);
+  DrawLineBlockEnd;
 
   WriteLn('对[1, 2, 3, 4, 5]的所有元素求和: ', F3([1, 2, 3, 4, 5], 0));
-  TUtils_Obj.DrawLine('=', 10);
+  DrawLineBlockEnd;
 
   WriteLn('翻转字符串''abcd'': ', reverse('abcd'));
-  TUtils_Obj.DrawLine('=', 10);
+  DrawLineBlockEnd;
 
   WriteLn('10的斐波那契数列: ', Fib(10));
-  TUtils_Obj.DrawLine('=', 10);
+  DrawLineBlockEnd;
 
   WriteLn('16 12 的最大公约数:', Gcd(16, 12));
-  TUtils_Obj.DrawLine('=', 10);
+  DrawLineBlockEnd;
 
   WriteLn('插入排序改递归: ');
   tmpArr := [2, 3, 1, 5, 4];

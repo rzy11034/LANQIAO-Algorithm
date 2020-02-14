@@ -10,7 +10,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case02_01_汉诺塔;
+  LQA.Case02_05_最长连续递增子序列;
 
 procedure Run;
 begin

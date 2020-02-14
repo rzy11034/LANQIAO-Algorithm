@@ -123,7 +123,7 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case02\LQA.Case02_00_TowerOfHanoi.pas"/>
+        <Filename Value="Source\Case02\LQA.Case02_01_TowerOfHanoi.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
@@ -131,12 +131,24 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case02\LQA.Case02_01_XiaoBaiGoesUpTheStairs.pas"/>
+        <Filename Value="Source\Case02\LQA.Case02_02_XiaoBaiGoesUpTheStairs.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="目录.txt"/>
         <FRMtype Value="0"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case02\LQA.Case02_03_RotateTheMinimumNumberOfTheArray.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case02\LQA.Case02_04_FindInAnSpecialOrderedArray.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>

@@ -17,13 +17,16 @@ uses
   LQA.Case01_05_交换奇偶位 in 'Source\Case01_位运算\LQA.Case01_05_交换奇偶位.pas',
   LQA.Case01_06_二进制小数 in 'Source\Case01_位运算\LQA.Case01_06_二进制小数.pas',
   LQA.Case02_00_什么是递归 in 'Source\Case02_查找与排序\LQA.Case02_00_什么是递归.pas',
-  LQA.Case02_00_汉诺塔 in 'Source\Case02_查找与排序\LQA.Case02_00_汉诺塔.pas',
-  LQA.Case02_01_小白上楼梯 in 'Source\Case02_查找与排序\LQA.Case02_01_小白上楼梯.pas';
+  LQA.Case02_01_汉诺塔 in 'Source\Case02_查找与排序\LQA.Case02_01_汉诺塔.pas',
+  LQA.Case02_02_小白上楼梯 in 'Source\Case02_查找与排序\LQA.Case02_02_小白上楼梯.pas',
+  LQA.Case02_03_旋转数组的最小数字 in 'Source\Case02_查找与排序\LQA.Case02_03_旋转数组的最小数字.pas',
+  LQA.Case02_04_特殊有序数组中查找 in 'Source\Case02_查找与排序\LQA.Case02_04_特殊有序数组中查找.pas',
+  LQA.Case02_05_最长连续递增子序列 in 'Source\Case02_查找与排序\LQA.Case02_05_最长连续递增子序列.pas';
 
 begin
   try
     Run;
-    TUtils_Obj.DrawLine('-');
+    DrawLineProgramEnd;
     Writeln(END_OF_PROGRAM_EN);
     Readln;
   except

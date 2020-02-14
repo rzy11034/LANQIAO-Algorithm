@@ -1,4 +1,4 @@
-﻿unit LQA.Case02_01_XiaoBaiGoesUpTheStairs;
+﻿unit LQA.Case02_02_XiaoBaiGoesUpTheStairs;
 
 {$mode objfpc}{$H+}
 
@@ -6,7 +6,8 @@ interface
 
 uses
   Classes,
-  SysUtils, LQA.Utils;
+  SysUtils,
+  LQA.Utils;
 
 procedure Main;
 
@@ -29,8 +30,8 @@ begin
   begin
     Write('输入阶梯数：');
     ReadLn(n);
-    WriteLn('共有',Func(n), '种走法。');
-    TUtils_Obj.DrawLine('=',10);
+    WriteLn('共有', Func(n), '种走法。');
+    DrawLineBlockEnd;
   end;
 end;
 

@@ -1,4 +1,4 @@
-﻿unit LQA.Case02_00_TowerOfHanoi;
+﻿unit LQA.Case02_01_TowerOfHanoi;
 
 {$mode objfpc}{$H+}
 

@@ -187,8 +187,11 @@
         <DCCReference Include="Source\Case01_位运算\LQA.Case01_05_交换奇偶位.pas"/>
         <DCCReference Include="Source\Case01_位运算\LQA.Case01_06_二进制小数.pas"/>
         <DCCReference Include="Source\Case02_查找与排序\LQA.Case02_00_什么是递归.pas"/>
-        <DCCReference Include="Source\Case02_查找与排序\LQA.Case02_00_汉诺塔.pas"/>
-        <DCCReference Include="Source\Case02_查找与排序\LQA.Case02_01_小白上楼梯.pas"/>
+        <DCCReference Include="Source\Case02_查找与排序\LQA.Case02_01_汉诺塔.pas"/>
+        <DCCReference Include="Source\Case02_查找与排序\LQA.Case02_02_小白上楼梯.pas"/>
+        <DCCReference Include="Source\Case02_查找与排序\LQA.Case02_03_旋转数组的最小数字.pas"/>
+        <DCCReference Include="Source\Case02_查找与排序\LQA.Case02_04_特殊有序数组中查找.pas"/>
+        <DCCReference Include="Source\Case02_查找与排序\LQA.Case02_05_最长连续递增子序列.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
