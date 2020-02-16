@@ -158,6 +158,8 @@
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>(None)</Manifest_File>
+        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+        <DCC_RangeChecking>true</DCC_RangeChecking>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
         <VerInfo_Locale>1033</VerInfo_Locale>
@@ -186,12 +188,14 @@
         <DCCReference Include="Source\Case01_位运算\LQA.Case01_04_用一条语句判断一个整数是不是2的整数次方.pas"/>
         <DCCReference Include="Source\Case01_位运算\LQA.Case01_05_交换奇偶位.pas"/>
         <DCCReference Include="Source\Case01_位运算\LQA.Case01_06_二进制小数.pas"/>
-        <DCCReference Include="Source\Case02_查找与排序\LQA.Case02_00_什么是递归.pas"/>
-        <DCCReference Include="Source\Case02_查找与排序\LQA.Case02_01_汉诺塔.pas"/>
-        <DCCReference Include="Source\Case02_查找与排序\LQA.Case02_02_小白上楼梯.pas"/>
-        <DCCReference Include="Source\Case02_查找与排序\LQA.Case02_03_旋转数组的最小数字.pas"/>
-        <DCCReference Include="Source\Case02_查找与排序\LQA.Case02_04_特殊有序数组中查找.pas"/>
-        <DCCReference Include="Source\Case02_查找与排序\LQA.Case02_05_最长连续递增子序列.pas"/>
+        <DCCReference Include="Source\Case02_查找与排序(上)\LQA.Case02_00_什么是递归.pas"/>
+        <DCCReference Include="Source\Case02_查找与排序(上)\LQA.Case02_01_汉诺塔.pas"/>
+        <DCCReference Include="Source\Case02_查找与排序(上)\LQA.Case02_02_小白上楼梯.pas"/>
+        <DCCReference Include="Source\Case02_查找与排序(上)\LQA.Case02_03_旋转数组的最小数字.pas"/>
+        <DCCReference Include="Source\Case02_查找与排序(上)\LQA.Case02_04_特殊有序数组中查找.pas"/>
+        <DCCReference Include="Source\Case02_查找与排序(上)\LQA.Case02_05_最长连续递增子序列.pas"/>
+        <DCCReference Include="Source\Case02_查找与排序(上)\LQA.Case02_06_高效的求a的n次幂的算法.pas"/>
+        <DCCReference Include="Source\Case03_查找与排序(下)\LQA.Case03_01_调整数组顺序使奇数位于偶数前面.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -213,6 +217,8 @@
                     <Source Name="MainSource">LQA.dpr</Source>
                 </Source>
                 <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcboffice2k260.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\bcbofficexp260.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k260.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp260.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>

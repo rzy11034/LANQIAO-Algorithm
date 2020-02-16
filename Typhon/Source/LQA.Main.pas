@@ -12,7 +12,8 @@ procedure Run;
 
 implementation
 
-uses LQA.Case02_05_LongestContinuousIncreasingSubsequence;
+uses
+  LQA.Case03_01_AdjustsTheArrayOrder;
 
 procedure Run;
 begin
