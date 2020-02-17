@@ -20,7 +20,7 @@ procedure Main;
 implementation
 
 // 双路 Partition
-function Partition(arr: TArr_int; l, r: integer): integer;
+function Partition(var arr: TArr_int; l, r: integer): integer;
 var
   i, j, e: integer;
 begin
@@ -56,23 +56,44 @@ end;
 // * r: 结束小标
 // * k: 求第k小元素（递增第k个元素）
 // *
-function SelectK(arr: TArr_int; l, r: integer): integer;
+function SelectK(var arr: TArr_int; p, r, k: integer): integer;
 var
-  p: integer;
+  q, qk, ret: integer;
 begin
-  p := Partition(arr, l, r);
+  q := Partition(arr, p, r);
+  qK := q - p + 1;
 
-  SelectK(arr, l, p - 1);
-  SelectK(arr, p + 1, r);
+  if qK = k then
+    ret := arr[q]
+  else if qK > k then
+    ret := selectK(arr, p, q - 1, k)
+  else
+    ret := selectK(arr, q + 1, r, k - qK);
+
+  Result := ret;
 end;
 
 procedure Main;
 var
   arr: TArr_int;
+  k: integer;
 begin
-  arr := [9, 8, 7, 6, 5];
-  SelectK(arr, 0, Length(arr) - 1);
-  TUtils_Int.PrintArray(arr);
+  arr := [3, 9, 7, 6, 1, 2];
+  k := SelectK(arr, 0, Length(arr) - 1, 2);
+  WriteLn(k);
+  DrawLineBlockEnd;
+
+  k := selectK(arr, 0, Length(arr) - 1, 1);
+  WriteLn(k);
+  DrawLineBlockEnd;
+
+  k := selectK(arr, 0, Length(arr) - 1, 3);
+  WriteLn(k);
+  DrawLineBlockEnd;
+
+  k := selectK(arr, 0, Length(arr) - 1, 6);
+  WriteLn(k);
+  DrawLineBlockEnd;
 end;
 
 end.

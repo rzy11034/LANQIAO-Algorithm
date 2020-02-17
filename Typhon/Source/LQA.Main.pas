@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case03_02_OrderStatistic;
+  LQA.Case03_03_MoreThanHalf;
 
 procedure Run;
 begin

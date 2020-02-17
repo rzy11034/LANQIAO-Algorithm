@@ -7,7 +7,8 @@ interface
 
 uses
   Classes,
-  SysUtils;
+  SysUtils,
+  Generics.Collections;
 
 type
   UChar = UnicodeChar;
@@ -16,6 +17,9 @@ type
   TArr_int = array of integer;
   TArr2D_int = array of array of integer;
   TArr_str = array of UString;
+
+  TArrayHelper_int = specialize TArrayHelper<integer>;
+
 
   generic TUtils<T> = class
   private type
