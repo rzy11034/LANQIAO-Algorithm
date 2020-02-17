@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case03_01_AdjustsTheArrayOrder;
+  LQA.Case03_02_OrderStatistic;
 
 procedure Run;
 begin

@@ -10,7 +10,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case03_01_调整数组顺序使奇数位于偶数前面;
+  LQA.Case03_02_第K个元素;
 
 procedure Run;
 begin

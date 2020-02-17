@@ -1,18 +1,13 @@
-﻿unit LQA.Case03_02_OrderStatistic;
-
-{**
- * 求顺序统计位的元素，如第一小元素，最大元素，第二小元素，
- * 或在顺序统计中任意位置的数
- *
- *}
-
-{$mode objfpc}{$H+}
+﻿unit LQA.Case03_02_第K个元素;
+{ **
+  * 求顺序统计位的元素，如第一小元素，最大元素，第二小元素，
+  * 或在顺序统计中任意位置的数
+  *
+  * }
 
 interface
 
 uses
-  Classes,
-  SysUtils,
   LQA.Utils;
 
 procedure Main;
@@ -56,14 +51,14 @@ end;
 // * r: 结束小标
 // * k: 求第k小元素（递增第k个元素）
 // *
-function SelectK(arr: TArr_int; l, r: integer): integer;
+function SelectK(arr: TArr_int; p, r, k: integer): integer;
 var
-  p: integer;
+  pv: integer;
 begin
-  p := Partition(arr, l, r);
+  pv := Partition(arr, p, r);
 
-  SelectK(arr, l, p - 1);
-  SelectK(arr, p + 1, r);
+  SelectK(arr, p, pv - 1, 0);
+  SelectK(arr, pv + 1, r, 0);
 end;
 
 procedure Main;
@@ -71,7 +66,7 @@ var
   arr: TArr_int;
 begin
   arr := [9, 8, 7, 6, 5];
-  SelectK(arr, 0, Length(arr) - 1);
+  SelectK(arr, 0, Length(arr) - 1, 0);
   TUtils_Int.PrintArray(arr);
 end;
 
