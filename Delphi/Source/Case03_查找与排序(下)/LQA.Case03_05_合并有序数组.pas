@@ -1,6 +1,4 @@
-﻿unit LQA.Case03_05_MergeOrderedArray;
-
-{$mode objfpc}{$H+}
+﻿unit LQA.Case03_05_合并有序数组;
 
 interface
 
@@ -34,7 +32,7 @@ begin
     if (i < 0) and (j >= 0) then
     begin
       ret[n] := arr2[j];
-      j -= 1;
+      Dec(j);
       Continue;
     end;
 

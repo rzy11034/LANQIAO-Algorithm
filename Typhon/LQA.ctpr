@@ -44,7 +44,6 @@
               <DebugInfoType Value="dsDwarf2Set"/>
               <UseHeaptrc Value="True"/>
               <TrashVariables Value="True"/>
-              <UseExternalDbgSyms Value="True"/>
             </Debugging>
           </Linking>
         </CompilerOptions>
@@ -173,6 +172,10 @@
       </Unit>
       <Unit>
         <Filename Value="Source\Case03\LQA.Case03_05_MergeOrderedArray.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case03\LQA.Case03_06_InversePairs.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>

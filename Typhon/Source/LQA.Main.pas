@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case03_04_MinFreeId;
+  LQA.Case03_05_MergeOrderedArray;
 
 procedure Run;
 begin

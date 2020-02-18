@@ -26,7 +26,8 @@ uses
   LQA.Case03_01_调整数组顺序使奇数位于偶数前面 in 'Source\Case03_查找与排序(下)\LQA.Case03_01_调整数组顺序使奇数位于偶数前面.pas',
   LQA.Case03_02_第K个元素 in 'Source\Case03_查找与排序(下)\LQA.Case03_02_第K个元素.pas',
   LQA.Case03_03_超过一半的数字 in 'Source\Case03_查找与排序(下)\LQA.Case03_03_超过一半的数字.pas',
-  LQA.Case03_04_最小可用ID in 'Source\Case03_查找与排序(下)\LQA.Case03_04_最小可用ID.pas';
+  LQA.Case03_04_最小可用ID in 'Source\Case03_查找与排序(下)\LQA.Case03_04_最小可用ID.pas',
+  LQA.Case03_05_合并有序数组 in 'Source\Case03_查找与排序(下)\LQA.Case03_05_合并有序数组.pas';
 
 begin
   try
