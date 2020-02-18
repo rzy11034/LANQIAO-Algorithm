@@ -5,7 +5,9 @@ interface
 uses
   System.SysUtils,
   System.Classes,
-  System.Rtti;
+  System.Rtti,
+  System.Generics.Collections,
+  System.Generics.Defaults;
 
 type
   UChar = Char;
@@ -14,6 +16,16 @@ type
   TArr_int = TArray<integer>;
   TArr2D_int = TArray<TArray<integer>>;
   TArr_str = TArray<UString>;
+
+  TArrayUtils<T> = class
+  public
+    /// <summary> 快速排序 </summary>
+    class procedure Sort(var arr: array of T);
+    /// <summary> 返回元素e的下标，元素不存在则返回 -1 </summary>
+    class function IndexOf(const arr: array of T; e: T): integer;
+  end;
+
+  TArrayUtils_int = TArrayUtils<integer>;
 
   TUtils<T> = class
   private type
@@ -41,7 +53,7 @@ var
 begin
   for i := 0 to 10 do
   begin
-    Write('-');
+    write('-');
   end;
   Writeln;
 end;
@@ -52,7 +64,7 @@ var
 begin
   for i := 0 to 70 do
   begin
-    Write('=');
+    write('=');
   end;
   Writeln;
 end;
@@ -69,15 +81,15 @@ begin
     Exit;
   end;
 
-  Write('[');
+  write('[');
   for i := 0 to high(arr) do
   begin
     if i <> high(arr) then
-      Write(TValue.From<T>(arr[i]).ToString, ', ')
+      write(TValue.From<T>(arr[i]).ToString, ', ')
     else
-      Write(TValue.From<T>(arr[i]).ToString);
+      write(TValue.From<T>(arr[i]).ToString);
   end;
-  Write(']'#10);
+  write(']'#10);
 end;
 
 class procedure TUtils<T>.Swap(var a, b: T);
@@ -87,6 +99,28 @@ begin
   tmp := a;
   a := b;
   b := tmp;
+end;
+
+{ TArrayHelper<T> }
+
+class function TArrayUtils<T>.IndexOf(const arr: array of T; e: T): integer;
+var
+  cmp: IComparer<T>;
+  i: integer;
+begin
+  Result := -1;
+  cmp := TComparer<T>.Default;
+
+  for i := 0 to Length(arr) - 1 do
+  begin
+    if cmp.Compare(arr[i], e) = 0 then
+      Result := i;
+  end;
+end;
+
+class procedure TArrayUtils<T>.Sort(var arr: array of T);
+begin
+  TArray.Sort<T>(arr);
 end;
 
 end.

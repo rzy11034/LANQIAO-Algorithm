@@ -26,7 +26,8 @@ uses
   LQA.Case02_06_AnToTheNthPower,
   LQA.Case03_01_AdjustsTheArrayOrder,
   LQA.Case03_02_OrderStatistic,
-  LQA.Case03_03_MoreThanHalf;
+  LQA.Case03_03_MoreThanHalf, LQA.Case03_04_MinFreeId,
+LQA.Case03_05_MergeOrderedArray;
 
 begin
   try

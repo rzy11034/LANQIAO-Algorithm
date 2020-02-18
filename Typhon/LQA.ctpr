@@ -167,6 +167,14 @@
         <Filename Value="Source\Case03\LQA.Case03_03_MoreThanHalf.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="Source\Case03\LQA.Case03_04_MinFreeId.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case03\LQA.Case03_05_MergeOrderedArray.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

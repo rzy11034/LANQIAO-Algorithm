@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case03_03_MoreThanHalf;
+  LQA.Case03_04_MinFreeId;
 
 procedure Run;
 begin

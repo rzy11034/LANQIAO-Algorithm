@@ -10,7 +10,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case03_02_第K个元素;
+  LQA.Case03_03_超过一半的数字;
 
 procedure Run;
 begin

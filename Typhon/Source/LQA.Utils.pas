@@ -18,9 +18,6 @@ type
   TArr2D_int = array of array of integer;
   TArr_str = array of UString;
 
-  TArrayHelper_int = specialize TArrayHelper<integer>;
-
-
   generic TUtils<T> = class
   private type
     TArr_T = array of T;
@@ -31,6 +28,19 @@ type
 
   TUtils_Obj = specialize TUtils<TObject>;
   TUtils_Int = specialize TUtils<integer>;
+
+  generic TArrayUtils<T> = class
+  private type
+    TArrayHelper_T = specialize TArrayHelper<T>;
+
+  public
+    // 快速排序
+    class procedure Sort(var arr: array of T);
+    // 返回元素e的下标，元素不存在则返回 -1
+    class function IndexOf(const arr: array of T; e: T): integer;
+  end;
+
+  TArrayUtils_int = specialize TArrayUtils<integer>;
 
   TUnicodeStringHelper = type Helper for UnicodeString
   private
@@ -71,6 +81,26 @@ begin
     Write('=');
   end;
   Writeln;
+end;
+
+{ TArrayUtils }
+
+class function TArrayUtils.IndexOf(const arr: array of T; e: T): integer;
+var
+  i: Integer;
+begin
+  Result := -1;
+
+  for i := 0 to High(arr) do
+  begin
+    if arr[i] = e then
+      Result := i;
+  end;
+end;
+
+class procedure TArrayUtils.Sort(var arr: array of T);
+begin
+  TArrayHelper_T.Sort(arr);
 end;
 
 { TUnicodeStringHelper }

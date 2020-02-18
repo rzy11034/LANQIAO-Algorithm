@@ -24,7 +24,7 @@ uses
 //解法1：排序后返回arr[N/2], NLg(N)
 procedure Solve1(arr: TArr_int);
 begin
-  TArrayHelper_int.Sort(arr);
+  TArrayUtils_int.Sort(arr);
   WriteLn(arr[Length(arr) div 2]);
 end;
 
