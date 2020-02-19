@@ -6,14 +6,15 @@ interface
 
 uses
   Classes,
-  SysUtils;
+  SysUtils,
+  LQA.Utils;
 
 procedure Run;
 
 implementation
 
 uses
-  LQA.Case03_06_InversePairs;
+  LQA.Case03_07_SortTheFactorsInTheArrayToFindTheSum;
 
 procedure Run;
 begin

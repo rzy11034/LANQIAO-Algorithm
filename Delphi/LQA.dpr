@@ -28,7 +28,8 @@ uses
   LQA.Case03_03_超过一半的数字 in 'Source\Case03_查找与排序(下)\LQA.Case03_03_超过一半的数字.pas',
   LQA.Case03_04_最小可用ID in 'Source\Case03_查找与排序(下)\LQA.Case03_04_最小可用ID.pas',
   LQA.Case03_05_合并有序数组 in 'Source\Case03_查找与排序(下)\LQA.Case03_05_合并有序数组.pas',
-  LQA.Case03_06_逆序对个数 in 'Source\Case03_查找与排序(下)\LQA.Case03_06_逆序对个数.pas';
+  LQA.Case03_06_逆序对个数 in 'Source\Case03_查找与排序(下)\LQA.Case03_06_逆序对个数.pas',
+  LQA.Case03_07_排序数组中找和的因子 in 'Source\Case03_查找与排序(下)\LQA.Case03_07_排序数组中找和的因子.pas';
 
 begin
   try
