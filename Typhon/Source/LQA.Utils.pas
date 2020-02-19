@@ -19,11 +19,8 @@ type
   TArr_str = array of UString;
 
   generic TUtils<T> = class
-  private type
-    TArr_T = array of T;
   public
     class procedure Swap(var a, b: T);
-    class procedure PrintArray(arr: TArr_T);
   end;
 
   TUtils_Obj = specialize TUtils<TObject>;
@@ -32,12 +29,15 @@ type
   generic TArrayUtils<T> = class
   private type
     TArrayHelper_T = specialize TArrayHelper<T>;
+    TArr_T = array of T;
 
   public
     // 快速排序
     class procedure Sort(var arr: array of T);
     // 返回元素e的下标，元素不存在则返回 -1
     class function IndexOf(const arr: array of T; e: T): integer;
+    // 输出一维数组
+    class procedure Print(arr: TArr_T);
   end;
 
   TArrayUtils_int = specialize TArrayUtils<integer>;
@@ -98,6 +98,27 @@ begin
   end;
 end;
 
+class procedure TArrayUtils.Print(arr: TArr_T);
+var
+  i: integer;
+begin
+  if arr = nil then
+  begin
+    WriteLn('Cannot print an empty array!');
+    Exit;
+  end;
+
+  Write('[');
+  for i := 0 to High(arr) do
+  begin
+    if i <> High(arr) then
+      Write(arr[i].ToString, ', ')
+    else
+      Write(arr[i].ToString);
+  end;
+  Write(']'#10);
+end;
+
 class procedure TArrayUtils.Sort(var arr: array of T);
 begin
   TArrayHelper_T.Sort(arr);
@@ -134,27 +155,6 @@ begin
 end;
 
 { TLAUtils }
-
-class procedure TUtils.PrintArray(arr: TArr_T);
-var
-  i: integer;
-begin
-  if arr = nil then
-  begin
-    WriteLn('Cannot print an empty array!');
-    Exit;
-  end;
-
-  Write('[');
-  for i := 0 to High(arr) do
-  begin
-    if i <> High(arr) then
-      Write(arr[i].ToString, ', ')
-    else
-      Write(arr[i].ToString);
-  end;
-  Write(']'#10);
-end;
 
 class procedure TUtils.Swap(var a, b: T);
 var

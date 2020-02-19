@@ -63,7 +63,7 @@ var
   arr: TArr_int;
 begin
   arr := [1, 9, 2, 5, 7, 3, 4, 6, 8, 0];
-  TUtils_Int.PrintArray(LongestSubsequence(arr));
+  TArrayUtils_int.Print(LongestSubsequence(arr));
 end;
 
 end.

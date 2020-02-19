@@ -44,7 +44,7 @@ var
   arr: TArr_int;
 begin
   arr := [2, 3, 4, 5, 6];
-  TUtils_Int.PrintArray(Func(arr));
+  TArrayUtils_int.Print(Func(arr));
 end;
 
 end.

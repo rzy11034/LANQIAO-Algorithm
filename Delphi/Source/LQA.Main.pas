@@ -10,7 +10,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case03_05_合并有序数组;
+  LQA.Case03_06_逆序对个数;
 
 procedure Run;
 begin

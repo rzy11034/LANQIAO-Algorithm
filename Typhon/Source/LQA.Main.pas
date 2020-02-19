@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case03_05_MergeOrderedArray;
+  LQA.Case03_06_InversePairs;
 
 procedure Run;
 begin

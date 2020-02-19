@@ -1,12 +1,8 @@
-unit LQA.Case03_06_InversePairs;
-
-{$mode objfpc}{$H+}
+﻿unit LQA.Case03_06_逆序对个数;
 
 interface
 
 uses
-  Classes,
-  SysUtils,
   LQA.Utils;
 
 procedure Main;
@@ -20,9 +16,9 @@ var
 begin
   ret := 0;
 
-  for i := 0 to High(arr) do
+  for i := 0 to high(arr) do
   begin
-    for j := i + 1 to High(arr) do
+    for j := i + 1 to high(arr) do
     begin
       if arr[i] > arr[j] then
         Inc(ret);
@@ -57,7 +53,7 @@ var
         arr[i] := aux[rightPoint - l];
         Inc(rightPoint);
       end
-      else if rightPoint > r then  // 右下标到头
+      else if rightPoint > r then // 右下标到头
       begin
         arr[i] := aux[leftPoint - l];
         Inc(leftPoint);
@@ -91,7 +87,7 @@ var
 
 begin
   countInverse := 0;
-  __sort(arr, 0, High(arr));
+  __sort(arr, 0, high(arr));
   Result := countInverse;
 end;
 

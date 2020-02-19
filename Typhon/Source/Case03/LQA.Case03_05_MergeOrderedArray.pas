@@ -59,7 +59,7 @@ var
 begin
   arr1 := [1, 3, 5, 7, 9, 11];
   arr2 := [2, 4, 6, 8, 10];
-  TUtils_Int.PrintArray(Merge(arr1, arr2));
+  TArrayUtils_int.Print(Merge(arr1, arr2));
 end;
 
 end.

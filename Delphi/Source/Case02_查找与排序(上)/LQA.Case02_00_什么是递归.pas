@@ -164,7 +164,7 @@ begin
   WriteLn('插入排序改递归: ');
   tmpArr := [2, 3, 1, 5, 4];
   InsertSort(tmpArr);
-  TUtils_Int.PrintArray(tmpArr);
+  TArrayUtils_int.Print(tmpArr);
   WriteLn;
 end;
 
