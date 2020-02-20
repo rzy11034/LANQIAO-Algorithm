@@ -35,18 +35,61 @@ begin
   end;
 
   // 找左端点：更新历史最低，只要左侧出现比历史最低高的，就应该将左边界扩展到此处
-  for i := n-1 downto 0 do
+  for i := len - 1 downto 0 do
   begin
+    if arr[i] < min then
+      min := arr[i];
 
+    if arr[i] > min then
+      l := i;
   end;
 
-  Result := 0;
+  if l = -1 then
+    ret := [0, 0];
+
+  ret := [l, r];
+  Result := r - l + 1;
 end;
 
 
 procedure Main;
+var
+  arr, ret: TArr_int;
 begin
+  arr := [1, 4, 6, 5, 9, 10];
+  WriteLn(FindSegment(arr, ret));
+  TArrayUtils_int.print(ret);
+  DrawLineBlockEnd;
 
+  arr := [1, 2, 3, 4, 5, 6];
+  WriteLn(FindSegment(arr, ret));
+  TArrayUtils_int.print(ret);
+  DrawLineBlockEnd;
+
+  arr := [1, 5, 3, 4, 2, 6, 7];
+  WriteLn(FindSegment(arr, ret));
+  TArrayUtils_int.print(ret);
+  DrawLineBlockEnd;
+
+  arr := [2, 3, 7, 5, 4, 6];
+  WriteLn(FindSegment(arr, ret));
+  TArrayUtils_int.print(ret);
+  DrawLineBlockEnd;
+
+  arr := [3, 2, 5, 6, 7, 8];
+  WriteLn(FindSegment(arr, ret));
+  TArrayUtils_int.print(ret);
+  DrawLineBlockEnd;
+
+  arr := [2, 8, 7, 10, 9];
+  WriteLn(FindSegment(arr, ret));
+  TArrayUtils_int.print(ret);
+  DrawLineBlockEnd;
+
+  arr := [2, 3, 7, 4, 1, 5, 6];
+  WriteLn(FindSegment(arr, ret));
+  TArrayUtils_int.print(ret);
+  DrawLineBlockEnd;
 end;
 
 end.

@@ -14,7 +14,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case03_07_SortTheFactorsInTheArrayToFindTheSum;
+  LQA.Case03_08_Rearrange;
 
 procedure Run;
 begin
