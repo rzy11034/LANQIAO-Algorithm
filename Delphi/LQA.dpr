@@ -29,7 +29,11 @@ uses
   LQA.Case03_04_最小可用ID in 'Source\Case03_查找与排序(下)\LQA.Case03_04_最小可用ID.pas',
   LQA.Case03_05_合并有序数组 in 'Source\Case03_查找与排序(下)\LQA.Case03_05_合并有序数组.pas',
   LQA.Case03_06_逆序对个数 in 'Source\Case03_查找与排序(下)\LQA.Case03_06_逆序对个数.pas',
-  LQA.Case03_07_排序数组中找和的因子 in 'Source\Case03_查找与排序(下)\LQA.Case03_07_排序数组中找和的因子.pas';
+  LQA.Case03_07_排序数组中找和的因子 in 'Source\Case03_查找与排序(下)\LQA.Case03_07_排序数组中找和的因子.pas',
+  LQA.Case03_08_需要排序的子数组 in 'Source\Case03_查找与排序(下)\LQA.Case03_08_需要排序的子数组.pas',
+  LQA.Case03_09_前K个数 in 'Source\Case03_查找与排序(下)\LQA.Case03_09_前K个数.pas',
+  LQA.Case03_10_所有员工年龄排序 in 'Source\Case03_查找与排序(下)\LQA.Case03_10_所有员工年龄排序.pas',
+  LQA.Case03_11_数组能排成的最小数 in 'Source\Case03_查找与排序(下)\LQA.Case03_11_数组能排成的最小数.pas';
 
 begin
   try

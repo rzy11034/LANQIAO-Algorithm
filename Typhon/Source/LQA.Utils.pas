@@ -8,7 +8,8 @@ interface
 uses
   Classes,
   SysUtils,
-  Generics.Collections;
+  Generics.Collections,
+  Generics.Defaults;
 
 type
   UChar = UnicodeChar;
@@ -28,12 +29,18 @@ type
 
   generic TArrayUtils<T> = class
   private type
-    TArrayHelper_T = specialize TArrayHelper<T>;
     TArr_T = array of T;
+    TArrayHelper_T = specialize TArrayHelper<T>;
+    ICmp_T = specialize IComparer<T>;
+    TCmp_T = specialize TComparer<T>;
+    TOnComparison_T = specialize TOnComparison<T>;
+    TComparisonFunc_T = specialize TComparisonFunc<T>;
 
   public
     // 快速排序
     class procedure Sort(var arr: array of T);
+    class procedure Sort(var arr: array of T; const cmp: TComparisonFunc_T);
+    class procedure Sort(var arr: array of T; const cmp: TOnComparison_T);
     // 返回元素e的下标，元素不存在则返回 -1
     class function IndexOf(const arr: array of T; e: T): integer;
     // 输出一维数组
@@ -87,7 +94,7 @@ end;
 
 class function TArrayUtils.IndexOf(const arr: array of T; e: T): integer;
 var
-  i: Integer;
+  i: integer;
 begin
   Result := -1;
 
@@ -122,6 +129,22 @@ end;
 class procedure TArrayUtils.Sort(var arr: array of T);
 begin
   TArrayHelper_T.Sort(arr);
+end;
+
+class procedure TArrayUtils.Sort(var arr: array of T; const cmp: TComparisonFunc_T);
+var
+  tmpCmp: ICmp_T;
+begin
+  tmpCmp := TCmp_T.Construct(cmp);
+  TArrayHelper_T.Sort(arr, tmpCmp);
+end;
+
+class procedure TArrayUtils.Sort(var arr: array of T; const cmp: TOnComparison_T);
+var
+  tmpCmp: ICmp_T;
+begin
+  tmpCmp := TCmp_T.Construct(cmp);
+  TArrayHelper_T.Sort(arr, tmpCmp);
 end;
 
 { TUnicodeStringHelper }

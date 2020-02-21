@@ -10,9 +10,6 @@ uses
   SysUtils,
   LQA.Main,
   LQA.Utils,
-  LQA.Case02_01_TowerOfHanoi,
-  LQA.Case02_00_WhatIsRecursion,
-  LQA.Case02_02_XiaoBaiGoesUpTheStairs,
   LQA.Case01_00_BitwiseOperation,
   LQA.Case01_01_AnUniquePairOfNumbers,
   LQA.Case01_02_FindTheSingleNumber,
@@ -20,6 +17,9 @@ uses
   LQA.Case01_04_IsIt2ToTheIntegerPower,
   LQA.Case01_05_SwapTheParityBits,
   LQA.Case01_06_BinaryRealNumber,
+  LQA.Case02_00_WhatIsRecursion,
+  LQA.Case02_01_TowerOfHanoi,
+  LQA.Case02_02_XiaoBaiGoesUpTheStairs,
   LQA.Case02_03_RotateTheMinimumNumberOfTheArray,
   LQA.Case02_04_FindInAnSpecialOrderedArray,
   LQA.Case02_05_LongestContinuousIncreasingSubsequence,
@@ -28,8 +28,13 @@ uses
   LQA.Case03_02_OrderStatistic,
   LQA.Case03_03_MoreThanHalf,
   LQA.Case03_04_MinFreeId,
-  LQA.Case03_05_MergeOrderedArray, LQA.Case03_06_InversePairs,
-LQA.Case03_07_SortTheFactorsInTheArrayToFindTheSum, LQA.Case03_08_Rearrange;
+  LQA.Case03_05_MergeOrderedArray,
+  LQA.Case03_06_InversePairs,
+  LQA.Case03_07_SortTheFactorsInTheArrayToFindTheSum,
+  LQA.Case03_08_Rearrange,
+  LQA.Case03_09_TopK,
+  LQA.Case03_10_RankAllEmployeesByAge, LQA.Case03_11_MinCombineNum;
+
 
 begin
   try

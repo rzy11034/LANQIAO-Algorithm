@@ -1,4 +1,4 @@
-unit LQA.Case03_06_InversePairs;
+﻿unit LQA.Case03_06_InversePairs;
 
 {$mode objfpc}{$H+}
 

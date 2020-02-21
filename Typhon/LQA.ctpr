@@ -22,7 +22,7 @@
           <PathDelim Value="\"/>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="Source;Source\Case01;Source\Case02;Source\Case03"/>
+            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II)"/>
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <Parsing>
@@ -46,6 +46,11 @@
               <TrashVariables Value="True"/>
             </Debugging>
           </Linking>
+          <Other>
+            <CompilerMessages>
+              <IgnoredMessages idx4105="True" idx4104="True"/>
+            </CompilerMessages>
+          </Other>
         </CompilerOptions>
       </Item>
       <Item Name="Release">
@@ -54,7 +59,7 @@
           <PathDelim Value="\"/>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="Source;Source\Case01;Source\Case02;Source\Case03"/>
+            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II)"/>
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <CodeGeneration>
@@ -94,96 +99,108 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\Case01\LQA.Case01_01_AnUniquePairOfNumbers.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\Case01\LQA.Case01_02_FindTheSingleNumber.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\Case01\LQA.Case01_03_FindTheNumberOfOnesInBinary.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\Case01\LQA.Case01_04_IsIt2ToTheIntegerPower.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\Case01\LQA.Case01_05_SwapTheParityBits.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\Case01\LQA.Case01_06_BinaryRealNumber.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\Case02\LQA.Case02_01_TowerOfHanoi.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\Case02\LQA.Case02_00_WhatIsRecursion.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\Case02\LQA.Case02_02_XiaoBaiGoesUpTheStairs.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
         <Filename Value="目录.txt"/>
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case02\LQA.Case02_03_RotateTheMinimumNumberOfTheArray.pas"/>
+        <Filename Value="Source\Case01_BitOperation\LQA.Case01_00_BitwiseOperation.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case02\LQA.Case02_04_FindInAnSpecialOrderedArray.pas"/>
+        <Filename Value="Source\Case01_BitOperation\LQA.Case01_01_AnUniquePairOfNumbers.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <Filename Value="Source\Case01_BitOperation\LQA.Case01_02_FindTheSingleNumber.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case02\LQA.Case02_06_AnToTheNthPower.pas"/>
+        <Filename Value="Source\Case01_BitOperation\LQA.Case01_03_FindTheNumberOfOnesInBinary.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case03\LQA.Case03_01_AdjustsTheArrayOrder.pas"/>
+        <Filename Value="Source\Case01_BitOperation\LQA.Case01_04_IsIt2ToTheIntegerPower.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case03\LQA.Case03_02_OrderStatistic.pas"/>
+        <Filename Value="Source\Case01_BitOperation\LQA.Case01_05_SwapTheParityBits.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case03\LQA.Case03_03_MoreThanHalf.pas"/>
+        <Filename Value="Source\Case01_BitOperation\LQA.Case01_06_BinaryRealNumber.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case03\LQA.Case03_04_MinFreeId.pas"/>
+        <Filename Value="Source\Case02_SearchAndSort(I)\LQA.Case02_00_WhatIsRecursion.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case03\LQA.Case03_05_MergeOrderedArray.pas"/>
+        <Filename Value="Source\Case02_SearchAndSort(I)\LQA.Case02_01_TowerOfHanoi.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case03\LQA.Case03_06_InversePairs.pas"/>
+        <Filename Value="Source\Case02_SearchAndSort(I)\LQA.Case02_02_XiaoBaiGoesUpTheStairs.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case03\LQA.Case03_07_SortTheFactorsInTheArrayToFindTheSum.pas"/>
+        <Filename Value="Source\Case02_SearchAndSort(I)\LQA.Case02_03_RotateTheMinimumNumberOfTheArray.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case03\LQA.Case03_08_Rearrange.pas"/>
+        <Filename Value="Source\Case02_SearchAndSort(I)\LQA.Case02_04_FindInAnSpecialOrderedArray.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case02_SearchAndSort(I)\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case02_SearchAndSort(I)\LQA.Case02_06_AnToTheNthPower.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_01_AdjustsTheArrayOrder.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_02_OrderStatistic.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_03_MoreThanHalf.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_04_MinFreeId.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_05_MergeOrderedArray.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_06_InversePairs.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_07_SortTheFactorsInTheArrayToFindTheSum.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_08_Rearrange.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_09_TopK.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_10_RankAllEmployeesByAge.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>
@@ -193,7 +210,7 @@
     <PathDelim Value="\"/>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="Source;Source\Case01;Source\Case02;Source\Case03"/>
+      <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II)"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
   </CompilerOptions>

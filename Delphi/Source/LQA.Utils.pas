@@ -22,7 +22,8 @@ type
     TArr_T = array of T;
   public
     /// <summary> 快速排序 </summary>
-    class procedure Sort(var arr: array of T);
+    class procedure Sort(var arr: array of T); overload;
+    class procedure Sort(var arr: array of T; const cmp: TComparison<T>); overload;
     /// <summary> 返回元素e的下标，元素不存在则返回 -1 </summary>
     class function IndexOf(const arr: array of T; e: T): integer;
     /// <summary>  输出一维数组 </summary>
@@ -117,6 +118,14 @@ begin
       write(TValue.From<T>(arr[i]).ToString);
   end;
   write(']'#10);
+end;
+
+class procedure TArrayUtils<T>.Sort(var arr: array of T; const cmp: TComparison<T>);
+var
+  tmpCmp: IComparer<T>;
+begin
+  tmpCmp := TComparer<T>.Construct(cmp);
+  TArray.Sort<T>(arr, tmpCmp);
 end;
 
 class procedure TArrayUtils<T>.Sort(var arr: array of T);

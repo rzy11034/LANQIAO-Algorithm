@@ -6,15 +6,14 @@ interface
 
 uses
   Classes,
-  SysUtils,
-  LQA.Utils;
+  SysUtils;
 
 procedure Run;
 
 implementation
 
 uses
-  LQA.Case03_08_Rearrange;
+  LQA.Case03_11_MinCombineNum;
 
 procedure Run;
 begin
