@@ -12,7 +12,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case03_11_数组能排成的最小数;
+  LQA.Case04_02_0所在的行列清零;
 
 procedure Run;
 begin

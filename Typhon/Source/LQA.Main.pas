@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case03_11_MinCombineNum;
+  LQA.Case04_03_ZigPrintMatrix;
 
 procedure Run;
 begin

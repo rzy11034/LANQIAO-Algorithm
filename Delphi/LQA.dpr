@@ -33,7 +33,10 @@ uses
   LQA.Case03_08_需要排序的子数组 in 'Source\Case03_查找与排序(下)\LQA.Case03_08_需要排序的子数组.pas',
   LQA.Case03_09_前K个数 in 'Source\Case03_查找与排序(下)\LQA.Case03_09_前K个数.pas',
   LQA.Case03_10_所有员工年龄排序 in 'Source\Case03_查找与排序(下)\LQA.Case03_10_所有员工年龄排序.pas',
-  LQA.Case03_11_数组能排成的最小数 in 'Source\Case03_查找与排序(下)\LQA.Case03_11_数组能排成的最小数.pas';
+  LQA.Case03_11_数组能排成的最小数 in 'Source\Case03_查找与排序(下)\LQA.Case03_11_数组能排成的最小数.pas',
+  LQA.Case03_12_字符串的包含 in 'Source\Case03_查找与排序(下)\LQA.Case03_12_字符串的包含.pas',
+  LQA.Case04_01_顺时针打印二维数组 in 'Source\Case04_多维数组与矩阵\LQA.Case04_01_顺时针打印二维数组.pas',
+  LQA.Case04_02_0所在的行列清零 in 'Source\Case04_多维数组与矩阵\LQA.Case04_02_0所在的行列清零.pas';
 
 begin
   try

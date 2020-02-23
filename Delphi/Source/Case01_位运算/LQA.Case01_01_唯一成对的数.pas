@@ -28,7 +28,7 @@ begin
   arr[high(arr)] := Random(n) + 1;
   index := Random(n); // 随机下标
 
-  TUtils_Int.Swap(arr[index], arr[high(arr)]);
+  TUtils_int.Swap(arr[index], arr[high(arr)]);
 
   for i := 0 to high(arr) do
     write(arr[i], ' ');

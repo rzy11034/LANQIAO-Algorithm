@@ -22,7 +22,7 @@
           <PathDelim Value="\"/>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II)"/>
+            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices"/>
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <Parsing>
@@ -41,7 +41,7 @@
           </CodeGeneration>
           <Linking>
             <Debugging>
-              <DebugInfoType Value="dsDwarf2Set"/>
+              <DebugInfoType Value="dsDwarf3"/>
               <UseHeaptrc Value="True"/>
               <TrashVariables Value="True"/>
             </Debugging>
@@ -59,7 +59,7 @@
           <PathDelim Value="\"/>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II)"/>
+            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices"/>
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <CodeGeneration>
@@ -203,6 +203,22 @@
         <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_12_ContainsAll.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_01_Print2DArr.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_02_ClearZeroIn2DArr.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -210,7 +226,7 @@
     <PathDelim Value="\"/>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II)"/>
+      <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
   </CompilerOptions>

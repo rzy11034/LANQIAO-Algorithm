@@ -114,7 +114,7 @@ var
   ret: integer;
 begin
   ret := Self.Top;
-  TUtils_Int.Swap(__data[0], __data[__index]);
+  TUtils_int.Swap(__data[0], __data[__index]);
   Dec(__index);
   __shiftDown(0);
   Result := ret;
@@ -157,7 +157,7 @@ begin
     if __data[k] >= __data[j] then
       Break;
 
-    TUtils_Int.Swap(__data[k], __data[j]);
+    TUtils_int.Swap(__data[k], __data[j]);
     k := j;
   end;
 end;
@@ -170,7 +170,7 @@ begin
 
   while (k > 0) and (__data[k] > __data[j]) do
   begin
-    TUtils_Int.Swap(__data[k], __data[j]);
+    TUtils_int.Swap(__data[k], __data[j]);
     k := j;
   end;
 end;

@@ -12,11 +12,14 @@ uses
   Generics.Defaults;
 
 type
+  int = integer;
   UChar = UnicodeChar;
   UString = UnicodeString;
 
+
   TArr_int = array of integer;
   TArr2D_int = array of array of integer;
+  Tarr_chr = TUnicodeCharArray;
   TArr_str = array of UString;
 
   generic TUtils<T> = class
@@ -24,12 +27,12 @@ type
     class procedure Swap(var a, b: T);
   end;
 
-  TUtils_Obj = specialize TUtils<TObject>;
-  TUtils_Int = specialize TUtils<integer>;
+  TUtils_int = specialize TUtils<integer>;
 
   generic TArrayUtils<T> = class
   private type
     TArr_T = array of T;
+    TArr2D_T = array of array of T;
     TArrayHelper_T = specialize TArrayHelper<T>;
     ICmp_T = specialize IComparer<T>;
     TCmp_T = specialize TComparer<T>;
@@ -41,13 +44,21 @@ type
     class procedure Sort(var arr: array of T);
     class procedure Sort(var arr: array of T; const cmp: TComparisonFunc_T);
     class procedure Sort(var arr: array of T; const cmp: TOnComparison_T);
-    // 返回元素e的下标，元素不存在则返回 -1
+    // 二分查找法
+    class function BinarySearch(const arr: TArr_T; const e: T): integer;
+    class function BinarySearch(const arr: TArr_T; const e: T; const cmp: TComparisonFunc_T): integer;
+    class function BinarySearch(const arr: TArr_T; const e: T; const cmp: TOnComparison_T): integer;
+    // 顺序查找，返回元素e的下标，元素不存在则返回 -1
     class function IndexOf(const arr: array of T; e: T): integer;
     // 输出一维数组
     class procedure Print(arr: TArr_T);
+    // 输出二维数组
+    class procedure Print2D(arr: TArr2D_T);
   end;
 
   TArrayUtils_int = specialize TArrayUtils<integer>;
+  TArrayUtils_str = specialize TArrayUtils<UString>;
+  TArrayUtils_chr = specialize TArrayUtils<UChar>;
 
   TUnicodeStringHelper = type Helper for UnicodeString
   private
@@ -92,6 +103,42 @@ end;
 
 { TArrayUtils }
 
+class function TArrayUtils.BinarySearch(const arr: TArr_T; const e: T): integer;
+var
+  ret: integer;
+begin
+  Result := -1;
+
+  if TArrayHelper_T.BinarySearch(arr, e, ret) then
+    Result := ret;
+end;
+
+class function TArrayUtils.BinarySearch(const arr: TArr_T; const e: T;
+  const cmp: TComparisonFunc_T): integer;
+var
+  tmpCmp: ICmp_T;
+  ret: integer;
+begin
+  Result := -1;
+  tmpCmp := TCmp_T.Construct(cmp);
+
+  if TArrayHelper_T.BinarySearch(arr, e, ret, tmpCmp) then
+    Result := ret;
+end;
+
+class function TArrayUtils.BinarySearch(const arr: TArr_T; const e: T;
+  const cmp: TOnComparison_T): integer;
+var
+  tmpCmp: ICmp_T;
+  ret: integer;
+begin
+  Result := -1;
+  tmpCmp := TCmp_T.Construct(cmp);
+
+  if TArrayHelper_T.BinarySearch(arr, e, ret, tmpCmp) then
+    Result := ret;
+end;
+
 class function TArrayUtils.IndexOf(const arr: array of T; e: T): integer;
 var
   i: integer;
@@ -119,11 +166,35 @@ begin
   for i := 0 to High(arr) do
   begin
     if i <> High(arr) then
-      Write(arr[i].ToString, ', ')
+      Write(arr[i], ', ')
     else
-      Write(arr[i].ToString);
+      Write(arr[i]);
   end;
   Write(']'#10);
+end;
+
+class procedure TArrayUtils.Print2D(arr: TArr2D_T);
+var
+  i, j: integer;
+begin
+  if arr = nil then
+  begin
+    WriteLn('Cannot print an empty array!');
+    Exit;
+  end;
+
+  for i := 0 to High(arr) do
+  begin
+    Write('[');
+    for j := 0 to High(arr[i]) do
+    begin
+      if j <> High(arr[i]) then
+        Write(arr[i, j], ', '#9)
+      else
+        Write(arr[i, j]);
+    end;
+    Write(']'#10);
+  end;
 end;
 
 class procedure TArrayUtils.Sort(var arr: array of T);

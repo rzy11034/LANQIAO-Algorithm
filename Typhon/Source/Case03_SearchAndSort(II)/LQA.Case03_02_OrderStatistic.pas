@@ -24,7 +24,7 @@ function Partition(var arr: TArr_int; l, r: integer): integer;
 var
   i, j, e: integer;
 begin
-  TUtils_Int.Swap(arr[l], arr[l + (r - l) div 2]);
+  TUtils_int.Swap(arr[l], arr[l + (r - l) div 2]);
   e := arr[l];
 
   i := l + 1;
@@ -39,12 +39,12 @@ begin
     if i > j then
       Break;
 
-    TUtils_Int.Swap(arr[i], arr[j]);
+    TUtils_int.Swap(arr[i], arr[j]);
     Inc(i);
     Dec(j);
   end;
 
-  TUtils_Int.Swap(arr[l], arr[j]);
+  TUtils_int.Swap(arr[l], arr[j]);
   Result := j;
 end;
 

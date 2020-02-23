@@ -14,7 +14,7 @@ procedure Main;
 
 implementation
 
-function __cmp(constref Left, Right: integer): integer;
+function Cmp(constref Left, Right: integer): integer;
 var
   s1, s2: UString;
 begin
@@ -29,7 +29,7 @@ var
   arr: TArr_int;
 begin
   arr := [3, 22, 321];
-  TArrayUtils_int.Sort(arr, @__cmp);
+  TArrayUtils_int.Sort(arr, @Cmp);
   TArrayUtils_int.Print(arr);
 end;
 

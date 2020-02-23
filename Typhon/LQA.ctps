@@ -11,25 +11,25 @@
         <IsPartOfProject Value="True"/>
         <TopLine Value="28"/>
         <CursorPos X="61" Y="24"/>
-        <UsageCount Value="133"/>
+        <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\LQA.Main.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="4"/>
+        <TopLine Value="7"/>
         <CursorPos X="6" Y="19"/>
-        <UsageCount Value="133"/>
+        <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\LQA.Utils.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="53"/>
-        <CursorPos X="56" Y="27"/>
-        <UsageCount Value="133"/>
+        <TopLine Value="174"/>
+        <CursorPos X="35" Y="196"/>
+        <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -37,10 +37,10 @@
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="13"/>
-        <CursorPos X="27" Y="28"/>
+        <TopLine Value="10"/>
+        <CursorPos X="22" Y="33"/>
         <SyntaxHighlighter Value="PO"/>
-        <UsageCount Value="133"/>
+        <UsageCount Value="201"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit>
@@ -51,16 +51,13 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01_BitOperation\LQA.Case01_01_AnUniquePairOfNumbers.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01_BitOperation\LQA.Case01_02_FindTheSingleNumber.pas"/>
@@ -69,7 +66,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01_BitOperation\LQA.Case01_03_FindTheNumberOfOnesInBinary.pas"/>
@@ -78,7 +75,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01_BitOperation\LQA.Case01_04_IsIt2ToTheIntegerPower.pas"/>
@@ -87,7 +84,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01_BitOperation\LQA.Case01_05_SwapTheParityBits.pas"/>
@@ -96,7 +93,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01_BitOperation\LQA.Case01_06_BinaryRealNumber.pas"/>
@@ -105,7 +102,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case02_SearchAndSort(I)\LQA.Case02_00_WhatIsRecursion.pas"/>
@@ -114,7 +111,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case02_SearchAndSort(I)\LQA.Case02_01_TowerOfHanoi.pas"/>
@@ -123,7 +120,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case02_SearchAndSort(I)\LQA.Case02_02_XiaoBaiGoesUpTheStairs.pas"/>
@@ -132,7 +129,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case02_SearchAndSort(I)\LQA.Case02_03_RotateTheMinimumNumberOfTheArray.pas"/>
@@ -141,7 +138,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case02_SearchAndSort(I)\LQA.Case02_04_FindInAnSpecialOrderedArray.pas"/>
@@ -150,7 +147,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case02_SearchAndSort(I)\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
@@ -159,7 +156,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case02_SearchAndSort(I)\LQA.Case02_06_AnToTheNthPower.pas"/>
@@ -168,7 +165,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_01_AdjustsTheArrayOrder.pas"/>
@@ -177,34 +174,27 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_02_OrderStatistic.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_03_MoreThanHalf.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <TopLine Value="169"/>
+        <CursorPos X="12" Y="197"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_04_MinFreeId.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_05_MergeOrderedArray.pas"/>
@@ -213,14 +203,14 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_06_InversePairs.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="32" Y="8"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_07_SortTheFactorsInTheArrayToFindTheSum.pas"/>
@@ -229,7 +219,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_08_Rearrange.pas"/>
@@ -238,16 +228,13 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_09_TopK.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_10_RankAllEmployeesByAge.pas"/>
@@ -255,7 +242,22 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="22"/>
         <CursorPos Y="10"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="102"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="42" Y="33"/>
+        <UsageCount Value="101"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_12_ContainsAll.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="25"/>
+        <CursorPos X="21" Y="53"/>
+        <UsageCount Value="91"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
@@ -263,7 +265,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="128"/>
+        <UsageCount Value="120"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01\LQA.Case01_01_AnUniquePairOfNumbers.pas"/>
@@ -271,7 +273,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="128"/>
+        <UsageCount Value="120"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01\LQA.Case01_02_FindTheSingleNumber.pas"/>
@@ -279,14 +281,14 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="128"/>
+        <UsageCount Value="120"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01\LQA.Case01_03_FindTheNumberOfOnesInBinary.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="33"/>
         <CursorPos X="20" Y="44"/>
-        <UsageCount Value="128"/>
+        <UsageCount Value="120"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01\LQA.Case01_04_IsIt2ToTheIntegerPower.pas"/>
@@ -294,7 +296,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="128"/>
+        <UsageCount Value="120"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01\LQA.Case01_05_SwapTheParityBits.pas"/>
@@ -302,7 +304,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="128"/>
+        <UsageCount Value="120"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01\LQA.Case01_06_BinaryRealNumber.pas"/>
@@ -310,132 +312,124 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="128"/>
+        <UsageCount Value="120"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case02\LQA.Case02_01_TowerOfHanoi.pas"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="128"/>
+        <UsageCount Value="120"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case02\LQA.Case02_00_WhatIsRecursion.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="156"/>
         <CursorPos X="24" Y="170"/>
-        <UsageCount Value="128"/>
+        <UsageCount Value="120"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case02\LQA.Case02_02_XiaoBaiGoesUpTheStairs.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="22" Y="34"/>
-        <UsageCount Value="128"/>
+        <UsageCount Value="120"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case02\LQA.Case02_03_RotateTheMinimumNumberOfTheArray.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="56"/>
         <CursorPos X="25" Y="63"/>
-        <UsageCount Value="128"/>
+        <UsageCount Value="120"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case02\LQA.Case02_04_FindInAnSpecialOrderedArray.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="37"/>
         <CursorPos X="28" Y="68"/>
-        <UsageCount Value="125"/>
+        <UsageCount Value="117"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case02\LQA.Case02_05_LongestContinuousIncreasingSubsequence.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="55"/>
         <CursorPos X="18" Y="69"/>
-        <UsageCount Value="124"/>
+        <UsageCount Value="116"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case02\LQA.Case02_06_AnToTheNthPower.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="7" Y="59"/>
-        <UsageCount Value="117"/>
+        <UsageCount Value="109"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case03\LQA.Case03_01_AdjustsTheArrayOrder.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="7"/>
         <CursorPos X="26" Y="2"/>
-        <UsageCount Value="95"/>
+        <UsageCount Value="87"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case03\LQA.Case03_02_OrderStatistic.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="7"/>
         <CursorPos X="24" Y="74"/>
-        <UsageCount Value="92"/>
+        <UsageCount Value="84"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case03\LQA.Case03_03_MoreThanHalf.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="76"/>
         <CursorPos X="22" Y="93"/>
-        <UsageCount Value="66"/>
+        <UsageCount Value="58"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case03\LQA.Case03_04_MinFreeId.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="96"/>
         <CursorPos X="3" Y="137"/>
-        <UsageCount Value="62"/>
+        <UsageCount Value="54"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case03\LQA.Case03_05_MergeOrderedArray.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="47"/>
         <CursorPos X="24" Y="62"/>
-        <UsageCount Value="58"/>
+        <UsageCount Value="50"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case03\LQA.Case03_06_InversePairs.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="34"/>
         <CursorPos X="24" Y="53"/>
-        <UsageCount Value="54"/>
+        <UsageCount Value="46"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case03\LQA.Case03_07_SortTheFactorsInTheArrayToFindTheSum.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="7"/>
         <CursorPos X="9" Y="24"/>
-        <UsageCount Value="42"/>
+        <UsageCount Value="34"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case03\LQA.Case03_08_Rearrange.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="69"/>
         <CursorPos X="29" Y="77"/>
-        <UsageCount Value="37"/>
-      </Unit>
-      <Unit>
-        <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\varianth.inc"/>
-        <FRMtype Value="0"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="65"/>
-        <CursorPos X="4" Y="82"/>
-        <UsageCount Value="6"/>
+        <UsageCount Value="29"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\packages\rtl-generics\src\generics.collections.pas"/>
         <FRMtype Value="0"/>
         <UnitName Value="Generics.Collections"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="61"/>
-        <CursorPos X="50" Y="78"/>
-        <UsageCount Value="10"/>
+        <TopLine Value="69"/>
+        <CursorPos X="42" Y="55"/>
+        <UsageCount Value="3"/>
       </Unit>
       <Unit>
         <Filename Value="..\LANQIAO_Algorithm_Src\java\elementary\_03sort\排序算法的总结.md"/>
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="74" Y="8"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="0"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit>
       <Unit>
@@ -444,7 +438,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="248"/>
         <CursorPos X="22" Y="270"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="1"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\objpas\sysutils\sysutils.inc"/>
@@ -452,21 +446,21 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="806"/>
         <CursorPos X="21" Y="819"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="1"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\objpas\sysutils\syshelph.inc"/>
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="3" Y="6"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="1"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case03\LQA.Case03_09_TopK.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="54"/>
         <CursorPos Y="72"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="25"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\Data-Structures-and-Algorithms\Typhon\Source\Tree\DSA.Tree.Heap.pas"/>
@@ -474,7 +468,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="103"/>
         <CursorPos X="14" Y="122"/>
-        <UsageCount Value="16"/>
+        <UsageCount Value="8"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\Data-Structures-and-Algorithms\Typhon\Source\List_Stack_Queue\DSA.List_Stack_Queue.ArrayList.pas"/>
@@ -482,7 +476,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="124"/>
         <CursorPos X="81" Y="143"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="2"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\Data-Structures-and-Algorithms\Typhon\Source\Sorts\DSA.Sorts.HeapSort.pas"/>
@@ -490,14 +484,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="105"/>
         <CursorPos X="28" Y="135"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="2"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case03\LQA.Case03_10_RankAllEmployeesByAge.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="12"/>
         <CursorPos X="20" Y="49"/>
-        <UsageCount Value="21"/>
+        <UsageCount Value="13"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\objpas\math.pp"/>
@@ -506,27 +500,16 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1866"/>
         <CursorPos X="3" Y="1870"/>
-        <UsageCount Value="10"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
-        <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="12"/>
-        <CursorPos X="5" Y="25"/>
-        <UsageCount Value="23"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="2"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\packages\rtl-generics\src\generics.defaults.pas"/>
         <FRMtype Value="0"/>
         <UnitName Value="Generics.Defaults"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="40"/>
-        <CursorPos X="19" Y="49"/>
-        <UsageCount Value="11"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="30"/>
+        <CursorPos X="20" Y="47"/>
+        <UsageCount Value="8"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\objpas\sysutils\sysuni.inc"/>
@@ -534,109 +517,170 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="255"/>
         <CursorPos X="10" Y="272"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="2"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\systemh.inc"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="352"/>
+        <CursorPos X="3" Y="369"/>
+        <UsageCount Value="3"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\codetyphon\fpcsrc\rtl\objpas\sysutils\sysunih.inc"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="3" Y="15"/>
+        <UsageCount Value="3"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_01_Print2DArr.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="74"/>
+        <CursorPos X="19" Y="97"/>
+        <UsageCount Value="69"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_02_ClearZeroIn2DArr.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="56"/>
+        <CursorPos X="14" Y="16"/>
+        <UsageCount Value="28"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="23"/>
+        <CursorPos X="16" Y="45"/>
+        <UsageCount Value="26"/>
+        <Loaded Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="24">
+    <JumpHistory HistoryIndex="29">
       <Position>
-        <Filename Value="Source\LQA.Utils.pas"/>
-        <Caret Line="36" Column="23" TopLine="8"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="41" TopLine="25"/>
       </Position>
       <Position>
-        <Filename Value="Source\LQA.Utils.pas"/>
-        <Caret Line="124" Column="3" TopLine="107"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="51" TopLine="40"/>
       </Position>
       <Position>
-        <Filename Value="Source\LQA.Utils.pas"/>
-        <Caret Line="31" Column="5" TopLine="14"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="53" TopLine="40"/>
       </Position>
       <Position>
-        <Filename Value="Source\LQA.Utils.pas"/>
-        <Caret Line="39" Column="52" TopLine="131"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="54" TopLine="40"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
-        <Caret Line="8" Column="36"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="55" TopLine="40"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
-        <Caret Line="19" Column="2"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="56" TopLine="40"/>
       </Position>
       <Position>
-        <Filename Value="Source\LQA.Main.pas"/>
-        <Caret Line="19" Column="6" TopLine="4"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="30" TopLine="19"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
-        <Caret Line="25" Column="25" TopLine="7"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="32" TopLine="19"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
-        <Caret Line="21" Column="23" TopLine="4"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="35" TopLine="19"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
-        <Caret Line="24" Column="44" TopLine="7"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="37" TopLine="19"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
-        <Caret Line="29" Column="32" TopLine="12"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="43" TopLine="32"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
-        <Caret Line="24" TopLine="6"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="51" TopLine="32"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
-        <Caret Line="21" TopLine="7"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="58" TopLine="47"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
-        <Caret Line="22" TopLine="7"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="60" TopLine="47"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
-        <Caret Line="21" TopLine="7"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="61" TopLine="47"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
-        <Caret Line="22" TopLine="7"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="62" TopLine="47"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
-        <Caret Line="24" TopLine="7"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="63" TopLine="47"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
-        <Caret Line="29" Column="30" TopLine="12"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="30" TopLine="19"/>
       </Position>
       <Position>
-        <Filename Value="Source\LQA.Utils.pas"/>
-        <Caret Line="38" Column="69" TopLine="14"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="32" TopLine="19"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
-        <Caret Line="29" Column="29" TopLine="12"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="33" TopLine="19"/>
       </Position>
       <Position>
-        <Filename Value="Source\LQA.Utils.pas"/>
-        <Caret Line="42" Column="73" TopLine="16"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="37" TopLine="19"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
-        <Caret Line="20" Column="15" TopLine="3"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="39" TopLine="20"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
-        <Caret Line="15" Column="17" TopLine="12"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="30" TopLine="21"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
-        <Caret Line="26" Column="80" TopLine="12"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="32" TopLine="21"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case03_SearchAndSort(II)\LQA.Case03_11_MinCombineNum.pas"/>
-        <Caret Line="29" Column="29" TopLine="12"/>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="35" TopLine="21"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="37" TopLine="30"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="43" TopLine="30"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="51" TopLine="41"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="58" TopLine="47"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_03_ZigPrintMatrix.pas"/>
+        <Caret Line="49" Column="83" TopLine="37"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -644,4 +688,11 @@
       <Modes ActiveMode=""/>
     </RunParams>
   </ProjectSession>
+  <Debugging>
+    <Watches>
+      <Item>
+        <Expression Value="matrix"/>
+      </Item>
+    </Watches>
+  </Debugging>
 </CONFIG>
