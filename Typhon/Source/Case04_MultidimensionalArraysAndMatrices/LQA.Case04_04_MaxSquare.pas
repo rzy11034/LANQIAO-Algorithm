@@ -32,13 +32,13 @@ var
 begin
   rowCount := Length(matrix);
   colCount := Length(matrix[0]);
-  SetLength(aux, rowCount, colCount, 2);
+  SetLength(ret, rowCount, colCount, 2);
 
   for i := rowCount - 1 downto 0 do
   begin
     for j := colCount - 1 downto 0 do
     begin
-      aux[i][j];
+      //ret[i][j];
     end;
   end;
 
@@ -49,6 +49,42 @@ var
   rowCount, colCount, i, j: integer;
 begin
 
+end;
+
+// 枚举法————O(n³)
+function MaxSquare(const matrix: TArr2D_int): integer;
+label
+  L3;
+var
+  len, n, r, c, i, j: integer;
+  flag: boolean;
+begin
+  len := Length(matrix);
+  n := len; // n代表最大正方形的边长长度
+
+  // 从最大正方形的边长长度开始枚举
+  while n > 0 do
+  begin
+    for i := 0 to len - 1 do
+    begin
+
+      for j := 0 to len - 1 do
+      begin
+        r := i;
+        c := j;
+
+        while c < j + n do
+        begin
+          if matrix[r][c] = 0 then
+          begin
+            goto L3;
+          end;
+        end;
+      end;
+
+      L3: Continue;
+    end;
+  end;
 end;
 
 procedure Main;
