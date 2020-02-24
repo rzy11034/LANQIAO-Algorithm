@@ -35,7 +35,8 @@ uses
   LQA.Case03_09_TopK,
   LQA.Case03_10_RankAllEmployeesByAge, LQA.Case03_11_MinCombineNum,
 LQA.Case03_12_ContainsAll, LQA.Case04_01_Print2DArr,
-LQA.Case04_02_ClearZeroIn2DArr, LQA.Case04_03_ZigPrintMatrix;
+LQA.Case04_02_ClearZeroIn2DArr, LQA.Case04_03_ZigPrintMatrix,
+LQA.Case04_04_MaxSquare;
 
 
 begin

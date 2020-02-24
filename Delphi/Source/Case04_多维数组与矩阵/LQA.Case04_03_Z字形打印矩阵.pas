@@ -1,12 +1,8 @@
-﻿unit LQA.Case04_03_ZigPrintMatrix;
-
-{$mode objfpc}{$H+}
+﻿unit LQA.Case04_03_Z字形打印矩阵;
 
 interface
 
 uses
-  Classes,
-  SysUtils,
   LQA.Utils;
 
 procedure Main;
@@ -26,7 +22,7 @@ begin
 
   while (r < rowBottom) and (c < colBottom) do
   begin
-    Write(matrix[r, c], ' ');
+    write(matrix[r, c], ' ');
 
     // 从左向右打印
     if isL2R then
@@ -76,7 +72,7 @@ begin
     [01, 02, 03, 04],
     [05, 06, 07, 08],
     [09, 10, 11, 12]];
-  // [3, 14, 15, 16]];
+  //[13, 14, 15, 16]];
 
   TArrayUtils_int.Print2D(matrix);
   Solution(matrix);

@@ -12,7 +12,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case04_02_0所在的行列清零;
+  LQA.Case04_03_Z字形打印矩阵;
 
 procedure Run;
 begin

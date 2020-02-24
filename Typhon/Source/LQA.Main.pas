@@ -6,7 +6,7 @@ interface
 
 uses
   Classes,
-  SysUtils;
+  SysUtils, LQA.Utils;
 
 procedure Run;
 

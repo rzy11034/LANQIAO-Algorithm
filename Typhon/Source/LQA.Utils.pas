@@ -12,13 +12,12 @@ uses
   Generics.Defaults;
 
 type
-  int = integer;
   UChar = UnicodeChar;
   UString = UnicodeString;
 
-
   TArr_int = array of integer;
   TArr2D_int = array of array of integer;
+  TArr3D_int = array of array of array of integer;
   Tarr_chr = TUnicodeCharArray;
   TArr_str = array of UString;
 
