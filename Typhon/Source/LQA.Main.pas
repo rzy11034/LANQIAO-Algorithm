@@ -6,14 +6,14 @@ interface
 
 uses
   Classes,
-  SysUtils, LQA.Utils;
+  SysUtils;
 
 procedure Run;
 
 implementation
 
 uses
-  LQA.Case04_03_ZigPrintMatrix;
+  LQA.Case04_04_MaxSquare;
 
 procedure Run;
 begin

@@ -12,7 +12,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case04_03_Z字形打印矩阵;
+  LQA.Case04_04_边界为1的最大子方阵;
 
 procedure Run;
 begin

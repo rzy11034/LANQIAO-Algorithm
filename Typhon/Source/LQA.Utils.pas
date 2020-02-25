@@ -32,6 +32,7 @@ type
   private type
     TArr_T = array of T;
     TArr2D_T = array of array of T;
+    TArr3D_T = array of array of array of T;
     TArrayHelper_T = specialize TArrayHelper<T>;
     ICmp_T = specialize IComparer<T>;
     TCmp_T = specialize TComparer<T>;
@@ -53,6 +54,8 @@ type
     class procedure Print(arr: TArr_T);
     // 输出二维数组
     class procedure Print2D(arr: TArr2D_T);
+    // 输出三维数组
+    class procedure Print3D(arr: TArr3D_T);
   end;
 
   TArrayUtils_int = specialize TArrayUtils<integer>;
@@ -191,6 +194,38 @@ begin
         Write(arr[i, j], ', '#9)
       else
         Write(arr[i, j]);
+    end;
+    Write(']'#10);
+  end;
+end;
+
+class procedure TArrayUtils.Print3D(arr: TArr3D_T);
+var
+  i, j, k: integer;
+begin
+  if arr = nil then
+  begin
+    WriteLn('Cannot print an empty array!');
+    Exit;
+  end;
+
+  for i := 0 to High(arr) do
+  begin
+    Write('[');
+    for j := 0 to High(arr[i]) do
+    begin
+      Write('(');
+      for k := 0 to High(arr[i, j]) do
+      begin
+        if k <> High(arr[i, j]) then
+          Write(arr[i, j, k], ',')
+        else
+          Write(arr[i, j, k]);
+      end;
+      Write(')');
+
+      if j <> High(arr[i]) then
+        Write(', ');
     end;
     Write(']'#10);
   end;

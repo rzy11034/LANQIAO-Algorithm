@@ -1,24 +1,20 @@
-﻿unit LQA.Case04_04_MaxSquare;
+﻿unit LQA.Case04_04_边界为1的最大子方阵;
 
-{**
- *  给定一个N×N的矩阵matrix，在这个矩阵中，只有0和1两种值，
-    返回边框全是1的最大正方形的边长长度。 
- 　 例如： 
-    [0, 1, 1, 1, 1],
-    [0, 1, 0, 0, 1],
-    [0, 1, 0, 0, 1],
-    [0, 1, 1, 1, 1],
-    [0, 1, 0, 1, 1]　
- 　其中，边框全是1的最大正方形的大小是4*4，返回4
- *}
-
-{$mode objfpc}{$H+}
+{ **
+  *  给定一个N×N的矩阵matrix，在这个矩阵中，只有0和1两种值，
+  返回边框全是1的最大正方形的边长长度。 
+  例如： 
+  [0, 1, 1, 1, 1],
+  [0, 1, 0, 0, 1],
+  [0, 1, 0, 0, 1],
+  [0, 1, 1, 1, 1],
+  [0, 1, 0, 1, 1]　
+  其中，边框全是1的最大正方形的大小是4*4，返回4
+  * }
 
 interface
 
 uses
-  Classes,
-  SysUtils,
   LQA.Utils;
 
 procedure Main;
@@ -27,8 +23,9 @@ implementation
 
 // 动态规划
 function MaxSquareADV(const matrix: TArr2D_int): integer;
-  // 生成一个辅助表 ret[][][]
-  // ret[x，x][0] 为下；ret[x，x][1] 为右；
+
+// 生成一个辅助表 ret[][][]
+// ret[x，x][0] 为下；ret[x，x][1] 为右；
   function GenerateAux(const matrix: TArr2D_int): TArr3D_int;
   var
     rowCount, colCount, i, j: integer;
@@ -58,7 +55,7 @@ function MaxSquareADV(const matrix: TArr2D_int): integer;
     Result := ret;
   end;
 
-  function Check(r, l, n: integer): boolean;
+  function Check(r, l, n: integer): Boolean;
   begin
 
   end;
@@ -134,13 +131,12 @@ begin
         Exit(n);
       end;
 
-      L3: Continue;
+    L3:
+      Continue;
     end;
 
     Dec(n);
   end;
-
-  Result := n;
 end;
 
 procedure Main;
@@ -149,24 +145,24 @@ var
   aux: TArr3D_int;
 begin
   matrix := [
-    //[0, 1, 1, 1, 1],
-    //[0, 1, 0, 0, 1],
-    //[0, 1, 0, 0, 1],
-    //[0, 1, 1, 1, 1],
-    //[0, 1, 0, 1, 1]];
+  //[0, 1, 1, 1, 1],
+  //[0, 1, 0, 0, 1],
+  //[0, 1, 0, 0, 1],
+  //[0, 1, 1, 1, 1],
+  //[0, 1, 0, 1, 1]];
 
-    [1, 1, 1, 1],
-    [1, 0, 0, 1],
-    [1, 0, 0, 1],
-    [1, 1, 1, 1]];
+  //[1, 1, 1, 1],
+  //[1, 0, 0, 1],
+  //[1, 0, 0, 1],
+  //[1, 1, 1, 1]];
 
-  //[1, 1],
-  //[1, 1]];
+    [0, 1],
+    [1, 1]];
 
   TArrayUtils_int.Print2D(matrix);
   DrawLineBlockEnd;
-  //WriteLn(MaxSquare(matrix));
-  MaxSquareADV(matrix);
+  WriteLn(MaxSquare(matrix));
+  //MaxSquareADV(matrix);
 
 end;
 

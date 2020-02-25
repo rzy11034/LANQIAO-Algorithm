@@ -15,6 +15,7 @@ type
 
   TArr_int = TArray<integer>;
   TArr2D_int = TArray<TArray<integer>>;
+  TArr3D_int = TArray<TArray<TArray<integer>>>;
   TArr_chr = TArray<UChar>;
   TArr_str = TArray<UString>;
 
@@ -22,6 +23,7 @@ type
   private type
     TArr_T = TArray<T>;
     TArr2D_T = TArray<TArray<T>>;
+    TArr3D_T = TArray<TArray<TArray<T>>>;
 
   public
     /// <summary> 快速排序 </summary>
@@ -35,8 +37,10 @@ type
     class function IndexOf(const arr: array of T; e: T): integer;
     /// <summary>  输出一维数组 </summary>
     class procedure Print(arr: TArr_T);
-    // 输出二维数组
+    /// <summary> 输出二维数组 </summary>
     class procedure Print2D(arr: TArr2D_T);
+    /// <summary> 输出三维数组 </summary>
+    class procedure Print3D(arr: TArr3D_T);
   end;
 
   TArrayUtils_int = TArrayUtils<integer>;
@@ -172,6 +176,38 @@ begin
         write(TValue.From<T>(arr[i, j]).ToString, ', '#9)
       else
         write(TValue.From<T>(arr[i, j]).ToString);
+    end;
+    write(']'#10);
+  end;
+end;
+
+class procedure TArrayUtils<T>.Print3D(arr: TArr3D_T);
+var
+  i, j, k: integer;
+begin
+  if arr = nil then
+  begin
+    Writeln('Cannot print an empty array!');
+    Exit;
+  end;
+
+  for i := 0 to High(arr) do
+  begin
+    write('[');
+    for j := 0 to High(arr[i]) do
+    begin
+      write('(');
+      for k := 0 to High(arr[i, j]) do
+      begin
+        if k <> High(arr[i, j]) then
+          write(TValue.From<T>(arr[i, j, k]).ToString, ',')
+        else
+          write(TValue.From<T>(arr[i, j, k]).ToString);
+      end;
+      write(')');
+
+      if j <> High(arr[i]) then
+        write(', ');
     end;
     write(']'#10);
   end;
