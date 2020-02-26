@@ -22,7 +22,7 @@
           <PathDelim Value="\"/>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices"/>
+            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices;Source\Case05_StringProblem"/>
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <Parsing>
@@ -59,7 +59,7 @@
           <PathDelim Value="\"/>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices"/>
+            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices;Source\Case05_StringProblem"/>
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
           </SearchPaths>
           <CodeGeneration>
@@ -223,6 +223,30 @@
         <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_04_MaxSquare.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_05_MaxSubArray.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_06_MaxSubMatrix.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case04_MultidimensionalArraysAndMatrices\LQA.Case04_07_MatrixCalculation.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case05_StringProblem\LQA.Case05_01_CheckDifferent.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case05_StringProblem\LQA.Case05_02_ReverseString.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case05_StringProblem\LQA.Case05_03_checkSame.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -230,7 +254,7 @@
     <PathDelim Value="\"/>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices"/>
+      <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices;Source\Case05_StringProblem"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
   </CompilerOptions>

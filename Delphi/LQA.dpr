@@ -38,7 +38,10 @@ uses
   LQA.Case04_01_顺时针打印二维数组 in 'Source\Case04_多维数组与矩阵\LQA.Case04_01_顺时针打印二维数组.pas',
   LQA.Case04_02_0所在的行列清零 in 'Source\Case04_多维数组与矩阵\LQA.Case04_02_0所在的行列清零.pas',
   LQA.Case04_03_Z字形打印矩阵 in 'Source\Case04_多维数组与矩阵\LQA.Case04_03_Z字形打印矩阵.pas',
-  LQA.Case04_04_边界为1的最大子方阵 in 'Source\Case04_多维数组与矩阵\LQA.Case04_04_边界为1的最大子方阵.pas';
+  LQA.Case04_04_边界为1的最大子方阵 in 'Source\Case04_多维数组与矩阵\LQA.Case04_04_边界为1的最大子方阵.pas',
+  LQA.Case04_05_子数组最大累加和 in 'Source\Case04_多维数组与矩阵\LQA.Case04_05_子数组最大累加和.pas',
+  LQA.Case04_06_子矩阵最大累加和 in 'Source\Case04_多维数组与矩阵\LQA.Case04_06_子矩阵最大累加和.pas',
+  LQA.Case04_07_矩阵计算 in 'Source\Case04_多维数组与矩阵\LQA.Case04_07_矩阵计算.pas';
 
 begin
   try

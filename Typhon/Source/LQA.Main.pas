@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case04_04_MaxSquare;
+  LQA.Case05_03_checkSame;
 
 procedure Run;
 begin

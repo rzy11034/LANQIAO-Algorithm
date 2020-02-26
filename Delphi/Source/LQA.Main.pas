@@ -3,16 +3,14 @@
 interface
 
 uses
-  System.Classes,
-  System.SysUtils,
-  System.Generics.Defaults;
+  System.SysUtils;
 
 procedure Run;
 
 implementation
 
 uses
-  LQA.Case04_04_边界为1的最大子方阵;
+  LQA.Case04_06_子矩阵最大累加和;
 
 procedure Run;
 begin
