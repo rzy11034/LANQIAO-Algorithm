@@ -46,7 +46,11 @@ uses
   LQA.Case05_02_翻转字符串 in 'Source\Case05_字符串问题\LQA.Case05_02_翻转字符串.pas',
   LQA.Case05_03_变形词 in 'Source\Case05_字符串问题\LQA.Case05_03_变形词.pas',
   LQA.Case05_04_替换字符串中的空格 in 'Source\Case05_字符串问题\LQA.Case05_04_替换字符串中的空格.pas',
-  LQA.Case05_05_字符串压缩 in 'Source\Case05_字符串问题\LQA.Case05_05_字符串压缩.pas';
+  LQA.Case05_05_字符串压缩 in 'Source\Case05_字符串问题\LQA.Case05_05_字符串压缩.pas',
+  LQA.Case05_06_判断两个字符串的字符集是否相同 in 'Source\Case05_字符串问题\LQA.Case05_06_判断两个字符串的字符集是否相同.pas',
+  LQA.Case05_07_旋转词 in 'Source\Case05_字符串问题\LQA.Case05_07_旋转词.pas',
+  LQA.Case05_08_将字符串按单词翻转 in 'Source\Case05_字符串问题\LQA.Case05_08_将字符串按单词翻转.pas',
+  LQA.Case05_09_移除字符串中连续出现的K个0 in 'Source\Case05_字符串问题\LQA.Case05_09_移除字符串中连续出现的K个0.pas';
 
 begin
   try

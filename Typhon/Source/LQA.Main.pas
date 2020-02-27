@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case05_05_StringZipper;
+  LQA.Case05_09_RemoveKZeros;
 
 procedure Run;
 begin

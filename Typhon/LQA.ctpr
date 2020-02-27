@@ -244,8 +244,9 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case05_StringProblem\LQA.Case05_03_CheckSame.pas"/>
+        <Filename Value="Source\Case05_StringProblem\LQA.Case05_03_checkSame.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="LQA.Case05_03_CheckSame"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case05_StringProblem\LQA.Case05_04_ReplaceSpace.pas"/>
@@ -253,6 +254,22 @@
       </Unit>
       <Unit>
         <Filename Value="Source\Case05_StringProblem\LQA.Case05_05_StringZipper.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case05_StringProblem\LQA.Case05_06_HasSameCharSet.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case05_StringProblem\LQA.Case05_07_IsRotate.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case05_StringProblem\LQA.Case05_08_WordReverse.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case05_StringProblem\LQA.Case05_09_RemoveKZeros.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>

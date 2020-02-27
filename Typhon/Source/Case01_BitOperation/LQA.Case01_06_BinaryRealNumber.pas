@@ -15,11 +15,11 @@ implementation
 procedure BinaryRealNumber;
 var
   num, r: double;
-  sb: TUnicodeStringBuilder;
+  sb: TStringBuilder;
 begin
   num := 0.625;
 
-  sb := TUnicodeStringBuilder.Create('0.');
+  sb := TStringBuilder.Create('0.');
   try
     while (num > 0) do
     begin

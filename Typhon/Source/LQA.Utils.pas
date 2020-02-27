@@ -21,6 +21,8 @@ type
   Tarr_chr = TUnicodeCharArray;
   TArr_str = array of UString;
 
+  TStringBuilder = TUnicodeStringBuilder;
+
   generic TUtils<T> = class
   public
     class procedure Swap(var a, b: T);
@@ -68,12 +70,16 @@ type
     function __getLength: integer;
   public
     function ToUnicodeCharArray: TUnicodeCharArray;
+    function Split(const Separators: array of char): TArr_str;
+
     property Chars[index: integer]: UnicodeChar read __getChar;
     property Length: integer read __getLength;
   end;
 
+
 procedure DrawLineBlockEnd;
 procedure DrawLineProgramEnd;
+function ReverseString(const AText: UString): UString;
 
 resourcestring
   END_OF_PROGRAM_EN = 'Press any key to continue...';
@@ -101,6 +107,21 @@ begin
     Write('=');
   end;
   Writeln;
+end;
+
+function ReverseString(const AText: UString): UString;
+var
+  i, j: SizeInt;
+begin
+  setlength(Result, length(atext));
+
+  i := 1;
+  j := length(atext);
+  while (i <= j) do
+  begin
+    Result[i] := atext[j - i + 1];
+    Inc(i);
+  end;
 end;
 
 { TArrayUtils }
@@ -253,6 +274,23 @@ begin
 end;
 
 { TUnicodeStringHelper }
+
+function TUnicodeStringHelper.Split(const Separators: array of char): TArr_str;
+var
+  ret: TArr_str;
+  tmp: TStringArray;
+  i: integer;
+begin
+  tmp := string(Self).Split(Separators);
+  SetLength(ret, system.Length(tmp));
+
+  for i := 0 to High(tmp) do
+  begin
+    ret[i] := UString(tmp[i]);
+  end;
+
+  Result := ret;
+end;
 
 function TUnicodeStringHelper.ToUnicodeCharArray: TUnicodeCharArray;
 var

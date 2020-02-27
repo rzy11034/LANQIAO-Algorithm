@@ -26,11 +26,11 @@ implementation
 
 function StringZipper(s: UString): UString;
 var
-  sb: TUnicodeStringBuilder;
+  sb: TStringBuilder;
   last, Count, i: integer;
   ret: UString;
 begin
-  sb := TUnicodeStringBuilder.Create;
+  sb := TStringBuilder.Create;
   try
     last := 0;
     Count := 1;

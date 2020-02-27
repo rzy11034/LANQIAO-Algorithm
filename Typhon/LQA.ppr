@@ -46,7 +46,10 @@ uses
   LQA.Case05_01_CheckDifferent,
   LQA.Case05_02_ReverseString,
   LQA.Case05_03_CheckSame,
-  LQA.Case05_04_ReplaceSpace, LQA.Case05_05_StringZipper;
+  LQA.Case05_04_ReplaceSpace,
+  LQA.Case05_05_StringZipper,
+  LQA.Case05_06_HasSameCharSet, LQA.Case05_07_IsRotate,
+LQA.Case05_08_WordReverse;
 
 
 begin
