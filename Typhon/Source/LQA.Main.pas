@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case05_03_checkSame;
+  LQA.Case05_05_StringZipper;
 
 procedure Run;
 begin

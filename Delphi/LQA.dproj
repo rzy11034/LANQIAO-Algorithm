@@ -214,6 +214,11 @@
         <DCCReference Include="Source\Case04_多维数组与矩阵\LQA.Case04_05_子数组最大累加和.pas"/>
         <DCCReference Include="Source\Case04_多维数组与矩阵\LQA.Case04_06_子矩阵最大累加和.pas"/>
         <DCCReference Include="Source\Case04_多维数组与矩阵\LQA.Case04_07_矩阵计算.pas"/>
+        <DCCReference Include="Source\Case05_字符串问题\LQA.Case05_01_判断字符串有无重复字符.pas"/>
+        <DCCReference Include="Source\Case05_字符串问题\LQA.Case05_02_翻转字符串.pas"/>
+        <DCCReference Include="Source\Case05_字符串问题\LQA.Case05_03_变形词.pas"/>
+        <DCCReference Include="Source\Case05_字符串问题\LQA.Case05_04_替换字符串中的空格.pas"/>
+        <DCCReference Include="Source\Case05_字符串问题\LQA.Case05_05_字符串压缩.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

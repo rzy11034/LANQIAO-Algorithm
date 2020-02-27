@@ -244,7 +244,15 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case05_StringProblem\LQA.Case05_03_checkSame.pas"/>
+        <Filename Value="Source\Case05_StringProblem\LQA.Case05_03_CheckSame.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case05_StringProblem\LQA.Case05_04_ReplaceSpace.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case05_StringProblem\LQA.Case05_05_StringZipper.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>

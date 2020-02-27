@@ -10,7 +10,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case04_06_子矩阵最大累加和;
+  LQA.Case05_05_字符串压缩;
 
 procedure Run;
 begin

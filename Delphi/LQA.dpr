@@ -41,7 +41,12 @@ uses
   LQA.Case04_04_边界为1的最大子方阵 in 'Source\Case04_多维数组与矩阵\LQA.Case04_04_边界为1的最大子方阵.pas',
   LQA.Case04_05_子数组最大累加和 in 'Source\Case04_多维数组与矩阵\LQA.Case04_05_子数组最大累加和.pas',
   LQA.Case04_06_子矩阵最大累加和 in 'Source\Case04_多维数组与矩阵\LQA.Case04_06_子矩阵最大累加和.pas',
-  LQA.Case04_07_矩阵计算 in 'Source\Case04_多维数组与矩阵\LQA.Case04_07_矩阵计算.pas';
+  LQA.Case04_07_矩阵计算 in 'Source\Case04_多维数组与矩阵\LQA.Case04_07_矩阵计算.pas',
+  LQA.Case05_01_判断字符串有无重复字符 in 'Source\Case05_字符串问题\LQA.Case05_01_判断字符串有无重复字符.pas',
+  LQA.Case05_02_翻转字符串 in 'Source\Case05_字符串问题\LQA.Case05_02_翻转字符串.pas',
+  LQA.Case05_03_变形词 in 'Source\Case05_字符串问题\LQA.Case05_03_变形词.pas',
+  LQA.Case05_04_替换字符串中的空格 in 'Source\Case05_字符串问题\LQA.Case05_04_替换字符串中的空格.pas',
+  LQA.Case05_05_字符串压缩 in 'Source\Case05_字符串问题\LQA.Case05_05_字符串压缩.pas';
 
 begin
   try
