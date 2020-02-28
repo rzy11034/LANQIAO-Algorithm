@@ -11,11 +11,17 @@ procedure Main;
 
 implementation
 
-procedure Main;
+function RemoveKZeros(src: UString; k: integer): UString;
 var
   reg: TRegEx;
 begin
+  reg.Create('0{' + k.ToString + '}');
+  Result := reg.Replace(src, '');
+end;
 
+procedure Main;
+begin
+  WriteLn(RemoveKZeros('a00000b', 3));
 end;
 
 end.

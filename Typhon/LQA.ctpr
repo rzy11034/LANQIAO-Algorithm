@@ -272,6 +272,10 @@
         <Filename Value="Source\Case05_StringProblem\LQA.Case05_09_RemoveKZeros.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="Source\Case05_StringProblem\LQA.Case05_10_Palindrome.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

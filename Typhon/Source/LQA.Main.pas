@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case05_09_RemoveKZeros;
+  LQA.Case05_10_Palindrome;
 
 procedure Run;
 begin

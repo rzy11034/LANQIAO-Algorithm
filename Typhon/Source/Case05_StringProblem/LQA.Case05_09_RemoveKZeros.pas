@@ -7,25 +7,25 @@ interface
 uses
   Classes,
   SysUtils,
-  Regex,
+  uregexpr,
   LQA.Utils;
 
 procedure Main;
 
 implementation
 
-function RemoveKZeros(src: UString): UString;
-
-begin
-  Result := '';
-end;
-
-procedure Main;
+function RemoveKZeros(src: UString; k: integer): UString;
 var
   reg: TRegExpr;
 begin
-  reg := TRegExpr.Create;
-  reg.Expression
+  reg := TRegExpr.Create('0{' + k.ToString + '}');
+  Result := reg.Replace(src, '', False);
+  reg.Free;
+end;
+
+procedure Main;
+begin
+  WriteLn(RemoveKZeros('a00000b', 3));
 end;
 
 end.

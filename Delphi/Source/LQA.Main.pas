@@ -10,7 +10,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case05_08_将字符串按单词翻转;
+  LQA.Case05_10_神奇的回文串;
 
 procedure Run;
 begin
