@@ -8,7 +8,6 @@ interface
 
 uses
   System.SysUtils,
-  System.StrUtils,
   LQA.Utils;
 
 procedure Main;
@@ -22,7 +21,7 @@ var
   i: integer;
   sb: TStringBuilder;
 begin
-  s := ReverseString(src);
+  s := src.ReverseString;
 
   wordArr := s.Split([' ']);
 
@@ -30,7 +29,7 @@ begin
   try
     for i := 0 to High(wordArr) do
     begin
-      sb.Append(ReverseString(wordArr[i]));
+      sb.Append((wordArr[i].ReverseString));
 
       if i <> High(wordArr) then
         sb.Append(' ');

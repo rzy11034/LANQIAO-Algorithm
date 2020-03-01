@@ -2,6 +2,9 @@
 
 interface
 
+uses
+  System.SysUtils;
+
 procedure Main;
 
 implementation
@@ -14,7 +17,7 @@ begin
   begin
     for j := 0 to 9 do
     begin
-      WriteLn(i * 1000 + j * 100 + j * 10 + i);
+      WriteLn((i * 1000 + j * 100 + j * 10 + i).ToString);
     end;
   end;
 end;

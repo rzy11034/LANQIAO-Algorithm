@@ -16,6 +16,7 @@ type
   UString = UnicodeString;
 
   TArr_int = array of integer;
+  TArr_int64 = array of int64;
   TArr2D_int = array of array of integer;
   TArr3D_int = array of array of array of integer;
   Tarr_chr = TUnicodeCharArray;
@@ -64,13 +65,15 @@ type
   TArrayUtils_str = specialize TArrayUtils<UString>;
   TArrayUtils_chr = specialize TArrayUtils<UChar>;
 
-  TUnicodeStringHelper = type Helper for UnicodeString
+  TUnicodeStringHelper = type Helper for UString
   private
     function __getChar(index: integer): UnicodeChar;
     function __getLength: integer;
   public
     function ToUnicodeCharArray: TUnicodeCharArray;
     function Split(const Separators: array of char): TArr_str;
+    function ReverseString: UString;
+    function Substring(index: integer; len: integer): UString;
 
     property Chars[index: integer]: UnicodeChar read __getChar;
     property Length: integer read __getLength;
@@ -79,7 +82,10 @@ type
 
 procedure DrawLineBlockEnd;
 procedure DrawLineProgramEnd;
-function ReverseString(const AText: UString): UString;
+
+type
+  // 数据结构
+  TMap_str_int = specialize THashMap<UString, integer>;
 
 resourcestring
   END_OF_PROGRAM_EN = 'Press any key to continue...';
@@ -107,21 +113,6 @@ begin
     Write('=');
   end;
   Writeln;
-end;
-
-function ReverseString(const AText: UString): UString;
-var
-  i, j: SizeInt;
-begin
-  setlength(Result, length(atext));
-
-  i := 1;
-  j := length(atext);
-  while (i <= j) do
-  begin
-    Result[i] := atext[j - i + 1];
-    Inc(i);
-  end;
 end;
 
 { TArrayUtils }
@@ -188,10 +179,10 @@ begin
   Write('[');
   for i := 0 to High(arr) do
   begin
+    Write(arr[i]);
+
     if i <> High(arr) then
-      Write(arr[i], ', ')
-    else
-      Write(arr[i]);
+      Write(', ');
   end;
   Write(']'#10);
 end;
@@ -211,10 +202,10 @@ begin
     Write('[');
     for j := 0 to High(arr[i]) do
     begin
+      Write(arr[i, j]);
+
       if j <> High(arr[i]) then
-        Write(arr[i, j], ', '#9)
-      else
-        Write(arr[i, j]);
+        Write(', '#9);
     end;
     Write(']'#10);
   end;
@@ -238,10 +229,10 @@ begin
       Write('(');
       for k := 0 to High(arr[i, j]) do
       begin
+        Write(arr[i, j, k]);
+
         if k <> High(arr[i, j]) then
-          Write(arr[i, j, k], ',')
-        else
-          Write(arr[i, j, k]);
+          Write(',');
       end;
       Write(')');
 
@@ -275,6 +266,21 @@ end;
 
 { TUnicodeStringHelper }
 
+function TUnicodeStringHelper.ReverseString: UString;
+var
+  i, j: SizeInt;
+begin
+  setlength(Result, Self.Length);
+
+  i := 1;
+  j := Self.Length;
+  while (i <= j) do
+  begin
+    Result[i] := Self[j - i + 1];
+    Inc(i);
+  end;
+end;
+
 function TUnicodeStringHelper.Split(const Separators: array of char): TArr_str;
 var
   ret: TArr_str;
@@ -290,6 +296,11 @@ begin
   end;
 
   Result := ret;
+end;
+
+function TUnicodeStringHelper.Substring(index: integer; len: integer): UString;
+begin
+  Result := system.Copy(Self, index + 1, len);
 end;
 
 function TUnicodeStringHelper.ToUnicodeCharArray: TUnicodeCharArray;

@@ -10,7 +10,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case05_10_神奇的回文串;
+  LQA.DSA.Strings.RabinKarp;
 
 procedure Run;
 begin

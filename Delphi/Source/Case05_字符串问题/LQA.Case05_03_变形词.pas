@@ -36,8 +36,8 @@ begin
   tmp1 := '';
   tmp2 := '';
 
-  chrs1 := s1.ToCharArray;
-  chrs2 := s2.ToCharArray;
+  chrs1 := s1.ToUnicodeCharArray;
+  chrs2 := s2.ToUnicodeCharArray;
 
   TArrayUtils_chr.Sort(chrs1);
   TArrayUtils_chr.Sort(chrs2);

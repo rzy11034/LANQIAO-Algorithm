@@ -51,7 +51,9 @@ uses
   LQA.Case05_07_旋转词 in 'Source\Case05_字符串问题\LQA.Case05_07_旋转词.pas',
   LQA.Case05_08_将字符串按单词翻转 in 'Source\Case05_字符串问题\LQA.Case05_08_将字符串按单词翻转.pas',
   LQA.Case05_09_移除字符串中连续出现的K个0 in 'Source\Case05_字符串问题\LQA.Case05_09_移除字符串中连续出现的K个0.pas',
-  LQA.Case05_10_神奇的回文串 in 'Source\Case05_字符串问题\LQA.Case05_10_神奇的回文串.pas';
+  LQA.Case05_10_神奇的回文串 in 'Source\Case05_字符串问题\LQA.Case05_10_神奇的回文串.pas',
+  LQA.Case05_11_最短摘要的生成 in 'Source\Case05_字符串问题\LQA.Case05_11_最短摘要的生成.pas',
+  LQA.DSA.Strings.RabinKarp in 'Source\DSA\Strings\LQA.DSA.Strings.RabinKarp.pas';
 
 begin
   try

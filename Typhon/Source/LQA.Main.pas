@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case05_10_Palindrome;
+  LQA.DSA.Strings.RabinKarp;
 
 procedure Run;
 begin

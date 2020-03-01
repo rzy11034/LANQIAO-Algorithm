@@ -4,6 +4,7 @@ interface
 
 uses
   System.SysUtils,
+  System.StrUtils,
   System.Classes,
   System.Rtti,
   System.Generics.Collections,
@@ -11,13 +12,28 @@ uses
 
 type
   UChar = Char;
-  UString = string;
+  UString = type String;
 
   TArr_int = TArray<integer>;
+  TArr_int64 = TArray<int64>;
   TArr2D_int = TArray<TArray<integer>>;
   TArr3D_int = TArray<TArray<TArray<integer>>>;
   TArr_chr = TArray<UChar>;
   TArr_str = TArray<UString>;
+
+  TStringHelper = record helper for UString
+  private
+    function __getChar(index: integer): UChar;
+    function __getLength: integer;
+  public
+    function ToUnicodeCharArray: TArr_chr;
+    function ReverseString: UString;
+    function Split(const Separators: array of Char): TArr_str;
+    function Substring(index: integer; len: integer): UString;
+
+    property Chars[index: integer]: UChar read __getChar;
+    property Length: integer read __getLength;
+  end;
 
   TArrayUtils<T> = class
   private type
@@ -56,6 +72,10 @@ type
 
 procedure DrawLineBlockEnd;
 procedure DrawLineProgramEnd;
+
+type
+  // 数据结构
+  TMap_str_int = TDictionary<UString, integer>;
 
 resourcestring
   END_OF_PROGRAM_EN = 'Press any key to continue...';
@@ -224,6 +244,41 @@ end;
 class procedure TArrayUtils<T>.Sort(var arr: array of T);
 begin
   TArray.Sort<T>(arr);
+end;
+
+{ TStringHelper }
+
+function TStringHelper.ReverseString: UString;
+begin
+  Result := System.StrUtils.ReverseString(Self);
+end;
+
+function TStringHelper.Split(const Separators: array of Char): TArr_str;
+begin
+  Result := TArr_str(String(Self).Split(Separators));
+end;
+
+function TStringHelper.Substring(index, len: integer): UString;
+begin
+  Result := String(Self).Substring(index, len);
+end;
+
+function TStringHelper.ToUnicodeCharArray: TArr_chr;
+begin
+  Result := String(Self).ToCharArray;
+end;
+
+function TStringHelper.__getChar(index: integer): UChar;
+{$ZEROBASEDSTRINGS ON}
+begin
+  Result := Self[index];
+end;
+{$ZEROBASEDSTRINGS OFF}
+
+
+function TStringHelper.__getLength: integer;
+begin
+  Result := System.Length(Self);
 end;
 
 end.

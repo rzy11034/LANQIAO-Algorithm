@@ -49,7 +49,8 @@ uses
   LQA.Case05_04_ReplaceSpace,
   LQA.Case05_05_StringZipper,
   LQA.Case05_06_HasSameCharSet, LQA.Case05_07_IsRotate,
-LQA.Case05_08_WordReverse, LQA.Case05_10_Palindrome;
+LQA.Case05_08_WordReverse, LQA.Case05_10_Palindrome,
+LQA.Case05_11_TheShortestAbstract, LQA.DSA.Strings.RabinKarp;
 
 
 begin

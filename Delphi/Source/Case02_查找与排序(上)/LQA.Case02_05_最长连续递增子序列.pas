@@ -17,7 +17,6 @@ var
 begin
   longest := 0;
   lowIndex := 0;
-  len := 1;
 
   // 定位最长连续递增子序列的下标和长度
   i := 0;

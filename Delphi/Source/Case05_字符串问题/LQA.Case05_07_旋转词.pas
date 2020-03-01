@@ -18,7 +18,7 @@ implementation
 function IsRotate(s1, s2: UString): boolean;
 var
   sb: TStringBuilder;
-  ret: UString;
+  ret: String;
 begin
   if s1.Length <> s2.Length then
     Exit(False);
