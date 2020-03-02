@@ -227,6 +227,7 @@
         <DCCReference Include="Source\Case05_字符串问题\LQA.Case05_11_最短摘要的生成.pas"/>
         <DCCReference Include="Source\DSA\Strings\LQA.DSA.Strings.RabinKarp.pas"/>
         <DCCReference Include="Source\DSA\Strings\LQA.DSA.Strings.KMP.pas"/>
+        <DCCReference Include="Source\Case06_数学问题\LQA.Case06_01_天平称重.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

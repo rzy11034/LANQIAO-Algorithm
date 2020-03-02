@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.DSA.Strings.KMP;
+  LQA.Case06_01_BalanceWeighing;
 
 procedure Run;
 begin

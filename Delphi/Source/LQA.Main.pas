@@ -10,7 +10,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.DSA.Strings.KMP;
+  LQA.Case06_01_天平称重;
 
 procedure Run;
 begin
