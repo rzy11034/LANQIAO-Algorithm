@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.DSA.Strings.RabinKarp;
+  LQA.DSA.Strings.KMP;
 
 procedure Run;
 begin

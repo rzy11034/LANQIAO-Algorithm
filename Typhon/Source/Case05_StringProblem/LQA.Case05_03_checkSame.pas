@@ -44,9 +44,13 @@ begin
   TArrayUtils_chr.Sort(chrs2);
 
   for i := 0 to High(chrs1) do
-  begin tmp1 += chrs1[i]; end;
+  begin
+    tmp1 += chrs1[i];
+  end;
   for i := 0 to High(chrs2) do
-  begin tmp2 += chrs1[i]; end;
+  begin
+    tmp2 += chrs1[i];
+  end;
 
   Result := tmp1 = tmp2;
 end;

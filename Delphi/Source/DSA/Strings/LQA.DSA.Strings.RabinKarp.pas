@@ -29,7 +29,7 @@ type
     // * 用滚动方法求出s中长度为n的每个子串的hash,组成一个hash数组
     // *
     class function __hash(src: UString; subStringLen: integer): TArr_int64; overload;
-    class function __matchADV(hash_p: int64; hashOfSrcArr: TArr_int64): TArr_int;
+    class function __match(hash_p: int64; hashOfSrcArr: TArr_int64): TArr_int;
 
   public
     // 朴素匹配
@@ -101,7 +101,7 @@ var
 begin
   hash_p := __hash(p);
   hashOfSrcArr := __hash(src, p.Length);
-  Result := __matchADV(hash_p, hashOfSrcArr);
+  Result := __match(hash_p, hashOfSrcArr);
 end;
 
 class function TRabinKarp.__hash(src: UString; subStringLen: integer): TArr_int64;
@@ -131,7 +131,7 @@ begin
   Result := ret;
 end;
 
-class function TRabinKarp.__matchADV(hash_p: int64; hashOfSrcArr: TArr_int64): TArr_int;
+class function TRabinKarp.__match(hash_p: int64; hashOfSrcArr: TArr_int64): TArr_int;
 var
   i: integer;
 begin

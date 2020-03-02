@@ -38,9 +38,6 @@
               <StackChecks Value="True"/>
             </Checks>
             <VerifyObjMethodCallValidity Value="True"/>
-            <Optimizations>
-              <OptimizationLevel Value="0"/>
-            </Optimizations>
           </CodeGeneration>
           <Linking>
             <Debugging>
@@ -247,9 +244,8 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case05_StringProblem\LQA.Case05_03_checkSame.pas"/>
+        <Filename Value="Source\Case05_StringProblem\LQA.Case05_03_CheckSame.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="LQA.Case05_03_CheckSame"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case05_StringProblem\LQA.Case05_04_ReplaceSpace.pas"/>
@@ -285,6 +281,10 @@
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Strings\LQA.DSA.Strings.RabinKarp.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\DSA\Strings\LQA.DSA.Strings.KMP.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>
