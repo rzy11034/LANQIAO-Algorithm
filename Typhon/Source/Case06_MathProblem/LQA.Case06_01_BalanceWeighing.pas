@@ -46,12 +46,19 @@ interface
 
 uses
   Classes,
-  SysUtils,math ,
+  SysUtils,
   LQA.Utils;
 
 procedure Main;
 
 implementation
+
+procedure solution(n: integer);
+var
+  list: TList_int;
+begin
+  list := TList_int.Create;
+end;
 
 procedure solution_Simplicity(n: integer);
 var
@@ -109,7 +116,7 @@ end;
 
 procedure Main;
 begin
-  solution_Simplicity(5);
+  solution_Simplicity(25);
 end;
 
 end.

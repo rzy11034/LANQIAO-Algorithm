@@ -75,6 +75,8 @@ procedure DrawLineProgramEnd;
 
 type
   // 数据结构
+  TList_int = TList<integer>;
+
   TMap_str_int = TDictionary<UString, integer>;
 
 resourcestring

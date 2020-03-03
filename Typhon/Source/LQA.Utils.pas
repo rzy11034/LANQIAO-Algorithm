@@ -85,6 +85,10 @@ procedure DrawLineProgramEnd;
 
 type
   // 数据结构
+
+  // TList<integer>
+  TList_int = specialize TList<integer>;
+  // THashMap<UString, integer>
   TMap_str_int = specialize THashMap<UString, integer>;
 
 resourcestring
