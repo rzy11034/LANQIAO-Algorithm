@@ -12,8 +12,8 @@ uses
   Generics.Defaults;
 
 type
-  UChar = UnicodeChar;
-  UString = UnicodeString;
+  UChar = type UnicodeChar;
+  UString = type UnicodeString;
 
   TArr_int = array of integer;
   TArr_int64 = array of int64;
@@ -79,17 +79,13 @@ type
     property Length: integer read __getLength;
   end;
 
+type // 容器类
+  TList_int = specialize TList<integer>;
+  TStack_chr = specialize TStack<UChar>;
+  TMap_str_int = specialize THashMap<UString, integer>;
 
 procedure DrawLineBlockEnd;
 procedure DrawLineProgramEnd;
-
-type
-  // 数据结构
-
-  // TList<integer>
-  TList_int = specialize TList<integer>;
-  // THashMap<UString, integer>
-  TMap_str_int = specialize THashMap<UString, integer>;
 
 resourcestring
   END_OF_PROGRAM_EN = 'Press any key to continue...';
@@ -292,7 +288,7 @@ var
   i: integer;
 begin
   tmp := string(Self).Split(Separators);
-  SetLength(ret, system.Length(tmp));
+  SetLength(ret, System.Length(tmp));
 
   for i := 0 to High(tmp) do
   begin
@@ -304,7 +300,7 @@ end;
 
 function TUnicodeStringHelper.Substring(index: integer; len: integer): UString;
 begin
-  Result := system.Copy(Self, index + 1, len);
+  Result := System.Copy(Self, index + 1, len);
 end;
 
 function TUnicodeStringHelper.ToUnicodeCharArray: TUnicodeCharArray;

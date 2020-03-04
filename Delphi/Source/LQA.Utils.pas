@@ -12,7 +12,7 @@ uses
 
 type
   UChar = Char;
-  UString = type String;
+  UString = type string;
 
   TArr_int = TArray<integer>;
   TArr_int64 = TArray<int64>;
@@ -73,10 +73,8 @@ type
 procedure DrawLineBlockEnd;
 procedure DrawLineProgramEnd;
 
-type
-  // 数据结构
+type // 容器类
   TList_int = TList<integer>;
-
   TMap_str_int = TDictionary<UString, integer>;
 
 resourcestring
@@ -169,9 +167,9 @@ begin
   end;
 
   write('[');
-  for i := 0 to High(arr) do
+  for i := 0 to high(arr) do
   begin
-    if i <> High(arr) then
+    if i <> high(arr) then
       write(TValue.From<T>(arr[i]).ToString, ', ')
     else
       write(TValue.From<T>(arr[i]).ToString);
@@ -189,12 +187,12 @@ begin
     Exit;
   end;
 
-  for i := 0 to High(arr) do
+  for i := 0 to high(arr) do
   begin
     write('[');
-    for j := 0 to High(arr[i]) do
+    for j := 0 to high(arr[i]) do
     begin
-      if j <> High(arr[i]) then
+      if j <> high(arr[i]) then
         write(TValue.From<T>(arr[i, j]).ToString, ', '#9)
       else
         write(TValue.From<T>(arr[i, j]).ToString);
@@ -213,22 +211,22 @@ begin
     Exit;
   end;
 
-  for i := 0 to High(arr) do
+  for i := 0 to high(arr) do
   begin
     write('[');
-    for j := 0 to High(arr[i]) do
+    for j := 0 to high(arr[i]) do
     begin
       write('(');
-      for k := 0 to High(arr[i, j]) do
+      for k := 0 to high(arr[i, j]) do
       begin
-        if k <> High(arr[i, j]) then
+        if k <> high(arr[i, j]) then
           write(TValue.From<T>(arr[i, j, k]).ToString, ',')
         else
           write(TValue.From<T>(arr[i, j, k]).ToString);
       end;
       write(')');
 
-      if j <> High(arr[i]) then
+      if j <> high(arr[i]) then
         write(', ');
     end;
     write(']'#10);
@@ -257,17 +255,17 @@ end;
 
 function TStringHelper.Split(const Separators: array of Char): TArr_str;
 begin
-  Result := TArr_str(String(Self).Split(Separators));
+  Result := TArr_str(string(Self).Split(Separators));
 end;
 
 function TStringHelper.Substring(index, len: integer): UString;
 begin
-  Result := String(Self).Substring(index, len);
+  Result := string(Self).Substring(index, len);
 end;
 
 function TStringHelper.ToUnicodeCharArray: TArr_chr;
 begin
-  Result := String(Self).ToCharArray;
+  Result := string(Self).ToCharArray;
 end;
 
 function TStringHelper.__getChar(index: integer): UChar;

@@ -1,4 +1,4 @@
-unit LQA.Case05_03_CheckSame;
+﻿unit LQA.Case05_03_CheckSame;
 
 {*
   变形词:两个串有相同的字符及数量组成 abc abc ,abc cba,aabcd bcada;

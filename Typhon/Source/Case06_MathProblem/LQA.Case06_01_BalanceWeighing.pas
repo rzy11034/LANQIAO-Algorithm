@@ -57,7 +57,7 @@ procedure solution(n: integer);
 var
   list: TList_int;
 begin
-  list := TList_int.Create;
+
 end;
 
 procedure solution_Simplicity(n: integer);
@@ -116,7 +116,7 @@ end;
 
 procedure Main;
 begin
-  solution_Simplicity(25);
+  solution_Simplicity(121);
 end;
 
 end.
