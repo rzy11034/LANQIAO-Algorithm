@@ -47,20 +47,58 @@ interface
 uses
   Classes,
   SysUtils,
-  LQA.Utils;
+  Math,
+  LQA.Utils,
+  LQA.DSA.Math;
 
 procedure Main;
 
 implementation
 
-procedure solution(n: integer);
+procedure Solution(n: integer);
 var
   list: TList_int;
+  arr: Tarr_chr;
+  arr1: TArr_int;
+  i, k: integer;
+  sb: TStringBuilder;
+  stack: TStack_int;
 begin
+  list := TList_int.Create;
+  arr := TMath.DecToAny(n, 3).ReverseString.ToUnicodeCharArray;
 
+  for i := 0 to High(arr) do
+  begin
+    if arr[i] = '2' then
+    begin
+      list.Insert(0, -1);
+      list.Insert(0, 1);
+    end
+    else if arr[i] = '1' then
+      list.Insert(0, 1)
+    else
+      list.Insert(0, 0);
+  end;
+
+  SetLength(arr1, list.Count);
+  for i := 0 to list.Count - 1 do
+    arr1[i] := list[i];
+
+  sb := TStringBuilder.Create;
+  stack := TStack_int.Create;
+  k := list.Count - 1;
+  for i := 0 to list.Count - 1 do
+  begin
+    if list[i] > 0 then
+      sb.Append('+');
+    sb.Append(Round(Power(3, k)) * list[i]);
+    k -= 1;
+  end;
+
+  WriteLn(sb.ToString);
 end;
 
-procedure solution_Simplicity(n: integer);
+procedure Solution_Simplicity(n: integer);
 var
   s: TArr_int;
   a, b, c, d, e: integer;
@@ -116,7 +154,9 @@ end;
 
 procedure Main;
 begin
-  solution_Simplicity(121);
+  Solution_Simplicity(5);
+  DrawLineBlockEnd;
+  Solution(5);
 end;
 
 end.

@@ -55,7 +55,8 @@ uses
   LQA.Case05_11_最短摘要的生成 in 'Source\Case05_字符串问题\LQA.Case05_11_最短摘要的生成.pas',
   LQA.DSA.Strings.RabinKarp in 'Source\DSA\Strings\LQA.DSA.Strings.RabinKarp.pas',
   LQA.DSA.Strings.KMP in 'Source\DSA\Strings\LQA.DSA.Strings.KMP.pas',
-  LQA.Case06_01_天平称重 in 'Source\Case06_数学问题\LQA.Case06_01_天平称重.pas';
+  LQA.Case06_01_天平称重 in 'Source\Case06_数学问题\LQA.Case06_01_天平称重.pas',
+  LQA.DSA.Math in 'Source\DSA\Math\LQA.DSA.Math.pas';
 
 begin
   try

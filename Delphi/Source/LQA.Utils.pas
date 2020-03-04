@@ -75,6 +75,7 @@ procedure DrawLineProgramEnd;
 
 type // 容器类
   TList_int = TList<integer>;
+  TStack_chr = TStack<UChar>;
   TMap_str_int = TDictionary<UString, integer>;
 
 resourcestring

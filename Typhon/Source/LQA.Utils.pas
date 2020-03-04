@@ -81,6 +81,8 @@ type
 
 type // 容器类
   TList_int = specialize TList<integer>;
+  TList_str = specialize TList<UString>;
+  TStack_int = specialize TStack<integer>;
   TStack_chr = specialize TStack<UChar>;
   TMap_str_int = specialize THashMap<UString, integer>;
 
