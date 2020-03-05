@@ -70,7 +70,7 @@ type
     function __getChar(index: integer): UnicodeChar;
     function __getLength: integer;
   public
-    function ToUnicodeCharArray: TUnicodeCharArray;
+    function ToCharArray: TUnicodeCharArray;
     function Split(const Separators: array of char): TArr_str;
     function ReverseString: UString;
     function Substring(index: integer; len: integer): UString;
@@ -305,9 +305,9 @@ begin
   Result := System.Copy(Self, index + 1, len);
 end;
 
-function TUnicodeStringHelper.ToUnicodeCharArray: TUnicodeCharArray;
+function TUnicodeStringHelper.ToCharArray: TUnicodeCharArray;
 var
-  chrArr: TUnicodeCharArray;
+  chrArr: Tarr_chr;
   c: UnicodeChar;
   i: integer;
 begin

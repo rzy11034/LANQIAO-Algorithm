@@ -62,22 +62,41 @@ var
   arr1: TArr_int;
   i, k: integer;
   sb: TStringBuilder;
-  stack: TStack_int;
+  s: UString;
 begin
   list := TList_int.Create;
-  arr := TMath.DecToAny(n, 3).ReverseString.ToUnicodeCharArray;
+  arr := TMath.DecToAny(n, 3).ReverseString.ToCharArray;
 
   for i := 0 to High(arr) do
   begin
     if arr[i] = '2' then
     begin
-      list.Insert(0, -1);
-      list.Insert(0, 1);
+      if i = High(arr) then
+      begin
+        list.Add(-1);
+        list.Add(1);
+      end
+      else
+      begin
+        list.Add(-1);
+        Inc(arr[i + 1]);
+      end;
     end
-    else if arr[i] = '1' then
-      list.Insert(0, 1)
+    else if arr[i] = '3' then
+    begin
+      if i = High(arr) then
+      begin
+        list.Add(0);
+        list.Add(1);
+      end
+      else
+      begin
+        list.Add(0);
+        Inc(arr[i + 1]);
+      end;
+    end
     else
-      list.Insert(0, 0);
+      list.Add(StrToInt(arr[i]));
   end;
 
   SetLength(arr1, list.Count);
@@ -85,17 +104,26 @@ begin
     arr1[i] := list[i];
 
   sb := TStringBuilder.Create;
-  stack := TStack_int.Create;
+
   k := list.Count - 1;
-  for i := 0 to list.Count - 1 do
+  for i := list.Count - 1 downto 0 do
   begin
-    if list[i] > 0 then
+    if list[i] = 1 then
+    begin
       sb.Append('+');
-    sb.Append(Round(Power(3, k)) * list[i]);
-    k -= 1;
+      sb.Append(Round(Power(3, k)));
+    end
+    else if list[i] = -1 then
+    begin
+      sb.Append('-');
+      sb.Append(Round(Power(3, k)));
+    end;
+
+    Dec(k);
   end;
 
-  WriteLn(sb.ToString);
+  s := sb.ToString;
+  WriteLn(s.Substring(1, s.Length - 1));
 end;
 
 procedure Solution_Simplicity(n: integer);
@@ -153,10 +181,14 @@ begin
 end;
 
 procedure Main;
+var
+  n: integer;
 begin
-  Solution_Simplicity(5);
+  n := 19;
+
+  Solution_Simplicity(n);
   DrawLineBlockEnd;
-  Solution(5);
+  Solution(n);
 end;
 
 end.

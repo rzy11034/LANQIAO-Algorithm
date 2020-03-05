@@ -44,13 +44,86 @@ interface
 
 uses
   System.SysUtils,
-  LQA.Utils;
+  System.Math,
+  LQA.Utils,
+  LQA.DSA.Math;
 
 procedure Main;
 
 implementation
 
-procedure solution_Simplicity(n: integer);
+procedure Solution(n: integer);
+var
+  list: TList_int;
+  arr: Tarr_chr;
+  arr1: TArr_int;
+  i, k: integer;
+  sb: TStringBuilder;
+  s: UString;
+begin
+  list := TList_int.Create;
+  arr := TMath.DecToAny(n, 3).ReverseString.ToCharArray;
+
+  for i := 0 to high(arr) do
+  begin
+    if arr[i] = '2' then
+    begin
+      if i = high(arr) then
+      begin
+        list.Add(-1);
+        list.Add(1);
+      end
+      else
+      begin
+        list.Add(-1);
+        Inc(arr[i + 1]);
+      end;
+    end
+    else if arr[i] = '3' then
+    begin
+      if i = high(arr) then
+      begin
+        list.Add(0);
+        list.Add(1);
+      end
+      else
+      begin
+        list.Add(0);
+        Inc(arr[i + 1]);
+      end;
+    end
+    else
+      list.Add(StrToInt(arr[i]));
+  end;
+
+  SetLength(arr1, list.Count);
+  for i := 0 to list.Count - 1 do
+    arr1[i] := list[i];
+
+  sb := TStringBuilder.Create;
+
+  k := list.Count - 1;
+  for i := list.Count - 1 downto 0 do
+  begin
+    if list[i] = 1 then
+    begin
+      sb.Append('+');
+      sb.Append(Round(Power(3, k)));
+    end
+    else if list[i] = -1 then
+    begin
+      sb.Append('-');
+      sb.Append(Round(Power(3, k)));
+    end;
+
+    Dec(k);
+  end;
+
+  s := sb.ToString;
+  WriteLn(s.Substring(1, s.Length - 1));
+end;
+
+procedure Solution_Simplicity(n: integer);
 var
   s: TArr_int;
   a, b, c, d, e: integer;
@@ -73,29 +146,29 @@ begin
               sb := TStringBuilder.Create;
 
               if (s[a] = 1) then
-                sb.append('81');
+                sb.Append('81');
               if (s[b] = 1) then
-                sb.append('+27');
+                sb.Append('+27');
               if (s[b] = -1) then
-                sb.append('-27');
+                sb.Append('-27');
               if (s[c] = 1) then
-                sb.append('+9');
+                sb.Append('+9');
               if (s[c] = -1) then
-                sb.append('-9');
+                sb.Append('-9');
               if (s[d] = 1) then
-                sb.append('+3');
+                sb.Append('+3');
               if (s[d] = -1) then
-                sb.append('-3');
+                sb.Append('-3');
               if (s[e] = 1) then
-                sb.append('+1');
+                sb.Append('+1');
               if (s[e] = -1) then
-                sb.append('-1');
+                sb.Append('-1');
 
               str := sb.ToString;
               if (str.Chars[0] = '+') or (str.Chars[0] = '-') then
-                writeln(str.Substring(1, str.Length - 1))
+                WriteLn(str.Substring(1, str.Length - 1))
               else
-                writeln(str);
+                WriteLn(sb.ToString());
             end;
           end;
         end;
@@ -105,8 +178,14 @@ begin
 end;
 
 procedure Main;
+var
+  n: integer;
 begin
-  solution_Simplicity(19);
+  n := 19;
+
+  Solution_Simplicity(n);
+  DrawLineBlockEnd;
+  Solution(n);
 end;
 
 end.

@@ -26,7 +26,7 @@ type
     function __getChar(index: integer): UChar;
     function __getLength: integer;
   public
-    function ToUnicodeCharArray: TArr_chr;
+    function ToCharArray: TArr_chr;
     function ReverseString: UString;
     function Split(const Separators: array of Char): TArr_str;
     function Substring(index: integer; len: integer): UString;
@@ -75,6 +75,8 @@ procedure DrawLineProgramEnd;
 
 type // 容器类
   TList_int = TList<integer>;
+  TList_str = TList<UString>;
+  TStack_int = TStack<integer>;
   TStack_chr = TStack<UChar>;
   TMap_str_int = TDictionary<UString, integer>;
 
@@ -264,7 +266,7 @@ begin
   Result := string(Self).Substring(index, len);
 end;
 
-function TStringHelper.ToUnicodeCharArray: TArr_chr;
+function TStringHelper.ToCharArray: TArr_chr;
 begin
   Result := string(Self).ToCharArray;
 end;

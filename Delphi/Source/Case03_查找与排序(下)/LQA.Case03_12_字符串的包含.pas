@@ -20,7 +20,7 @@ var
   arr_strB: TArr_chr;
   ret, i: integer;
 begin
-  arr_strB := strB.ToUnicodeCharArray;
+  arr_strB := strB.ToCharArray;
   TArrayUtils_chr.Sort(arr_strB);
 
   for i := 0 to Length(strA) - 1 do
