@@ -44,7 +44,7 @@
           </CodeGeneration>
           <Linking>
             <Debugging>
-              <DebugInfoType Value="dsDwarf3"/>
+              <DebugInfoType Value="dsDwarf2Set"/>
               <UseHeaptrc Value="True"/>
               <TrashVariables Value="True"/>
             </Debugging>
@@ -312,6 +312,22 @@
       </Unit>
       <Unit>
         <Filename Value="Source\Case06_MathProblem\LQA.Case06_05_ExtendedEuclideanAlgorithm.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case06_MathProblem\LQA.Case06_06_OneStepAway.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case06_MathProblem\LQA.Case06_07_FrogDate.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case06_MathProblem\LQA.Case06_08_InverseElement.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case06_MathProblem\LQA.Case06_09_Biorhythms.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>

@@ -1,11 +1,42 @@
-﻿unit LQA.Case06_05_扩展欧几里得算法;
+﻿unit LQA.Case06_07_FrogDate;
+
+{ **
+  两只青蛙在网上相识了，它们聊得很开心，于是觉得很有必要见一面。它们很高兴地发现它
+  们住在同一条纬度线上，于是它们约定各自朝西跳，直到碰面为止。可是它们出发之前忘记
+  了一件很重要的事情，既没有问清楚对方的特征，也没有约定见面的具体位置。不过青蛙们
+  都是很乐观的，它们觉得只要一直朝着某个方向跳下去，总能碰到对方的。但是除非这两只
+  青蛙在同一时间跳到同一点上，不然是永远都不可能碰面的。为了帮助这两只乐观的青蛙，
+  你被要求写一个程序来判断这两只青蛙是否能够碰面，会在什么时候碰面。
+
+  我们把这两只青蛙分别叫做青蛙A和青蛙B，并且规定纬度线上东经0度处为原点，由东往西
+  为正方向，单位长度1米，这样我们就得到了一条首尾相接的数轴。设青蛙A的出发点坐标是x
+  ，青蛙B的出发点坐标是y。青蛙A一次能跳m米，青蛙B一次能跳n米，两只青蛙跳一次所花费
+  的时间相同。纬度线总长L米。现在要你求出它们跳了几次以后才会碰面
+  。
+  Input
+    输入只包括一行5个整数x，y，m，n，L，
+    其中x≠y < 2000000000，0 < m、n < 2000000000，0 < L < 2100000000。
+  Output
+    输出碰面所需要的跳跃次数，如果永远不可能碰面则输出一行"Impossible"
+  Sample Input
+    1 2 3 4 5
+  Sample Output
+    4
+**}
+
+{$mode objfpc}{$H+}
 
 interface
 
 uses
-  System.SysUtils,
+  Classes,
+  SysUtils,
   Math,
   LQA.Utils;
+
+procedure Main;
+
+implementation
 
 type
   TExtendedEuclideanAlgorithm = class
@@ -19,11 +50,9 @@ type
     // 扩展欧几里得
     // 调用完成后xy是ax+by:=gcd(a,b)的解
     class function Ext_Gcd(a, b: integer): integer;
-    /// <summary>
-    /// 线性方程
-    /// ax+by=m 当m时gcd(a,b)倍数时有解
-    /// 等价于ax = m mod b
-    /// </summary>
+    // 线性方程
+    // ax+by=m 当m时gcd(a,b)倍数时有解
+    // 等价于ax = m mod b
     class function LinearEquation(a, b, m: integer): integer;
     // **
     // *  x = a1(%m1)
@@ -44,51 +73,39 @@ type
   end;
 
 procedure Main;
-
-implementation
-
-procedure Main;
 var
-  d, a, b, m: integer;
+  x: integer; //坐标
+  y: integer; //坐标
+  m: integer; //A一次跳
+  n: integer; //B一次跳
+  l: integer; //维度总线
+  a, b, d, x0: integer;
 begin
-  with TExtendedEuclideanAlgorithm do
-  begin
-    Ext_Gcd(7, 11);
-    WriteLn(X, ' ', Y);
-    a := 14;
-    b := 22;
-    m := -10;
+  x := 1;
+  y := 2;
+  m := 3;
+  n := 4;
+  l := 5;
 
-    try
-      d := LinearEquation(a, b, m);
-      WriteLn('解1:', X, ' ', Y);
-      //x和y是一组解,下面也是一组解
-      X := X + b div d;
-      Y := Y - a div d;
-      WriteLn('解2:', X, ' ', Y);
+  a := m - n;
+  b := l;
+  m := y - x;
 
-      while (X > 0) do
-      begin
-        if b div d > 0 then // 使x减小
-          X := X + -b div d
-        else
-          X := X + b div d;
+  try
+    //x+m*k = y+n*k mod l
+    //(m-n)*k = y-x mod l
+    //(m-n)*xx + L*yy =  y-x
 
-        if a div d > 0 then // 使y增加减小
-          Y := Y + a div d
-        else
-          Y := Y + -a div d;
-      end;
+    d := TExtendedEuclideanAlgorithm.LinearEquation(a, b, m);//求解线性方程
+    x0 := TExtendedEuclideanAlgorithm.X; // 可能小于0
+    b := b div d; // 约一下
+    b := Abs(b);
 
-      WriteLn('解2:', X, ' ', Y);
-      // b=b/d;
-      // a = a/d;
-      // x = (x%b+b)%b;//第一个大于0的解
-      // y = (y%a+a)%a;
-      // System.out.println("保证x大于等于0:" + x + " " + y);
-    except
-      WriteLn('无解');
-    end;
+    //*============这里是AC的关键==============*/
+    x0 := (x0 mod b + b) mod b;//要求大于0的第一个解
+    WriteLn(x0);
+  except
+    WriteLn('Impossible');
   end;
 end;
 
@@ -105,7 +122,7 @@ begin
     Exit(a);
   end;
 
-  ret := Ext_Gcd(b, a mod b);
+  ret := ext_gcd(b, a mod b);
 
   // x,y已经被下一层递归更新了,ppt中所说的x0和y0
   x1 := X; // 备份x
@@ -124,7 +141,7 @@ var
   d: integer;
 begin
   d := LinearEquation(a, mo, 1); // ax+mo*y=1
-  X := (X mod mo + mo) mod mo; // 保证x>0
+  X := (x mod mo + mo) mod mo; // 保证x>0
   Result := d;
 end;
 
@@ -165,10 +182,10 @@ begin
   begin
     // 这里往前看是两个方程
     a2_a1 := a[i] - a[i - 1];
-    d := LinearEquation(m[i - 1], -m[i], a2_a1);
+    d := linearEquation(m[i - 1], -m[i], a2_a1);
 
     // 现在的x是y1,用y1求得一个特解
-    x0 := a[i - 1] + m[i - 1] * X;
+    x0 := a[i - 1] + m[i - 1] * x;
     _lcm := m[i - 1] * m[i] div d;
     a[i] := (x0 mod _lcm + _lcm) mod _lcm; // x0变成正数
     m[i] := _lcm;

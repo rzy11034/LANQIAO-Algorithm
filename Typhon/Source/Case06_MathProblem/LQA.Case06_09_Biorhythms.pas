@@ -1,11 +1,18 @@
-﻿unit LQA.Case06_05_扩展欧几里得算法;
+﻿unit LQA.Case06_09_Biorhythms;
+
+{$mode objfpc}{$H+}
 
 interface
 
 uses
-  System.SysUtils,
+  Classes,
+  SysUtils,
   Math,
   LQA.Utils;
+
+procedure Main;
+
+implementation
 
 type
   TExtendedEuclideanAlgorithm = class
@@ -19,11 +26,9 @@ type
     // 扩展欧几里得
     // 调用完成后xy是ax+by:=gcd(a,b)的解
     class function Ext_Gcd(a, b: integer): integer;
-    /// <summary>
-    /// 线性方程
-    /// ax+by=m 当m时gcd(a,b)倍数时有解
-    /// 等价于ax = m mod b
-    /// </summary>
+    // 线性方程
+    // ax+by=m 当m时gcd(a,b)倍数时有解
+    // 等价于ax = m mod b
     class function LinearEquation(a, b, m: integer): integer;
     // **
     // *  x = a1(%m1)
@@ -44,52 +49,8 @@ type
   end;
 
 procedure Main;
-
-implementation
-
-procedure Main;
-var
-  d, a, b, m: integer;
 begin
-  with TExtendedEuclideanAlgorithm do
-  begin
-    Ext_Gcd(7, 11);
-    WriteLn(X, ' ', Y);
-    a := 14;
-    b := 22;
-    m := -10;
 
-    try
-      d := LinearEquation(a, b, m);
-      WriteLn('解1:', X, ' ', Y);
-      //x和y是一组解,下面也是一组解
-      X := X + b div d;
-      Y := Y - a div d;
-      WriteLn('解2:', X, ' ', Y);
-
-      while (X > 0) do
-      begin
-        if b div d > 0 then // 使x减小
-          X := X + -b div d
-        else
-          X := X + b div d;
-
-        if a div d > 0 then // 使y增加减小
-          Y := Y + a div d
-        else
-          Y := Y + -a div d;
-      end;
-
-      WriteLn('解2:', X, ' ', Y);
-      // b=b/d;
-      // a = a/d;
-      // x = (x%b+b)%b;//第一个大于0的解
-      // y = (y%a+a)%a;
-      // System.out.println("保证x大于等于0:" + x + " " + y);
-    except
-      WriteLn('无解');
-    end;
-  end;
 end;
 
 { TExtendedEuclideanAlgorithm }

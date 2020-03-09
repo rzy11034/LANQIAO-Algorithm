@@ -1,11 +1,39 @@
-﻿unit LQA.Case06_05_扩展欧几里得算法;
+﻿unit LQA.Case06_06_OneStepAway;
+
+{**
+  * 从昏迷中醒来，小明发现自己被关在X星球的废矿车里。
+  矿车停在平直的废弃的轨道上。
+  他的面前是两个按钮，分别写着“F”和“B”。
+
+  小明突然记起来，这两个按钮可以控制矿车在轨道上前进和后退。
+  按F，会前进97米。按B会后退127米。
+  透过昏暗的灯光，小明看到自己前方1米远正好有个监控探头。
+  他必须设法使得矿车正好停在摄像头的下方，才有机会争取同伴的援助。
+  或许，通过多次操作F和B可以办到。
+
+  矿车上的动力已经不太足，黄色的警示灯在默默闪烁...
+  每次进行 F 或 B 操作都会消耗一定的能量。
+  小明飞快地计算，至少要多少次操作，才能把矿车准确地停在前方1米远的地方。
+
+  请填写为了达成目标，最少需要操作的次数。
+
+  97x-127y=1
+  ax+by=m
+ *}
+
+{$mode objfpc}{$H+}
 
 interface
 
 uses
-  System.SysUtils,
+  Classes,
+  SysUtils,
   Math,
   LQA.Utils;
+
+procedure Main;
+
+implementation
 
 type
   TExtendedEuclideanAlgorithm = class
@@ -19,11 +47,9 @@ type
     // 扩展欧几里得
     // 调用完成后xy是ax+by:=gcd(a,b)的解
     class function Ext_Gcd(a, b: integer): integer;
-    /// <summary>
-    /// 线性方程
-    /// ax+by=m 当m时gcd(a,b)倍数时有解
-    /// 等价于ax = m mod b
-    /// </summary>
+    // 线性方程
+    // ax+by=m 当m时gcd(a,b)倍数时有解
+    // 等价于ax = m mod b
     class function LinearEquation(a, b, m: integer): integer;
     // **
     // *  x = a1(%m1)
@@ -44,50 +70,15 @@ type
   end;
 
 procedure Main;
-
-implementation
-
-procedure Main;
-var
-  d, a, b, m: integer;
 begin
   with TExtendedEuclideanAlgorithm do
   begin
-    Ext_Gcd(7, 11);
-    WriteLn(X, ' ', Y);
-    a := 14;
-    b := 22;
-    m := -10;
-
     try
-      d := LinearEquation(a, b, m);
-      WriteLn('解1:', X, ' ', Y);
-      //x和y是一组解,下面也是一组解
-      X := X + b div d;
-      Y := Y - a div d;
-      WriteLn('解2:', X, ' ', Y);
-
-      while (X > 0) do
-      begin
-        if b div d > 0 then // 使x减小
-          X := X + -b div d
-        else
-          X := X + b div d;
-
-        if a div d > 0 then // 使y增加减小
-          Y := Y + a div d
-        else
-          Y := Y + -a div d;
-      end;
-
-      WriteLn('解2:', X, ' ', Y);
-      // b=b/d;
-      // a = a/d;
-      // x = (x%b+b)%b;//第一个大于0的解
-      // y = (y%a+a)%a;
-      // System.out.println("保证x大于等于0:" + x + " " + y);
+      linearEquation(97, -127, 1);
+      WriteLn(Abs(X) + Abs(Y));
     except
-      WriteLn('无解');
+      on E: Exception do
+        Writeln(E.ClassName, ': ', E.Message);
     end;
   end;
 end;
@@ -105,7 +96,7 @@ begin
     Exit(a);
   end;
 
-  ret := Ext_Gcd(b, a mod b);
+  ret := ext_gcd(b, a mod b);
 
   // x,y已经被下一层递归更新了,ppt中所说的x0和y0
   x1 := X; // 备份x
@@ -124,7 +115,7 @@ var
   d: integer;
 begin
   d := LinearEquation(a, mo, 1); // ax+mo*y=1
-  X := (X mod mo + mo) mod mo; // 保证x>0
+  X := (x mod mo + mo) mod mo; // 保证x>0
   Result := d;
 end;
 
@@ -144,8 +135,8 @@ begin
     raise Exception.Create('无解');
 
   n := m div d; // 约一下,考虑m是d的倍数
-  X := X * n;
-  Y := Y * n;
+  X *= n;
+  Y *= n;
   Result := d;
 end;
 
@@ -165,10 +156,10 @@ begin
   begin
     // 这里往前看是两个方程
     a2_a1 := a[i] - a[i - 1];
-    d := LinearEquation(m[i - 1], -m[i], a2_a1);
+    d := linearEquation(m[i - 1], -m[i], a2_a1);
 
     // 现在的x是y1,用y1求得一个特解
-    x0 := a[i - 1] + m[i - 1] * X;
+    x0 := a[i - 1] + m[i - 1] * x;
     _lcm := m[i - 1] * m[i] div d;
     a[i] := (x0 mod _lcm + _lcm) mod _lcm; // x0变成正数
     m[i] := _lcm;

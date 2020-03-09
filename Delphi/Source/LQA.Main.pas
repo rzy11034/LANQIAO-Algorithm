@@ -10,7 +10,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case06_04_欧几里得算法;
+  LQA.Case06_08_求逆元;
 
 procedure Run;
 begin

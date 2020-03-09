@@ -6,7 +6,8 @@ interface
 
 uses
   Classes,
-  SysUtils;
+  SysUtils,
+  Math;
 
 procedure Main;
 
@@ -14,15 +15,8 @@ implementation
 
 // 最大公约数
 function Gcd(m, n: integer): integer;
-var
-  ret: integer;
 begin
-  if n = 0 then
-    ret := m
-  else
-    ret := Gcd(n, m mod n);
-
-  Result := ret;
+  Result := IfThen(n = 0, m, Gcd(n, m mod n));
 end;
 
 // 最小公倍数 lowest common multiple (LCM)

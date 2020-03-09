@@ -1,11 +1,23 @@
-﻿unit LQA.Case06_05_扩展欧几里得算法;
+﻿unit LQA.Case06_08_InverseElement;
+
+{**
+ * (A/B)%9973,求余,除法不满足交换性,可改为求B关于9973的逆元x,
+ * 这样结果等价于Ax%9973等价于x*A%9973等价于xn%9973,
+ *}
+
+{$mode objfpc}{$H+}
 
 interface
 
 uses
-  System.SysUtils,
+  Classes,
+  SysUtils,
   Math,
   LQA.Utils;
+
+procedure Main;
+
+implementation
 
 type
   TExtendedEuclideanAlgorithm = class
@@ -19,11 +31,9 @@ type
     // 扩展欧几里得
     // 调用完成后xy是ax+by:=gcd(a,b)的解
     class function Ext_Gcd(a, b: integer): integer;
-    /// <summary>
-    /// 线性方程
-    /// ax+by=m 当m时gcd(a,b)倍数时有解
-    /// 等价于ax = m mod b
-    /// </summary>
+    // 线性方程
+    // ax+by=m 当m时gcd(a,b)倍数时有解
+    // 等价于ax = m mod b
     class function LinearEquation(a, b, m: integer): integer;
     // **
     // *  x = a1(%m1)
@@ -44,50 +54,24 @@ type
   end;
 
 procedure Main;
-
-implementation
-
-procedure Main;
 var
-  d, a, b, m: integer;
+  T, n, b, i, x: integer;
 begin
-  with TExtendedEuclideanAlgorithm do
+  ReadLn(T);
+
+  for i := 0 to T - 1 do
   begin
-    Ext_Gcd(7, 11);
-    WriteLn(X, ' ', Y);
-    a := 14;
-    b := 22;
-    m := -10;
+    ReadLn(n);
+    ReadLn(b);
 
     try
-      d := LinearEquation(a, b, m);
-      WriteLn('解1:', X, ' ', Y);
-      //x和y是一组解,下面也是一组解
-      X := X + b div d;
-      Y := Y - a div d;
-      WriteLn('解2:', X, ' ', Y);
-
-      while (X > 0) do
-      begin
-        if b div d > 0 then // 使x减小
-          X := X + -b div d
-        else
-          X := X + b div d;
-
-        if a div d > 0 then // 使y增加减小
-          Y := Y + a div d
-        else
-          Y := Y + -a div d;
-      end;
-
-      WriteLn('解2:', X, ' ', Y);
-      // b=b/d;
-      // a = a/d;
-      // x = (x%b+b)%b;//第一个大于0的解
-      // y = (y%a+a)%a;
-      // System.out.println("保证x大于等于0:" + x + " " + y);
+      TExtendedEuclideanAlgorithm.inverseElement(b, 9973);
+      x := TExtendedEuclideanAlgorithm.X;//x是B的关于9973的逆元
+      // x = (x%9973 + 9973) % 9973;
+      WriteLn(x * n mod 9973);
     except
-      WriteLn('无解');
+      on E: Exception do
+        Writeln(E.ClassName, ': ', E.Message);
     end;
   end;
 end;
@@ -105,7 +89,7 @@ begin
     Exit(a);
   end;
 
-  ret := Ext_Gcd(b, a mod b);
+  ret := ext_gcd(b, a mod b);
 
   // x,y已经被下一层递归更新了,ppt中所说的x0和y0
   x1 := X; // 备份x
@@ -124,7 +108,7 @@ var
   d: integer;
 begin
   d := LinearEquation(a, mo, 1); // ax+mo*y=1
-  X := (X mod mo + mo) mod mo; // 保证x>0
+  X := (x mod mo + mo) mod mo; // 保证x>0
   Result := d;
 end;
 
@@ -165,10 +149,10 @@ begin
   begin
     // 这里往前看是两个方程
     a2_a1 := a[i] - a[i - 1];
-    d := LinearEquation(m[i - 1], -m[i], a2_a1);
+    d := linearEquation(m[i - 1], -m[i], a2_a1);
 
     // 现在的x是y1,用y1求得一个特解
-    x0 := a[i - 1] + m[i - 1] * X;
+    x0 := a[i - 1] + m[i - 1] * x;
     _lcm := m[i - 1] * m[i] div d;
     a[i] := (x0 mod _lcm + _lcm) mod _lcm; // x0变成正数
     m[i] := _lcm;

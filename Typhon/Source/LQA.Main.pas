@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case06_04_EuclideanAlgorithm;
+  LQA.Case06_08_InverseElement;
 
 procedure Run;
 begin
