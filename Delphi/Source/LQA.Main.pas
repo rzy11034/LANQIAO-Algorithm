@@ -10,7 +10,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case06_01_天平称重;
+  LQA.Case06_04_欧几里得算法;
 
 procedure Run;
 begin

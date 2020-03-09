@@ -298,6 +298,22 @@
         <Filename Value="Source\DSA\Math\LQA.DSA.Math.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="Source\Case06_MathProblem\LQA.Case06_02_NimGame.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case06_MathProblem\LQA.Case06_03_StaircaseNim.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case06_MathProblem\LQA.Case06_04_EuclideanAlgorithm.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case06_MathProblem\LQA.Case06_05_ExtendedEuclideanAlgorithm.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

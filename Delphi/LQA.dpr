@@ -56,7 +56,11 @@ uses
   LQA.DSA.Strings.RabinKarp in 'Source\DSA\Strings\LQA.DSA.Strings.RabinKarp.pas',
   LQA.DSA.Strings.KMP in 'Source\DSA\Strings\LQA.DSA.Strings.KMP.pas',
   LQA.Case06_01_天平称重 in 'Source\Case06_数学问题\LQA.Case06_01_天平称重.pas',
-  LQA.DSA.Math in 'Source\DSA\Math\LQA.DSA.Math.pas';
+  LQA.DSA.Math in 'Source\DSA\Math\LQA.DSA.Math.pas',
+  LQA.Case06_02_Nim游戏 in 'Source\Case06_数学问题\LQA.Case06_02_Nim游戏.pas',
+  LQA.Case06_03_阶梯Nim博弈 in 'Source\Case06_数学问题\LQA.Case06_03_阶梯Nim博弈.pas',
+  LQA.Case06_04_欧几里得算法 in 'Source\Case06_数学问题\LQA.Case06_04_欧几里得算法.pas',
+  LQA.Case06_05_扩展欧几里得算法 in 'Source\Case06_数学问题\LQA.Case06_05_扩展欧几里得算法.pas';
 
 begin
   try

@@ -229,6 +229,10 @@
         <DCCReference Include="Source\DSA\Strings\LQA.DSA.Strings.KMP.pas"/>
         <DCCReference Include="Source\Case06_数学问题\LQA.Case06_01_天平称重.pas"/>
         <DCCReference Include="Source\DSA\Math\LQA.DSA.Math.pas"/>
+        <DCCReference Include="Source\Case06_数学问题\LQA.Case06_02_Nim游戏.pas"/>
+        <DCCReference Include="Source\Case06_数学问题\LQA.Case06_03_阶梯Nim博弈.pas"/>
+        <DCCReference Include="Source\Case06_数学问题\LQA.Case06_04_欧几里得算法.pas"/>
+        <DCCReference Include="Source\Case06_数学问题\LQA.Case06_05_扩展欧几里得算法.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

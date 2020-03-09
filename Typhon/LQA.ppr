@@ -54,7 +54,10 @@ uses
   LQA.Case05_10_Palindrome,
   LQA.Case05_11_TheShortestAbstract,
   LQA.DSA.Strings.RabinKarp,
-  LQA.DSA.Strings.KMP, LQA.Case06_01_BalanceWeighing, LQA.DSA.Math;
+  LQA.DSA.Strings.KMP, LQA.Case06_01_BalanceWeighing, LQA.DSA.Math,
+LQA.Case06_02_NimGame, LQA.Case06_03_StaircaseNim,
+LQA.Case06_04_EuclideanAlgorithm,
+LQA.Case06_05_ExtendedEuclideanAlgorithm;
 
 
 begin

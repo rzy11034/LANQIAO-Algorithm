@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case06_01_BalanceWeighing;
+  LQA.Case06_04_EuclideanAlgorithm;
 
 procedure Run;
 begin
