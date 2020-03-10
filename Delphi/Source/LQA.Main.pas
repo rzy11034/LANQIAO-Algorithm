@@ -10,7 +10,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case06_08_求逆元;
+  LQA.Case06_09_生理周期;
 
 procedure Run;
 begin

@@ -63,7 +63,9 @@ uses
   LQA.Case06_05_扩展欧几里得算法 in 'Source\Case06_数学问题\LQA.Case06_05_扩展欧几里得算法.pas',
   LQA.Case06_06_一步之遥 in 'Source\Case06_数学问题\LQA.Case06_06_一步之遥.pas',
   LQA.Case06_07_青蛙的约会 in 'Source\Case06_数学问题\LQA.Case06_07_青蛙的约会.pas',
-  LQA.Case06_08_求逆元 in 'Source\Case06_数学问题\LQA.Case06_08_求逆元.pas';
+  LQA.Case06_08_求逆元 in 'Source\Case06_数学问题\LQA.Case06_08_求逆元.pas',
+  LQA.Case06_09_生理周期 in 'Source\Case06_数学问题\LQA.Case06_09_生理周期.pas',
+  LQA.Case06_10_素数测试及质因数分解 in 'Source\Case06_数学问题\LQA.Case06_10_素数测试及质因数分解.pas';
 
 begin
   try

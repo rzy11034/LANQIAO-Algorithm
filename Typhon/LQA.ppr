@@ -62,8 +62,9 @@ uses
   LQA.Case06_04_EuclideanAlgorithm,
   LQA.Case06_05_ExtendedEuclideanAlgorithm,
   LQA.Case06_06_OneStepAway,
-  LQA.Case06_07_FrogDate, LQA.Case06_08_InverseElement,
-LQA.Case06_09_Biorhythms;
+  LQA.Case06_07_FrogDate,
+  LQA.Case06_08_InverseElement,
+  LQA.Case06_09_Biorhythms, LQA.Case06_10_PrimeNumber;
 
 
 begin

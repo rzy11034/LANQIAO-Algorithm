@@ -1,6 +1,6 @@
-﻿unit LQA.Case06_09_Biorhythms;
+﻿unit LQA.Case06_09_生理周期;
 
-{**
+{ **
   input:
     0 0 0 0
     0 0 0 100
@@ -17,16 +17,13 @@
     Case 4: the next triple peak occurs in 16994 days.
     Case 5: the next triple peak occurs in 8910 days.
     Case 6: the next triple peak occurs in 10789 days.
-**}
-
-{$mode objfpc}{$H+}
+  ** }
 
 interface
 
 uses
-  Classes,
-  SysUtils,
-  Math,
+  System.SysUtils,
+  System.Math,
   LQA.Utils;
 
 procedure Main;
@@ -81,7 +78,7 @@ begin
   while True do
   begin
     SetLength(a, 3);
-    ReadLn(a[0], a[1], a[2], d);
+    Readln(a[0], a[1], a[2], d);
 
     if (a[0] = -1) and (a[1] = -1) and (a[2] = -1) and (d = -1) then
       Break
@@ -101,7 +98,7 @@ begin
     res := TExtendedEuclideanAlgorithm.LinearEquationGroup(a, m);
     while (res <= d) do
     begin
-      res += 21252;
+      res := res + 21252;
     end;
 
     WriteLn('Case ', t, ': the next triple peak occurs in ', res - d, ' days.');

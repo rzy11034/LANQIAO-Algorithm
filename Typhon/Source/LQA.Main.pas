@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case06_08_InverseElement;
+  LQA.Case06_10_PrimeNumber;
 
 procedure Run;
 begin

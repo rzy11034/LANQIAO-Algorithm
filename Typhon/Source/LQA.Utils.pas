@@ -23,6 +23,7 @@ type
   TArr_str = array of UString;
 
   TStringBuilder = TUnicodeStringBuilder;
+  ts = TAnsiStringBuilder;
 
   generic TUtils<T> = class
   public
@@ -82,8 +83,10 @@ type
 type // 容器类
   TList_int = specialize TList<integer>;
   TList_str = specialize TList<UString>;
+  TList_TArr_int = specialize TList<TArr_int>;
   TStack_int = specialize TStack<integer>;
   TStack_chr = specialize TStack<UChar>;
+  TMap_int_int = specialize THashMap<integer, integer>;
   TMap_str_int = specialize THashMap<UString, integer>;
 
 procedure DrawLineBlockEnd;
