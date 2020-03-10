@@ -67,7 +67,7 @@ var
 begin
   WriteLn(IsPrime(7));
 
-  map := PrimeFactor(987654);
+  map := PrimeFactor(100);
   sb := TStringBuilder.Create;
 
   for pair in map.ToArray do
@@ -77,7 +77,7 @@ begin
 
     for i := 0 to v - 1 do
     begin
-      sb.Append('*').Append(k);
+      sb.Append('×').Append(k);
     end;
   end;
 

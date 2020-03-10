@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case06_10_PrimeNumber;
+  LQA.Case07_01_TakeTheStairs;
 
 procedure Run;
 begin

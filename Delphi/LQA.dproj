@@ -238,6 +238,9 @@
         <DCCReference Include="Source\Case06_数学问题\LQA.Case06_08_求逆元.pas"/>
         <DCCReference Include="Source\Case06_数学问题\LQA.Case06_09_生理周期.pas"/>
         <DCCReference Include="Source\Case06_数学问题\LQA.Case06_10_素数测试及质因数分解.pas"/>
+        <DCCReference Include="Source\Case06_数学问题\LQA.Case06_11_第十万零二个素数.pas"/>
+        <DCCReference Include="Source\Case06_数学问题\LQA.Case06_12_快速幂运算.pas"/>
+        <DCCReference Include="Source\Case06_数学问题\LQA.Case06_13_矩阵运算求解斐波那契.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -282,6 +285,12 @@
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="Win32\Debug\LQA.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>LQA.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="Win32\Release\LQA.exe" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Win32">
                         <RemoteName>LQA.exe</RemoteName>
                         <Overwrite>true</Overwrite>

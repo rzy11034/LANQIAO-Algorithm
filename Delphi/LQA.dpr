@@ -65,7 +65,10 @@ uses
   LQA.Case06_07_青蛙的约会 in 'Source\Case06_数学问题\LQA.Case06_07_青蛙的约会.pas',
   LQA.Case06_08_求逆元 in 'Source\Case06_数学问题\LQA.Case06_08_求逆元.pas',
   LQA.Case06_09_生理周期 in 'Source\Case06_数学问题\LQA.Case06_09_生理周期.pas',
-  LQA.Case06_10_素数测试及质因数分解 in 'Source\Case06_数学问题\LQA.Case06_10_素数测试及质因数分解.pas';
+  LQA.Case06_10_素数测试及质因数分解 in 'Source\Case06_数学问题\LQA.Case06_10_素数测试及质因数分解.pas',
+  LQA.Case06_11_第十万零二个素数 in 'Source\Case06_数学问题\LQA.Case06_11_第十万零二个素数.pas',
+  LQA.Case06_12_快速幂运算 in 'Source\Case06_数学问题\LQA.Case06_12_快速幂运算.pas',
+  LQA.Case06_13_矩阵运算求解斐波那契 in 'Source\Case06_数学问题\LQA.Case06_13_矩阵运算求解斐波那契.pas';
 
 begin
   try

@@ -79,6 +79,7 @@ type // 容器类
   TList_TArr_int = TList<TArr_int>;
   TStack_int = TStack<integer>;
   TStack_chr = TStack<UChar>;
+  TMap_int_int = TDictionary<integer, integer>;
   TMap_str_int = TDictionary<UString, integer>;
 
 resourcestring
