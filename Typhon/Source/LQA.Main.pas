@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case07_03_CoinRepresents_Classic;
+  LQA.Case07_05_NonEmptySubsets;
 
 procedure Run;
 begin

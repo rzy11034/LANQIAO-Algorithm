@@ -39,7 +39,8 @@ uses
   LQA.Case06_10_PrimeNumber, LQA.Case06_11_100000sPrimeNumber,
   LQA.Case06_12_NExponent, LQA.Case06_13_MatrixOperationsForFibonacci,
   LQA.Case07_01_TakeTheStairs, LQA.Case07_02_RobotWalk,
-LQA.Case07_03_CoinRepresents_Classic;
+  LQA.Case07_03_CoinRepresents_Classic, LQA.Case07_04_LegalBracketCombination,
+  LQA.DSA.Tree.HashSet, LQA.Case07_05_NonEmptySubsets;
 
 
 begin

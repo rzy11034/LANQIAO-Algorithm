@@ -1,25 +1,22 @@
-﻿unit LQA.Case07_03_CoinRepresents_Classic;
+﻿unit LQA.Case07_03_硬币表示_经典;
 
-{**
- * 假设我们有8种不同面值的硬币｛1，2，5，10，20，50，100，200｝，
- * 用这些硬币组合构成一个给定的数值n。
- * 例如n=200，那么一种可能的组合方式为 200 = 3 * 1 + 1＊2 + 1＊5 + 2＊20 + 1 * 50 + 1 * 100.
- * 问总共有多少种可能的组合方式？ (这道题目来自著名编程网站ProjectEuler) 类似的题目还有：
+{ **
+  * 假设我们有8种不同面值的硬币｛1，2，5，10，20，50，100，200｝，
+  * 用这些硬币组合构成一个给定的数值n。
+  * 例如n=200，那么一种可能的组合方式为 200 = 3 * 1 + 1＊2 + 1＊5 + 2＊20 + 1 * 50 + 1 * 100.
+  * 问总共有多少种可能的组合方式？ (这道题目来自著名编程网站ProjectEuler) 类似的题目还有：
 
- 　　[华为面试题] 1分2分5分的硬币三种，组合成1角，共有多少种组合
-      1*x + 2*y + 5*z=10
- 　　[创新工厂笔试题] 有1分，2分，5分，10分四种硬币，每种硬币数量无限，给定n分钱，有多少组合可以组成n分钱
+  [华为面试题] 1分2分5分的硬币三种，组合成1角，共有多少种组合
+  1*x + 2*y + 5*z=10
+  [创新工厂笔试题] 有1分，2分，5分，10分四种硬币，每种硬币数量无限，给定n分钱，有多少组合可以组成n分钱
 
-      1 5 10 25 分 n,多少种组合方法.
- *}
-
-{$mode objfpc}{$H+}
+  1 5 10 25 分 n,多少种组合方法.
+  * }
 
 interface
 
 uses
-  Classes,
-  SysUtils,
+  System.SysUtils,
   LQA.Utils;
 
 procedure Main;
@@ -29,7 +26,7 @@ implementation
 const
   COINS: array [0 .. 3] of integer = (1, 5, 10, 25);
 
-// 递推解法
+  // 递推解法
 function CountWays1(n: integer): integer;
 var
   dp: TArr2D_int;
@@ -42,7 +39,6 @@ begin
 
   for j := 0 to n do
     dp[0][j] := 1; // 用1来凑任何面值都只有一种凑法,第一行初始化为1
-
 
   for i := 1 to 3 do
   begin
@@ -97,7 +93,7 @@ function CountWays3(n: integer): integer;
     i := 0;
     while i * COINS[cur] <= n do
     begin
-      tmp := n - i * coins[cur];
+      tmp := n - i * COINS[cur];
       ret := ret + __countWay3(tmp, cur - 1);
 
       Inc(i);

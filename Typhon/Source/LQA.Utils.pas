@@ -9,7 +9,8 @@ uses
   Classes,
   SysUtils,
   Generics.Collections,
-  Generics.Defaults;
+  Generics.Defaults,
+  LQA.DSA.Tree.HashSet;
 
 type
   UChar = type UnicodeChar;
@@ -88,6 +89,7 @@ type // 容器类
   TStack_chr = specialize TStack<UChar>;
   TMap_int_int = specialize THashMap<integer, integer>;
   TMap_str_int = specialize THashMap<UString, integer>;
+  TSet_str = specialize THashSet<UString>;
 
 procedure DrawLineBlockEnd;
 procedure DrawLineProgramEnd;

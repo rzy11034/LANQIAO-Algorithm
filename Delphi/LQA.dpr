@@ -69,7 +69,11 @@ uses
   LQA.Case06_11_第十万零二个素数 in 'Source\Case06_数学问题\LQA.Case06_11_第十万零二个素数.pas',
   LQA.Case06_12_快速幂运算 in 'Source\Case06_数学问题\LQA.Case06_12_快速幂运算.pas',
   LQA.Case06_13_矩阵运算求解斐波那契 in 'Source\Case06_数学问题\LQA.Case06_13_矩阵运算求解斐波那契.pas',
-  LQA.Case07_01_走楼梯 in 'Source\Case07_深入递归\LQA.Case07_01_走楼梯.pas';
+  LQA.Case07_01_走楼梯 in 'Source\Case07_深入递归\LQA.Case07_01_走楼梯.pas',
+  LQA.DSA.Tree.HashSet in 'Source\DSA\Tree\LQA.DSA.Tree.HashSet.pas',
+  LQA.Case07_02_机器人走格子 in 'Source\Case07_深入递归\LQA.Case07_02_机器人走格子.pas',
+  LQA.Case07_03_硬币表示_经典 in 'Source\Case07_深入递归\LQA.Case07_03_硬币表示_经典.pas',
+  LQA.Case07_04_合法的括号组合 in 'Source\Case07_深入递归\LQA.Case07_04_合法的括号组合.pas';
 
 begin
   try

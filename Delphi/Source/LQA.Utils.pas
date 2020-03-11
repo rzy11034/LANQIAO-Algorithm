@@ -8,7 +8,8 @@ uses
   System.Classes,
   System.Rtti,
   System.Generics.Collections,
-  System.Generics.Defaults;
+  System.Generics.Defaults,
+  LQA.DSA.Tree.HashSet;
 
 type
   UChar = Char;
@@ -81,6 +82,7 @@ type // 容器类
   TStack_chr = TStack<UChar>;
   TMap_int_int = TDictionary<integer, integer>;
   TMap_str_int = TDictionary<UString, integer>;
+  TSet_str = THashSet<UString>;
 
 resourcestring
   END_OF_PROGRAM_EN = 'Press any key to continue...';
