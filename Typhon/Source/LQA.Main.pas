@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case07_01_TakeTheStairs;
+  LQA.Case07_03_CoinRepresents_Classic;
 
 procedure Run;
 begin

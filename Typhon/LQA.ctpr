@@ -350,6 +350,14 @@
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_01_TakeTheStairs.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_02_RobotWalk.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_03_CoinRepresents_Classic.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

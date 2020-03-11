@@ -10,7 +10,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case06_12_快速幂运算;
+  LQA.Case07_01_走楼梯;
 
 procedure Run;
 begin
