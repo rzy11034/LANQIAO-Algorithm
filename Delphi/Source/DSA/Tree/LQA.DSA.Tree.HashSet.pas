@@ -21,6 +21,7 @@ type
     destructor Destroy; override;
 
     procedure Add(e: T);
+    procedure AddAll(HashSet: THashSet_T);
     function Contains(e: T): boolean;
     procedure Clear;
     function Clone: THashSet_T;
@@ -43,6 +44,14 @@ procedure THashSet<T>.Add(e: T);
 begin
   if __map.ContainsKey(e) = False then
     __map.Add(e, nil);
+end;
+
+procedure THashSet<T>.AddAll(HashSet: THashSet_T);
+var
+  e: T;
+begin
+  for e in HashSet.ToArray do
+    Add(e);
 end;
 
 procedure THashSet<T>.Clear;

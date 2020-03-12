@@ -16,24 +16,28 @@ interface
 uses
   Classes,
   SysUtils,
+  Generics.Collections,
   LQA.Utils,
-  LQA.DSA.Tree.HashSet;
+  LQA.DSA.Tree.HashSet,
+  LQA.DSA.Math;
 
 procedure Main;
 
 implementation
 
 type
-  TSubSets = specialize THashSet<TSet_int>;
+  TSet_TSet_int = specialize THashSet<TSet_int>;
+  TList_TList_int = specialize TList<TList_int>;
+
 
 // 递归增量构造法
-function GetSubsets1(const arr: TArr_int; const n: integer): TSubSets;
-  function __getSubsets1(const arr: TArr_int; const n: integer; cur: integer): TSubSets;
+function GetSubsets1(const arr: TArr_int; const n: integer): TSet_TSet_int;
+  function __getSubsets1(const arr: TArr_int; const n: integer; cur: integer): TSet_TSet_Int;
   var
-    res, tmp: TSubSets;
+    res, tmp: TSet_TSet_Int;
     null, _1st, t, clone: TSet_int;
   begin
-    res := TSubSets.Create;
+    res := TSet_TSet_int.Create;
 
     // 处理第一个元素
     if cur = 0 then
@@ -75,25 +79,114 @@ begin
   Result := __getSubsets1(arr, n, n - 1);
 end;
 
+// 逐步生成迭代法
+function GetSubsets2(const arr: TArr_int; const n: integer): TSet_TSet_int;
+var
+  res, tmp: TSet_TSet_int;
+  e, clone: TSet_int;
+  i: integer;
+begin
+  res := TSet_TSet_int.Create;
+  res.Add(TSet_int.Create); // 初始化为空集
+
+  //从第一个元素开始处理
+  for i := 0 to n - 1 do
+  begin
+    // 新建一个大集合
+    tmp := TSet_TSet_int.Create;
+    // 把原来集合中的每个子集都加入到新集合中
+    tmp.AddAll(res);
+
+    // 遍历之前的集合, 全部克隆一遍
+    for e in res.ToArray do
+    begin
+      clone := e.Clone;
+      clone.Add(arr[i]); // 把当前元素加进去
+      tmp.Add(clone); // 把克隆的子集加到大集合中
+    end;
+
+    res := tmp;
+  end;
+
+  Result := res;
+end;
+
+// 二进制法,迭代法,或者逐步生成法
+function GetSubsets3(const arr: TArr_int; const n: integer): TList_TList_int;
+var
+  res: TList_TList_int;
+  s: TList_int;
+  tmpArr: TArr_int;
+  i, j: integer;
+begin
+  tmpArr := Copy(arr);
+  TArrayUtils_int.Sort(tmpArr);
+
+  res := TList_TList_int.Create;
+  for i := TMath.Power(2, n) - 1 downto 1 do
+  begin
+    s := TList_int.Create; // 对每个i建立一个集合
+
+    // 检查哪个位上的二进制为1, 从高位开始检查,高位对应着数组靠后的元素
+    for j := n - 1 downto 0 do
+    begin
+      if ((i shr j) and 1) = 1 then
+        s.add(tmpArr[j]);
+    end;
+
+    res.AddRange(s);
+  end;
+
+  Result := res;
+end;
+
 procedure Main;
 var
-  arr: TArr_int;
-  tmp: TSubSets;
-  t: TSet_int;
+  arr, a: TArr_int;
+  tmp1: TSet_TSet_int;
+  tmp2: TList_TList_int;
+  t1: TSet_int;
+  t2: TList_int;
 begin
-  arr := [1, 2];
+  arr := [1, 2, 3];
 
-  tmp := GetSubsets1(arr, Length(arr));
-
-  for t in tmp.ToArray do
+  tmp1 := GetSubsets1(arr, Length(arr));
+  for t1 in tmp1.ToArray do
   begin
-    arr := t.ToArray;
+    a := t1.ToArray;
 
-    if not t.IsEmpty then
+    if not t1.IsEmpty then
     begin
-      TArrayUtils_int.Sort(arr);
-      TArrayUtils_int.Print(arr);
+      TArrayUtils_int.Sort(a);
+      TArrayUtils_int.Print(a);
     end
+    else
+      writeln('[]');
+  end;
+
+  DrawLineBlockEnd;
+
+  tmp1 := GetSubsets2(arr, Length(arr));
+  for t1 in tmp1.ToArray do
+  begin
+    a := t1.ToArray;
+
+    if not t1.IsEmpty then
+    begin
+      TArrayUtils_int.Sort(a);
+      TArrayUtils_int.Print(a);
+    end
+    else
+      writeln('[]');
+  end;
+
+  DrawLineBlockEnd;
+
+  tmp2 := GetSubsets3(arr, Length(arr));
+  for t2 in tmp2 do
+  begin
+    if t2.Count <> 0 then
+      TArrayUtils_int.Print(t2.ToArray)
     else
       writeln('[]');
   end;

@@ -82,6 +82,7 @@ type // 容器类
   TStack_chr = TStack<UChar>;
   TMap_int_int = TDictionary<integer, integer>;
   TMap_str_int = TDictionary<UString, integer>;
+  TSet_int = THashSet<integer>;
   TSet_str = THashSet<UString>;
 
 resourcestring

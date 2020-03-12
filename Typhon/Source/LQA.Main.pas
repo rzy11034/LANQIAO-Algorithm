@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case07_05_NonEmptySubsets;
+  LQA.Case07_06_WholeArrangement_1;
 
 procedure Run;
 begin
