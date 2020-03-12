@@ -90,6 +90,7 @@ type // 容器类
   TMap_int_int = specialize THashMap<integer, integer>;
   TMap_str_int = specialize THashMap<UString, integer>;
   TSet_str = specialize THashSet<UString>;
+  TSet_int = specialize THashSet<integer>;
 
 procedure DrawLineBlockEnd;
 procedure DrawLineProgramEnd;

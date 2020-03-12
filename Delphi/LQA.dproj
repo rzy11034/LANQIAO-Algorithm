@@ -246,6 +246,7 @@
         <DCCReference Include="Source\Case07_深入递归\LQA.Case07_02_机器人走格子.pas"/>
         <DCCReference Include="Source\Case07_深入递归\LQA.Case07_03_硬币表示_经典.pas"/>
         <DCCReference Include="Source\Case07_深入递归\LQA.Case07_04_合法的括号组合.pas"/>
+        <DCCReference Include="Source\Case07_深入递归\LQA.Case07_05_非空子集.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

@@ -23,10 +23,13 @@ type
     constructor Create;
     destructor Destroy; override;
 
-    procedure Add(a: T);
+    procedure Add(e: T);
+    function Contains(e: T): boolean;
     procedure Clear;
     function Clone: THashSet_T;
     function Count: integer;
+    function IsEmpty: boolean;
+    procedure Remove(e: T);
     function ToArray: TArr_T;
   end;
 
@@ -39,10 +42,10 @@ begin
   __map := TMap_T_Obj.Create;
 end;
 
-procedure THashSet.Add(a: T);
+procedure THashSet.Add(e: T);
 begin
-  if __map.ContainsKey(a) = False then
-    __map.Add(a, nil);
+  if __map.ContainsKey(e) = False then
+    __map.Add(e, nil);
 end;
 
 procedure THashSet.Clear;
@@ -63,6 +66,11 @@ begin
   Result := ret;
 end;
 
+function THashSet.Contains(e: T): boolean;
+begin
+  Result := __map.ContainsKey(e);
+end;
+
 function THashSet.Count: integer;
 begin
   Result := __map.Count;
@@ -72,6 +80,16 @@ destructor THashSet.Destroy;
 begin
   FreeAndNil(__map);
   inherited Destroy;
+end;
+
+function THashSet.IsEmpty: boolean;
+begin
+  Result := Count = 0;
+end;
+
+procedure THashSet.Remove(e: T);
+begin
+  __map.Remove(e);
 end;
 
 function THashSet.ToArray: TArr_T;
