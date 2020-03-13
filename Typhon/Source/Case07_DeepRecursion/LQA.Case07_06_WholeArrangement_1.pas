@@ -22,7 +22,7 @@ procedure Main;
 implementation
 
 // 逐步生成----迭代法
-function Solution(const str: UString): TList_str;
+function Solution1(const str: UString): TList_str;
 var
   res, tmpList: TList_str;
   s, tmpStr: UString;
@@ -57,13 +57,30 @@ begin
   Result := res;
 end;
 
+// 逐步生成----迭代法
+function Solution2(const str: UString): TList_str;
+  function __solution2(const str: UString; cur: integer): TList_str;
+  var
+    res: TList_str;
+  begin
+    res := TList_str.Create;
+    if cur = 0 then
+    begin
+      res.Add(
+    end;
+  end;
+
+begin
+
+end;
+
 procedure Main;
 var
   s: UString;
   tmp: TList_str;
 begin
   s := 'ABCD';
-  tmp := Solution(s);
+  tmp := Solution1(s);
   TArrayUtils_str.Print(tmp.ToArray);
 end;
 
