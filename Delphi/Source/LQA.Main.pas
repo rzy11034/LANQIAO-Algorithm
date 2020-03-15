@@ -10,7 +10,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case07_05_非空子集;
+  LQA.Case07_06_全排列II;
 
 procedure Run;
 begin

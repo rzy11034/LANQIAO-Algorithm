@@ -247,8 +247,9 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case05_StringProblem\LQA.Case05_03_CheckSame.pas"/>
+        <Filename Value="Source\Case05_StringProblem\LQA.Case05_03_checkSame.pas"/>
         <IsPartOfProject Value="True"/>
+        <UnitName Value="LQA.Case05_03_CheckSame"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case05_StringProblem\LQA.Case05_04_ReplaceSpace.pas"/>
@@ -372,6 +373,14 @@
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_06_WholeArrangement_1.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_06_WholeArrangement_2.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_06_WholeArrangement_3_Kth_Permutation.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>

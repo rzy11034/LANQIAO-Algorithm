@@ -20,18 +20,19 @@ type
   TArr_int64 = array of int64;
   TArr2D_int = array of array of integer;
   TArr3D_int = array of array of array of integer;
-  Tarr_chr = TUnicodeCharArray;
+  TArr_chr = TUnicodeCharArray;
   TArr_str = array of UString;
 
   TStringBuilder = TUnicodeStringBuilder;
-  ts = TAnsiStringBuilder;
 
   generic TUtils<T> = class
   public
-    class procedure Swap(var a, b: T);
+    class procedure Swap(var a, b: T); inline;
   end;
 
   TUtils_int = specialize TUtils<integer>;
+  TUtils_str = specialize TUtils<UString>;
+  TUtils_chr = specialize TUtils<UChar>;
 
   generic TArrayUtils<T> = class
   private type
@@ -69,15 +70,18 @@ type
 
   TUnicodeStringHelper = type Helper for UString
   private
-    function __getChar(index: integer): UnicodeChar;
+    function __getChar(index: integer): UChar;
     function __getLength: integer;
   public
-    function ToCharArray: TUnicodeCharArray;
-    function Split(const Separators: array of char): TArr_str;
+    class function Create(const chrArr: TArr_chr): UString; static;
+    class function Create(const chrArr: TArr_chr; startIndex, len: integer): UString; static;
+
+    function ToCharArray: TArr_chr;
+    function Split(const Separators: TCharArray): TArr_str;
     function ReverseString: UString;
     function Substring(index: integer; len: integer): UString;
 
-    property Chars[index: integer]: UnicodeChar read __getChar;
+    property Chars[index: integer]: UChar read __getChar;
     property Length: integer read __getLength;
   end;
 
@@ -274,6 +278,21 @@ end;
 
 { TUnicodeStringHelper }
 
+class function TUnicodeStringHelper.Create(const chrArr: TArr_chr): UString;
+var
+  i: integer;
+begin
+  i := system.Length(chrArr);
+  Result := Create(chrArr, 0, system.Length(chrArr));
+end;
+
+class function TUnicodeStringHelper.Create(const chrArr: TArr_chr;
+  startIndex, len: integer): UString;
+begin
+  SetLength(Result, Len);
+  Move(chrArr[StartIndex], PChar(PChar(Result))^, Len * SizeOf(UChar));
+end;
+
 function TUnicodeStringHelper.ReverseString: UString;
 var
   i, j: SizeInt;
@@ -289,7 +308,7 @@ begin
   end;
 end;
 
-function TUnicodeStringHelper.Split(const Separators: array of char): TArr_str;
+function TUnicodeStringHelper.Split(const Separators: TCharArray): TArr_str;
 var
   ret: TArr_str;
   tmp: TStringArray;
@@ -311,10 +330,10 @@ begin
   Result := System.Copy(Self, index + 1, len);
 end;
 
-function TUnicodeStringHelper.ToCharArray: TUnicodeCharArray;
+function TUnicodeStringHelper.ToCharArray: TArr_chr;
 var
-  chrArr: Tarr_chr;
-  c: UnicodeChar;
+  chrArr: TArr_chr;
+  c: UChar;
   i: integer;
 begin
   SetLength(chrArr, Self.Length);
@@ -329,7 +348,7 @@ begin
   Result := chrArr;
 end;
 
-function TUnicodeStringHelper.__getChar(index: integer): UnicodeChar;
+function TUnicodeStringHelper.__getChar(index: integer): UChar;
 begin
   Result := Self[index + 1];
 end;

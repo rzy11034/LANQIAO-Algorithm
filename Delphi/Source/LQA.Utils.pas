@@ -27,6 +27,10 @@ type
     function __getChar(index: integer): UChar;
     function __getLength: integer;
   public
+    class function Create(const chrArr: TArr_chr): UString; overload; static;
+    class function Create(const chrArr: TArr_chr; startIndex, len: integer): UString;
+      overload; static;
+
     function ToCharArray: TArr_chr;
     function ReverseString: UString;
     function Split(const Separators: array of Char): TArr_str;
@@ -66,10 +70,12 @@ type
 
   TUtils<T> = class
   public
-    class procedure Swap(var a, b: T);
+    class procedure Swap(var a, b: T); inline;
   end;
 
   TUtils_int = TUtils<integer>;
+  TUtils_str = TUtils<UString>;
+  TUtils_chr = TUtils<UChar>;
 
 procedure DrawLineBlockEnd;
 procedure DrawLineProgramEnd;
@@ -255,6 +261,17 @@ begin
 end;
 
 { TStringHelper }
+
+class function TStringHelper.Create(const chrArr: TArr_chr; startIndex,
+  len: integer): UString;
+begin
+  Result := string.Create(chrArr, startIndex, len);
+end;
+
+class function TStringHelper.Create(const chrArr: TArr_chr): UString;
+begin
+  Result := string.Create(chrArr);
+end;
 
 function TStringHelper.ReverseString: UString;
 begin

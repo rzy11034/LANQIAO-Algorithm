@@ -27,7 +27,7 @@ implementation
 // Olg(n)
 function CheckSame(s1, s2: UString): boolean;
 var
-  chrs1, chrs2: Tarr_chr;
+  chrs1, chrs2: TArr_chr;
   tmp1, tmp2: UString;
   i: integer;
 begin

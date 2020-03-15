@@ -74,7 +74,10 @@ uses
   LQA.Case07_02_机器人走格子 in 'Source\Case07_深入递归\LQA.Case07_02_机器人走格子.pas',
   LQA.Case07_03_硬币表示_经典 in 'Source\Case07_深入递归\LQA.Case07_03_硬币表示_经典.pas',
   LQA.Case07_04_合法的括号组合 in 'Source\Case07_深入递归\LQA.Case07_04_合法的括号组合.pas',
-  LQA.Case07_05_非空子集 in 'Source\Case07_深入递归\LQA.Case07_05_非空子集.pas';
+  LQA.Case07_05_非空子集 in 'Source\Case07_深入递归\LQA.Case07_05_非空子集.pas',
+  LQA.Case07_06_全排列I in 'Source\Case07_深入递归\LQA.Case07_06_全排列I.pas',
+  LQA.Case07_06_全排列II in 'Source\Case07_深入递归\LQA.Case07_06_全排列II.pas',
+  LQA.Case07_06_全排列III_第k个排列 in 'Source\Case07_深入递归\LQA.Case07_06_全排列III_第k个排列.pas';
 
 begin
   try

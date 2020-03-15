@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case07_06_WholeArrangement_1;
+  LQA.Case07_06_WholeArrangement_2;
 
 procedure Run;
 begin

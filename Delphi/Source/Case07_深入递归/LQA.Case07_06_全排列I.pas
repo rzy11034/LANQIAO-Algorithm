@@ -1,20 +1,17 @@
-﻿unit LQA.Case07_06_WholeArrangement_1;
+﻿unit LQA.Case07_06_全排列I;
 
-{**
- * 编写一个方法，确定某字符串的所有排列组合。
+{ **
+  * 编写一个方法，确定某字符串的所有排列组合。
 
- 给定一个string A和一个int n,代表字符串和其长度，请返回所有该字符串字符的排列，
- 保证字符串长度小于等于11且字符串中字符均为大写英文字符，
+  给定一个string A和一个int n,代表字符串和其长度，请返回所有该字符串字符的排列，
+  保证字符串长度小于等于11且字符串中字符均为大写英文字符，
 
- *}
-
-{$mode objfpc}{$H+}
+  * }
 
 interface
 
 uses
-  Classes,
-  SysUtils,
+  System.SysUtils,
   LQA.Utils;
 
 procedure Main;
@@ -77,7 +74,6 @@ function Solution2(const str: UString): TList_str;
     tmpList := __solution2(str, cur - 1);
     for s in tmpList do
     begin
-      //tmpList := TList_str.Create;
       c := str.Chars[cur];
 
       // 加到左边

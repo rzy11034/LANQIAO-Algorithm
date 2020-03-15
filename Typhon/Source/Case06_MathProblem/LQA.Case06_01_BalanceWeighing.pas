@@ -58,7 +58,7 @@ implementation
 procedure Solution(n: integer);
 var
   list: TList_int;
-  arr: Tarr_chr;
+  arr: TArr_chr;
   arr1: TArr_int;
   i, k: integer;
   sb: TStringBuilder;
