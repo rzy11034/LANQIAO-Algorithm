@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case07_06_WholeArrangement_2;
+  LQA.Case07_06_WholeArrangement_3_Kth_Permutation;
 
 procedure Run;
 begin
