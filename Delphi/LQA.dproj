@@ -250,6 +250,7 @@
         <DCCReference Include="Source\Case07_深入递归\LQA.Case07_06_全排列I.pas"/>
         <DCCReference Include="Source\Case07_深入递归\LQA.Case07_06_全排列II.pas"/>
         <DCCReference Include="Source\Case07_深入递归\LQA.Case07_06_全排列III_第k个排列.pas"/>
+        <DCCReference Include="Source\Case07_深入递归\LQA.Case07_07_数独游戏.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

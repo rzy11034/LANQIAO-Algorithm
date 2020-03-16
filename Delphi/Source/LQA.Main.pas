@@ -10,7 +10,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case07_06_全排列III_第k个排列;
+  LQA.Case07_07_数独游戏;
 
 procedure Run;
 begin

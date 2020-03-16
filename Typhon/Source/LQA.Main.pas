@@ -13,7 +13,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case07_06_WholeArrangement_3_Kth_Permutation;
+  LQA.Case07_07_SudokuGame;
 
 procedure Run;
 begin

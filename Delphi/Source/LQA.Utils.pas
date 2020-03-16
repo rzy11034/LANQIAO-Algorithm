@@ -17,9 +17,10 @@ type
 
   TArr_int = TArray<integer>;
   TArr_int64 = TArray<int64>;
-  TArr2D_int = TArray<TArray<integer>>;
-  TArr3D_int = TArray<TArray<TArray<integer>>>;
+  TArr2D_int = TArray<TArr_int>;
+  TArr3D_int = TArray<TArr2D_int>;
   TArr_chr = TArray<UChar>;
+  TArr2D_chr = TArray<TArr_chr>;
   TArr_str = TArray<UString>;
 
   TStringHelper = record helper for UString
@@ -59,7 +60,7 @@ type
     /// <summary>  输出一维数组 </summary>
     class procedure Print(arr: TArr_T);
     /// <summary> 输出二维数组 </summary>
-    class procedure Print2D(arr: TArr2D_T);
+    class procedure Print2D(arr: TArr2D_T; formated: boolean = True);
     /// <summary> 输出三维数组 </summary>
     class procedure Print3D(arr: TArr3D_T);
   end;
@@ -191,7 +192,7 @@ begin
   write(']'#10);
 end;
 
-class procedure TArrayUtils<T>.Print2D(arr: TArr2D_T);
+class procedure TArrayUtils<T>.Print2D(arr: TArr2D_T; formated: boolean);
 var
   i, j: integer;
 begin
@@ -201,18 +202,40 @@ begin
     Exit;
   end;
 
-  for i := 0 to high(arr) do
-  begin
-    write('[');
-    for j := 0 to high(arr[i]) do
-    begin
-      if j <> high(arr[i]) then
-        write(TValue.From<T>(arr[i, j]).ToString, ', '#9)
-      else
-        write(TValue.From<T>(arr[i, j]).ToString);
-    end;
-    write(']'#10);
+  case formated of
+    True:
+      begin
+        for i := 0 to high(arr) do
+        begin
+          write('[');
+          for j := 0 to high(arr[i]) do
+          begin
+            if j <> high(arr[i]) then
+              write(TValue.From<T>(arr[i, j]).ToString, ', '#9)
+            else
+              write(TValue.From<T>(arr[i, j]).ToString);
+          end;
+          write(']'#10);
+        end;
+      end;
+
+    False:
+      begin
+        for i := 0 to high(arr) do
+        begin
+          write('[');
+          for j := 0 to high(arr[i]) do
+          begin
+            if j <> high(arr[i]) then
+              write(TValue.From<T>(arr[i, j]).ToString, ', ')
+            else
+              write(TValue.From<T>(arr[i, j]).ToString);
+          end;
+          write(']'#10);
+        end;
+      end;
   end;
+
 end;
 
 class procedure TArrayUtils<T>.Print3D(arr: TArr3D_T);

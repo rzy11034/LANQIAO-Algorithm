@@ -18,9 +18,10 @@ type
 
   TArr_int = array of integer;
   TArr_int64 = array of int64;
-  TArr2D_int = array of array of integer;
-  TArr3D_int = array of array of array of integer;
+  TArr2D_int = array of TArr_int;
+  TArr3D_int = array of TArr2D_int;
   TArr_chr = TUnicodeCharArray;
+  Tarr2D_chr = array of TArr_chr;
   TArr_str = array of UString;
 
   TStringBuilder = TUnicodeStringBuilder;
@@ -59,7 +60,7 @@ type
     // 输出一维数组
     class procedure Print(arr: TArr_T);
     // 输出二维数组
-    class procedure Print2D(arr: TArr2D_T);
+    class procedure Print2D(arr: TArr2D_T; formated: boolean = True);
     // 输出三维数组
     class procedure Print3D(arr: TArr3D_T);
   end;
@@ -199,7 +200,10 @@ begin
   Write(']'#10);
 end;
 
-class procedure TArrayUtils.Print2D(arr: TArr2D_T);
+type
+  tt = (aaa, bbb, ccc);
+
+class procedure TArrayUtils.Print2D(arr: TArr2D_T; formated: boolean);
 var
   i, j: integer;
 begin
@@ -209,17 +213,38 @@ begin
     Exit;
   end;
 
-  for i := 0 to High(arr) do
-  begin
-    Write('[');
-    for j := 0 to High(arr[i]) do
+  case formated of
+    True:
     begin
-      Write(arr[i, j]);
+      for i := 0 to High(arr) do
+      begin
+        Write('[');
+        for j := 0 to High(arr[i]) do
+        begin
+          Write(arr[i, j]);
 
-      if j <> High(arr[i]) then
-        Write(', '#9);
+          if j <> High(arr[i]) then
+            Write(', '#9);
+        end;
+        Write(']'#10);
+      end;
     end;
-    Write(']'#10);
+
+    False:
+    begin
+      for i := 0 to High(arr) do
+      begin
+        Write('[');
+        for j := 0 to High(arr[i]) do
+        begin
+          Write(arr[i, j]);
+
+          if j <> High(arr[i]) then
+            Write(', ');
+        end;
+        Write(']'#10);
+      end;
+    end;
   end;
 end;
 
