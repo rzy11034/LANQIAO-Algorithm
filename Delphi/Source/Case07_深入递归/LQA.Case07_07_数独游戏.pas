@@ -71,32 +71,129 @@ procedure Main;
 implementation
 
 type
-  ClassName = class(TObject)
+  TSudokuGame = class(TObject)
   private
+    _data: TArr2D_chr;
+    _result: TArr2D_chr;
 
+    function __check(row, col: integer; ck: UChar): boolean;
   public
+    _i: integer;
+    constructor Create(newData: TArr2D_chr);
 
+    function Solution: TArr2D_chr;
   end;
 
 procedure Main;
 var
   arr: TArr2D_chr;
   i, j: integer;
-  cl: ClassName;
 begin
-  cl := ClassName.Create;
-
   SetLength(arr, 9, 9);
   for i := 0 to 8 do
   begin
     for j := 0 to 8 do
     begin
-      Read(arr[i, j]);
+      read(arr[i, j]);
     end;
     ReadLn;
   end;
 
-  TArrayUtils_chr.Print2D(arr, False);
+  TArrayUtils_chr.Print2D(arr, false);
+  DrawLineBlockEnd;
+
+  with TSudokuGame.Create(arr) do
+  begin
+    arr := Solution;
+    WriteLn('Count: ', _i);
+    DrawLineBlockEnd;
+  end;
+  TArrayUtils_chr.Print2D(arr, false);
+end;
+
+{ TSudokuGame }
+
+constructor TSudokuGame.Create(newData: TArr2D_chr);
+begin
+  _data := copy(newData);
+end;
+
+function TSudokuGame.Solution: TArr2D_chr;
+  function __solution(row, col: integer): boolean;
+  var
+    isFinished: boolean;
+    i: integer;
+    ck: UChar;
+  begin
+    Inc(_i);
+    if (row = 9) then
+    begin
+      //SetLength(_result, 8, 8);
+      _result := copy(_data);
+      Exit(true);
+    end;
+
+    isFinished := false;
+    if _data[row, col] = '0' then
+    begin
+      for i := 1 to 9 do
+      begin
+        ck := Chr(i + Ord('0'));
+
+        if __check(row, col, ck) then
+        begin
+          _data[row, col] := ck;
+
+          isFinished := __solution(row + (col + 1) div 9, (col + 1) mod 9);
+        end;
+
+        if isFinished then
+          Break;
+      end;
+
+      _data[row, col] := '0';
+    end
+    else
+    begin
+      isFinished := __solution(row + (col + 1) div 9, (col + 1) mod 9);
+    end;
+
+    Result := isFinished;
+  end;
+
+begin
+  Result := nil;
+
+  if __solution(0, 0) then
+    Result := _result;
+end;
+
+function TSudokuGame.__check(row, col: integer; ck: UChar): boolean;
+var
+  i, j: integer;
+begin
+  Result := true;
+
+  //检查同行和同列
+  for i := 0 to 8 do
+  begin
+    // 检查同一行有没有重复
+    if _data[row, i] = ck then
+      Exit(false);
+    // 检查同一列有没有重复
+    if _data[i, col] = ck then
+      Exit(false);
+  end;
+
+  //检查小九宫格
+  for i := row div 3 * 3 to row div 3 * 3 + 2 do
+  begin
+    for j := col div 3 * 3 to col div 3 * 3 + 2 do
+    begin
+      if _data[i, j] = ck then
+        Exit(false);
+    end;
+  end;
 end;
 
 end.

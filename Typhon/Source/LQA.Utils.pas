@@ -21,7 +21,7 @@ type
   TArr2D_int = array of TArr_int;
   TArr3D_int = array of TArr2D_int;
   TArr_chr = TUnicodeCharArray;
-  Tarr2D_chr = array of TArr_chr;
+  TArr2D_chr = array of TArr_chr;
   TArr_str = array of UString;
 
   TStringBuilder = TUnicodeStringBuilder;
@@ -60,7 +60,7 @@ type
     // 输出一维数组
     class procedure Print(arr: TArr_T);
     // 输出二维数组
-    class procedure Print2D(arr: TArr2D_T; formated: boolean = True);
+    class procedure Print2D(arr: TArr2D_T; formated: boolean = true);
     // 输出三维数组
     class procedure Print3D(arr: TArr3D_T);
   end;
@@ -214,7 +214,7 @@ begin
   end;
 
   case formated of
-    True:
+    true:
     begin
       for i := 0 to High(arr) do
       begin
@@ -230,7 +230,7 @@ begin
       end;
     end;
 
-    False:
+    false:
     begin
       for i := 0 to High(arr) do
       begin
@@ -307,8 +307,8 @@ class function TUnicodeStringHelper.Create(const chrArr: TArr_chr): UString;
 var
   i: integer;
 begin
-  i := system.Length(chrArr);
-  Result := Create(chrArr, 0, system.Length(chrArr));
+  i := System.Length(chrArr);
+  Result := Create(chrArr, 0, System.Length(chrArr));
 end;
 
 class function TUnicodeStringHelper.Create(const chrArr: TArr_chr;

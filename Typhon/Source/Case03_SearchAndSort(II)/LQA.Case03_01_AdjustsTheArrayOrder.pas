@@ -22,7 +22,7 @@ begin
   l := Low(arr);
   r := High(arr);
 
-  for i := 0 to high(arr) do
+  for i := 0 to High(arr) do
   begin
     if Odd(arr[i]) then
     begin

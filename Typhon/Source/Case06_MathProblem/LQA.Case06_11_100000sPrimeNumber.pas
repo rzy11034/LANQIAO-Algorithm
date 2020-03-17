@@ -110,7 +110,7 @@ begin
     Inc(x);
   end;
   endTime := TThread.GetTickCount64;
-  WriteLn(x-1);
+  WriteLn(x - 1);
   Writeln('Total Time : ', ((endTime - beginTime) / 1000).ToString, ' s');
 end;
 

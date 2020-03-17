@@ -29,7 +29,8 @@ begin
     Exit;
   end;
 
-  TowerOfHanoi(n - 1, from, help, to_);  // 先把前N-1个盘子挪到辅助空间上1个盘子挪到辅助空间上去
+  TowerOfHanoi(n - 1, from, help, to_);
+  // 先把前N-1个盘子挪到辅助空间上1个盘子挪到辅助空间上去
   WriteLn('move ', n, ' from ', from, ' to ' + to_);  // N可以顺利到达target
   TowerOfHanoi(n - 1, help, to_, from); // 让N-1从辅助空间回到源空间上去
 end;

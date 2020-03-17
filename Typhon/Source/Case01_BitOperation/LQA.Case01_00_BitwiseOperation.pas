@@ -61,9 +61,9 @@ end;
 
 procedure Main;
 var
-  i, x:integer;
+  i, x: integer;
 begin
-  x:=-12;
+  x := -12;
   i := x shr 31;
   WriteLn(i);
 end;

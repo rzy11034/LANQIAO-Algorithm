@@ -24,14 +24,14 @@ begin
   while l < r do
   begin
     if arr[l] + arr[r] < k then
-      inc(l)
+      Inc(l)
     else
     if arr[l] + arr[r] > k then
-      dec(r)
+      Dec(r)
     else
     begin
       WriteLn('(', arr[l], ', ', arr[r], ')');
-      dec(r)
+      Dec(r);
     end;
   end;
 end;

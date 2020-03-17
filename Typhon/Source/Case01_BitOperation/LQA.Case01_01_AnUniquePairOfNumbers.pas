@@ -35,23 +35,23 @@ begin
   WriteLn;
 
   x := 0;
-  for i:=1 to n-1 do
+  for i := 1 to n - 1 do
     x := x xor i;
-  for i:=0 to n-1 do
+  for i := 0 to n - 1 do
     x := x xor arr[i];
   WriteLn(x);
 
   WriteLn('=================================================');
 
   SetLength(tmpArr, n);
-  for i:=0 to n-1 do
+  for i := 0 to n - 1 do
     tmpArr[arr[i]] += 1;
 
   for i := 0 to High(tmpArr) do
     Write(tmpArr[i], ' ');
   WriteLn;
 
-  for i:=0 to n-1 do
+  for i := 0 to n - 1 do
   begin
     if tmpArr[i] = 2 then
     begin

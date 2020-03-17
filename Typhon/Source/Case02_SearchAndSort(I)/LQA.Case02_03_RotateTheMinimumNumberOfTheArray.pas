@@ -27,7 +27,7 @@ var
   l, r, mid: integer;
 begin
   l := 0;
-  r := high(arr) - 1;
+  r := High(arr) - 1;
   //考虑没有旋转这种特殊的旋转
   if arr[l] < arr[r] then
   begin
