@@ -64,6 +64,7 @@ interface
 
 uses
   System.SysUtils,
+  System.Generics.Collections,
   LQA.Utils;
 
 procedure Main;
@@ -128,8 +129,8 @@ function TSudokuGame.Solution: TArr2D_chr;
     Inc(_i);
     if (row = 9) then
     begin
-      //SetLength(_result, 8, 8);
-      _result := copy(_data);
+      _result := TArrayUtils_chr.CopyArray2D(_data);
+
       Exit(true);
     end;
 

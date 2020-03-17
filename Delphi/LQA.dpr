@@ -78,7 +78,9 @@ uses
   LQA.Case07_06_全排列I in 'Source\Case07_深入递归\LQA.Case07_06_全排列I.pas',
   LQA.Case07_06_全排列II in 'Source\Case07_深入递归\LQA.Case07_06_全排列II.pas',
   LQA.Case07_06_全排列III_第k个排列 in 'Source\Case07_深入递归\LQA.Case07_06_全排列III_第k个排列.pas',
-  LQA.Case07_07_数独游戏 in 'Source\Case07_深入递归\LQA.Case07_07_数独游戏.pas';
+  LQA.Case07_07_数独游戏 in 'Source\Case07_深入递归\LQA.Case07_07_数独游戏.pas',
+  LQA.Case07_08_部分和 in 'Source\Case07_深入递归\LQA.Case07_08_部分和.pas',
+  LQA.Case07_09_水洼数目 in 'Source\Case07_深入递归\LQA.Case07_09_水洼数目.pas';
 
 begin
   try

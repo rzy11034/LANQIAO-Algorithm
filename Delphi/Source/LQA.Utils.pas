@@ -63,6 +63,10 @@ type
     class procedure Print2D(arr: TArr2D_T; formated: boolean = True);
     /// <summary> 输出三维数组 </summary>
     class procedure Print3D(arr: TArr3D_T);
+    /// <summary> 复制一维数组 </summary>
+    class function CopyArray(arr: TArr_T): TArr_T;
+    /// <summary> 复制二维数组 </summary>
+    class function CopyArray2D(arr2D: TArr2D_T): TArr2D_T;
   end;
 
   TArrayUtils_int = TArrayUtils<integer>;
@@ -144,6 +148,24 @@ begin
 
   if TArray.BinarySearch<T>(arr, e, ret, tmpCmp) then
     Result := ret;
+end;
+
+class function TArrayUtils<T>.CopyArray(arr: TArr_T): TArr_T;
+begin
+  Result := Copy(arr);
+end;
+
+class function TArrayUtils<T>.CopyArray2D(arr2D: TArr2D_T): TArr2D_T;
+var
+  i: integer;
+  res: TArr2D_T;
+begin
+  SetLength(res, Length(arr2D));
+
+  for i := 0 to Length(arr2D) - 1 do
+    res[i] := Copy(arr2D[i]);
+
+  Result := res;
 end;
 
 class function TArrayUtils<T>.BinarySearch(const arr: TArr_T; const e: T): integer;

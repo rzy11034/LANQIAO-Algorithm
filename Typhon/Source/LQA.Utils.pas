@@ -18,10 +18,10 @@ type
 
   TArr_int = array of integer;
   TArr_int64 = array of int64;
-  TArr2D_int = array of TArr_int;
-  TArr3D_int = array of TArr2D_int;
-  TArr_chr = TUnicodeCharArray;
-  TArr2D_chr = array of TArr_chr;
+  TArr2D_int = array of array of integer;
+  TArr3D_int = array of array of array of integer;
+  TArr_chr = array of  UChar;
+  TArr2D_chr = array of array of UChar;
   TArr_str = array of UString;
 
   TStringBuilder = TUnicodeStringBuilder;
@@ -38,8 +38,8 @@ type
   generic TArrayUtils<T> = class
   private type
     TArr_T = array of T;
-    TArr2D_T = array of array of T;
-    TArr3D_T = array of array of array of T;
+    TArr2D_T = array of TArr_T;
+    TArr3D_T = array of TArr2D_T;
     TArrayHelper_T = specialize TArrayHelper<T>;
     ICmp_T = specialize IComparer<T>;
     TCmp_T = specialize TComparer<T>;
@@ -60,9 +60,13 @@ type
     // 输出一维数组
     class procedure Print(arr: TArr_T);
     // 输出二维数组
-    class procedure Print2D(arr: TArr2D_T; formated: boolean = true);
+    class procedure Print2D(arr: TArr2D_T; formated: boolean = True);
     // 输出三维数组
     class procedure Print3D(arr: TArr3D_T);
+    // 复制一维数组
+    class function CopyArray(arr: TArr_T): TArr_T;
+    // 复制二维数组
+    class function CopyArray2D(arr2D: TArr2D_T): TArr2D_T;
   end;
 
   TArrayUtils_int = specialize TArrayUtils<integer>;
@@ -166,6 +170,24 @@ begin
     Result := ret;
 end;
 
+class function TArrayUtils.CopyArray(arr: TArr_T): TArr_T;
+begin
+  Result := Copy(arr);
+end;
+
+class function TArrayUtils.CopyArray2D(arr2D: TArr2D_T): TArr2D_T;
+var
+  i: integer;
+  res: TArr2D_T;
+begin
+  SetLength(res, Length(arr2D));
+
+  for i := 0 to Length(arr2D) - 1 do
+    res[i] := Copy(arr2D[i]);
+
+  Result := res;
+end;
+
 class function TArrayUtils.IndexOf(const arr: array of T; e: T): integer;
 var
   i: integer;
@@ -214,7 +236,7 @@ begin
   end;
 
   case formated of
-    true:
+    True:
     begin
       for i := 0 to High(arr) do
       begin
@@ -230,7 +252,7 @@ begin
       end;
     end;
 
-    false:
+    False:
     begin
       for i := 0 to High(arr) do
       begin

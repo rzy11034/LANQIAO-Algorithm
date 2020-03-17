@@ -3,17 +3,23 @@
 interface
 
 uses
-  System.SysUtils;
+  System.SysUtils,
+  LQA.Utils;
 
 procedure Run;
 
 implementation
 
 uses
-  LQA.Case07_07_数独游戏;
+  LQA.Case07_08_部分和;
 
 procedure Run;
+var
+  a, b: TArr2D_int;
 begin
+  a := [[1, 2], [3, 4]];
+  b := copy(a);
+
   Main;
 end;
 

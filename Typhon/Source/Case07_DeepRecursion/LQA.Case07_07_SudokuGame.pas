@@ -67,6 +67,7 @@ interface
 uses
   Classes,
   SysUtils,
+  Generics.Collections,
   LQA.Utils;
 
 procedure Main;
@@ -102,7 +103,7 @@ begin
     ReadLn;
   end;
 
-  TArrayUtils_chr.Print2D(arr, false);
+  TArrayUtils_chr.Print2D(arr, False);
   DrawLineBlockEnd;
 
   with TSudokuGame.Create(arr) do
@@ -111,7 +112,7 @@ begin
     WriteLn('Count: ', _i);
     DrawLineBlockEnd;
   end;
-  TArrayUtils_chr.Print2D(arr, false);
+  TArrayUtils_chr.Print2D(arr, False);
 end;
 
 { TSudokuGame }
@@ -131,15 +132,11 @@ function TSudokuGame.Solution: TArr2D_chr;
     Inc(_i);
     if (row = 9) then
     begin
-      SetLength(_result, 9, 9);
-      for i := 0 to 8 do
-        for j := 0 to 8 do
-          _result[i, j] := _data[i, j];
-
-      Exit(true);
+      _result := TArrayUtils_chr.CopyArray2D(_data);
+      Exit(True);
     end;
 
-    isFinished := false;
+    isFinished := False;
     if _data[row, col] = '0' then
     begin
       for i := 1 to 9 do
@@ -178,17 +175,17 @@ function TSudokuGame.__check(row, col: integer; ck: UChar): boolean;
 var
   i, j: integer;
 begin
-  Result := true;
+  Result := True;
 
   //检查同行和同列
   for i := 0 to 8 do
   begin
     // 检查同一行有没有重复
     if _data[row, i] = ck then
-      Exit(false);
+      Exit(False);
     // 检查同一列有没有重复
     if _data[i, col] = ck then
-      Exit(false);
+      Exit(False);
   end;
 
   //检查小九宫格
@@ -197,7 +194,7 @@ begin
     for j := col div 3 * 3 to col div 3 * 3 + 2 do
     begin
       if _data[i, j] = ck then
-        Exit(false);
+        Exit(False);
     end;
   end;
 end;
