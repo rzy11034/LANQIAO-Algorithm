@@ -9,7 +9,7 @@
         <Filename Value="LQA.ppr"/>
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
-        <CursorPos X="57" Y="46"/>
+        <CursorPos X="28" Y="47"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit>
@@ -17,8 +17,7 @@
         <Filename Value="Source\LQA.Main.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="7"/>
-        <CursorPos Y="23"/>
+        <CursorPos X="39" Y="13"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit>
@@ -26,8 +25,8 @@
         <Filename Value="Source\LQA.Utils.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="7"/>
-        <CursorPos X="39" Y="25"/>
+        <TopLine Value="94"/>
+        <CursorPos X="6" Y="139"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit>
@@ -35,9 +34,10 @@
         <Filename Value="目录.txt"/>
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="51"/>
-        <CursorPos X="17" Y="73"/>
+        <TopLine Value="55"/>
+        <CursorPos X="19" Y="74"/>
         <SyntaxHighlighter Value="PO"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
@@ -47,9 +47,8 @@
         <Filename Value="Source\Case01_BitOperation\LQA.Case01_00_BitwiseOperation.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
+        <TopLine Value="34"/>
+        <CursorPos X="18" Y="45"/>
         <UsageCount Value="202"/>
       </Unit>
       <Unit>
@@ -440,7 +439,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="55"/>
         <CursorPos X="22" Y="22"/>
-        <UsageCount Value="188"/>
+        <UsageCount Value="196"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case06_MathProblem\LQA.Case06_04_EuclideanAlgorithm.pas"/>
@@ -448,7 +447,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="7"/>
         <CursorPos X="47" Y="19"/>
-        <UsageCount Value="188"/>
+        <UsageCount Value="196"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case06_MathProblem\LQA.Case06_05_ExtendedEuclideanAlgorithm.pas"/>
@@ -456,7 +455,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="145"/>
         <CursorPos X="23" Y="126"/>
-        <UsageCount Value="187"/>
+        <UsageCount Value="195"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case06_MathProblem\LQA.Case06_06_OneStepAway.pas"/>
@@ -464,7 +463,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="60"/>
         <CursorPos X="18" Y="74"/>
-        <UsageCount Value="182"/>
+        <UsageCount Value="190"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case06_MathProblem\LQA.Case06_07_FrogDate.pas"/>
@@ -472,7 +471,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="109"/>
         <CursorPos X="13" Y="196"/>
-        <UsageCount Value="181"/>
+        <UsageCount Value="189"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case06_MathProblem\LQA.Case06_08_InverseElement.pas"/>
@@ -480,7 +479,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="132"/>
         <CursorPos Y="166"/>
-        <UsageCount Value="180"/>
+        <UsageCount Value="188"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case06_MathProblem\LQA.Case06_09_Biorhythms.pas"/>
@@ -488,7 +487,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="88"/>
         <CursorPos X="40" Y="6"/>
-        <UsageCount Value="177"/>
+        <UsageCount Value="185"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case06_MathProblem\LQA.Case06_10_PrimeNumber.pas"/>
@@ -496,7 +495,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="7"/>
         <CursorPos X="21" Y="31"/>
-        <UsageCount Value="172"/>
+        <UsageCount Value="180"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case06_MathProblem\LQA.Case06_11_100000sPrimeNumber.pas"/>
@@ -504,14 +503,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="91"/>
         <CursorPos X="76" Y="114"/>
-        <UsageCount Value="163"/>
+        <UsageCount Value="171"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case06_MathProblem\LQA.Case06_12_NExponent.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="5" Y="72"/>
-        <UsageCount Value="160"/>
+        <UsageCount Value="168"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case06_MathProblem\LQA.Case06_13_MatrixOperationsForFibonacci.pas"/>
@@ -519,7 +518,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="10"/>
         <CursorPos Y="41"/>
-        <UsageCount Value="159"/>
+        <UsageCount Value="167"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_01_TakeTheStairs.pas"/>
@@ -527,7 +526,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="95"/>
         <CursorPos X="25" Y="113"/>
-        <UsageCount Value="156"/>
+        <UsageCount Value="164"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_02_RobotWalk.pas"/>
@@ -535,7 +534,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="34"/>
         <CursorPos X="5" Y="58"/>
-        <UsageCount Value="154"/>
+        <UsageCount Value="162"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_03_CoinRepresents_Classic.pas"/>
@@ -543,7 +542,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="74"/>
         <CursorPos X="21" Y="104"/>
-        <UsageCount Value="150"/>
+        <UsageCount Value="158"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_04_LegalBracketCombination.pas"/>
@@ -551,7 +550,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="53"/>
         <CursorPos X="26" Y="66"/>
-        <UsageCount Value="140"/>
+        <UsageCount Value="148"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Tree\LQA.DSA.Tree.HashSet.pas"/>
@@ -559,7 +558,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="99"/>
         <CursorPos X="31" Y="62"/>
-        <UsageCount Value="140"/>
+        <UsageCount Value="148"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_05_NonEmptySubsets.pas"/>
@@ -567,7 +566,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="41"/>
         <CursorPos X="27" Y="167"/>
-        <UsageCount Value="136"/>
+        <UsageCount Value="144"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_06_WholeArrangement_1.pas"/>
@@ -575,7 +574,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="22"/>
         <CursorPos X="19" Y="25"/>
-        <UsageCount Value="122"/>
+        <UsageCount Value="130"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_06_WholeArrangement_2.pas"/>
@@ -583,7 +582,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="29"/>
         <CursorPos Y="45"/>
-        <UsageCount Value="116"/>
+        <UsageCount Value="124"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_06_WholeArrangement_3_Kth_Permutation.pas"/>
@@ -591,15 +590,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="72"/>
         <CursorPos X="13" Y="82"/>
-        <UsageCount Value="65"/>
+        <UsageCount Value="73"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_07_SudokuGame.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="78"/>
-        <CursorPos X="16" Y="104"/>
-        <UsageCount Value="50"/>
+        <CursorPos X="21" Y="196"/>
+        <UsageCount Value="58"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_08_PartialSum.pas"/>
@@ -607,17 +605,23 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="43"/>
         <CursorPos X="30" Y="99"/>
-        <UsageCount Value="28"/>
+        <UsageCount Value="36"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="89"/>
-        <CursorPos X="18" Y="106"/>
-        <UsageCount Value="25"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="120"/>
+        <CursorPos X="47" Y="125"/>
+        <UsageCount Value="33"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_10_QueenProblem.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="83"/>
+        <CursorPos X="13" Y="97"/>
+        <UsageCount Value="28"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case01\LQA.Case01_00_BitwiseOperation.pas"/>
@@ -888,127 +892,19 @@
         <CursorPos X="3" Y="63"/>
         <UsageCount Value="2"/>
       </Unit>
+      <Unit>
+        <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\objpash.inc"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="198"/>
+        <CursorPos X="23" Y="206"/>
+        <UsageCount Value="10"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="112" TopLine="94"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="106" TopLine="94"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="108" TopLine="94"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="111" TopLine="94"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="114" TopLine="94"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="106" TopLine="94"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="108" TopLine="94"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="111" TopLine="94"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="112" TopLine="94"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="114" TopLine="94"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="115" TopLine="95"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="104" TopLine="95"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="106" TopLine="95"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="108" TopLine="95"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="111" TopLine="95"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="124" TopLine="95"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="102" TopLine="95"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="124" Column="5" TopLine="105"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="102" Column="20" TopLine="93"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="104" TopLine="93"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="106" TopLine="93"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="108" TopLine="93"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="111" TopLine="93"/>
-      </Position>
+    <JumpHistory>
       <Position>
         <Filename Value="Source\LQA.Utils.pas"/>
-        <Caret Line="23" Column="31"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\LQA.Main.pas"/>
-        <Caret Line="23"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\LQA.Main.pas"/>
-        <Caret Line="21" Column="6" TopLine="7"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\LQA.Main.pas"/>
-        <Caret Line="23" TopLine="7"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\LQA.Main.pas"/>
-        <Caret Line="24" TopLine="7"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\LQA.Main.pas"/>
-        <Caret Line="25" TopLine="7"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
-        <Caret Line="106" Column="17" TopLine="92"/>
+        <Caret Line="106" Column="21" TopLine="97"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -1019,10 +915,10 @@
   <Debugging>
     <Watches>
       <Item>
-        <Expression Value="_data[row + i, col + j]"/>
+        <Expression Value="_rec"/>
       </Item>
       <Item>
-        <Expression Value="_data[row, col]"/>
+        <Expression Value="_cnt"/>
       </Item>
     </Watches>
   </Debugging>

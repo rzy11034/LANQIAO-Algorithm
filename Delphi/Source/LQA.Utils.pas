@@ -82,9 +82,6 @@ type
   TUtils_str = TUtils<UString>;
   TUtils_chr = TUtils<UChar>;
 
-procedure DrawLineBlockEnd;
-procedure DrawLineProgramEnd;
-
 type // 容器类
   TList_int = TList<integer>;
   TList_str = TList<UString>;
@@ -95,6 +92,10 @@ type // 容器类
   TMap_str_int = TDictionary<UString, integer>;
   TSet_int = THashSet<integer>;
   TSet_str = THashSet<UString>;
+
+procedure DrawLineBlockEnd;
+procedure DrawLineProgramEnd;
+procedure NeedInput;
 
 resourcestring
   END_OF_PROGRAM_EN = 'Press any key to continue...';
@@ -122,6 +123,11 @@ begin
     write('=');
   end;
   Writeln;
+end;
+
+procedure NeedInput;
+begin
+  Writeln('Need input data: ');
 end;
 
 { TLAUtils }

@@ -63,19 +63,21 @@ var
   arr: TArr2D_chr;
   i, j: integer;
 begin
+  NeedInput;
+
   SetLength(arr, 10, 12);
-  for i := 0 to High(arr) do
+  for i := 0 to high(arr) do
   begin
-    for j := 0 to High(arr[i]) do
+    for j := 0 to high(arr[i]) do
     begin
-      Read(arr[i, j]);
+      read(arr[i, j]);
     end;
     ReadLn;
   end;
 
   with TPuddlesNumber.Create do
   begin
-    WriteLn(Solution(arr));
+    Writeln(Solution(arr));
   end;
 end;
 
@@ -105,8 +107,8 @@ function TPuddlesNumber.Solution(const arr: TArr2D_chr): integer;
         if (i = 0) and (j = 0) then
           Continue;
 
-        if (row + i >= 0) and (row + i <= High(_data))
-          and (col + j >= 0) and (col + j <= High(_data[0])) then
+        if (row + i >= 0) and (row + i <= high(_data))
+          and (col + j >= 0) and (col + j <= high(_data[0])) then
         begin
           if _data[row + i, col + j] = 'W' then
             __solution(row + i, col + j);
@@ -121,9 +123,9 @@ begin
   _data := TArrayUtils_chr.CopyArray2D(arr);
   k := 0;
 
-  for i := 0 to High(_data) do
+  for i := 0 to high(_data) do
   begin
-    for j := 0 to High(_data[i]) do
+    for j := 0 to high(_data[i]) do
     begin
       if _data[i, j] = 'W' then
       begin

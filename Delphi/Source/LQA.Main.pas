@@ -11,15 +11,10 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case07_08_部分和;
+  LQA.Case07_10_n皇后问题;
 
 procedure Run;
-var
-  a, b: TArr2D_int;
 begin
-  a := [[1, 2], [3, 4]];
-  b := copy(a);
-
   Main;
 end;
 

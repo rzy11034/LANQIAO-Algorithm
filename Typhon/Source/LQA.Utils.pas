@@ -103,6 +103,7 @@ type // 容器类
 
 procedure DrawLineBlockEnd;
 procedure DrawLineProgramEnd;
+procedure NeedInput;
 
 resourcestring
   END_OF_PROGRAM_EN = 'Press any key to continue...';
@@ -130,6 +131,11 @@ begin
     Write('=');
   end;
   Writeln;
+end;
+
+procedure NeedInput;
+begin
+  writeln('Need input data: ');
 end;
 
 { TArrayUtils }

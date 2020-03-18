@@ -1,6 +1,7 @@
 ﻿unit LQA.Main;
 
 {$mode objfpc}{$H+}
+{$WARN 5023 off : Unit "$1" not used in $2}
 
 interface
 
@@ -14,16 +15,10 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case07_09_PuddlesNumber;
+  LQA.Case07_10_QueenProblem;
 
 procedure Run;
-var
-  a,b: TArr2D_int;
 begin
-  a := [[1, 2], [3, 4]];
-  b := copy(a);
-  a[0, 0] := 10;
-
   Main;
 end;
 
