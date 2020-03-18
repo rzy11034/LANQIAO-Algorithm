@@ -15,7 +15,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case07_10_QueenProblem;
+  LQA.Case07_11_PrimeRing;
 
 procedure Run;
 begin

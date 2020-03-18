@@ -44,7 +44,7 @@ uses
   LQA.Case07_06_WholeArrangement_1, LQA.Case07_06_WholeArrangement_2,
   LQA.Case07_06_WholeArrangement_3_Kth_Permutation, LQA.Case07_07_SudokuGame,
   LQA.Case07_08_PartialSum, LQA.Case07_09_PuddlesNumber,
-LQA.Case07_10_QueenProblem;
+LQA.Case07_10_QueenProblem, LQA.Case07_11_PrimeRing;
 
 
 begin

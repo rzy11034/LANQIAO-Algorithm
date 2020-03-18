@@ -20,9 +20,10 @@ type
   TArr_int64 = array of int64;
   TArr2D_int = array of array of integer;
   TArr3D_int = array of array of array of integer;
-  TArr_chr = array of  UChar;
+  TArr_chr = array of UChar;
   TArr2D_chr = array of array of UChar;
   TArr_str = array of UString;
+  TArr_bool = array of boolean;
 
   TStringBuilder = TUnicodeStringBuilder;
 
@@ -60,7 +61,7 @@ type
     // 输出一维数组
     class procedure Print(arr: TArr_T);
     // 输出二维数组
-    class procedure Print2D(arr: TArr2D_T; formated: boolean = True);
+    class procedure Print2D(arr: TArr2D_T; formated: boolean = true);
     // 输出三维数组
     class procedure Print3D(arr: TArr3D_T);
     // 复制一维数组
@@ -242,7 +243,7 @@ begin
   end;
 
   case formated of
-    True:
+    true:
     begin
       for i := 0 to High(arr) do
       begin
@@ -258,7 +259,7 @@ begin
       end;
     end;
 
-    False:
+    false:
     begin
       for i := 0 to High(arr) do
       begin

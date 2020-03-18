@@ -399,6 +399,10 @@
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_10_QueenProblem.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

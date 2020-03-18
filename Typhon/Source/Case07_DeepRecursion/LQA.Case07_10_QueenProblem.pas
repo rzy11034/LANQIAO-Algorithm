@@ -47,8 +47,6 @@ end;
 { TQueenProblem }
 
 constructor TQueenProblem.Create(n: integer);
-var
-  i: integer;
 begin
   _max := n;
   _cnt := 0;

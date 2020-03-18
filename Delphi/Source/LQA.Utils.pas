@@ -22,6 +22,7 @@ type
   TArr_chr = TArray<UChar>;
   TArr2D_chr = TArray<TArr_chr>;
   TArr_str = TArray<UString>;
+  TArr_bool = TArray<boolean>;
 
   TStringHelper = record helper for UString
   private
