@@ -11,7 +11,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case07_12_困难的串;
+  LQA.Case08_01_硬币支付问题;
 
 procedure Run;
 begin

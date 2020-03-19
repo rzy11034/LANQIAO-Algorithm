@@ -411,6 +411,10 @@
         <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_02_QuickCrossingRiver.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
