@@ -105,6 +105,7 @@ type // 容器类
 procedure DrawLineBlockEnd;
 procedure DrawLineProgramEnd;
 procedure NeedInput;
+function Chr(i: Cardinal): UChar;
 
 resourcestring
   END_OF_PROGRAM_EN = 'Press any key to continue...';
@@ -137,6 +138,11 @@ end;
 procedure NeedInput;
 begin
   writeln('Need input data: ');
+end;
+
+function Chr(i: Cardinal): UChar;
+begin
+  Result := UChar(i);
 end;
 
 { TArrayUtils }
@@ -349,7 +355,7 @@ end;
 
 function TUnicodeStringHelper.ReverseString: UString;
 var
-  i, j: SizeInt;
+  i, j: integer;
 begin
   setlength(Result, Self.Length);
 

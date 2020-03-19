@@ -15,7 +15,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case07_11_PrimeRing;
+  LQA.Case08_01_CoinPaymentProblem;
 
 procedure Run;
 begin

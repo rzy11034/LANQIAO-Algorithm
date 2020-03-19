@@ -1,4 +1,4 @@
-﻿unit LQA.Case07_11_PrimeRing;
+﻿unit LQA.Case07_11_素数环;
 
 (**
  * 输入正整数n，对1-n进行排列，使得相邻两个数之和均为素数，
@@ -11,13 +11,10 @@
  * 1 6 5 2 3 4
  *)
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
-  Classes,
-  SysUtils,
+System.  SysUtils,
   LQA.Utils;
 
 procedure Main;

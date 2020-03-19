@@ -3,23 +3,24 @@
   <ProjectSession>
     <PathDelim Value="\"/>
     <Version Value="12"/>
+    <ManyBuildModesSelection Value="Default,Debug,Release"/>
     <BuildModes Active="Debug"/>
     <Units>
       <Unit>
         <Filename Value="LQA.ppr"/>
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="13"/>
-        <CursorPos X="53" Y="47"/>
+        <TopLine Value="73"/>
+        <CursorPos X="35" Y="87"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\LQA.Main.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <CursorPos X="32" Y="19"/>
+        <TopLine Value="5"/>
+        <CursorPos X="6" Y="21"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit>
@@ -27,8 +28,8 @@
         <Filename Value="Source\LQA.Utils.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="38"/>
-        <CursorPos X="11" Y="262"/>
+        <TopLine Value="98"/>
+        <CursorPos X="22" Y="145"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit>
@@ -37,8 +38,8 @@
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="55"/>
-        <CursorPos X="15" Y="75"/>
+        <TopLine Value="57"/>
+        <CursorPos X="21" Y="78"/>
         <SyntaxHighlighter Value="PO"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
@@ -488,7 +489,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="88"/>
         <CursorPos X="40" Y="6"/>
-        <UsageCount Value="197"/>
+        <UsageCount Value="200"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case06_MathProblem\LQA.Case06_10_PrimeNumber.pas"/>
@@ -496,7 +497,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="7"/>
         <CursorPos X="21" Y="31"/>
-        <UsageCount Value="192"/>
+        <UsageCount Value="201"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case06_MathProblem\LQA.Case06_11_100000sPrimeNumber.pas"/>
@@ -504,14 +505,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="91"/>
         <CursorPos X="76" Y="114"/>
-        <UsageCount Value="183"/>
+        <UsageCount Value="194"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case06_MathProblem\LQA.Case06_12_NExponent.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="5" Y="72"/>
-        <UsageCount Value="180"/>
+        <UsageCount Value="191"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case06_MathProblem\LQA.Case06_13_MatrixOperationsForFibonacci.pas"/>
@@ -519,7 +520,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="10"/>
         <CursorPos Y="41"/>
-        <UsageCount Value="179"/>
+        <UsageCount Value="190"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_01_TakeTheStairs.pas"/>
@@ -527,15 +528,15 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="95"/>
         <CursorPos X="25" Y="113"/>
-        <UsageCount Value="176"/>
+        <UsageCount Value="187"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_02_RobotWalk.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="34"/>
+        <TopLine Value="26"/>
         <CursorPos X="5" Y="58"/>
-        <UsageCount Value="174"/>
+        <UsageCount Value="185"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_03_CoinRepresents_Classic.pas"/>
@@ -543,7 +544,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="74"/>
         <CursorPos X="21" Y="104"/>
-        <UsageCount Value="170"/>
+        <UsageCount Value="181"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_04_LegalBracketCombination.pas"/>
@@ -551,7 +552,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="53"/>
         <CursorPos X="26" Y="66"/>
-        <UsageCount Value="160"/>
+        <UsageCount Value="171"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Tree\LQA.DSA.Tree.HashSet.pas"/>
@@ -559,7 +560,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="99"/>
         <CursorPos X="31" Y="62"/>
-        <UsageCount Value="160"/>
+        <UsageCount Value="171"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_05_NonEmptySubsets.pas"/>
@@ -567,7 +568,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="41"/>
         <CursorPos X="27" Y="167"/>
-        <UsageCount Value="156"/>
+        <UsageCount Value="167"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_06_WholeArrangement_1.pas"/>
@@ -575,7 +576,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="22"/>
         <CursorPos X="19" Y="25"/>
-        <UsageCount Value="142"/>
+        <UsageCount Value="153"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_06_WholeArrangement_2.pas"/>
@@ -583,7 +584,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="29"/>
         <CursorPos Y="45"/>
-        <UsageCount Value="136"/>
+        <UsageCount Value="147"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_06_WholeArrangement_3_Kth_Permutation.pas"/>
@@ -591,14 +592,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="72"/>
         <CursorPos X="13" Y="82"/>
-        <UsageCount Value="85"/>
+        <UsageCount Value="96"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_07_SudokuGame.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="21" Y="196"/>
-        <UsageCount Value="70"/>
+        <UsageCount Value="81"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_08_PartialSum.pas"/>
@@ -606,7 +607,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="43"/>
         <CursorPos X="30" Y="99"/>
-        <UsageCount Value="48"/>
+        <UsageCount Value="59"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
@@ -614,24 +615,40 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="120"/>
         <CursorPos X="47" Y="125"/>
-        <UsageCount Value="45"/>
+        <UsageCount Value="56"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_10_QueenProblem.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="76"/>
         <CursorPos X="42" Y="57"/>
-        <UsageCount Value="40"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="51"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
         <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="98"/>
+        <CursorPos X="23" Y="117"/>
+        <UsageCount Value="43"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_12_DifficultString.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="58"/>
+        <CursorPos X="31" Y="65"/>
+        <UsageCount Value="31"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="33"/>
-        <CursorPos X="28" Y="52"/>
-        <UsageCount Value="32"/>
+        <TopLine Value="56"/>
+        <CursorPos X="24" Y="67"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -781,7 +798,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="7"/>
         <CursorPos X="9" Y="24"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="10"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case03\LQA.Case03_08_Rearrange.pas"/>
@@ -829,7 +846,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="113"/>
         <CursorPos X="14" Y="136"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="10"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\objpas\classes\classesh.inc"/>
@@ -893,7 +910,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1406"/>
         <CursorPos X="3" Y="1410"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="10"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\ustringh.inc"/>
@@ -938,141 +955,149 @@
     </Units>
     <JumpHistory HistoryIndex="29">
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="108" Column="12" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="88" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="103" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="91" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="105" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="94" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="108" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="95" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="109" Column="13" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="96" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="103" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="97" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="105" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="98" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="108" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="88" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="109" Column="12" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="91" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="103" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="94" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="105" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="95" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="108" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="96" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="109" Column="16" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="97" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="103" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="98" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="105" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="88" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="108" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="91" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="109" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="94" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="103" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="95" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="105" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="96" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="108" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="97" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="109" Column="12" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="98" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="103" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="88" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="105" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="91" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="108" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="94" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="109" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="95" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="105" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="96" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="108" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="97" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="109" TopLine="91"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="98" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="48" Column="24" TopLine="28"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="88" TopLine="83"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
-        <Caret Line="44" Column="14" TopLine="27"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
+        <Caret Line="91" Column="38" TopLine="83"/>
       </Position>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
       <Modes ActiveMode=""/>
     </RunParams>
+    <HistoryLists>
+      <List Name="WorkingDirectory" Type="File" Count="1"/>
+      <List Name="LaunchingApplication" Type="File" Count="1"/>
+      <List Name="CommandLineParameters" Count="1"/>
+    </HistoryLists>
   </ProjectSession>
   <Debugging>
     <Watches>
       <Item>
-        <Expression Value="_rec"/>
+        <Expression Value="coinValue"/>
       </Item>
       <Item>
-        <Expression Value="_rec[i]"/>
+        <Expression Value="cnt"/>
       </Item>
       <Item>
-        <Expression Value="k"/>
+        <Expression Value="x"/>
+      </Item>
+      <Item>
+        <Expression Value="t"/>
       </Item>
     </Watches>
   </Debugging>
