@@ -15,7 +15,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case08_01_CoinPaymentProblem;
+  LQA.Case08_03_IntervalSchedulingProblem;
 
 procedure Run;
 begin

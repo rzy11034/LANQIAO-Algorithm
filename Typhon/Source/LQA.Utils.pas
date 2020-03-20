@@ -8,6 +8,7 @@ interface
 uses
   Classes,
   SysUtils,
+  Rtti,
   Generics.Collections,
   Generics.Defaults,
   LQA.DSA.Tree.HashSet;
@@ -39,8 +40,8 @@ type
   generic TArrayUtils<T> = class
   private type
     TArr_T = array of T;
-    TArr2D_T = array of TArr_T;
-    TArr3D_T = array of TArr2D_T;
+    TArr2D_T = array of array of T;
+    TArr3D_T = array of array of array of T;
     TArrayHelper_T = specialize TArrayHelper<T>;
     ICmp_T = specialize IComparer<T>;
     TCmp_T = specialize TComparer<T>;
@@ -105,7 +106,7 @@ type // 容器类
 procedure DrawLineBlockEnd;
 procedure DrawLineProgramEnd;
 procedure NeedInput;
-function Chr(i: Cardinal): UChar;
+function Chr(i: cardinal): UChar;
 
 resourcestring
   END_OF_PROGRAM_EN = 'Press any key to continue...';
@@ -140,7 +141,7 @@ begin
   writeln('Need input data: ');
 end;
 
-function Chr(i: Cardinal): UChar;
+function Chr(i: cardinal): UChar;
 begin
   Result := UChar(i);
 end;
@@ -217,6 +218,7 @@ end;
 class procedure TArrayUtils.Print(arr: TArr_T);
 var
   i: integer;
+  Value: TValue;
 begin
   if arr = nil then
   begin
@@ -227,7 +229,8 @@ begin
   Write('[');
   for i := 0 to High(arr) do
   begin
-    Write(arr[i]);
+    TValue.Make(@arr[i], TypeInfo(T), Value);
+    Write(Value.ToString);
 
     if i <> High(arr) then
       Write(', ');
@@ -235,12 +238,11 @@ begin
   Write(']'#10);
 end;
 
-type
-  tt = (aaa, bbb, ccc);
-
 class procedure TArrayUtils.Print2D(arr: TArr2D_T; formated: boolean);
 var
   i, j: integer;
+  Value: TValue;
+  tmp: T;
 begin
   if arr = nil then
   begin
@@ -256,7 +258,9 @@ begin
         Write('[');
         for j := 0 to High(arr[i]) do
         begin
-          Write(arr[i, j]);
+          tmp := arr[i, j];
+          TValue.Make(@tmp, system.TypeInfo(T), Value);
+          Write(Value.ToString);
 
           if j <> High(arr[i]) then
             Write(', '#9);
@@ -272,7 +276,9 @@ begin
         Write('[');
         for j := 0 to High(arr[i]) do
         begin
-          Write(arr[i, j]);
+          tmp := arr[i, j];
+          TValue.Make(@tmp, TypeInfo(T), Value);
+          Write(Value.ToString);
 
           if j <> High(arr[i]) then
             Write(', ');
@@ -286,6 +292,8 @@ end;
 class procedure TArrayUtils.Print3D(arr: TArr3D_T);
 var
   i, j, k: integer;
+  Value: TValue;
+  tmp: T;
 begin
   if arr = nil then
   begin
@@ -301,7 +309,9 @@ begin
       Write('(');
       for k := 0 to High(arr[i, j]) do
       begin
-        Write(arr[i, j, k]);
+        tmp := arr[i, j, k];
+        TValue.Make(@tmp, TypeInfo(T), Value);
+        Write(Value.ToString);
 
         if k <> High(arr[i, j]) then
           Write(',');

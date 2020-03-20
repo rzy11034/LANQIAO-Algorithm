@@ -84,7 +84,8 @@ uses
   LQA.Case07_10_QueenProblem,
   LQA.Case07_11_PrimeRing,
   LQA.Case07_12_DifficultString,
-  LQA.Case08_01_CoinPaymentProblem, LQA.Case08_02_QuickCrossingRiver;
+  LQA.Case08_01_CoinPaymentProblem, LQA.Case08_02_QuickCrossingRiver,
+LQA.Case08_03_IntervalSchedulingProblem;
 
 
 begin

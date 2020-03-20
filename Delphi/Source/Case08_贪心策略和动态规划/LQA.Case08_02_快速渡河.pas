@@ -1,4 +1,4 @@
-﻿unit LQA.Case08_02_QuickCrossingRiver;
+﻿unit LQA.Case08_02_快速渡河;
 
 (*
   A group of N people wishes to go across a river with only one boat,
@@ -29,8 +29,6 @@
   Sample Output
   17
  *)
-
-{$mode objfpc}{$H+}
 
 interface
 
@@ -68,17 +66,17 @@ begin
   ans := 0;
   while (left > 0) do
   begin
-    if (left = 1) then //只有1人
+    if (left = 1) then // 只有1人
     begin
       ans := ans + speed[0];
       Break;
     end
-    else if (left = 2) then  //只有两人
+    else if (left = 2) then //只有两人
     begin
       ans := ans + speed[1];
       Break;
     end
-    else if (left = 3) then  //有三人
+    else if (left = 3) then //有三人
     begin
       ans := ans + speed[2] + speed[0] + speed[1];
       Break;

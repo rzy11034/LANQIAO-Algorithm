@@ -239,11 +239,12 @@ begin
           write('[');
           for j := 0 to high(arr[i]) do
           begin
+            write(TValue.From<T>(arr[i, j]).ToString);
+
             if j <> high(arr[i]) then
-              write(TValue.From<T>(arr[i, j]).ToString, ', '#9)
-            else
-              write(TValue.From<T>(arr[i, j]).ToString);
+              write(', '#9);
           end;
+
           write(']'#10);
         end;
       end;
@@ -255,11 +256,12 @@ begin
           write('[');
           for j := 0 to high(arr[i]) do
           begin
+            write(TValue.From<T>(arr[i, j]).ToString);
+
             if j <> high(arr[i]) then
-              write(TValue.From<T>(arr[i, j]).ToString, ', ')
-            else
-              write(TValue.From<T>(arr[i, j]).ToString);
+              write(', ');
           end;
+
           write(']'#10);
         end;
       end;
@@ -285,10 +287,10 @@ begin
       write('(');
       for k := 0 to high(arr[i, j]) do
       begin
+        write(TValue.From<T>(arr[i, j, k]).ToString);
+
         if k <> high(arr[i, j]) then
-          write(TValue.From<T>(arr[i, j, k]).ToString, ',')
-        else
-          write(TValue.From<T>(arr[i, j, k]).ToString);
+          write(',');
       end;
       write(')');
 

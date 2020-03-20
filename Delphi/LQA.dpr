@@ -84,7 +84,9 @@ uses
   LQA.Case07_10_n皇后问题 in 'Source\Case07_深入递归\LQA.Case07_10_n皇后问题.pas',
   LQA.Case07_11_素数环 in 'Source\Case07_深入递归\LQA.Case07_11_素数环.pas',
   LQA.Case07_12_困难的串 in 'Source\Case07_深入递归\LQA.Case07_12_困难的串.pas',
-  LQA.Case08_01_硬币支付问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_01_硬币支付问题.pas';
+  LQA.Case08_01_硬币支付问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_01_硬币支付问题.pas',
+  LQA.Case08_02_快速渡河 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_02_快速渡河.pas',
+  LQA.Case08_03_区间调度问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_03_区间调度问题.pas';
 
 begin
   try
