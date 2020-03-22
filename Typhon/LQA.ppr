@@ -84,8 +84,15 @@ uses
   LQA.Case07_10_QueenProblem,
   LQA.Case07_11_PrimeRing,
   LQA.Case07_12_DifficultString,
-  LQA.Case08_01_CoinPaymentProblem, LQA.Case08_02_QuickCrossingRiver,
-LQA.Case08_03_IntervalSchedulingProblem;
+  LQA.Case08_01_CoinPaymentProblem,
+  LQA.Case08_02_QuickCrossingRiver,
+  LQA.Case08_03_IntervalSchedulingProblem,
+  LQA.Case08_04_IntervalChoicePointProblem_1,
+  LQA.Case08_04_IntervalChoicePointProblem_2,
+  LQA.Case08_05_IntervalCoverageProblem,
+  LQA.Case08_06_LexicographicalMinimumProblem,
+  LQA.Case08_07_OptimalLoadingProblem,
+  LQA.Case08_08_PartialBackpackProblem;
 
 
 begin

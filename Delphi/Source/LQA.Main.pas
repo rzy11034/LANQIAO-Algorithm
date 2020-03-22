@@ -4,6 +4,7 @@ interface
 
 uses
   System.SysUtils,
+  System.TypInfo,
   LQA.Utils;
 
 procedure Run;
@@ -11,7 +12,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case08_03_区间调度问题;
+  LQA.Case08_06_字典序最小问题;
 
 procedure Run;
 begin

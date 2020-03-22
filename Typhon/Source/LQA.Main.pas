@@ -15,7 +15,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case08_03_IntervalSchedulingProblem;
+  LQA.Case08_07_OptimalLoadingProblem;
 
 procedure Run;
 begin
