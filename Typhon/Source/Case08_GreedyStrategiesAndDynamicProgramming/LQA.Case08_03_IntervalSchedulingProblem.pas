@@ -44,7 +44,7 @@ uses
 type
   TIntervalSchedulingProblem = class(TObject)
   private type
-    __TJob = class(TObject)
+    TJob = class(TObject)
     public
       BeginTime: integer;
       EndTime: integer;
@@ -52,10 +52,10 @@ type
       constructor Create(newBeginTime, newEndTime: integer);
     end;
 
-    TArrayUtils_TJob = specialize TArrayUtils<__TJob>;
+    TArrayUtils_TJob = specialize TArrayUtils<TJob>;
 
   var
-    _jobs: array of __TJob;
+    _jobs: array of TJob;
 
   public
     constructor Create(n: integer; BeginTimes, EndTimes: TArr_int);
@@ -63,7 +63,7 @@ type
 
     function Solution: integer;
 
-    function ComparerJob(constref a, b: __TJob): integer;
+    function ComparerJob(constref a, b: TJob): integer;
   end;
 
 procedure Main;
@@ -85,9 +85,9 @@ begin
   end;
 end;
 
-{ TIntervalSchedulingProblem.__TJob }
+{ TIntervalSchedulingProblem.TJob }
 
-constructor TIntervalSchedulingProblem.__TJob.Create(newBeginTime, newEndTime: integer);
+constructor TIntervalSchedulingProblem.TJob.Create(newBeginTime, newEndTime: integer);
 begin
   BeginTime := newBeginTime;
   EndTime := newEndTime;
@@ -102,10 +102,10 @@ var
 begin
   SetLength(_jobs, n);
   for i := 0 to n - 1 do
-    _jobs[i] := __TJob.Create(BeginTimes[i], EndTimes[i]);
+    _jobs[i] := TJob.Create(BeginTimes[i], EndTimes[i]);
 end;
 
-function TIntervalSchedulingProblem.ComparerJob(constref a, b: __TJob): integer;
+function TIntervalSchedulingProblem.ComparerJob(constref a, b: TJob): integer;
 var
   res: integer;
 begin

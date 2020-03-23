@@ -22,7 +22,7 @@ uses
 type
   TPartialBackpackProblem = class(TObject)
   private type
-    __TGoods = class(TObject)
+    TGoods = class(TObject)
     private
       _weight: double;
       _value: double;
@@ -30,17 +30,17 @@ type
 
     public
       constructor Create(weight: double; Value: double);
-      function Compare(constref a, b: __TGoods): integer;
+      function Compare(constref a, b: TGoods): integer;
 
       property Weight: double read _weight write _weight;
       property Value: double read _value write _value;
       property Price: double read __getPrice;
     end;
 
-    TArrayUtils_TGoods = specialize TArrayUtils<__TGoods>;
+    TArrayUtils_TGoods = specialize TArrayUtils<TGoods>;
 
   var
-    _goods: array of __TGoods;
+    _goods: array of TGoods;
     _max: double;
 
   public
@@ -69,15 +69,15 @@ begin
   end;
 end;
 
-{ TPartialBackpackProblem.__TGoods }
+{ TPartialBackpackProblem.TGoods }
 
-constructor TPartialBackpackProblem.__TGoods.Create(weight: double; Value: double);
+constructor TPartialBackpackProblem.TGoods.Create(weight: double; Value: double);
 begin
   _weight := weight;
   _value := Value;
 end;
 
-function TPartialBackpackProblem.__TGoods.Compare(constref a, b: __TGoods): integer;
+function TPartialBackpackProblem.TGoods.Compare(constref a, b: TGoods): integer;
 begin
   Result := 0;
 
@@ -87,7 +87,7 @@ begin
     Result := -1;
 end;
 
-function TPartialBackpackProblem.__TGoods.__getPrice: double;
+function TPartialBackpackProblem.TGoods.__getPrice: double;
 begin
   Result := _value / _weight;
 end;
@@ -102,7 +102,7 @@ begin
 
   SetLength(_goods, Length(w));
   for i := 0 to High(_goods) do
-    _goods[i] := __TGoods.Create(w[i], v[i]);
+    _goods[i] := TGoods.Create(w[i], v[i]);
 end;
 
 destructor TPartialBackpackProblem.Destroy;
@@ -120,7 +120,7 @@ var
   MaxValue, m: double;
   i: integer;
 begin
-  TArrayUtils_TGoods.Sort(_goods, @__TGoods(nil).Compare);
+  TArrayUtils_TGoods.Sort(_goods, @TGoods(nil).Compare);
   m := _max;
   MaxValue := 0.0;
 

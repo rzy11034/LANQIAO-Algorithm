@@ -69,6 +69,8 @@ type
     class function CopyArray(arr: TArr_T): TArr_T;
     // 复制二维数组
     class function CopyArray2D(arr2D: TArr2D_T): TArr2D_T;
+    // 填充数组
+    class procedure FillArray(var arr: TArr_T; e: T);
   end;
 
   TArrayUtils_int = specialize TArrayUtils<integer>;
@@ -200,6 +202,14 @@ begin
     res[i] := Copy(arr2D[i]);
 
   Result := res;
+end;
+
+class procedure TArrayUtils.FillArray(var arr: TArr_T; e: T);
+var
+  i: integer;
+begin
+  for i := 0 to High(arr) do
+    arr[i] := e;
 end;
 
 class function TArrayUtils.IndexOf(const arr: array of T; e: T): integer;

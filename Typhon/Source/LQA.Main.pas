@@ -15,7 +15,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case08_09_TheBoatProblem;
+  LQA.Case08_10_01BackpackProblem;
 
 procedure Run;
 begin

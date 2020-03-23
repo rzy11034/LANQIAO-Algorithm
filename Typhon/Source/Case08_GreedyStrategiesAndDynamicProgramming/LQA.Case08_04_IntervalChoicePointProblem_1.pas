@@ -40,7 +40,7 @@ uses
 type
   TIntervalChoicePointProblem_1 = class(TObject)
   private type
-    __TInterval = class(TObject)
+    TInterval = class(TObject)
     private
       _S: integer;
       _T: integer;
@@ -48,17 +48,17 @@ type
 
     public
       constructor Create(s, t, c: integer);
-      function Compare(constref a, b: __TInterval): integer;
+      function Compare(constref a, b: TInterval): integer;
 
       property S: integer read _S write _S;
       property T: integer read _T write _T;
       property C: integer read _C write _C;
     end;
 
-    TArrayUtils_TInterval = specialize TArrayUtils<__TInterval>;
+    TArrayUtils_TInterval = specialize TArrayUtils<TInterval>;
 
   var
-    _intervals: array of __TInterval;
+    _intervals: array of TInterval;
     _axis: TArr_int;
 
     // 统计数轴axis上s-t区间已经有多少个点被选中
@@ -104,7 +104,7 @@ begin
 
   for i := 0 to High(arrs) do
   begin
-    _intervals[i] := __TInterval.Create(arrs[i, 0], arrs[i, 1], arrs[i, 2]);
+    _intervals[i] := TInterval.Create(arrs[i, 0], arrs[i, 1], arrs[i, 2]);
   end;
 end;
 
@@ -123,7 +123,7 @@ function TIntervalChoicePointProblem_1.Solution: integer;
 var
   s, t, cnt, max, i, n: integer;
 begin
-  TArrayUtils_TInterval.Sort(_intervals, @__TInterval(nil).Compare); // 按区间右端点排序
+  TArrayUtils_TInterval.Sort(_intervals, @TInterval(nil).Compare); // 按区间右端点排序
   n := Length(_intervals);
   max := _intervals[n - 1].T; // 右端最大值
   SetLength(_axis, max + 1); // 标记数轴上的点是否已经被选中
@@ -168,16 +168,16 @@ begin
   end;
 end;
 
-{ TIntervalChoicePointProblem_1.__TInterval }
+{ TIntervalChoicePointProblem_1.TInterval }
 
-constructor TIntervalChoicePointProblem_1.__TInterval.Create(s, t, c: integer);
+constructor TIntervalChoicePointProblem_1.TInterval.Create(s, t, c: integer);
 begin
   _S := s;
   _C := c;
   _T := t;
 end;
 
-function TIntervalChoicePointProblem_1.__TInterval.Compare(constref a, b: __TInterval): integer;
+function TIntervalChoicePointProblem_1.TInterval.Compare(constref a, b: TInterval): integer;
 var
   x: integer;
 begin

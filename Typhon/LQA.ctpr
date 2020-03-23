@@ -447,6 +447,10 @@
         <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_09_TheBoatProblem.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_10_01BackpackProblem.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

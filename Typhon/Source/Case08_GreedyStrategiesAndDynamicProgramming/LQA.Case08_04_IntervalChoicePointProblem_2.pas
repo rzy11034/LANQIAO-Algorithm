@@ -40,7 +40,7 @@ uses
 type
   TIntervalChoicePointProblem_2 = class(TObject)
   private type
-    __TInterval = class(TObject)
+    TInterval = class(TObject)
     private
       _S: integer;
       _T: integer;
@@ -48,17 +48,17 @@ type
 
     public
       constructor Create(s, t, c: integer);
-      function Compare(constref a, b: __TInterval): integer;
+      function Compare(constref a, b: TInterval): integer;
 
       property S: integer read _S write _S;
       property T: integer read _T write _T;
       property C: integer read _C write _C;
     end;
 
-    TArrayUtils_TInterval = specialize TArrayUtils<__TInterval>;
+    TArrayUtils_TInterval = specialize TArrayUtils<TInterval>;
 
   var
-    _intervals: array of __TInterval;
+    _intervals: array of TInterval;
     _axis: TArr_int;
 
     // 前i项和，注意：i不是下标
@@ -112,7 +112,7 @@ begin
   SetLength(_intervals, n);
   for i := 0 to High(arrs) do
   begin
-    _intervals[i] := __TInterval.Create(arrs[i, 0], arrs[i, 1], arrs[i, 2]);
+    _intervals[i] := TInterval.Create(arrs[i, 0], arrs[i, 1], arrs[i, 2]);
   end;
 end;
 
@@ -132,7 +132,7 @@ var
   max, n, i, s, t, cnt: integer;
   c: TArr_int;
 begin
-  TArrayUtils_TInterval.Sort(_intervals, @__TInterval(nil).Compare); // 按区间右端点排序
+  TArrayUtils_TInterval.Sort(_intervals, @TInterval(nil).Compare); // 按区间右端点排序
   n := Length(_intervals);
   max := _intervals[n - 1].T; // 右端最大值
   SetLength(_axis, max + 1);
@@ -199,16 +199,16 @@ begin
   end;
 end;
 
-{ TIntervalChoicePointProblem_2.__TInterval }
+{ TIntervalChoicePointProblem_2.TInterval }
 
-constructor TIntervalChoicePointProblem_2.__TInterval.Create(s, t, c: integer);
+constructor TIntervalChoicePointProblem_2.TInterval.Create(s, t, c: integer);
 begin
   _S := s;
   _C := c;
   _T := t;
 end;
 
-function TIntervalChoicePointProblem_2.__TInterval.Compare(constref a, b: __TInterval): integer;
+function TIntervalChoicePointProblem_2.TInterval.Compare(constref a, b: TInterval): integer;
 var
   x: integer;
 begin

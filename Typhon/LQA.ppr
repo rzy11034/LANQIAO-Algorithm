@@ -92,7 +92,8 @@ uses
   LQA.Case08_05_IntervalCoverageProblem,
   LQA.Case08_06_LexicographicalMinimumProblem,
   LQA.Case08_07_OptimalLoadingProblem,
-  LQA.Case08_08_PartialBackpackProblem, LQA.Case08_09_TheBoatProblem;
+  LQA.Case08_08_PartialBackpackProblem, LQA.Case08_09_TheBoatProblem,
+LQA.Case08_10_01BackpackProblem;
 
 
 begin

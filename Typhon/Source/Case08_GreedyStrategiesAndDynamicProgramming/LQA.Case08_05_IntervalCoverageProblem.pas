@@ -50,23 +50,23 @@ uses
 type
   TIntervalCoverageProblem = class(TObject)
   private type
-    __TJob = class(TObject)
+    TJob = class(TObject)
     private
       _S: integer;
       _T: integer;
 
     public
       constructor Create(s, t: integer);
-      function Compare(constref a, b: __TJob): integer;
+      function Compare(constref a, b: TJob): integer;
 
       property S: integer read _S write _S;
       property T: integer read _T write _T;
     end;
 
-    TArrayUtils_TJob = specialize TArrayUtils<__TJob>;
+    TArrayUtils_TJob = specialize TArrayUtils<TJob>;
 
   var
-    _jobs: array of __TJob;
+    _jobs: array of TJob;
 
   public
     constructor Create(n: integer; arrs: TArr2D_int);
@@ -105,7 +105,7 @@ var
 begin
   SetLength(_jobs, n);
   for i := 0 to n - 1 do
-    _jobs[i] := __TJob.Create(arrs[i, 0], arrs[i, 1]);
+    _jobs[i] := TJob.Create(arrs[i, 0], arrs[i, 1]);
 end;
 
 destructor TIntervalCoverageProblem.Destroy;
@@ -122,7 +122,7 @@ function TIntervalCoverageProblem.Solution: integer;
 var
   n, _T, start, ends, ans, s, t, i, res: integer;
 begin
-  TArrayUtils_TJob.Sort(_jobs, @__TJob(nil).Compare);
+  TArrayUtils_TJob.Sort(_jobs, @TJob(nil).Compare);
   n := Length(_jobs);
   _T := _jobs[High(_jobs)].T;
 
@@ -172,15 +172,15 @@ begin
   Result := res;
 end;
 
-{ TIntervalCoverageProblem.__TJob }
+{ TIntervalCoverageProblem.TJob }
 
-constructor TIntervalCoverageProblem.__TJob.Create(s, t: integer);
+constructor TIntervalCoverageProblem.TJob.Create(s, t: integer);
 begin
   Self.S := s;
   Self.T := t;
 end;
 
-function TIntervalCoverageProblem.__TJob.Compare(constref a, b: __TJob): integer;
+function TIntervalCoverageProblem.TJob.Compare(constref a, b: TJob): integer;
 begin
   Result := a.S - b.S;
 
