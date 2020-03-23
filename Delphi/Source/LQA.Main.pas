@@ -12,7 +12,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case08_06_字典序最小问题;
+  LQA.Case08_08_部分背包问题;
 
 procedure Run;
 begin

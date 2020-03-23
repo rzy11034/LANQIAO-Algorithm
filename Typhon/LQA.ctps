@@ -11,7 +11,7 @@
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
         <TopLine Value="73"/>
-        <CursorPos X="40" Y="95"/>
+        <CursorPos X="70" Y="95"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit>
@@ -20,7 +20,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
         <TopLine Value="8"/>
-        <CursorPos X="38" Y="18"/>
+        <CursorPos X="31" Y="18"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit>
@@ -28,7 +28,6 @@
         <Filename Value="Source\LQA.Utils.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="411"/>
         <CursorPos Y="423"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
@@ -38,8 +37,8 @@
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="43"/>
-        <CursorPos X="88" Y="81"/>
+        <TopLine Value="64"/>
+        <CursorPos X="17" Y="86"/>
         <SyntaxHighlighter Value="PO"/>
         <UsageCount Value="201"/>
         <Loaded Value="True"/>
@@ -591,14 +590,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="72"/>
         <CursorPos X="13" Y="82"/>
-        <UsageCount Value="189"/>
+        <UsageCount Value="194"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_07_SudokuGame.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="21" Y="196"/>
-        <UsageCount Value="174"/>
+        <UsageCount Value="179"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_08_PartialSum.pas"/>
@@ -606,7 +605,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="43"/>
         <CursorPos X="30" Y="99"/>
-        <UsageCount Value="152"/>
+        <UsageCount Value="157"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_09_PuddlesNumber.pas"/>
@@ -614,7 +613,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="120"/>
         <CursorPos X="47" Y="125"/>
-        <UsageCount Value="149"/>
+        <UsageCount Value="154"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_10_QueenProblem.pas"/>
@@ -622,7 +621,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="76"/>
         <CursorPos X="42" Y="57"/>
-        <UsageCount Value="144"/>
+        <UsageCount Value="149"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_11_PrimeRing.pas"/>
@@ -630,7 +629,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="98"/>
         <CursorPos X="23" Y="117"/>
-        <UsageCount Value="136"/>
+        <UsageCount Value="141"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_12_DifficultString.pas"/>
@@ -638,7 +637,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="58"/>
         <CursorPos X="31" Y="65"/>
-        <UsageCount Value="124"/>
+        <UsageCount Value="129"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_01_CoinPaymentProblem.pas"/>
@@ -646,7 +645,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="77"/>
         <CursorPos X="40" Y="92"/>
-        <UsageCount Value="118"/>
+        <UsageCount Value="123"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_02_QuickCrossingRiver.pas"/>
@@ -654,7 +653,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="48"/>
         <CursorPos X="36" Y="80"/>
-        <UsageCount Value="113"/>
+        <UsageCount Value="118"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_03_IntervalSchedulingProblem.pas"/>
@@ -662,7 +661,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="122"/>
         <CursorPos X="37" Y="133"/>
-        <UsageCount Value="90"/>
+        <UsageCount Value="95"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_04_IntervalChoicePointProblem_1.pas"/>
@@ -670,7 +669,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="69"/>
         <CursorPos X="28" Y="94"/>
-        <UsageCount Value="83"/>
+        <UsageCount Value="88"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_04_IntervalChoicePointProblem_2.pas"/>
@@ -678,7 +677,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="102"/>
         <CursorPos X="26" Y="96"/>
-        <UsageCount Value="30"/>
+        <UsageCount Value="35"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_05_IntervalCoverageProblem.pas"/>
@@ -686,6 +685,30 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="158"/>
         <CursorPos X="30" Y="170"/>
+        <UsageCount Value="32"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_06_LexicographicalMinimumProblem.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="55"/>
+        <CursorPos X="42" Y="67"/>
+        <UsageCount Value="30"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_08_PartialBackpackProblem.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="117"/>
+        <CursorPos X="26" Y="133"/>
+        <UsageCount Value="27"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_07_OptimalLoadingProblem.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="13"/>
+        <CursorPos X="19" Y="38"/>
         <UsageCount Value="27"/>
       </Unit>
       <Unit>
@@ -838,7 +861,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1052"/>
         <CursorPos X="57" Y="1072"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="10"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\packages\rtl-generics\src\generics.collections.pas"/>
@@ -872,7 +895,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="13"/>
         <CursorPos X="37" Y="17"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="10"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\sstrings.inc"/>
@@ -880,7 +903,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="333"/>
         <CursorPos X="10" Y="350"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="10"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\objpas\sysutils\syshelph.inc"/>
@@ -903,7 +926,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="198"/>
         <CursorPos X="23" Y="206"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="10"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\compproc.inc"/>
@@ -911,7 +934,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="750"/>
         <CursorPos X="19" Y="775"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="10"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\i386\math.inc"/>
@@ -919,7 +942,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="301"/>
         <CursorPos X="14" Y="315"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="10"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\system.inc"/>
@@ -927,16 +950,15 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="847"/>
         <CursorPos X="3" Y="867"/>
-        <UsageCount Value="0"/>
+        <UsageCount Value="10"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\packages\rtl-generics\src\generics.defaults.pas"/>
         <FRMtype Value="0"/>
         <UnitName Value="Generics.Defaults"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="35"/>
-        <CursorPos X="3" Y="49"/>
-        <UsageCount Value="5"/>
+        <TopLine Value="34"/>
+        <UsageCount Value="10"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\packages\rtl-objpas\src\inc\rtti.pp"/>
@@ -964,47 +986,44 @@
         <UsageCount Value="4"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_06_LexicographicalMinimumProblem.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="55"/>
-        <CursorPos X="42" Y="67"/>
-        <UsageCount Value="25"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_08_PartialBackpackProblem.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="3" Y="28"/>
-        <UsageCount Value="22"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_07_OptimalLoadingProblem.pas"/>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_09_TheBoatProblem.pas"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="22"/>
-        <CursorPos X="15" Y="31"/>
-        <UsageCount Value="22"/>
+        <TopLine Value="32"/>
+        <CursorPos X="20" Y="40"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="3">
-      <Position>
-        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_07_OptimalLoadingProblem.pas"/>
-        <Caret Line="19" Column="20" TopLine="4"/>
-      </Position>
+    <JumpHistory HistoryIndex="6">
       <Position>
         <Filename Value="Source\LQA.Main.pas"/>
         <Caret Line="18" Column="38" TopLine="8"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_07_OptimalLoadingProblem.pas"/>
-        <Caret Line="49" Column="7" TopLine="32"/>
+        <Filename Value="Source\LQA.Utils.pas"/>
+        <Caret Line="423"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_07_OptimalLoadingProblem.pas"/>
-        <Caret Line="51" Column="38" TopLine="34"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="18" Column="39" TopLine="8"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_09_TheBoatProblem.pas"/>
+        <Caret Line="32" Column="6" TopLine="13"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_09_TheBoatProblem.pas"/>
+        <Caret Line="31" Column="4" TopLine="13"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="18" Column="31" TopLine="8"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_09_TheBoatProblem.pas"/>
+        <Caret Line="39" Column="4" TopLine="19"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -1012,14 +1031,4 @@
       <Modes ActiveMode=""/>
     </RunParams>
   </ProjectSession>
-  <Debugging>
-    <Watches>
-      <Item>
-        <Expression Value="_intervals"/>
-      </Item>
-      <Item>
-        <Expression Value="_axis"/>
-      </Item>
-    </Watches>
-  </Debugging>
 </CONFIG>

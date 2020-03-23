@@ -1,6 +1,6 @@
-﻿unit LQA.Case08_08_PartialBackpackProblem;
+﻿unit LQA.Case08_08_部分背包问题;
 
-(**
+(* *
  有n个物体，第i个物体的重量为wi，价值为vi。在总重量不超过C的情况下让总价值尽量高。
 
  每一个物体都可以只取走一部分，价值和重量按比例计算。
@@ -10,13 +10,10 @@
  注意：每个物体可以只拿一部分，因此一定可以让总重量恰好为C。
  *)
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
-  Classes,
-  SysUtils,
+  System.SysUtils,
   LQA.Utils;
 
 type
@@ -30,14 +27,14 @@ type
 
     public
       constructor Create(weight: double; Value: double);
-      function Compare(constref a, b: __TGoods): integer;
+      function Compare(const a, b: __TGoods): integer;
 
-      property Weight: double read _weight write _weight;
+      property weight: double read _weight write _weight;
       property Value: double read _value write _value;
       property Price: double read __getPrice;
     end;
 
-    TArrayUtils_TGoods = specialize TArrayUtils<__TGoods>;
+    TArrayUtils_TGoods = TArrayUtils<__TGoods>;
 
   var
     _goods: array of __TGoods;
@@ -65,7 +62,7 @@ begin
 
   with TPartialBackpackProblem.Create(w, v, max) do
   begin
-    writeln(Solution: 3: 2);
+    writeln(Solution:3:2);
   end;
 end;
 
@@ -77,7 +74,7 @@ begin
   _value := Value;
 end;
 
-function TPartialBackpackProblem.__TGoods.Compare(constref a, b: __TGoods): integer;
+function TPartialBackpackProblem.__TGoods.Compare(const a, b: __TGoods): integer;
 begin
   Result := 0;
 
@@ -101,7 +98,7 @@ begin
   _max := m;
 
   SetLength(_goods, Length(w));
-  for i := 0 to High(_goods) do
+  for i := 0 to high(_goods) do
     _goods[i] := __TGoods.Create(w[i], v[i]);
 end;
 
@@ -109,7 +106,7 @@ destructor TPartialBackpackProblem.Destroy;
 var
   i: integer;
 begin
-  for i := 0 to High(_goods) do
+  for i := 0 to high(_goods) do
     _goods[i].Free;
 
   inherited Destroy;
@@ -120,20 +117,20 @@ var
   MaxValue, m: double;
   i: integer;
 begin
-  TArrayUtils_TGoods.Sort(_goods, @__TGoods(nil).Compare);
+  TArrayUtils_TGoods.Sort(_goods, __TGoods(nil).Compare);
   m := _max;
   MaxValue := 0.0;
 
-  for i := High(_goods) downto 0 do
+  for i := high(_goods) downto 0 do
   begin
-    if _goods[i].Weight <= m then
+    if _goods[i].weight <= m then
     begin
-      MaxValue += _goods[i].Value;
-      m -= _goods[i].Weight;
+      MaxValue := MaxValue + _goods[i].Value;
+      m := m - _goods[i].weight;
     end
     else
     begin
-      MaxValue += _goods[i].Price * m;
+      MaxValue := MaxValue + _goods[i].Price * m;
       Break;
     end;
   end;

@@ -15,7 +15,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case08_07_OptimalLoadingProblem;
+  LQA.Case08_09_TheBoatProblem;
 
 procedure Run;
 begin

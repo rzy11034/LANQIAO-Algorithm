@@ -90,7 +90,9 @@ uses
   LQA.Case08_04_区间选点问题I in 'Source\Case08_贪心策略和动态规划\LQA.Case08_04_区间选点问题I.pas',
   LQA.Case08_04_区间选点问题II in 'Source\Case08_贪心策略和动态规划\LQA.Case08_04_区间选点问题II.pas',
   LQA.Case08_05_区间覆盖问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_05_区间覆盖问题.pas',
-  LQA.Case08_06_字典序最小问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_06_字典序最小问题.pas';
+  LQA.Case08_06_字典序最小问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_06_字典序最小问题.pas',
+  LQA.Case08_07_最优装载问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_07_最优装载问题.pas',
+  LQA.Case08_08_部分背包问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_08_部分背包问题.pas';
 
 begin
   try
