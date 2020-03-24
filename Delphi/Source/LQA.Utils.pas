@@ -68,6 +68,8 @@ type
     class function CopyArray(arr: TArr_T): TArr_T;
     /// <summary> 复制二维数组 </summary>
     class function CopyArray2D(arr2D: TArr2D_T): TArr2D_T;
+    /// <summary>  填充数组 </summary>
+    class procedure FillArray(var arr: TArr_T; e: T);
   end;
 
   TArrayUtils_int = TArrayUtils<integer>;
@@ -173,6 +175,14 @@ begin
     res[i] := Copy(arr2D[i]);
 
   Result := res;
+end;
+
+class procedure TArrayUtils<T>.FillArray(var arr: TArr_T; e: T);
+var
+  i: integer;
+begin
+  for i := 0 to High(arr) do
+    arr[i] := e;
 end;
 
 class function TArrayUtils<T>.BinarySearch(const arr: TArr_T; const e: T): integer;

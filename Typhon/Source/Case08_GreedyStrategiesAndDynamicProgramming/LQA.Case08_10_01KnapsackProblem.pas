@@ -1,4 +1,4 @@
-﻿unit LQA.Case08_10_01BackpackProblem;
+﻿unit LQA.Case08_10_01KnapsackProblem;
 
 (*
 有n个重量和价值分别为wi，vi的物品，从这些物品中挑选出总重量不超过W的物品，求所有挑选方案中价值总和的最大值。
@@ -34,7 +34,7 @@ uses
   LQA.Utils;
 
 type
-  T01BackpackProblem = class(TObject)
+  T01KnapsackProblem = class(TObject)
   private type
     TGoods = class(TObject)
     private
@@ -67,6 +67,8 @@ type
     function Dfs: integer;
     // 记忆型递归
     function Memory: integer;
+    // 动态规划
+    function Dp: integer;
   end;
 
 procedure Main;
@@ -82,52 +84,48 @@ begin
   values := [3, 2, 4, 2]; // 价值表
   weight := 5; // 背包的承重极限
 
-  with T01BackpackProblem.Create(weights, values, weight) do
+  with T01KnapsackProblem.Create(weights, values, weight) do
   begin
     writeln('Dfs: ', Dfs);
-    Free;
-  end;
-  DrawLineBlockEnd;
-
-  with T01BackpackProblem.Create(weights, values, weight) do
-  begin
+    DrawLineBlockEnd;
     writeln('Memory: ', Memory);
+    DrawLineBlockEnd;
+    writeln('Dp: ', Dp);
     Free;
   end;
-  DrawLineBlockEnd;
 end;
 
-{ T01BackpackProblem.TGoods }
+{ T01KnapsackProblem.TGoods }
 
-constructor T01BackpackProblem.TGoods.Create(w, v: integer);
+constructor T01KnapsackProblem.TGoods.Create(w, v: integer);
 begin
   Weight := w;
   Value := v;
 end;
 
-function T01BackpackProblem.TGoods.__getValue: integer;
+function T01KnapsackProblem.TGoods.__getValue: integer;
 begin
   Result := _value;
 end;
 
-function T01BackpackProblem.TGoods.__getWeight: integer;
+function T01KnapsackProblem.TGoods.__getWeight: integer;
 begin
   Result := _weight;
 end;
 
-procedure T01BackpackProblem.TGoods.__setValue(const newValue: integer);
+procedure T01KnapsackProblem.TGoods.__setValue(const newValue: integer);
 begin
   _value := newValue;
 end;
 
-procedure T01BackpackProblem.TGoods.__setWeight(const newWeight: integer);
+procedure T01KnapsackProblem.TGoods.__setWeight(const newWeight: integer);
 begin
   _weight := newWeight;
 end;
 
-{ T01BackpackProblem }
+{ T01KnapsackProblem }
 
-constructor T01BackpackProblem.Create(weights, values: TArr_int; maxWeight: integer);
+constructor T01KnapsackProblem.Create(weights, values: TArr_int; maxWeight: integer);
 var
   i: integer;
 begin
@@ -140,7 +138,7 @@ begin
   end;
 end;
 
-destructor T01BackpackProblem.Destroy;
+destructor T01KnapsackProblem.Destroy;
 var
   i: integer;
 begin
@@ -152,7 +150,7 @@ begin
   inherited Destroy;
 end;
 
-function T01BackpackProblem.Dfs: integer;
+function T01KnapsackProblem.Dfs: integer;
   function __dfs(cur, w: integer): integer;
   var
     v1, v2, res: integer;
@@ -180,7 +178,46 @@ begin
   Result := __dfs(0, _maxWeight);
 end;
 
-function T01BackpackProblem.Memory: integer;
+function T01KnapsackProblem.Dp: integer;
+var
+  rec: TArr2D_int;
+  i, j, v1, v2: integer;
+begin
+  SetLength(rec, Length(_goods), _maxWeight + 1);
+
+  for i := 0 to High(rec[0]) do
+  begin
+    if _goods[0].Weight > i then
+      rec[0, i] := 0
+    else
+      rec[0, i] := _goods[0].Value;
+  end;
+
+  for i := 1 to High(rec) do
+  begin
+    j := 0; // 背包重量
+    repeat
+      if j >= _goods[i].Weight then // 能装下情况
+      begin
+        // 装下当前货物的总价值
+        v1 := _goods[i].Value + rec[i - 1, j - _goods[i].Weight];
+        // 不装当前货物的总价值
+        v2 := rec[i - 1, j];
+        rec[i, j] := Max(v1, v2);
+      end
+      else
+      begin
+        rec[i, j] := rec[i - 1, j];
+      end;
+
+      Inc(j);
+    until j > High(rec[i]);
+  end;
+
+  Result := rec[High(rec), High(rec[0])];
+end;
+
+function T01KnapsackProblem.Memory: integer;
 var
   rec: TArr2D_int;
 

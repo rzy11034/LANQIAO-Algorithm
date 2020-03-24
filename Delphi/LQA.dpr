@@ -92,7 +92,9 @@ uses
   LQA.Case08_05_区间覆盖问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_05_区间覆盖问题.pas',
   LQA.Case08_06_字典序最小问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_06_字典序最小问题.pas',
   LQA.Case08_07_最优装载问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_07_最优装载问题.pas',
-  LQA.Case08_08_部分背包问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_08_部分背包问题.pas';
+  LQA.Case08_08_部分背包问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_08_部分背包问题.pas',
+  LQA.Case08_09_乘船问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_09_乘船问题.pas',
+  LQA.Case08_10_01背包问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_10_01背包问题.pas';
 
 begin
   try

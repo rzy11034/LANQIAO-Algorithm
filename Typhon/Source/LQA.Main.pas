@@ -8,14 +8,15 @@ interface
 uses
   Classes,
   SysUtils,
-  LQA.Utils;
+  LQA.Utils,
+  LQA.DSA.Strings.KMP;
 
 procedure Run;
 
 implementation
 
 uses
-  LQA.Case08_10_01BackpackProblem;
+  LQA.Case08_11_SteelCutting;
 
 procedure Run;
 begin

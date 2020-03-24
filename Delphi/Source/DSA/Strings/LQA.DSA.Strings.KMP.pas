@@ -8,9 +8,6 @@ uses
 
 type
   TKMP = class(TObject)
-  private
-    class function __next(p: UString): TArr_int;
-
   public
     /// <summary> 暴力匹配 </summary>
     class function IndexOf_Simplicity(s, p: UString): TArr_int;
@@ -36,6 +33,36 @@ end;
 { TKMP }
 
 class function TKMP.IndexOf(s, p: UString): TArr_int;
+  function __next(p: UString): TArr_int;
+  var
+    Next: TArr_int;
+    i, j: integer;
+  begin
+  // 创建一个 next 数组保存部分匹配值
+    SetLength(Next, p.Length);
+    Next[0] := 0; // 如果字符串是长度为 1, 部分匹配值就是 0
+
+    i := 1;
+    j := 0;
+    while i < p.Length do
+    begin
+      if p.Chars[j] <> p.Chars[i] then
+      begin
+        Next[i] := 0;
+        Inc(i);
+        j := 0;
+      end
+      else
+      begin
+        Next[i] := Next[i - 1] + 1;
+        Inc(i);
+        Inc(j);
+      end;
+    end;
+
+    Result := Next;
+  end;
+
 var
   Next, ret: TArr_int;
   i, j: integer;
@@ -114,36 +141,6 @@ begin
       p_r := 0;
     end;
   end;
-end;
-
-class function TKMP.__next(p: UString): TArr_int;
-var
-  Next: TArr_int;
-  i, j: integer;
-begin
-  // 创建一个 next 数组保存部分匹配值
-  SetLength(Next, p.Length);
-  Next[0] := 0; // 如果字符串是长度为 1, 部分匹配值就是 0
-
-  i := 1;
-  j := 0;
-  while i < p.Length do
-  begin
-    if p.Chars[j] <> p.Chars[i] then
-    begin
-      Next[i] := 0;
-      Inc(i);
-      j := 0;
-    end
-    else
-    begin
-      Next[i] := Next[i - 1] + 1;
-      Inc(i);
-      Inc(j);
-    end;
-  end;
-
-  Result := Next;
 end;
 
 end.

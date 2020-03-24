@@ -12,7 +12,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case08_08_部分背包问题;
+  LQA.Case08_10_01背包问题;
 
 procedure Run;
 begin
