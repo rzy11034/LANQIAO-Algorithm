@@ -16,10 +16,14 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case08_11_SteelCutting;
+  LQA.Case08_13_Lcs;
 
 procedure Run;
+var
+  s1, s2: UString;
 begin
+  s1 := 'ABCDEF';
+  s2 := s1.Substring(1, 2);
   Main;
 end;
 

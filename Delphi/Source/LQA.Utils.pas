@@ -36,7 +36,8 @@ type
     function ToCharArray: TArr_chr;
     function ReverseString: UString;
     function Split(const Separators: array of Char): TArr_str;
-    function Substring(index: integer; len: integer): UString;
+    function Substring(index: integer): UString; overload;
+    function Substring(index: integer; len: integer): UString; overload;
 
     property Chars[index: integer]: UChar read __getChar;
     property Length: integer read __getLength;
@@ -88,6 +89,7 @@ type
 type // 容器类
   TList_int = TList<integer>;
   TList_str = TList<UString>;
+  TList_chr = TList<UChar>;
   TList_TArr_int = TList<TArr_int>;
   TStack_int = TStack<integer>;
   TStack_chr = TStack<UChar>;
@@ -216,7 +218,7 @@ var
 begin
   if arr = nil then
   begin
-    Writeln('Cannot print an empty array!');
+    Writeln('[]');
     Exit;
   end;
 
@@ -237,7 +239,7 @@ var
 begin
   if arr = nil then
   begin
-    Writeln('Cannot print an empty array!');
+    Writeln('[]');
     Exit;
   end;
 
@@ -285,7 +287,7 @@ var
 begin
   if arr = nil then
   begin
-    Writeln('Cannot print an empty array!');
+    Writeln('[]');
     Exit;
   end;
 
@@ -345,6 +347,11 @@ end;
 function TStringHelper.Split(const Separators: array of Char): TArr_str;
 begin
   Result := TArr_str(string(Self).Split(Separators));
+end;
+
+function TStringHelper.Substring(index: integer): UString;
+begin
+  Result := string(Self).Substring(index);
 end;
 
 function TStringHelper.Substring(index, len: integer): UString;

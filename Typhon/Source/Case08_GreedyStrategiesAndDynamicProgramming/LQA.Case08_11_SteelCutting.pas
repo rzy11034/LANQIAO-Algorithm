@@ -37,6 +37,7 @@ type
 
     function Dfs: integer;
     function Dp: integer;
+    function Memory: integer;
   end;
 
 procedure Main;
@@ -54,6 +55,8 @@ begin
   with TSteelCutting.Create(steelValues, steelLen) do
   begin
     writeln('Dfs: ', Dfs);
+    writeln('Memory: ', Memory);
+    writeln('Dp: ', Dp);
   end;
 end;
 
@@ -93,8 +96,54 @@ begin
 end;
 
 function TSteelCutting.Dp: integer;
+var
+  rec: TArr_int;
+  i, j: integer;
 begin
+  SetLength(rec, Length(_steelValues) + 1);
 
+  rec[0] := 0;
+  for i := 1 to High(rec) do
+  begin
+    for j := 1 to i do
+    begin
+      rec[i] := Max(_steelValues[j - 1] + rec[i - j], rec[i]);
+    end;
+  end;
+
+  Result := rec[High(rec)];
+end;
+
+function TSteelCutting.Memory: integer;
+var
+  rec: TArr_int;
+
+  function __memory(n: integer): integer;
+  var
+    ans, i, v: integer;
+  begin
+    if n = 0 then
+      Exit(0);
+
+    ans := 0;
+    for i := 1 to n do
+    begin
+      if rec[n - i] = -1 then
+        rec[n - i] := __memory(n - i);
+
+      v := _steelValues[i - 1] + rec[n - i];
+      ans := Max(v, ans);
+    end;
+
+    rec[n] := ans;
+    Result := ans;
+  end;
+
+begin
+  SetLength(rec, Length(_steelValues) + 1);
+  TArrayUtils_int.FillArray(rec, -1);
+
+  Result := __memory(_steelLen);
 end;
 
 end.

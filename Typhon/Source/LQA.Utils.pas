@@ -88,6 +88,7 @@ type
     function ToCharArray: TArr_chr;
     function Split(const Separators: TCharArray): TArr_str;
     function ReverseString: UString;
+    function Substring(index: integer): UString;
     function Substring(index: integer; len: integer): UString;
 
     property Chars[index: integer]: UChar read __getChar;
@@ -97,6 +98,7 @@ type
 type // 容器类
   TList_int = specialize TList<integer>;
   TList_str = specialize TList<UString>;
+  TList_chr = specialize TList<UChar>;
   TList_TArr_int = specialize TList<TArr_int>;
   TStack_int = specialize TStack<integer>;
   TStack_chr = specialize TStack<UChar>;
@@ -232,7 +234,7 @@ var
 begin
   if arr = nil then
   begin
-    WriteLn('Cannot print an empty array!');
+    WriteLn('[]');
     Exit;
   end;
 
@@ -256,7 +258,7 @@ var
 begin
   if arr = nil then
   begin
-    WriteLn('Cannot print an empty array!');
+    WriteLn('[]');
     Exit;
   end;
 
@@ -307,7 +309,7 @@ var
 begin
   if arr = nil then
   begin
-    WriteLn('Cannot print an empty array!');
+    WriteLn('[]');
     Exit;
   end;
 
@@ -403,6 +405,11 @@ begin
   end;
 
   Result := ret;
+end;
+
+function TUnicodeStringHelper.Substring(index: integer): UString;
+begin
+  Result := System.Copy(Self, index + 1, Self.Length-index);
 end;
 
 function TUnicodeStringHelper.Substring(index: integer; len: integer): UString;
