@@ -41,10 +41,15 @@ begin
     TArrayUtils_chr.Print(Dfs('3563243', '513141').ToArray);
     TArrayUtils_chr.Print(Dfs('3069248', '513164318').ToArray);
     TArrayUtils_chr.Print(Dfs('123', '456').ToArray);
+    TArrayUtils_chr.Print(Dfs('JFSF6F7F9F', 'JSDED6FF').ToArray);
 
     DrawLineBlockEnd;
 
     TArrayUtils_chr.Print(Dp('AB34C', 'A1BC2').ToArray);
+    TArrayUtils_chr.Print(Dp('3563243', '513141').ToArray);
+    TArrayUtils_chr.Print(Dp('3069248', '513164318').ToArray);
+    TArrayUtils_chr.Print(Dp('123', '456').ToArray);
+    TArrayUtils_chr.Print(Dp('JFSF6F7F9F', 'JSDED6FF').ToArray);
   end;
 end;
 
@@ -107,17 +112,35 @@ function TLcs.Dp(s1, s2: UString): Tlist_chr;
     j := Length(rec[i]) - 1;
     res := TList_chr.Create;
 
-    repeat
+    while (i > 0) and (j > 0) do
+    begin
+      // 比左和上大，一定是当前位置的字符相等
+      if rec[i, j] > Max(rec[i - 1, j], rec[i, j - 1]) then
+      begin
+        res.Insert(0, s1.Chars[i - 1]);
+        i -= 1;
+        j -= 1;
+      end
+      else
+      begin
+        // 选择左边或上边的较大的值
+        if rec[i - 1, j] > rec[i, j - 1] then
+        begin
+          i -= 1; // 往上移
+        end
+        else
+        begin
+          j -= 1; // 往左移
+        end;
+      end;
+    end;
 
-      if rec
-
-    until (i > 0) and (j > 0);
+    Result := res;
   end;
 
 var
   rec: TArr2D_int;
   i, j: integer;
-  a, b: UChar;
 begin
   SetLength(rec, s1.Length + 1, s2.Length + 1);
 
@@ -136,7 +159,7 @@ begin
     end;
   end;
 
-  Result := TList_chr.Create;
+  Result := __parse(rec);
 end;
 
 end.

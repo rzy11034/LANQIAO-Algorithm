@@ -8,22 +8,17 @@ interface
 uses
   Classes,
   SysUtils,
-  LQA.Utils,
-  LQA.DSA.Strings.KMP;
+  LQA.Utils;
 
 procedure Run;
 
 implementation
 
 uses
-  LQA.Case08_13_Lcs;
+  LQA.Case08_14_CompleteKnapsackProblem;
 
 procedure Run;
-var
-  s1, s2: UString;
 begin
-  s1 := 'ABCDEF';
-  s2 := s1.Substring(1, 2);
   Main;
 end;
 
