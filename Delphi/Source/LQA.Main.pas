@@ -12,7 +12,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case08_10_01背包问题;
+  LQA.Case08_13_最大公共子序列;
 
 procedure Run;
 begin

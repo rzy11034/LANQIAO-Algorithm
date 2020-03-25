@@ -94,7 +94,10 @@ uses
   LQA.Case08_07_最优装载问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_07_最优装载问题.pas',
   LQA.Case08_08_部分背包问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_08_部分背包问题.pas',
   LQA.Case08_09_乘船问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_09_乘船问题.pas',
-  LQA.Case08_10_01背包问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_10_01背包问题.pas';
+  LQA.Case08_10_01背包问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_10_01背包问题.pas',
+  LQA.Case08_11_钢条切割 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_11_钢条切割.pas',
+  LQA.Case08_12_数字三角形 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_12_数字三角形.pas',
+  LQA.Case08_13_最大公共子序列 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_13_最大公共子序列.pas';
 
 begin
   try

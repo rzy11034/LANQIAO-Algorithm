@@ -1,20 +1,17 @@
-﻿unit LQA.Case08_13_Lcs;
+﻿unit LQA.Case08_13_最大公共子序列;
 
-(**
+(* *
  * 求最大公共子序列问题
  * AB34C
  * A1BC2 结果为 ABC
  * 更多案例请看测试用例
  * *)
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
-  Classes,
-  SysUtils,
-  Math,
+  System.SysUtils,
+  System.Math,
   LQA.Utils;
 
 type
@@ -26,7 +23,7 @@ type
     destructor Destroy; override;
 
     function Dfs(s1, s2: UString): TList_chr;
-    function Dp(s1, s2: UString): Tlist_chr;
+    function Dp(s1, s2: UString): TList_chr;
   end;
 
 procedure Main;
@@ -97,23 +94,7 @@ begin
   Result := ans;
 end;
 
-function TLcs.Dp(s1, s2: UString): Tlist_chr;
-  function __parse(const rec: TArr2D_int): TList_chr;
-  var
-    i, j: integer;
-    res: TList_chr;
-  begin
-    i := Length(rec) - 1;
-    j := Length(rec[i]) - 1;
-    res := TList_chr.Create;
-
-    repeat
-
-      if rec
-
-    until (i > 0) and (j > 0);
-  end;
-
+function TLcs.Dp(s1, s2: UString): TList_chr;
 var
   rec: TArr2D_int;
   i, j: integer;
@@ -121,9 +102,9 @@ var
 begin
   SetLength(rec, s1.Length + 1, s2.Length + 1);
 
-  for i := 1 to High(rec) do
+  for i := 1 to high(rec) do
   begin
-    for j := 1 to High(rec[i]) do
+    for j := 1 to high(rec[i]) do
     begin
       if s1.Chars[i - 1] = s2.Chars[j - 1] then
       begin
@@ -131,7 +112,7 @@ begin
       end
       else
       begin
-        rec[i, j] := MaxValue([rec[i - 1, j - 1], rec[i, j - 1], rec[i - 1, j]]);
+        rec[i, j] := MaxIntValue([rec[i - 1, j - 1], rec[i, j - 1], rec[i - 1, j]]);
       end;
     end;
   end;

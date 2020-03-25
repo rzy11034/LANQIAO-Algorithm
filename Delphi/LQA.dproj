@@ -267,6 +267,9 @@
         <DCCReference Include="Source\Case08_贪心策略和动态规划\LQA.Case08_08_部分背包问题.pas"/>
         <DCCReference Include="Source\Case08_贪心策略和动态规划\LQA.Case08_09_乘船问题.pas"/>
         <DCCReference Include="Source\Case08_贪心策略和动态规划\LQA.Case08_10_01背包问题.pas"/>
+        <DCCReference Include="Source\Case08_贪心策略和动态规划\LQA.Case08_11_钢条切割.pas"/>
+        <DCCReference Include="Source\Case08_贪心策略和动态规划\LQA.Case08_12_数字三角形.pas"/>
+        <DCCReference Include="Source\Case08_贪心策略和动态规划\LQA.Case08_13_最大公共子序列.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
