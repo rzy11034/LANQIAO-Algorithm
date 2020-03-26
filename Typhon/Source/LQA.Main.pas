@@ -15,7 +15,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case08_14_CompleteKnapsackProblem;
+  LQA.Case08_15_LIS;
 
 procedure Run;
 begin

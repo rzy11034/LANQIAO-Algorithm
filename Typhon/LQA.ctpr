@@ -44,7 +44,7 @@
           </CodeGeneration>
           <Linking>
             <Debugging>
-              <DebugInfoType Value="dsDwarf2Set"/>
+              <DebugInfoType Value="dsDwarf3"/>
               <TrashVariables Value="True"/>
               <UseValgrind Value="True"/>
             </Debugging>
@@ -465,6 +465,10 @@
       </Unit>
       <Unit>
         <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_14_CompleteKnapsackProblem.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_15_LIS.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>
