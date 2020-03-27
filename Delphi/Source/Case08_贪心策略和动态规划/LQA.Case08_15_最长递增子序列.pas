@@ -1,18 +1,15 @@
-﻿unit LQA.Case08_15_LIS;
+﻿unit LQA.Case08_15_最长递增子序列;
 
-(**
+(* *
  * 最长递增子序列的长度
  *输入 4 2 3 1 5 6
  *输出 3 （因为 2 3 5组成了最长递增子序列）
  *)
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
-  Classes,
-  SysUtils,
+  System.SysUtils,
   Math,
   LQA.Utils;
 
@@ -46,8 +43,8 @@ begin
   with TLis.Create(s) do
   begin
     WriteLn('Solution_Simplicity: ', Simplicity);
-    writeln('Dp_Simplicity: ', Dp_Simplicity);
-    writeln('Dp: ', Dp);
+    WriteLn('Dp_Simplicity: ', Dp_Simplicity);
+    WriteLn('Dp: ', Dp);
   end;
 end;
 
@@ -66,32 +63,19 @@ end;
 function TLis.Dp: integer;
 var
   rec: TArr_int;
-<<<<<<< HEAD
-  p, indexOfFirstBigger, i: integer;
-begin
-  SetLength(rec, Length(_data) + 1);
-
-  rec[1] := _data[0]; // 长度为1的最长递增子序列，初始化为第一个元素
-  p := 1; // 记录dp更新的最后位置
-
-  for i := 1 to High(_data) do
-  begin
-    if (_data[i] > rec[p]) then
-=======
   p, i, indexOfFirstBigger: integer;
 begin
   SetLength(rec, Length(_data) + 1);
 
-  rec[1] := _data[0];//长度为1的最长递增子序列，初始化为第一个元素
+  rec[1] := _data[0]; //长度为1的最长递增子序列，初始化为第一个元素
 
-  p := 1;//记录dp更新的最后位置
-  for i := 1 to High(_data) do
+  p := 1; //记录dp更新的最后位置
+  for i := 1 to high(_data) do
   begin
     if _data[i] > rec[p] then
->>>>>>> d34d96c8a37089742e6af097e897c03c90e3bea5
     begin
       rec[p + 1] := _data[i];
-      p += 1;
+      p :=p+ 1;
     end
     else
     begin
@@ -101,10 +85,7 @@ begin
       //     rec[j]=_data[i];
       //   end;
       // end;
-<<<<<<< HEAD
-=======
 
->>>>>>> d34d96c8a37089742e6af097e897c03c90e3bea5
       indexOfFirstBigger := __indexOfFirstBigger(rec, _data[i], 0, p);
       if indexOfFirstBigger <> -1 then
         rec[indexOfFirstBigger] := _data[i];
@@ -122,7 +103,7 @@ begin
   SetLength(rec, Length(_data));
   rec[0] := 1;
 
-  for i := 1 to High(_data) do
+  for i := 1 to high(_data) do
   begin
     for j := i downto 0 do
     begin
@@ -141,7 +122,7 @@ begin
     rec[i] := MaxIntValue(tmp);
   end;
 
-  Result := rec[High(rec)];
+  Result := rec[high(rec)];
 end;
 
 function TLis.Simplicity: integer;
@@ -150,13 +131,13 @@ var
 begin
   maxCnt := 0;
 
-  for i := 0 to High(_data) do
+  for i := 0 to high(_data) do
   begin
     cnt := 1;
-    for j := i to High(_data) - 1 do
+    for j := i to high(_data) - 1 do
     begin
       if _data[j] < _data[j + 1] then
-        cnt += 1;
+        cnt :=cnt+ 1;
     end;
 
     maxCnt := Max(maxCnt, cnt);
@@ -171,25 +152,16 @@ var
 begin
   while l <= r do
   begin
-<<<<<<< HEAD
-    mid := l + (r - l) div 2;
-
-    if (rec[mid] > v) then
-      r := mid  //保留大于v的下标以防这是第一个
-    else
-      l := mid + 1;
-=======
     mid := l + (r - 1) div 2;
 
     if rec[mid] > v then
     begin
-      r := mid;  // 保留大于v的下标以防这是第一个
+      r := mid; // 保留大于v的下标以防这是第一个
     end
     else
     begin
       l := mid + 1;
     end;
->>>>>>> d34d96c8a37089742e6af097e897c03c90e3bea5
 
     if (l = r) and (rec[l] > v) then
       Exit(l);

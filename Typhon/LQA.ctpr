@@ -471,6 +471,10 @@
         <Filename Value="Source\Case08_GreedyStrategiesAndDynamicProgramming\LQA.Case08_15_LIS.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="Source\LQA.Interfaces.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
