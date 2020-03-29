@@ -8,7 +8,7 @@ interface
 uses
   Classes,
   SysUtils,
-  Rtti,
+  {%H-}Rtti,
   Generics.Collections,
   Generics.Defaults,
   LQA.DSA.Tree.HashSet;
@@ -77,7 +77,7 @@ type
   TArrayUtils_str = specialize TArrayUtils<UString>;
   TArrayUtils_chr = specialize TArrayUtils<UChar>;
 
-  TUnicodeStringHelper = type Helper for UString
+  TUStringHelper = type Helper for UString
   private
     function __getChar(index: integer): UChar;
     function __getLength: integer;
@@ -358,24 +358,21 @@ begin
   TArrayHelper_T.Sort(arr, tmpCmp);
 end;
 
-{ TUnicodeStringHelper }
+{ TUStringHelper }
 
-class function TUnicodeStringHelper.Create(const chrArr: TArr_chr): UString;
-var
-  i: integer;
+class function TUStringHelper.Create(const chrArr: TArr_chr): UString;
 begin
-  i := System.Length(chrArr);
   Result := Create(chrArr, 0, System.Length(chrArr));
 end;
 
-class function TUnicodeStringHelper.Create(const chrArr: TArr_chr;
+class function TUStringHelper.Create(const chrArr: TArr_chr;
   startIndex, len: integer): UString;
 begin
   SetLength(Result, Len);
   Move(chrArr[StartIndex], PChar(PChar(Result))^, Len * SizeOf(UChar));
 end;
 
-function TUnicodeStringHelper.ReverseString: UString;
+function TUStringHelper.ReverseString: UString;
 var
   i, j: integer;
 begin
@@ -390,7 +387,7 @@ begin
   end;
 end;
 
-function TUnicodeStringHelper.Split(const Separators: TCharArray): TArr_str;
+function TUStringHelper.Split(const Separators: TCharArray): TArr_str;
 var
   ret: TArr_str;
   tmp: TStringArray;
@@ -407,17 +404,17 @@ begin
   Result := ret;
 end;
 
-function TUnicodeStringHelper.Substring(index: integer): UString;
+function TUStringHelper.Substring(index: integer): UString;
 begin
-  Result := System.Copy(Self, index + 1, Self.Length-index);
+  Result := System.Copy(Self, index + 1, Self.Length - index);
 end;
 
-function TUnicodeStringHelper.Substring(index: integer; len: integer): UString;
+function TUStringHelper.Substring(index: integer; len: integer): UString;
 begin
   Result := System.Copy(Self, index + 1, len);
 end;
 
-function TUnicodeStringHelper.ToCharArray: TArr_chr;
+function TUStringHelper.ToCharArray: TArr_chr;
 var
   chrArr: TArr_chr;
   c: UChar;
@@ -435,12 +432,12 @@ begin
   Result := chrArr;
 end;
 
-function TUnicodeStringHelper.__getChar(index: integer): UChar;
+function TUStringHelper.__getChar(index: integer): UChar;
 begin
   Result := Self[index + 1];
 end;
 
-function TUnicodeStringHelper.__getLength: integer;
+function TUStringHelper.__getLength: integer;
 begin
   Result := System.Length(Self);
 end;

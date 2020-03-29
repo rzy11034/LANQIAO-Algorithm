@@ -92,9 +92,16 @@ uses
   LQA.Case08_05_IntervalCoverageProblem,
   LQA.Case08_06_LexicographicalMinimumProblem,
   LQA.Case08_07_OptimalLoadingProblem,
-  LQA.Case08_08_PartialBackpackProblem, LQA.Case08_09_TheBoatProblem,
-LQA.Case08_10_01KnapsackProblem, LQA.Case08_11_SteelCutting, LQA.Case08_12_DigitalTriangle,
-LQA.Case08_13_Lcs, LQA.Case08_14_CompleteKnapsackProblem, LQA.Case08_15_LIS, LQA.Interfaces;
+  LQA.Case08_08_PartialBackpackProblem,
+  LQA.Case08_09_TheBoatProblem,
+  LQA.Case08_10_01KnapsackProblem,
+  LQA.Case08_11_SteelCutting,
+  LQA.Case08_12_DigitalTriangle,
+  LQA.Case08_13_Lcs,
+  LQA.Case08_14_CompleteKnapsackProblem,
+  LQA.Case08_15_LIS,
+  LQA.DSA.ArrayList, LQA.DSA.Interfaces, LQA.DSA.UString, LQA.DSA.LinkedList,
+LQA.DSA.Test.ArrayList, LQA.DSA.Test.LinkedList, LQA.DSA.DoubleLinkedList;
 
 
 begin

@@ -4,7 +4,6 @@ interface
 
 uses
   System.SysUtils,
-  System.TypInfo,
   LQA.Utils;
 
 procedure Run;
@@ -12,7 +11,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case08_15_最长递增子序列;
+  LQA.DSA.Test.LinkedList;
 
 procedure Run;
 begin

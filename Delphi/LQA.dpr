@@ -100,7 +100,12 @@ uses
   LQA.Case08_13_最大公共子序列 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_13_最大公共子序列.pas',
   LQA.Case08_14_完全背包问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_14_完全背包问题.pas',
   LQA.Case08_15_最长递增子序列 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_15_最长递增子序列.pas',
-  LQA.Interfaces in 'Source\LQA.Interfaces.pas';
+  LQA.DSA.Interfaces in 'Source\DSA\LQA.DSA.Interfaces.pas',
+  LQA.DSA.ArrayList in 'Source\DSA\Linear\LQA.DSA.ArrayList.pas',
+  LQA.DSA.UString in 'Source\DSA\LQA.DSA.UString.pas',
+  LQA.DSA.Test.ArrayList in 'Source\DSA\Linear\Test\LQA.DSA.Test.ArrayList.pas',
+  LQA.DSA.LinkedList in 'Source\DSA\Linear\LQA.DSA.LinkedList.pas',
+  LQA.DSA.Test.LinkedList in 'Source\DSA\Linear\Test\LQA.DSA.Test.LinkedList.pas';
 
 begin
   try

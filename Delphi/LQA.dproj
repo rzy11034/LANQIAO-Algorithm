@@ -272,7 +272,12 @@
         <DCCReference Include="Source\Case08_贪心策略和动态规划\LQA.Case08_13_最大公共子序列.pas"/>
         <DCCReference Include="Source\Case08_贪心策略和动态规划\LQA.Case08_14_完全背包问题.pas"/>
         <DCCReference Include="Source\Case08_贪心策略和动态规划\LQA.Case08_15_最长递增子序列.pas"/>
-        <DCCReference Include="Source\LQA.Interfaces.pas"/>
+        <DCCReference Include="Source\DSA\LQA.DSA.Interfaces.pas"/>
+        <DCCReference Include="Source\DSA\Linear\LQA.DSA.ArrayList.pas"/>
+        <DCCReference Include="Source\DSA\LQA.DSA.UString.pas"/>
+        <DCCReference Include="Source\DSA\Linear\Test\LQA.DSA.Test.ArrayList.pas"/>
+        <DCCReference Include="Source\DSA\Linear\LQA.DSA.LinkedList.pas"/>
+        <DCCReference Include="Source\DSA\Linear\Test\LQA.DSA.Test.LinkedList.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

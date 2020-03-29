@@ -15,7 +15,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case08_15_LIS;
+  LQA.DSA.Test.LinkedList;
 
 procedure Run;
 begin

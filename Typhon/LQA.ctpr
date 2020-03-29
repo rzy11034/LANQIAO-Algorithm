@@ -8,6 +8,7 @@
         <MainUnitHasCreateFormStatements Value="False"/>
         <MainUnitHasTitleStatement Value="False"/>
         <MainUnitHasScaledStatement Value="False"/>
+        <AlwaysBuild Value="True"/>
       </Flags>
       <SessionStorage Value="InProjectDir"/>
       <Title Value="LQA"/>
@@ -22,7 +23,7 @@
           <PathDelim Value="\"/>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices;Source\Case05_StringProblem;Source\DSA\Strings;Source\Case06_MathProblem;Source\DSA\Math;Source\Case07_DeepRecursion;Source\DSA\Tree;Source\Case08_GreedyStrategiesAndDynamicProgramming"/>
+            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices;Source\Case05_StringProblem;Source\DSA\Strings;Source\Case06_MathProblem;Source\DSA\Math;Source\Case07_DeepRecursion;Source\DSA\Tree;Source\Case08_GreedyStrategiesAndDynamicProgramming;Source\DSA\Linear;Source\DSA;Source\DSA\Linear\Test"/>
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\Debug"/>
           </SearchPaths>
           <Parsing>
@@ -47,6 +48,7 @@
               <DebugInfoType Value="dsDwarf3"/>
               <TrashVariables Value="True"/>
               <UseValgrind Value="True"/>
+              <StripSymbols Value="True"/>
             </Debugging>
           </Linking>
           <Other>
@@ -62,7 +64,7 @@
           <PathDelim Value="\"/>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices;Source\Case05_StringProblem;Source\DSA\Strings;Source\Case06_MathProblem;Source\DSA\Math;Source\Case07_DeepRecursion;Source\DSA\Tree;Source\Case08_GreedyStrategiesAndDynamicProgramming"/>
+            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices;Source\Case05_StringProblem;Source\DSA\Strings;Source\Case06_MathProblem;Source\DSA\Math;Source\Case07_DeepRecursion;Source\DSA\Tree;Source\Case08_GreedyStrategiesAndDynamicProgramming;Source\DSA\Linear;Source\DSA;Source\DSA\Linear\Test"/>
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\Release"/>
           </SearchPaths>
           <CodeGeneration>
@@ -472,7 +474,31 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\LQA.Interfaces.pas"/>
+        <Filename Value="Source\DSA\LQA.DSA.Interfaces.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\DSA\Linear\LQA.DSA.ArrayList.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\DSA\LQA.DSA.UString.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\DSA\Linear\LQA.DSA.LinkedList.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\DSA\Linear\Test\LQA.DSA.Test.ArrayList.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\DSA\Linear\Test\LQA.DSA.Test.LinkedList.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\DSA\Linear\LQA.DSA.DoubleLinkedList.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>
@@ -482,9 +508,14 @@
     <PathDelim Value="\"/>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices;Source\Case05_StringProblem;Source\DSA\Strings;Source\Case06_MathProblem;Source\DSA\Math;Source\Case07_DeepRecursion;Source\DSA\Tree;Source\Case08_GreedyStrategiesAndDynamicProgramming"/>
+      <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices;Source\Case05_StringProblem;Source\DSA\Strings;Source\Case06_MathProblem;Source\DSA\Math;Source\Case07_DeepRecursion;Source\DSA\Tree;Source\Case08_GreedyStrategiesAndDynamicProgramming;Source\DSA\Linear;Source\DSA;Source\DSA\Linear\Test"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\Default"/>
     </SearchPaths>
+    <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsDwarf3"/>
+      </Debugging>
+    </Linking>
   </CompilerOptions>
   <Debugging>
     <Exceptions>

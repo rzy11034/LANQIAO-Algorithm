@@ -24,7 +24,7 @@ type
   TArr_str = TArray<UString>;
   TArr_bool = TArray<boolean>;
 
-  TStringHelper = record helper for UString
+  TUStringHelper = record helper for UString
   private
     function __getChar(index: integer): UChar;
     function __getLength: integer;
@@ -326,45 +326,45 @@ begin
   TArray.Sort<T>(arr);
 end;
 
-{ TStringHelper }
+{ TUStringHelper }
 
-class function TStringHelper.Create(const chrArr: TArr_chr; startIndex,
+class function TUStringHelper.Create(const chrArr: TArr_chr; startIndex,
   len: integer): UString;
 begin
   Result := string.Create(chrArr, startIndex, len);
 end;
 
-class function TStringHelper.Create(const chrArr: TArr_chr): UString;
+class function TUStringHelper.Create(const chrArr: TArr_chr): UString;
 begin
   Result := string.Create(chrArr);
 end;
 
-function TStringHelper.ReverseString: UString;
+function TUStringHelper.ReverseString: UString;
 begin
   Result := System.StrUtils.ReverseString(Self);
 end;
 
-function TStringHelper.Split(const Separators: array of Char): TArr_str;
+function TUStringHelper.Split(const Separators: array of Char): TArr_str;
 begin
   Result := TArr_str(string(Self).Split(Separators));
 end;
 
-function TStringHelper.Substring(index: integer): UString;
+function TUStringHelper.Substring(index: integer): UString;
 begin
   Result := string(Self).Substring(index);
 end;
 
-function TStringHelper.Substring(index, len: integer): UString;
+function TUStringHelper.Substring(index, len: integer): UString;
 begin
   Result := string(Self).Substring(index, len);
 end;
 
-function TStringHelper.ToCharArray: TArr_chr;
+function TUStringHelper.ToCharArray: TArr_chr;
 begin
   Result := string(Self).ToCharArray;
 end;
 
-function TStringHelper.__getChar(index: integer): UChar;
+function TUStringHelper.__getChar(index: integer): UChar;
 {$ZEROBASEDSTRINGS ON}
 begin
   Result := Self[index];
@@ -372,7 +372,7 @@ end;
 {$ZEROBASEDSTRINGS OFF}
 
 
-function TStringHelper.__getLength: integer;
+function TUStringHelper.__getLength: integer;
 begin
   Result := System.Length(Self);
 end;

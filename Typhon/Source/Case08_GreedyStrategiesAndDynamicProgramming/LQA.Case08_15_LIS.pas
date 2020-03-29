@@ -66,18 +66,6 @@ end;
 function TLis.Dp: integer;
 var
   rec: TArr_int;
-<<<<<<< HEAD
-  p, indexOfFirstBigger, i: integer;
-begin
-  SetLength(rec, Length(_data) + 1);
-
-  rec[1] := _data[0]; // 长度为1的最长递增子序列，初始化为第一个元素
-  p := 1; // 记录dp更新的最后位置
-
-  for i := 1 to High(_data) do
-  begin
-    if (_data[i] > rec[p]) then
-=======
   p, i, indexOfFirstBigger: integer;
 begin
   SetLength(rec, Length(_data) + 1);
@@ -88,7 +76,6 @@ begin
   for i := 1 to High(_data) do
   begin
     if _data[i] > rec[p] then
->>>>>>> d34d96c8a37089742e6af097e897c03c90e3bea5
     begin
       rec[p + 1] := _data[i];
       p += 1;
@@ -101,10 +88,7 @@ begin
       //     rec[j]=_data[i];
       //   end;
       // end;
-<<<<<<< HEAD
-=======
 
->>>>>>> d34d96c8a37089742e6af097e897c03c90e3bea5
       indexOfFirstBigger := __indexOfFirstBigger(rec, _data[i], 0, p);
       if indexOfFirstBigger <> -1 then
         rec[indexOfFirstBigger] := _data[i];
@@ -171,14 +155,6 @@ var
 begin
   while l <= r do
   begin
-<<<<<<< HEAD
-    mid := l + (r - l) div 2;
-
-    if (rec[mid] > v) then
-      r := mid  //保留大于v的下标以防这是第一个
-    else
-      l := mid + 1;
-=======
     mid := l + (r - 1) div 2;
 
     if rec[mid] > v then
@@ -189,7 +165,6 @@ begin
     begin
       l := mid + 1;
     end;
->>>>>>> d34d96c8a37089742e6af097e897c03c90e3bea5
 
     if (l = r) and (rec[l] > v) then
       Exit(l);
