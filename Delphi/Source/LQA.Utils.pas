@@ -9,7 +9,7 @@ uses
   System.Rtti,
   System.Generics.Collections,
   System.Generics.Defaults,
-  LQA.DSA.Tree.HashSet;
+  DeepStar.DSA.Tree.HashSet;
 
 type
   UChar = Char;

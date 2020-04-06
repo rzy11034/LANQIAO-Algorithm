@@ -23,7 +23,7 @@
           <PathDelim Value="\"/>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices;Source\Case05_StringProblem;Source\DSA\Strings;Source\Case06_MathProblem;Source\DSA\Math;Source\Case07_DeepRecursion;Source\DSA\Tree;Source\Case08_GreedyStrategiesAndDynamicProgramming;Source\DSA\Linear;Source\DSA;Source\DSA\Linear\Test"/>
+            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices;Source\Case05_StringProblem;Source\Case06_MathProblem;Source\Case07_DeepRecursion;Source\Case08_GreedyStrategiesAndDynamicProgramming;Source\DeepStar\Utils;Source\DeepStar\DSA;Source\DeepStar\DSA\Linear;Source\DeepStar\DSA\Linear\Test;Source\DeepStar\DSA\Math;Source\DeepStar\DSA\Strings;Source\DeepStar\DSA\Tree;Source\Case09_Linear"/>
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\Debug"/>
           </SearchPaths>
           <Parsing>
@@ -64,7 +64,7 @@
           <PathDelim Value="\"/>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices;Source\Case05_StringProblem;Source\DSA\Strings;Source\Case06_MathProblem;Source\DSA\Math;Source\Case07_DeepRecursion;Source\DSA\Tree;Source\Case08_GreedyStrategiesAndDynamicProgramming;Source\DSA\Linear;Source\DSA;Source\DSA\Linear\Test"/>
+            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices;Source\Case05_StringProblem;Source\Case06_MathProblem;Source\Case07_DeepRecursion;Source\Case08_GreedyStrategiesAndDynamicProgramming;Source\DeepStar\Utils;Source\DeepStar\DSA;Source\DeepStar\DSA\Linear;Source\DeepStar\DSA\Linear\Test;Source\DeepStar\DSA\Math;Source\DeepStar\DSA\Strings;Source\DeepStar\DSA\Tree;Source\Case09_Linear"/>
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\Release"/>
           </SearchPaths>
           <CodeGeneration>
@@ -286,19 +286,7 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\DSA\Strings\LQA.DSA.Strings.RabinKarp.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\DSA\Strings\LQA.DSA.Strings.KMP.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
         <Filename Value="Source\Case06_MathProblem\LQA.Case06_01_BalanceWeighing.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\DSA\Math\LQA.DSA.Math.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
@@ -363,10 +351,6 @@
       </Unit>
       <Unit>
         <Filename Value="Source\Case07_DeepRecursion\LQA.Case07_04_LegalBracketCombination.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\DSA\Tree\LQA.DSA.Tree.HashSet.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
@@ -474,31 +458,59 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\DSA\LQA.DSA.Interfaces.pas"/>
+        <Filename Value="Source\DeepStar\Utils\DeepStar.Utils.UString.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\DSA\Linear\LQA.DSA.ArrayList.pas"/>
+        <Filename Value="Source\DeepStar\DSA\DeepStar.DSA.Interfaces.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\DSA\LQA.DSA.UString.pas"/>
+        <Filename Value="Source\DeepStar\DSA\Linear\DeepStar.DSA.Linear.ArrayList.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\DSA\Linear\LQA.DSA.LinkedList.pas"/>
+        <Filename Value="Source\DeepStar\DSA\Linear\DeepStar.DSA.Linear.DoubleLinkedList.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\DSA\Linear\Test\LQA.DSA.Test.ArrayList.pas"/>
+        <Filename Value="Source\DeepStar\DSA\Linear\DeepStar.DSA.Linear.LinkedList.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\DSA\Linear\Test\LQA.DSA.Test.LinkedList.pas"/>
+        <Filename Value="Source\DeepStar\DSA\Linear\Test\DeepStar.DSA.Linear.Test.ArrayList.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\DSA\Linear\LQA.DSA.DoubleLinkedList.pas"/>
+        <Filename Value="Source\DeepStar\DSA\Linear\Test\DeepStar.DSA.Linear.Test.LinkedList.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\DeepStar\DSA\Math\DeepStar.DSA.Math.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\DeepStar\DSA\Strings\DeepStar.DSA.Strings.KMP.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\DeepStar\DSA\Strings\DeepStar.DSA.Strings.RabinKarp.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.HashSet.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\DeepStar\DSA\Linear\Test\DeepStar.DSA.Linear.Test.DoubleLinkedList.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_01_BucketSort.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>
@@ -508,7 +520,7 @@
     <PathDelim Value="\"/>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices;Source\Case05_StringProblem;Source\DSA\Strings;Source\Case06_MathProblem;Source\DSA\Math;Source\Case07_DeepRecursion;Source\DSA\Tree;Source\Case08_GreedyStrategiesAndDynamicProgramming;Source\DSA\Linear;Source\DSA;Source\DSA\Linear\Test"/>
+      <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices;Source\Case05_StringProblem;Source\Case06_MathProblem;Source\Case07_DeepRecursion;Source\Case08_GreedyStrategiesAndDynamicProgramming;Source\DeepStar\Utils;Source\DeepStar\DSA;Source\DeepStar\DSA\Linear;Source\DeepStar\DSA\Linear\Test;Source\DeepStar\DSA\Math;Source\DeepStar\DSA\Strings;Source\DeepStar\DSA\Tree;Source\Case09_Linear"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\Default"/>
     </SearchPaths>
     <Linking>

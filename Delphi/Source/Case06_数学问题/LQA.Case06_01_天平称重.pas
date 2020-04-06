@@ -46,7 +46,7 @@ uses
   System.SysUtils,
   System.Math,
   LQA.Utils,
-  LQA.DSA.Math;
+  DeepStar.DSA.Math;
 
 procedure Main;
 

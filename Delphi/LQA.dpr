@@ -53,10 +53,7 @@ uses
   LQA.Case05_09_移除字符串中连续出现的K个0 in 'Source\Case05_字符串问题\LQA.Case05_09_移除字符串中连续出现的K个0.pas',
   LQA.Case05_10_神奇的回文串 in 'Source\Case05_字符串问题\LQA.Case05_10_神奇的回文串.pas',
   LQA.Case05_11_最短摘要的生成 in 'Source\Case05_字符串问题\LQA.Case05_11_最短摘要的生成.pas',
-  LQA.DSA.Strings.RabinKarp in 'Source\DSA\Strings\LQA.DSA.Strings.RabinKarp.pas',
-  LQA.DSA.Strings.KMP in 'Source\DSA\Strings\LQA.DSA.Strings.KMP.pas',
   LQA.Case06_01_天平称重 in 'Source\Case06_数学问题\LQA.Case06_01_天平称重.pas',
-  LQA.DSA.Math in 'Source\DSA\Math\LQA.DSA.Math.pas',
   LQA.Case06_02_Nim游戏 in 'Source\Case06_数学问题\LQA.Case06_02_Nim游戏.pas',
   LQA.Case06_03_阶梯Nim博弈 in 'Source\Case06_数学问题\LQA.Case06_03_阶梯Nim博弈.pas',
   LQA.Case06_04_欧几里得算法 in 'Source\Case06_数学问题\LQA.Case06_04_欧几里得算法.pas',
@@ -70,7 +67,6 @@ uses
   LQA.Case06_12_快速幂运算 in 'Source\Case06_数学问题\LQA.Case06_12_快速幂运算.pas',
   LQA.Case06_13_矩阵运算求解斐波那契 in 'Source\Case06_数学问题\LQA.Case06_13_矩阵运算求解斐波那契.pas',
   LQA.Case07_01_走楼梯 in 'Source\Case07_深入递归\LQA.Case07_01_走楼梯.pas',
-  LQA.DSA.Tree.HashSet in 'Source\DSA\Tree\LQA.DSA.Tree.HashSet.pas',
   LQA.Case07_02_机器人走格子 in 'Source\Case07_深入递归\LQA.Case07_02_机器人走格子.pas',
   LQA.Case07_03_硬币表示_经典 in 'Source\Case07_深入递归\LQA.Case07_03_硬币表示_经典.pas',
   LQA.Case07_04_合法的括号组合 in 'Source\Case07_深入递归\LQA.Case07_04_合法的括号组合.pas',
@@ -100,12 +96,18 @@ uses
   LQA.Case08_13_最大公共子序列 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_13_最大公共子序列.pas',
   LQA.Case08_14_完全背包问题 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_14_完全背包问题.pas',
   LQA.Case08_15_最长递增子序列 in 'Source\Case08_贪心策略和动态规划\LQA.Case08_15_最长递增子序列.pas',
-  LQA.DSA.Interfaces in 'Source\DSA\LQA.DSA.Interfaces.pas',
-  LQA.DSA.ArrayList in 'Source\DSA\Linear\LQA.DSA.ArrayList.pas',
-  LQA.DSA.UString in 'Source\DSA\LQA.DSA.UString.pas',
-  LQA.DSA.Test.ArrayList in 'Source\DSA\Linear\Test\LQA.DSA.Test.ArrayList.pas',
-  LQA.DSA.LinkedList in 'Source\DSA\Linear\LQA.DSA.LinkedList.pas',
-  LQA.DSA.Test.LinkedList in 'Source\DSA\Linear\Test\LQA.DSA.Test.LinkedList.pas';
+  DeepStar.Utils.UString in 'Source\DeepStar\Utils\DeepStar.Utils.UString.pas',
+  DeepStar.DSA.Interfaces in 'Source\DeepStar\DSA\DeepStar.DSA.Interfaces.pas',
+  DeepStar.DSA.Linear.ArrayList in 'Source\DeepStar\DSA\Linear\DeepStar.DSA.Linear.ArrayList.pas',
+  DeepStar.DSA.Linear.LinkedList in 'Source\DeepStar\DSA\Linear\DeepStar.DSA.Linear.LinkedList.pas',
+  DeepStar.DSA.Linear.Test.ArrayList in 'Source\DeepStar\DSA\Linear\Test\DeepStar.DSA.Linear.Test.ArrayList.pas',
+  DeepStar.DSA.Linear.Test.LinkedList in 'Source\DeepStar\DSA\Linear\Test\DeepStar.DSA.Linear.Test.LinkedList.pas',
+  DeepStar.DSA.Math in 'Source\DeepStar\DSA\Math\DeepStar.DSA.Math.pas',
+  DeepStar.DSA.Strings.KMP in 'Source\DeepStar\DSA\Strings\DeepStar.DSA.Strings.KMP.pas',
+  DeepStar.DSA.Strings.RabinKarp in 'Source\DeepStar\DSA\Strings\DeepStar.DSA.Strings.RabinKarp.pas',
+  DeepStar.DSA.Tree.HashSet in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.HashSet.pas',
+  DeepStar.DSA.Linear.DoubleLinkedList in 'Source\DeepStar\DSA\Linear\DeepStar.DSA.Linear.DoubleLinkedList.pas',
+  DeepStar.DSA.Linear.Test.DoubleLinkedList in 'Source\DeepStar\DSA\Linear\Test\DeepStar.DSA.Linear.Test.DoubleLinkedList.pas';
 
 begin
   try

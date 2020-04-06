@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils,
   LQA.Utils,
-  LQA.DSA.Math;
+  DeepStar.DSA.Math;
 
 procedure Main;
 

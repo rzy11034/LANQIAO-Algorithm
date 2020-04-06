@@ -7,8 +7,8 @@ interface
 uses
   Classes,
   SysUtils,
-  LQA.Utils,
-  LQA.DSA.Math;
+  DeepStar.DSA.Math,
+  LQA.Utils;
 
 procedure Main;
 

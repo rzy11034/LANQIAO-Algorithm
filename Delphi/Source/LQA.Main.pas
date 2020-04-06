@@ -11,7 +11,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.DSA.Test.LinkedList;
+  DeepStar.DSA.Linear.Test.DoubleLinkedList;
 
 procedure Run;
 begin

@@ -11,7 +11,7 @@ uses
   {%H-}Rtti,
   Generics.Collections,
   Generics.Defaults,
-  LQA.DSA.Tree.HashSet;
+  DeepStar.DSA.Tree.HashSet;
 
 type
   UChar = type UnicodeChar;

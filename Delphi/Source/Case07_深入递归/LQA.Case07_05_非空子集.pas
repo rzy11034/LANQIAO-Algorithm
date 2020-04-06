@@ -15,8 +15,8 @@ uses
   System.SysUtils,
   System.Generics.Collections,
   LQA.Utils,
-  LQA.DSA.Tree.HashSet,
-  LQA.DSA.Math;
+  DeepStar.DSA.Tree.HashSet,
+  DeepStar.DSA.Math;
 
 procedure Main;
 

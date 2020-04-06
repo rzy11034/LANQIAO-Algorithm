@@ -15,7 +15,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.DSA.Test.LinkedList;
+  LQA.Case09_02_DeleteDuplicateElements;
 
 procedure Run;
 begin
