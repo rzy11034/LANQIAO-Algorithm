@@ -15,6 +15,7 @@ type
     E: integer;
     Next: TNode;
 
+    constructor Create;
     constructor Create(newE: integer);
     destructor Destroy; override;
 
@@ -31,7 +32,8 @@ var
   a: TArr_int;
   i: integer;
 begin
-  a := [1, 2, 3, 4, 5, 1];
+  node := TNode.Create;
+  a := [1, 2, 1, 2, 3, 4, 5, 1, 4];
   for i in a do
     node.AppendToTail(i);
 
@@ -47,6 +49,7 @@ begin
         del := flag.Next;
         flag.Next := del.Next;
         FreeAndNil(del);
+        Continue;
       end;
 
       flag := flag.Next;
@@ -59,7 +62,9 @@ begin
   while p <> nil do
   begin
     Write(p.E, ' ');
+    p := p.Next;
   end;
+  WriteLn;
 end;
 
 { TNode }
@@ -70,11 +75,15 @@ begin
   Next := nil;
 end;
 
+constructor TNode.Create;
+begin
+  Self.Create(0);
+end;
+
 procedure TNode.AppendToTail(newE: integer);
 var
   tail, n: TNode;
 begin
-  tail := TNode.Create(newE);
   n := Self;
 
   while n.Next <> nil do
@@ -82,22 +91,14 @@ begin
     n := n.Next;
   end;
 
+  tail := TNode.Create(newE);
   n.Next := tail;
 end;
 
 destructor TNode.Destroy;
 var
-  n, del: TNode;
+  n: TNode;
 begin
-  n := Self;
-
-  while n.Next <> nil do
-  begin
-    del := n;
-    n := n.Next;
-    FreeAndNil(del);
-  end;
-
   inherited Destroy;
 end;
 

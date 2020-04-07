@@ -9,8 +9,8 @@
         <Filename Value="LQA.ppr"/>
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
-        <TopLine Value="89"/>
-        <CursorPos X="47" Y="113"/>
+        <TopLine Value="109"/>
+        <CursorPos Y="125"/>
         <UsageCount Value="300"/>
         <Loaded Value="True"/>
       </Unit>
@@ -18,8 +18,8 @@
         <Filename Value="Source\LQA.Main.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="3"/>
-        <CursorPos X="40" Y="18"/>
+        <TopLine Value="14"/>
+        <CursorPos Y="23"/>
         <UsageCount Value="300"/>
         <Loaded Value="True"/>
       </Unit>
@@ -599,101 +599,209 @@
         <UsageCount Value="200"/>
       </Unit>
       <Unit>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="45"/>
+        <CursorPos X="21" Y="51"/>
+        <UsageCount Value="26"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
         <Filename Value="Source\DSA\Strings\LQA.DSA.Strings.RabinKarp.pas"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="39"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Strings\LQA.DSA.Strings.KMP.pas"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="39"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Math\LQA.DSA.Math.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="10"/>
         <CursorPos X="50" Y="22"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="39"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Tree\LQA.DSA.Tree.HashSet.pas"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="39"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\DeepStar.DSA.Interfaces.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="48" Y="19"/>
         <FoldState Value=" T7MDMi"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="39"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Linear\DeepStar.DSA.ArrayList.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="55" Y="23"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="39"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\LQA.DSA.UString.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="106"/>
         <CursorPos X="49" Y="18"/>
-        <UsageCount Value="36"/>
+        <UsageCount Value="35"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Linear\DeepStar.DSA.LinkedList.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="39" Y="317"/>
-        <UsageCount Value="30"/>
+        <UsageCount Value="29"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Linear\Test\DeepStar.DSA.Test.ArrayList.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="33" Y="10"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="25"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Linear\Test\LQA.DSA.Test.LinkedList.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="41"/>
         <CursorPos X="24" Y="52"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="9"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DeepStar\DSA\Linear\DeepStar.DSA.Linear.LinkedList.Node.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="13"/>
         <CursorPos X="27" Y="34"/>
-        <UsageCount Value="28"/>
+        <UsageCount Value="27"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DeepStar\DSA\Linear\DeepStar.DSA.Linear.DoubleLinkedList.Node.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="19"/>
         <CursorPos X="27" Y="36"/>
-        <UsageCount Value="22"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="65"/>
-        <CursorPos Y="77"/>
         <UsageCount Value="21"/>
-        <Loaded Value="True"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="2">
+    <JumpHistory HistoryIndex="29">
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="50" TopLine="36"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="51" TopLine="36"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="35" TopLine="24"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="102" TopLine="90"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="61" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="62" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="64" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="65" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="62" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="64" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="65" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="62" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="64" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="65" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="62" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="64" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="65" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="62" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="64" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="65" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="62" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="67" TopLine="55"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="34" TopLine="24"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
+        <Caret Line="68" TopLine="60"/>
+      </Position>
       <Position>
         <Filename Value="Source\LQA.Main.pas"/>
-        <Caret Line="18" Column="40" TopLine="3"/>
+        <Caret Line="23" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="LQA.ppr"/>
+        <Caret Line="118" TopLine="109"/>
+      </Position>
+      <Position>
+        <Filename Value="LQA.ppr"/>
+        <Caret Line="119" TopLine="109"/>
+      </Position>
+      <Position>
+        <Filename Value="LQA.ppr"/>
+        <Caret Line="120" TopLine="109"/>
+      </Position>
+      <Position>
+        <Filename Value="LQA.ppr"/>
+        <Caret Line="116" TopLine="109"/>
       </Position>
       <Position>
         <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="77" TopLine="65"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="78" TopLine="65"/>
+        <Caret Line="61" TopLine="48"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -701,4 +809,11 @@
       <Modes ActiveMode=""/>
     </RunParams>
   </ProjectSession>
+  <Debugging>
+    <Watches>
+      <Item>
+        <Expression Value="flag.Next"/>
+      </Item>
+    </Watches>
+  </Debugging>
 </CONFIG>
