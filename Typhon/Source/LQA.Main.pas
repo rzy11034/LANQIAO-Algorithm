@@ -15,7 +15,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case09_02_DeleteDuplicateElements;
+  LQA.Case09_03_TheKthReciprocalNode;
 
 procedure Run;
 begin

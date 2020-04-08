@@ -10,7 +10,7 @@
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
         <TopLine Value="109"/>
-        <CursorPos Y="125"/>
+        <CursorPos Y="126"/>
         <UsageCount Value="300"/>
         <Loaded Value="True"/>
       </Unit>
@@ -19,7 +19,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
         <TopLine Value="14"/>
-        <CursorPos Y="23"/>
+        <CursorPos X="6" Y="21"/>
         <UsageCount Value="300"/>
         <Loaded Value="True"/>
       </Unit>
@@ -27,8 +27,8 @@
         <Filename Value="Source\LQA.Utils.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="330"/>
-        <CursorPos X="32" Y="16"/>
+        <TopLine Value="125"/>
+        <CursorPos X="5" Y="151"/>
         <UsageCount Value="300"/>
         <Loaded Value="True"/>
       </Unit>
@@ -37,8 +37,8 @@
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="72"/>
-        <CursorPos X="21" Y="95"/>
+        <TopLine Value="87"/>
+        <CursorPos X="35" Y="97"/>
         <SyntaxHighlighter Value="PO"/>
         <UsageCount Value="300"/>
         <Loaded Value="True"/>
@@ -595,213 +595,189 @@
         <Filename Value="Source\Case09_Linear\LQA.Case09_01_BucketSort.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="30"/>
+        <CursorPos X="5" Y="112"/>
         <UsageCount Value="200"/>
       </Unit>
       <Unit>
         <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="45"/>
-        <CursorPos X="21" Y="51"/>
-        <UsageCount Value="26"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="49"/>
+        <CursorPos X="29" Y="71"/>
+        <UsageCount Value="88"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Strings\LQA.DSA.Strings.RabinKarp.pas"/>
-        <UsageCount Value="39"/>
+        <UsageCount Value="33"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Strings\LQA.DSA.Strings.KMP.pas"/>
-        <UsageCount Value="39"/>
+        <UsageCount Value="33"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Math\LQA.DSA.Math.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="10"/>
         <CursorPos X="50" Y="22"/>
-        <UsageCount Value="39"/>
+        <UsageCount Value="33"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Tree\LQA.DSA.Tree.HashSet.pas"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="39"/>
+        <UsageCount Value="33"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\DeepStar.DSA.Interfaces.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="48" Y="19"/>
         <FoldState Value=" T7MDMi"/>
-        <UsageCount Value="39"/>
+        <UsageCount Value="33"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Linear\DeepStar.DSA.ArrayList.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="55" Y="23"/>
-        <UsageCount Value="39"/>
+        <UsageCount Value="33"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\LQA.DSA.UString.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="106"/>
         <CursorPos X="49" Y="18"/>
-        <UsageCount Value="35"/>
+        <UsageCount Value="29"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Linear\DeepStar.DSA.LinkedList.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="39" Y="317"/>
-        <UsageCount Value="29"/>
+        <UsageCount Value="23"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Linear\Test\DeepStar.DSA.Test.ArrayList.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="33" Y="10"/>
-        <UsageCount Value="25"/>
+        <UsageCount Value="19"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Linear\Test\LQA.DSA.Test.LinkedList.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="41"/>
         <CursorPos X="24" Y="52"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="3"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DeepStar\DSA\Linear\DeepStar.DSA.Linear.LinkedList.Node.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="13"/>
         <CursorPos X="27" Y="34"/>
-        <UsageCount Value="27"/>
+        <UsageCount Value="21"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DeepStar\DSA\Linear\DeepStar.DSA.Linear.DoubleLinkedList.Node.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="19"/>
         <CursorPos X="27" Y="36"/>
-        <UsageCount Value="21"/>
+        <UsageCount Value="15"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_03_TheKthReciprocalNode.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="10"/>
+        <CursorPos X="45" Y="28"/>
+        <UsageCount Value="76"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\codetyphon\fpcsrc\rtl\objpas\sysutils\syshelph.inc"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="506"/>
+        <CursorPos X="14" Y="523"/>
+        <UsageCount Value="9"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_04_DeleteNodeInTheMiddleOfLinkedList.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="60"/>
+        <CursorPos X="4" Y="93"/>
+        <UsageCount Value="28"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="50"/>
+        <CursorPos X="22" Y="66"/>
+        <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\codetyphon\fpcsrc\rtl\objpas\sysutils\sysutilh.inc"/>
+        <FRMtype Value="0"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="250"/>
+        <CursorPos X="18" Y="270"/>
+        <UsageCount Value="10"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="29">
+    <JumpHistory HistoryIndex="13">
       <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="50" TopLine="36"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="51" TopLine="36"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="35" TopLine="24"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="102" TopLine="90"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="61" TopLine="55"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="62" TopLine="55"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="64" TopLine="55"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="65" TopLine="55"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="62" TopLine="55"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="64" TopLine="55"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="65" TopLine="55"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="62" TopLine="55"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="64" TopLine="55"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="65" TopLine="55"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="62" TopLine="55"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="64" TopLine="55"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="65" TopLine="55"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="62" TopLine="55"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="64" TopLine="55"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="65" TopLine="55"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="62" TopLine="55"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="67" TopLine="55"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="34" TopLine="24"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="68" TopLine="60"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="18" Column="27" TopLine="14"/>
       </Position>
       <Position>
         <Filename Value="Source\LQA.Main.pas"/>
-        <Caret Line="23" TopLine="14"/>
+        <Caret Line="21" Column="6" TopLine="14"/>
       </Position>
       <Position>
-        <Filename Value="LQA.ppr"/>
-        <Caret Line="118" TopLine="109"/>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
+        <Caret Line="19" Column="18"/>
       </Position>
       <Position>
-        <Filename Value="LQA.ppr"/>
-        <Caret Line="119" TopLine="109"/>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
+        <Caret Line="22" Column="25" TopLine="10"/>
       </Position>
       <Position>
-        <Filename Value="LQA.ppr"/>
-        <Caret Line="120" TopLine="109"/>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
+        <Caret Line="53" Column="7" TopLine="31"/>
       </Position>
       <Position>
-        <Filename Value="LQA.ppr"/>
-        <Caret Line="116" TopLine="109"/>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
+        <Caret Line="18" TopLine="22"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
-        <Caret Line="61" TopLine="48"/>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
+        <Caret Line="66" Column="4" TopLine="42"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
+        <Caret Line="75" Column="27" TopLine="48"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\LQA.Utils.pas"/>
+        <Caret Line="105" Column="23" TopLine="79"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\LQA.Utils.pas"/>
+        <Caret Line="98" Column="18" TopLine="122"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
+        <Caret Line="25" Column="49" TopLine="13"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
+        <Caret Line="58" Column="6" TopLine="46"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
+        <Caret Line="64" Column="13" TopLine="46"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
+        <Caret Line="61" Column="4" TopLine="46"/>
       </Position>
     </JumpHistory>
     <RunParams>

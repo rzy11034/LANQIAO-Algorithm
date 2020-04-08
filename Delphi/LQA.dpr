@@ -107,7 +107,11 @@ uses
   DeepStar.DSA.Strings.RabinKarp in 'Source\DeepStar\DSA\Strings\DeepStar.DSA.Strings.RabinKarp.pas',
   DeepStar.DSA.Tree.HashSet in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.HashSet.pas',
   DeepStar.DSA.Linear.DoubleLinkedList in 'Source\DeepStar\DSA\Linear\DeepStar.DSA.Linear.DoubleLinkedList.pas',
-  DeepStar.DSA.Linear.Test.DoubleLinkedList in 'Source\DeepStar\DSA\Linear\Test\DeepStar.DSA.Linear.Test.DoubleLinkedList.pas';
+  DeepStar.DSA.Linear.Test.DoubleLinkedList in 'Source\DeepStar\DSA\Linear\Test\DeepStar.DSA.Linear.Test.DoubleLinkedList.pas',
+  LQA.Case09_01_桶排序 in 'Source\Case09_线性结构\LQA.Case09_01_桶排序.pas',
+  LQA.Case09_02_删除重复元素 in 'Source\Case09_线性结构\LQA.Case09_02_删除重复元素.pas',
+  LQA.Case09_03_倒数第k个节点 in 'Source\Case09_线性结构\LQA.Case09_03_倒数第k个节点.pas',
+  LQA.Case09_04_删除单向链表中间的某个结点 in 'Source\Case09_线性结构\LQA.Case09_04_删除单向链表中间的某个结点.pas';
 
 begin
   try

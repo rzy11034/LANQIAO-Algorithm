@@ -1,13 +1,10 @@
-﻿unit LQA.Case09_01_BucketSort;
-
-{$mode objfpc}{$H+}
+﻿unit LQA.Case09_01_桶排序;
 
 interface
 
 uses
-  Classes,
-  SysUtils,
-  Math,
+  System.SysUtils,
+  System.Math,
   LQA.Utils;
 
 type
@@ -77,7 +74,7 @@ begin
     while tmp <> nil do
     begin
       arr[i] := tmp.E;
-      i += 1;
+      i := i + 1;
       tmp := tmp.Next;
     end;
   end;

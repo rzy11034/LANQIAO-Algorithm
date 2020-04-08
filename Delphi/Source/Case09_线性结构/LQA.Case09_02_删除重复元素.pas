@@ -1,12 +1,9 @@
-﻿unit LQA.Case09_02_DeleteDuplicateElements;
-
-{$mode objfpc}{$H+}
+﻿unit LQA.Case09_02_删除重复元素;
 
 interface
 
 uses
-  Classes,
-  SysUtils,
+  System.SysUtils,
   LQA.Utils;
 
 type
@@ -17,8 +14,8 @@ type
       E: integer;
       Next: TNode;
 
-      constructor Create;
-      constructor Create(newE: integer);
+      constructor Create; overload;
+      constructor Create(newE: integer); overload;
       destructor Destroy; override;
     end;
 

@@ -513,6 +513,18 @@
         <Filename Value="Source\Case09_Linear\LQA.Case09_02_DeleteDuplicateElements.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_03_TheKthReciprocalNode.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_04_DeleteNodeInTheMiddleOfLinkedList.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
