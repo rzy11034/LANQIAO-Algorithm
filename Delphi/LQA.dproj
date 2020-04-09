@@ -284,6 +284,7 @@
         <DCCReference Include="Source\Case09_线性结构\LQA.Case09_02_删除重复元素.pas"/>
         <DCCReference Include="Source\Case09_线性结构\LQA.Case09_03_倒数第k个节点.pas"/>
         <DCCReference Include="Source\Case09_线性结构\LQA.Case09_04_删除单向链表中间的某个结点.pas"/>
+        <DCCReference Include="Source\Case09_线性结构\LQA.Case09_05_用基准值将链表分区.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

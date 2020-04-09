@@ -11,7 +11,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case09_03_倒数第k个节点;
+  LQA.Case09_05_用基准值将链表分区;
 
 procedure Run;
 begin

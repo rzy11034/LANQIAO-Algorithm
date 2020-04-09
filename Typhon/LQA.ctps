@@ -10,7 +10,7 @@
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
         <TopLine Value="109"/>
-        <CursorPos Y="126"/>
+        <CursorPos Y="127"/>
         <UsageCount Value="300"/>
         <Loaded Value="True"/>
       </Unit>
@@ -19,7 +19,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
         <TopLine Value="14"/>
-        <CursorPos X="6" Y="21"/>
+        <CursorPos X="29" Y="18"/>
         <UsageCount Value="300"/>
         <Loaded Value="True"/>
       </Unit>
@@ -37,8 +37,8 @@
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="87"/>
-        <CursorPos X="35" Y="97"/>
+        <TopLine Value="81"/>
+        <CursorPos X="17" Y="99"/>
         <SyntaxHighlighter Value="PO"/>
         <UsageCount Value="300"/>
         <Loaded Value="True"/>
@@ -604,7 +604,31 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="49"/>
         <CursorPos X="29" Y="71"/>
-        <UsageCount Value="88"/>
+        <UsageCount Value="92"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_03_TheKthReciprocalNode.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="10"/>
+        <CursorPos X="45" Y="28"/>
+        <UsageCount Value="80"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_04_DeleteNodeInTheMiddleOfLinkedList.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="60"/>
+        <CursorPos X="4" Y="93"/>
+        <UsageCount Value="32"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="141"/>
+        <CursorPos X="5" Y="163"/>
+        <UsageCount Value="31"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Strings\LQA.DSA.Strings.RabinKarp.pas"/>
@@ -680,38 +704,12 @@
         <UsageCount Value="15"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_03_TheKthReciprocalNode.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="10"/>
-        <CursorPos X="45" Y="28"/>
-        <UsageCount Value="76"/>
-      </Unit>
-      <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\objpas\sysutils\syshelph.inc"/>
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="506"/>
         <CursorPos X="14" Y="523"/>
         <UsageCount Value="9"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_04_DeleteNodeInTheMiddleOfLinkedList.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="60"/>
-        <CursorPos X="4" Y="93"/>
-        <UsageCount Value="28"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
-        <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="50"/>
-        <CursorPos X="22" Y="66"/>
-        <UsageCount Value="27"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\objpas\sysutils\sysutilh.inc"/>
@@ -721,63 +719,49 @@
         <CursorPos X="18" Y="270"/>
         <UsageCount Value="10"/>
       </Unit>
+      <Unit>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_06_PlusLinkNode.pas"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="80"/>
+        <CursorPos X="5" Y="40"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="13">
+    <JumpHistory HistoryIndex="7">
       <Position>
-        <Filename Value="Source\LQA.Main.pas"/>
-        <Caret Line="18" Column="27" TopLine="14"/>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_06_PlusLinkNode.pas"/>
+        <Caret Line="31" Column="18" TopLine="13"/>
       </Position>
       <Position>
-        <Filename Value="Source\LQA.Main.pas"/>
-        <Caret Line="21" Column="6" TopLine="14"/>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_06_PlusLinkNode.pas"/>
+        <Caret Line="37" Column="43" TopLine="25"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
-        <Caret Line="19" Column="18"/>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_06_PlusLinkNode.pas"/>
+        <Caret Line="31" Column="49" TopLine="13"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
-        <Caret Line="22" Column="25" TopLine="10"/>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_06_PlusLinkNode.pas"/>
+        <Caret Line="30" Column="30" TopLine="16"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
-        <Caret Line="53" Column="7" TopLine="31"/>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_06_PlusLinkNode.pas"/>
+        <Caret Line="71" Column="4" TopLine="55"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
-        <Caret Line="18" TopLine="22"/>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_06_PlusLinkNode.pas"/>
+        <Caret Line="49" Column="21" TopLine="31"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
-        <Caret Line="66" Column="4" TopLine="42"/>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_06_PlusLinkNode.pas"/>
+        <Caret Line="37" Column="9" TopLine="34"/>
       </Position>
       <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
-        <Caret Line="75" Column="27" TopLine="48"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\LQA.Utils.pas"/>
-        <Caret Line="105" Column="23" TopLine="79"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\LQA.Utils.pas"/>
-        <Caret Line="98" Column="18" TopLine="122"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
-        <Caret Line="25" Column="49" TopLine="13"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
-        <Caret Line="58" Column="6" TopLine="46"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
-        <Caret Line="64" Column="13" TopLine="46"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_05_PartitionLinkNode.pas"/>
-        <Caret Line="61" Column="4" TopLine="46"/>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_06_PlusLinkNode.pas"/>
+        <Caret Line="38" Column="25" TopLine="22"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -785,11 +769,4 @@
       <Modes ActiveMode=""/>
     </RunParams>
   </ProjectSession>
-  <Debugging>
-    <Watches>
-      <Item>
-        <Expression Value="flag.Next"/>
-      </Item>
-    </Watches>
-  </Debugging>
 </CONFIG>

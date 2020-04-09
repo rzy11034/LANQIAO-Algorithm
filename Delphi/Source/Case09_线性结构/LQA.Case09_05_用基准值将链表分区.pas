@@ -1,6 +1,6 @@
-﻿unit LQA.Case09_05_PartitionLinkNode;
+﻿unit LQA.Case09_05_用基准值将链表分区;
 
-(**
+(* *
  * 编写代码，以给定值x为基准将链表分割成两部分，所有小于x的结点排在大于或等于x的结点之前
  给定一个链表的头指针 ListNode* pHead，请返回重新排列后的链表的头指针。
 
@@ -9,13 +9,10 @@
  不要开辟新的空间，即不要新建节点
  *)
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
-  Classes,
-  SysUtils,
+  System.SysUtils,
   LQA.Utils;
 
 type
@@ -46,7 +43,7 @@ var
 begin
   a := [5, 6, 3, 2, 1];
   node := TNode.Create(a[0]);
-  for i := 1 to High(a) do
+  for i := 1 to high(a) do
     node.AppendToTail(a[i]);
 
   with TPartitionLinkNode.Create do

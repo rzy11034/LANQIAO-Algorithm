@@ -111,7 +111,8 @@ uses
   LQA.Case09_01_桶排序 in 'Source\Case09_线性结构\LQA.Case09_01_桶排序.pas',
   LQA.Case09_02_删除重复元素 in 'Source\Case09_线性结构\LQA.Case09_02_删除重复元素.pas',
   LQA.Case09_03_倒数第k个节点 in 'Source\Case09_线性结构\LQA.Case09_03_倒数第k个节点.pas',
-  LQA.Case09_04_删除单向链表中间的某个结点 in 'Source\Case09_线性结构\LQA.Case09_04_删除单向链表中间的某个结点.pas';
+  LQA.Case09_04_删除单向链表中间的某个结点 in 'Source\Case09_线性结构\LQA.Case09_04_删除单向链表中间的某个结点.pas',
+  LQA.Case09_05_用基准值将链表分区 in 'Source\Case09_线性结构\LQA.Case09_05_用基准值将链表分区.pas';
 
 begin
   try

@@ -15,7 +15,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case09_03_TheKthReciprocalNode;
+  LQA.Case09_06_PlusLinkNode;
 
 procedure Run;
 begin
