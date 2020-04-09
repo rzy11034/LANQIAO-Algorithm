@@ -11,7 +11,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case09_05_用基准值将链表分区;
+  LQA.Case09_06_链表加法;
 
 procedure Run;
 begin

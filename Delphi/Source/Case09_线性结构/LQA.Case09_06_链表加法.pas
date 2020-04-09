@@ -1,4 +1,4 @@
-﻿unit LQA.Case09_06_PlusLinkNode;
+﻿unit LQA.Case09_06_链表加法;
 
 (*
 有两个用链表表示的整数，每个结点包含一个数位。
@@ -12,13 +12,10 @@
 返回：{9,1,3,0,0,1}
 *)
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
-  Classes,
-  SysUtils,
+  System.SysUtils,
   LQA.Utils;
 
 type
@@ -164,13 +161,13 @@ function TPlusLinkNode.Solution_Recursion(const a, b: TNode): TNode;
     sum := m;
     if a <> nil then
     begin
-      sum += a.E;
+      sum := sum + a.E;
       a := a.Next;
     end;
 
     if b <> nil then
     begin
-      sum += b.E;
+      sum := sum + b.E;
       b := b.Next;
     end;
 
@@ -181,7 +178,7 @@ function TPlusLinkNode.Solution_Recursion(const a, b: TNode): TNode;
   end;
 
 begin
-  Result := __solution_Recursion(a, b,  0);
+  Result := __solution_Recursion(a, b, 0);
 end;
 
 { TNode }
