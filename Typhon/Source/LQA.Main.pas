@@ -15,7 +15,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case09_06_PlusLinkNode;
+  LQA.Case09_07_CircleLinkedList;
 
 procedure Run;
 begin

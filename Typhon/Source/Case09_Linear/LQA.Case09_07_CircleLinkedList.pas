@@ -30,10 +30,63 @@ type
 
   TCircleLinkedList = class(TObject)
   public
+    function HasCircle(node: TNode): boolean;
 
   end;
 
+procedure Main;
+
 implementation
+
+procedure Main;
+var
+  node, p: TNode;
+  i: integer;
+begin
+  node := TNode.Create(1);
+  node.Next := TNode.Create(2);
+  node.Next.Next := TNode.Create(3);
+  node.Next.Next.Next := TNode.Create(4);
+  node.Next.Next.Next.Next := TNode.Create(5);
+  node.Next.Next.Next.Next.Next := TNode.Create(6);
+  node.Next.Next.Next.Next.Next.Next := node.Next.Next;
+
+  p := node;
+  for i := 0 to 10 do
+  begin
+    Write(p.E.ToString, ' -> ');
+    p := p.Next;
+  end;
+  WriteLn('nil');
+
+  DrawLineBlockEnd;
+
+  with TCircleLinkedList.Create do
+  begin
+    WriteLn(HasCircle(node));
+  end;
+end;
+
+{ TCircleLinkedList }
+
+function TCircleLinkedList.HasCircle(node: TNode): boolean;
+var
+  s, f: TNode;
+begin
+  s := node;
+  f := node;
+
+  repeat
+    s := s.Next;
+    f := f.Next.Next;
+
+    if s = f then
+      Exit(true);
+
+  until true;
+
+  Result := false;
+end;
 
 { TNode }
 
