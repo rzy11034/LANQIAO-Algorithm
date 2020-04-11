@@ -31,7 +31,7 @@ type
   TCircleLinkedList = class(TObject)
   public
     function HasCircle(node: TNode): boolean;
-
+    function Solution(node: TNode): TNode;
   end;
 
 procedure Main;
@@ -64,6 +64,7 @@ begin
   with TCircleLinkedList.Create do
   begin
     WriteLn(HasCircle(node));
+    WriteLn(Solution(node).E);
   end;
 end;
 
@@ -76,16 +77,45 @@ begin
   s := node;
   f := node;
 
-  repeat
+  while true do
+  begin
+    if (s = nil) or (f = nil) or (f.Next = nil) then
+      Exit(false);
+
     s := s.Next;
     f := f.Next.Next;
 
     if s = f then
       Exit(true);
-
-  until true;
+  end;
 
   Result := false;
+end;
+
+function TCircleLinkedList.Solution(node: TNode): TNode;
+var
+  s, f, p: TNode;
+begin
+  s := node;
+  f := node;
+
+  while true do
+  begin
+    s := s.Next;
+    f := f.Next.Next;
+
+    if s = f then
+      Break;
+  end;
+
+  p := node;
+  while s <> p do
+  begin
+    p := p.Next;
+    s := s.Next;
+  end;
+
+  Result := p;
 end;
 
 { TNode }

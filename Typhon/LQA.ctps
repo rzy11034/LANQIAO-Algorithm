@@ -643,8 +643,8 @@
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="68"/>
-        <CursorPos X="13" Y="86"/>
+        <TopLine Value="49"/>
+        <CursorPos X="29" Y="67"/>
         <UsageCount Value="27"/>
         <Loaded Value="True"/>
       </Unit>
@@ -739,10 +739,6 @@
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="Source\Case09_Linear\LQA.Case09_07_CircleLinkedList.pas"/>
-        <Caret Line="104" TopLine="91"/>
-      </Position>
       <Position>
         <Filename Value="Source\Case09_Linear\LQA.Case09_07_CircleLinkedList.pas"/>
         <Caret Line="106" TopLine="91"/>
@@ -858,6 +854,10 @@
       <Position>
         <Filename Value="Source\Case09_Linear\LQA.Case09_07_CircleLinkedList.pas"/>
         <Caret Line="86" TopLine="68"/>
+      </Position>
+      <Position>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_07_CircleLinkedList.pas"/>
+        <Caret Line="34" Column="43" TopLine="20"/>
       </Position>
     </JumpHistory>
     <RunParams>
