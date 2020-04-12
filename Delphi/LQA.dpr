@@ -113,7 +113,15 @@ uses
   LQA.Case09_03_倒数第k个节点 in 'Source\Case09_线性结构\LQA.Case09_03_倒数第k个节点.pas',
   LQA.Case09_04_删除单向链表中间的某个结点 in 'Source\Case09_线性结构\LQA.Case09_04_删除单向链表中间的某个结点.pas',
   LQA.Case09_05_用基准值将链表分区 in 'Source\Case09_线性结构\LQA.Case09_05_用基准值将链表分区.pas',
-  LQA.Case09_06_链表加法 in 'Source\Case09_线性结构\LQA.Case09_06_链表加法.pas';
+  LQA.Case09_06_链表加法 in 'Source\Case09_线性结构\LQA.Case09_06_链表加法.pas',
+  DeepStar.DSA.Linear.Stack in 'Source\DeepStar\DSA\Linear\DeepStar.DSA.Linear.Stack.pas',
+  DeepStar.DSA.Linear.Test.Stack in 'Source\DeepStar\DSA\Linear\Test\DeepStar.DSA.Linear.Test.Stack.pas',
+  DeepStar.DSA.Linear.Queue in 'Source\DeepStar\DSA\Linear\DeepStar.DSA.Linear.Queue.pas',
+  DeepStar.DSA.Linear.Test.Queue in 'Source\DeepStar\DSA\Linear\Test\DeepStar.DSA.Linear.Test.Queue.pas',
+  LQA.Case09_07_有环链表的环起点 in 'Source\Case09_线性结构\LQA.Case09_07_有环链表的环起点.pas',
+  LQA.Case09_08_判断回文链表 in 'Source\Case09_线性结构\LQA.Case09_08_判断回文链表.pas',
+  LQA.Case09_09_设计带最小值的栈 in 'Source\Case09_线性结构\LQA.Case09_09_设计带最小值的栈.pas',
+  LQA.Case09_10_栈的集合 in 'Source\Case09_线性结构\LQA.Case09_10_栈的集合.pas';
 
 begin
   try

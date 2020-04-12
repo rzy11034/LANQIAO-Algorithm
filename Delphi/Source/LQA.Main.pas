@@ -11,7 +11,7 @@ procedure Run;
 implementation
 
 uses
-  LQA.Case09_06_链表加法;
+  LQA.Case09_09_设计带最小值的栈;
 
 procedure Run;
 begin

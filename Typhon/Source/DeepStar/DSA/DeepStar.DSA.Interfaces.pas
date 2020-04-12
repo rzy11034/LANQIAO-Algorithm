@@ -47,6 +47,24 @@ type
     property Items[i: integer]: T read GetItem write SetItem; default;
   end;
 
+  IStack<T> = interface
+    ['{F4C21C9B-5BB0-446D-BBA0-43343B7E8A04}']
+    function Count: integer;
+    function IsEmpty: boolean;
+    procedure Push(e: T);
+    function Pop: T;
+    function Peek: T;
+  end;
+
+  IQueue<T> = interface
+    ['{1454F65C-3628-488C-891A-4A4F6EDECCDA}']
+    function Count: integer;
+    function IsEmpty: boolean;
+    procedure EnQueue(e: T);
+    function DeQueue: T;
+    function Peek: T;
+  end;
+
 implementation
 
 end.
