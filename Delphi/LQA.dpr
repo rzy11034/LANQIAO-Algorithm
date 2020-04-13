@@ -121,7 +121,10 @@ uses
   LQA.Case09_07_有环链表的环起点 in 'Source\Case09_线性结构\LQA.Case09_07_有环链表的环起点.pas',
   LQA.Case09_08_判断回文链表 in 'Source\Case09_线性结构\LQA.Case09_08_判断回文链表.pas',
   LQA.Case09_09_设计带最小值的栈 in 'Source\Case09_线性结构\LQA.Case09_09_设计带最小值的栈.pas',
-  LQA.Case09_10_栈的集合 in 'Source\Case09_线性结构\LQA.Case09_10_栈的集合.pas';
+  LQA.Case09_10_栈的集合 in 'Source\Case09_线性结构\LQA.Case09_10_栈的集合.pas',
+  LQA.Case09_11_两个栈实现一个队列 in 'Source\Case09_线性结构\LQA.Case09_11_两个栈实现一个队列.pas',
+  LQA.Case09_12_栈的排序 in 'Source\Case09_线性结构\LQA.Case09_12_栈的排序.pas',
+  LQA.Case09_13_猫狗收容所 in 'Source\Case09_线性结构\LQA.Case09_13_猫狗收容所.pas';
 
 begin
   try

@@ -1,18 +1,15 @@
-﻿unit LQA.Case09_11_QueueByTwoStack;
-
-{$mode objfpc}{$H+}
+﻿unit LQA.Case09_11_两个栈实现一个队列;
 
 interface
 
 uses
-  Classes,
-  SysUtils,
+  System.SysUtils,
   DeepStar.DSA.Linear.Stack;
 
 type
   TQueueByTwoStack = class(TObject)
   private type
-    TStack_int = specialize TStack<integer>;
+    TStack_int = TStack<integer>;
 
   private
     _stack1, _stack2: TStack_int;

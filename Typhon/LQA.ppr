@@ -50,7 +50,7 @@ uses
   LQA.Case09_06_PlusLinkNode, LQA.Case09_07_CircleLinkedList, DeepStar.DSA.Linear.Stack,
   DeepStar.DSA.Linear.Test.Stack, DeepStar.DSA.Linear.Queue, DeepStar.DSA.Linear.Test.Queue,
   LQA.Case09_08_PalindromeLinkedList, LQA.Case09_09_StackWithMin, LQA.Case09_10_SetOfStacks,
-LQA.Case09_11_QueueByTwoStack, LQA.Case09_12_StacksSort;
+LQA.Case09_11_QueueByTwoStack, LQA.Case09_12_StacksSort, LQA.Case09_13_CatDogAsylum;
 
 
 begin

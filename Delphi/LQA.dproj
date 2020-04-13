@@ -294,6 +294,9 @@
         <DCCReference Include="Source\Case09_线性结构\LQA.Case09_08_判断回文链表.pas"/>
         <DCCReference Include="Source\Case09_线性结构\LQA.Case09_09_设计带最小值的栈.pas"/>
         <DCCReference Include="Source\Case09_线性结构\LQA.Case09_10_栈的集合.pas"/>
+        <DCCReference Include="Source\Case09_线性结构\LQA.Case09_11_两个栈实现一个队列.pas"/>
+        <DCCReference Include="Source\Case09_线性结构\LQA.Case09_12_栈的排序.pas"/>
+        <DCCReference Include="Source\Case09_线性结构\LQA.Case09_13_猫狗收容所.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

@@ -569,6 +569,10 @@
         <Filename Value="Source\Case09_Linear\LQA.Case09_12_StacksSort.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="Source\Case09_Linear\LQA.Case09_13_CatDogAsylum.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
