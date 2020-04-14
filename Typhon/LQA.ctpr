@@ -23,7 +23,7 @@
           <PathDelim Value="\"/>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices;Source\Case05_StringProblem;Source\Case06_MathProblem;Source\Case07_DeepRecursion;Source\Case08_GreedyStrategiesAndDynamicProgramming;Source\DeepStar\Utils;Source\DeepStar\DSA;Source\DeepStar\DSA\Linear;Source\DeepStar\DSA\Linear\Test;Source\DeepStar\DSA\Math;Source\DeepStar\DSA\Strings;Source\DeepStar\DSA\Tree;Source\Case09_Linear;Source\DeepStar\DSA\Hash;Source\DeepStar\DSA\Hash\Test"/>
+            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices;Source\Case05_StringProblem;Source\Case06_MathProblem;Source\Case07_DeepRecursion;Source\Case08_GreedyStrategiesAndDynamicProgramming;Source\DeepStar\Utils;Source\DeepStar\DSA;Source\DeepStar\DSA\Linear;Source\DeepStar\DSA\Linear\Test;Source\DeepStar\DSA\Math;Source\DeepStar\DSA\Strings;Source\Case09_Linear;Source\DeepStar\DSA\Hash;Source\DeepStar\DSA\Hash\Test"/>
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\Debug"/>
           </SearchPaths>
           <Parsing>
@@ -64,7 +64,7 @@
           <PathDelim Value="\"/>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices;Source\Case05_StringProblem;Source\Case06_MathProblem;Source\Case07_DeepRecursion;Source\Case08_GreedyStrategiesAndDynamicProgramming;Source\DeepStar\Utils;Source\DeepStar\DSA;Source\DeepStar\DSA\Linear;Source\DeepStar\DSA\Linear\Test;Source\DeepStar\DSA\Math;Source\DeepStar\DSA\Strings;Source\DeepStar\DSA\Tree;Source\Case09_Linear;Source\DeepStar\DSA\Hash;Source\DeepStar\DSA\Hash\Test"/>
+            <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices;Source\Case05_StringProblem;Source\Case06_MathProblem;Source\Case07_DeepRecursion;Source\Case08_GreedyStrategiesAndDynamicProgramming;Source\DeepStar\Utils;Source\DeepStar\DSA;Source\DeepStar\DSA\Linear;Source\DeepStar\DSA\Linear\Test;Source\DeepStar\DSA\Math;Source\DeepStar\DSA\Strings;Source\Case09_Linear;Source\DeepStar\DSA\Hash;Source\DeepStar\DSA\Hash\Test"/>
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\Release"/>
           </SearchPaths>
           <CodeGeneration>
@@ -498,10 +498,6 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.HashSet.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
         <Filename Value="Source\DeepStar\DSA\Linear\Test\DeepStar.DSA.Linear.Test.DoubleLinkedList.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
@@ -592,7 +588,7 @@
     <PathDelim Value="\"/>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices;Source\Case05_StringProblem;Source\Case06_MathProblem;Source\Case07_DeepRecursion;Source\Case08_GreedyStrategiesAndDynamicProgramming;Source\DeepStar\Utils;Source\DeepStar\DSA;Source\DeepStar\DSA\Linear;Source\DeepStar\DSA\Linear\Test;Source\DeepStar\DSA\Math;Source\DeepStar\DSA\Strings;Source\DeepStar\DSA\Tree;Source\Case09_Linear;Source\DeepStar\DSA\Hash;Source\DeepStar\DSA\Hash\Test"/>
+      <OtherUnitFiles Value="Source;Source\Case01_BitOperation;Source\Case02_SearchAndSort(I);Source\Case03_SearchAndSort(II);Source\Case04_MultidimensionalArraysAndMatrices;Source\Case05_StringProblem;Source\Case06_MathProblem;Source\Case07_DeepRecursion;Source\Case08_GreedyStrategiesAndDynamicProgramming;Source\DeepStar\Utils;Source\DeepStar\DSA;Source\DeepStar\DSA\Linear;Source\DeepStar\DSA\Linear\Test;Source\DeepStar\DSA\Math;Source\DeepStar\DSA\Strings;Source\Case09_Linear;Source\DeepStar\DSA\Hash;Source\DeepStar\DSA\Hash\Test"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\Default"/>
     </SearchPaths>
     <Linking>

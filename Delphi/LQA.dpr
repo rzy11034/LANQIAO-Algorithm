@@ -105,7 +105,6 @@ uses
   DeepStar.DSA.Math in 'Source\DeepStar\DSA\Math\DeepStar.DSA.Math.pas',
   DeepStar.DSA.Strings.KMP in 'Source\DeepStar\DSA\Strings\DeepStar.DSA.Strings.KMP.pas',
   DeepStar.DSA.Strings.RabinKarp in 'Source\DeepStar\DSA\Strings\DeepStar.DSA.Strings.RabinKarp.pas',
-  DeepStar.DSA.Tree.HashSet in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.HashSet.pas',
   DeepStar.DSA.Linear.DoubleLinkedList in 'Source\DeepStar\DSA\Linear\DeepStar.DSA.Linear.DoubleLinkedList.pas',
   DeepStar.DSA.Linear.Test.DoubleLinkedList in 'Source\DeepStar\DSA\Linear\Test\DeepStar.DSA.Linear.Test.DoubleLinkedList.pas',
   LQA.Case09_01_桶排序 in 'Source\Case09_线性结构\LQA.Case09_01_桶排序.pas',
@@ -124,7 +123,10 @@ uses
   LQA.Case09_10_栈的集合 in 'Source\Case09_线性结构\LQA.Case09_10_栈的集合.pas',
   LQA.Case09_11_两个栈实现一个队列 in 'Source\Case09_线性结构\LQA.Case09_11_两个栈实现一个队列.pas',
   LQA.Case09_12_栈的排序 in 'Source\Case09_线性结构\LQA.Case09_12_栈的排序.pas',
-  LQA.Case09_13_猫狗收容所 in 'Source\Case09_线性结构\LQA.Case09_13_猫狗收容所.pas';
+  LQA.Case09_13_猫狗收容所 in 'Source\Case09_线性结构\LQA.Case09_13_猫狗收容所.pas',
+  DeepStar.DSA.Hash.HashMap in 'Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashMap.pas',
+  DeepStar.DSA.Hash.HashSet in 'Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashSet.pas',
+  DeepStar.DSA.Hash.Test.HashMap in 'Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas';
 
 begin
   try

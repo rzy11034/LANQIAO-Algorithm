@@ -16,10 +16,10 @@ interface
 uses
   Classes,
   SysUtils,
-  Generics.Collections,
   LQA.Utils,
-  DeepStar.DSA.Tree.HashSet,
-  DeepStar.DSA.Math;
+  DeepStar.DSA.Hash.HashSet,
+  DeepStar.DSA.Math,
+  DeepStar.DSA.Linear.ArrayList;
 
 procedure Main;
 
@@ -27,7 +27,7 @@ implementation
 
 type
   TSet_TSet_int = specialize THashSet<TSet_int>;
-  TList_TList_int = specialize TList<TList_int>;
+  TList_TList_int = specialize TArrayList<TList_int>;
 
 
 // 递归增量构造法
@@ -131,7 +131,7 @@ begin
     for j := n - 1 downto 0 do
     begin
       if ((i shr j) and 1) = 1 then
-        s.add(tmpArr[j]);
+        s.AddLast(tmpArr[j]);
     end;
 
     res.AddRange(s);
@@ -183,7 +183,7 @@ begin
   DrawLineBlockEnd;
 
   tmp2 := GetSubsets3(arr, Length(arr));
-  for t2 in tmp2 do
+  for t2 in tmp2.ToArray do
   begin
     if t2.Count <> 0 then
       TArrayUtils_int.Print(t2.ToArray)

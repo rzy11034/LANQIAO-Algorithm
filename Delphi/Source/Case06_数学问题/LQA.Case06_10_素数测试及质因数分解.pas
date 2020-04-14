@@ -5,8 +5,8 @@ interface
 uses
   Classes,
   SysUtils,
-  System.Generics.Collections,
-  LQA.Utils;
+  LQA.Utils,
+  DeepStar.DSA.Hash.HashMap;
 
 procedure Main;
 
@@ -45,7 +45,7 @@ begin
       if not map.ContainsKey(i) then
         map.Add(i, 1)
       else
-        map.AddOrSetValue(i, map.Items[i] + 1);
+        map.SetItem(i, map.Item[i] + 1);
 
       num := num div i;
     end;
@@ -60,7 +60,7 @@ procedure Main;
 var
   map: TMap_int_int;
   sb: TStringBuilder;
-  pair: TPair<integer, integer>;
+  pair: TMap_int_int.TPair;
   k, v, i: integer;
   s: UString;
 begin
@@ -69,7 +69,7 @@ begin
   map := PrimeFactor(100);
   sb := TStringBuilder.Create;
 
-  for pair in map.ToArray do
+  for pair in map.Pairs do
   begin
     k := pair.Key;
     v := pair.Value;

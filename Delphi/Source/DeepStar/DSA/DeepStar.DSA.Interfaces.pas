@@ -61,6 +61,36 @@ type
     function Peek: T;
   end;
 
+  ISet<T> = interface
+    ['{EB3DEBD8-1473-4AD1-90B2-C5CEF2AD2A97}']
+    function Contains(e: T): boolean;
+    function Count: integer;
+    function IsEmpty: boolean;
+    function ToArray: TImpl<T>.TArr;
+    procedure Add(e: T);
+    procedure Clear;
+    procedure Remove(e: T);
+  end;
+
+  TPtr_V<V> = record
+    PValue: ^V;
+  end;
+
+  IMap<K, V> = interface
+    ['{4D344A23-A724-4120-80D8-C7F07F33D367}']
+    function ContainsKey(key: K): boolean;
+    function ContainsValue(value: V): boolean;
+    function Count: integer;
+    function GetItem(key: K): TPtr_V<V>;
+    function IsEmpty: boolean;
+    function Keys: TImpl<K>.TArr;
+    function Remove(key: K): TPtr_V<V>;
+    function Values: TImpl<V>.TArr;
+    procedure Add(key: K; Value: V);
+    procedure Clear;
+    procedure SetItem(key: K; Value: V);
+  end;
+
 implementation
 
 end.

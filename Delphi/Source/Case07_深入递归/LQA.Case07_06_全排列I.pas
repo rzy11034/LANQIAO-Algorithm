@@ -27,24 +27,24 @@ var
   i, j: integer;
 begin
   res := TList_str.Create;
-  res.Add(str.Chars[0]);
+  res.AddLast(str.Chars[0]);
 
   for i := 1 to str.Length - 1 do
   begin
     tmpList := TList_str.Create;
     c := str.Chars[i];
 
-    for s in res do
+    for s in res.ToArray do
     begin
       // 加到左边
-      tmpList.Add(c + s);
+      tmpList.AddLast(c + s);
       // 加到右边
-      tmpList.Add(s + c);
+      tmpList.AddLast(s + c);
       // 加到中间
       for j := 1 to s.Length - 1 do
       begin
         tmpStr := s.Substring(0, j) + c + s.Substring(j, s.Length);
-        tmpList.Add(tmpStr);
+        tmpList.AddLast(tmpStr);
       end;
     end;
 
@@ -67,24 +67,24 @@ function Solution2(const str: UString): TList_str;
 
     if cur = 0 then
     begin
-      res.Add(str.Chars[cur]);
+      res.AddLast(str.Chars[cur]);
       Exit(res);
     end;
 
     tmpList := __solution2(str, cur - 1);
-    for s in tmpList do
+    for s in tmpList.ToArray do
     begin
       c := str.Chars[cur];
 
       // 加到左边
-      res.Add(c + s);
+      res.AddLast(c + s);
       // 加到右边
-      res.Add(s + c);
+      res.AddLast(s + c);
       // 加到中间
       for j := 1 to s.Length - 1 do
       begin
         tmpStr := s.Substring(0, j) + c + s.Substring(j, s.Length);
-        res.Add(tmpStr);
+        res.AddLast(tmpStr);
       end;
     end;
 

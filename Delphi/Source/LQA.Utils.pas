@@ -9,7 +9,11 @@ uses
   System.Rtti,
   System.Generics.Collections,
   System.Generics.Defaults,
-  DeepStar.DSA.Tree.HashSet;
+  DeepStar.DSA.Hash.HashMap,
+  DeepStar.DSA.Hash.HashSet,
+  DeepStar.DSA.Interfaces,
+  DeepStar.DSA.Linear.ArrayList,
+  DeepStar.DSA.Linear.Stack;
 
 type
   UChar = Char;
@@ -87,14 +91,14 @@ type
   TUtils_chr = TUtils<UChar>;
 
 type // 容器类
-  TList_int = TList<integer>;
-  TList_str = TList<UString>;
-  TList_chr = TList<UChar>;
-  TList_TArr_int = TList<TArr_int>;
+  TList_int = TArrayList<integer>;
+  TList_str = TArrayList<UString>;
+  TList_chr = TArrayList<UChar>;
+  TList_TArr_int = TArrayList<TArr_int>;
   TStack_int = TStack<integer>;
   TStack_chr = TStack<UChar>;
-  TMap_int_int = TDictionary<integer, integer>;
-  TMap_str_int = TDictionary<UString, integer>;
+  TMap_int_int = THashMap<integer, integer>;
+  TMap_str_int = THashMap<UString, integer>;
   TSet_int = THashSet<integer>;
   TSet_str = THashSet<UString>;
 
@@ -183,7 +187,7 @@ class procedure TArrayUtils<T>.FillArray(var arr: TArr_T; e: T);
 var
   i: integer;
 begin
-  for i := 0 to High(arr) do
+  for i := 0 to high(arr) do
     arr[i] := e;
 end;
 

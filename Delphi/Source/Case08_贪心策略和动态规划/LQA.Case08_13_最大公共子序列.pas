@@ -82,7 +82,7 @@ begin
     begin
       if (s1.Chars[i] = s2.Chars[j]) then // 如果相同
       begin
-        list.add(s1.Chars[i]);
+        list.AddLast(s1.Chars[i]);
         tmpS1 := s1.substring(i + 1);
         tmpS2 := s2.substring(j + 1);
         list.AddRange(Dfs(tmpS1, tmpS2).ToArray);
@@ -114,7 +114,7 @@ function TLcs.Dp(s1, s2: UString): Tlist_chr;
       // 比左和上大，一定是当前位置的字符相等
       if rec[i, j] > Max(rec[i - 1, j], rec[i, j - 1]) then
       begin
-        res.Insert(0, s1.Chars[i - 1]);
+        res.Add(0, s1.Chars[i - 1]);
         i := i - 1;
         j := j - 1;
       end

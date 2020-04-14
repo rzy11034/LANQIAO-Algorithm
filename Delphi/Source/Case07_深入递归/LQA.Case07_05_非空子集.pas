@@ -15,7 +15,7 @@ uses
   System.SysUtils,
   System.Generics.Collections,
   LQA.Utils,
-  DeepStar.DSA.Tree.HashSet,
+  DeepStar.DSA.Hash.HashSet,
   DeepStar.DSA.Math;
 
 procedure Main;
@@ -127,7 +127,7 @@ begin
     for j := n - 1 downto 0 do
     begin
       if ((i shr j) and 1) = 1 then
-        s.Add(tmpArr[j]);
+        s.AddLast(tmpArr[j]);
     end;
 
     res.AddRange(s);

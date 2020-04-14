@@ -11,7 +11,11 @@ uses
   {%H-}Rtti,
   Generics.Collections,
   Generics.Defaults,
-  DeepStar.DSA.Tree.HashSet;
+  DeepStar.DSA.Hash.HashMap,
+  DeepStar.DSA.Hash.HashSet,
+  DeepStar.DSA.Interfaces,
+  DeepStar.DSA.Linear.ArrayList,
+  DeepStar.DSA.Linear.Stack;
 
 type
   UChar = type UnicodeChar;
@@ -96,10 +100,10 @@ type
   end;
 
 type // 容器类
-  TList_int = specialize TList<integer>;
-  TList_str = specialize TList<UString>;
-  TList_chr = specialize TList<UChar>;
-  TList_TArr_int = specialize TList<TArr_int>;
+  TList_int = specialize TArrayList<integer>;
+  TList_str = specialize TArrayList<UString>;
+  TList_chr = specialize TArrayList<UChar>;
+  TList_TArr_int = specialize TArrayList<TArr_int>;
   TStack_int = specialize TStack<integer>;
   TStack_chr = specialize TStack<UChar>;
   TMap_int_int = specialize THashMap<integer, integer>;
@@ -271,7 +275,7 @@ begin
         for j := 0 to High(arr[i]) do
         begin
           tmp := arr[i, j];
-          TValue.Make(@tmp, system.TypeInfo(T), Value);
+          TValue.Make(@tmp, System.TypeInfo(T), Value);
           Write(Value.ToString);
 
           if j <> High(arr[i]) then

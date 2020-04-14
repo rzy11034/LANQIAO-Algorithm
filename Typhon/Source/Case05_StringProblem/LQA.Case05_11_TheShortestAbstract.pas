@@ -50,17 +50,17 @@ var
   k: integer;
   map, map2: TMap_str_int;
   key: UString;
-  e: TMap_str_int.TDictionaryPair;
+  e: TMap_str_int.TPair;
 begin
   map := TMap_str_int.Create;
 
   for k := 0 to Length(keyWords) - 1 do
   begin
     key := keyWords[k];
-    if map.ContainsKey(key) = False then
+    if map.ContainsKey(key) = false then
       map.Add(key, 1)
     else
-      map.AddOrSetValue(key, map[key] + 1);
+      map.SetItem(key, map.GetItem(key).PValue^ + 1);
   end;
 
   map2 := TMap_str_int.Create;
@@ -68,22 +68,22 @@ begin
   for k := i to j do
   begin
     key := w[k];
-    if map2.ContainsKey(key) = False then
+    if map2.ContainsKey(key) = false then
       map2.add(key, 1)
     else
-      map2.AddOrSetValue(key, map2[key] + 1);
+      map2.SetItem(key, map2.GetItem(key).PValue^ + 1);
   end;
 
-  for e in map.ToArray do
+  for e in map.Pairs do
   begin
-    if (map2.ContainsKey(e.Key) = False) or (map2[e.Key] < e.Value) then
+    if (map2.ContainsKey(e.Key) = false) or (map2.GetItem(e.Key).PValue^ < e.Value) then
     begin
-      Result := False;
+      Result := false;
       Exit;
     end;
   end;
 
-  Result := True;
+  Result := true;
 end;
 
 class procedure TShortestAbstract.print(arr: TArr_str; l, r: integer);

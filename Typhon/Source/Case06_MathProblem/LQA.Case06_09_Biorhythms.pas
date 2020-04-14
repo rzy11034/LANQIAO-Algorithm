@@ -87,8 +87,8 @@ begin
       Break
     else
     begin
-      aList.Add(a);
-      dList.Add(d);
+      aList.AddLast(a);
+      dList.AddLast(d);
     end;
   end;
 

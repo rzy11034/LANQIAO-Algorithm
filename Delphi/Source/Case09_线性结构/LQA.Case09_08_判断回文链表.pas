@@ -29,7 +29,7 @@ type
     TStack = TStack<integer>;
 
   private
-    function __reverseList_Iteration(node: TNode): TNode;
+    //function __reverseList_Iteration(node: TNode): TNode;
     function __reverseList_Recursion(node: TNode): TNode;
   public
     function IsPalindrome(node: TNode): boolean;
@@ -93,23 +93,23 @@ begin
   Result := true;
 end;
 
-function TPalindromeLinkedList.__reverseList_Iteration(node: TNode): TNode;
-var
-  prev, Next: TNode;
-begin
-  prev := nil;
-  //Next := nil;
-
-  while node <> nil do
-  begin
-    Next := node.Next;
-    node.Next := prev;
-    prev := node;
-    node := Next;
-  end;
-
-  Result := prev;
-end;
+//function TPalindromeLinkedList.__reverseList_Iteration(node: TNode): TNode;
+//var
+//  prev, Next: TNode;
+//begin
+//  prev := nil;
+//  //Next := nil;
+//
+//  while node <> nil do
+//  begin
+//    Next := node.Next;
+//    node.Next := prev;
+//    prev := node;
+//    node := Next;
+//  end;
+//
+//  Result := prev;
+//end;
 
 function TPalindromeLinkedList.__reverseList_Recursion(node: TNode): TNode;
 var

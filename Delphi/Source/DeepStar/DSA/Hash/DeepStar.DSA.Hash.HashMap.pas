@@ -1,18 +1,15 @@
 ﻿unit DeepStar.DSA.Hash.HashMap;
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
-  Classes,
-  SysUtils,
-  {%H-}Rtti,
+  System.SysUtils,
+  System.Rtti,
   DeepStar.DSA.Interfaces,
   DeepStar.DSA.Linear.LinkedList;
 
 type
-  generic THashMap<K, V> = class(TInterfacedObject, specialize IMap<K, V>)
+  THashMap<K, V> = class(TInterfacedObject, IMap<K, V>)
   public type
     TPair = class
       Key: K;
@@ -21,15 +18,15 @@ type
     end;
 
   private type
-    TPtr_V = specialize TPtr_V<V>;
-    TImpl_K = specialize TImpl<K>;
-    TImpl_V = specialize TImpl<V>;
-    TImpl_TPair = specialize TImpl<TPair>;
-    TLinkedList_K = specialize TLinkedList<K>;
-    TLinkedList_V = specialize TLinkedList<V>;
-    TLinkedList_TPair = specialize TLinkedList<TPair>;
+    TPtr_V = TPtr_V<V>;
+    TImpl_K = TImpl<K>;
+    TImpl_V = TImpl<V>;
+    TImpl_TPair = TImpl<TPair>;
+    TLinkedList_K = TLinkedList<K>;
+    TLinkedList_V = TLinkedList<V>;
+    TLinkedList_TPair = TLinkedList<TPair>;
 
-    THashMap_K_V = specialize THashMap<K, V>;
+    THashMap_K_V = THashMap<K, V>;
 
   private
     _data: array of TLinkedList_TPair;
@@ -38,28 +35,28 @@ type
     _cmp_K: TImpl_K.ICmp;
     _cmp_V: TImpl_V.ICmp;
 
+    function __hash(Key: K): integer;
     function __getItem(key: K): V;
-    function __hash(key: K): integer;
-    procedure __setItem(key: K; value: V);
+    procedure __setItem(key: K; const Value: V);
 
   public
     constructor Create(newCapacity: integer = 20);
     destructor Destroy; override;
 
     function Clone: THashMap_K_V;
-    function ContainsKey(key: K): boolean;
+    function ContainsKey(Key: K): boolean;
     function ContainsValue(Value: V): boolean;
     function Count: integer;
-    function GetItem(key: K): TPtr_V;
+    function GetItem(Key: K): TPtr_V;
     function IsEmpty: boolean;
     function Keys: TImpl_K.TArr;
     function Pairs: TImpl_TPair.TArr;
-    function Remove(key: K): TPtr_V;
+    function Remove(Key: K): TPtr_V;
     function Values: TImpl_V.TArr;
-    procedure Add(key: K; Value: V);
+    procedure Add(Key: K; Value: V);
     procedure AddAll(map: THashMap_K_V);
     procedure Clear;
-    procedure SetItem(key: K; Value: V);
+    procedure SetItem(Key: K; Value: V);
 
     property Comparer_K: TImpl_K.ICmp read _cmp_K write _cmp_K;
     property Comparer_V: TImpl_V.ICmp read _cmp_V write _cmp_V;
@@ -68,17 +65,17 @@ type
 
 implementation
 
-{ THashMap.TPair }
+{ THashMap<K, V>.TPair }
 
-constructor THashMap.TPair.Create(newKey: K; newValue: V);
+constructor THashMap<K, V>.TPair.Create(newKey: K; newValue: V);
 begin
   Key := newKey;
   Value := newValue;
 end;
 
-{ THashMap }
+{ THashMap<K, V> }
 
-constructor THashMap.Create(newCapacity: integer);
+constructor THashMap<K, V>.Create(newCapacity: integer);
 var
   i: integer;
 begin
@@ -88,26 +85,26 @@ begin
   _size := 0;
   SetLength(_data, _capacity);
 
-  for i := 0 to High(_data) do
+  for i := 0 to high(_data) do
   begin
     _data[i] := TLinkedList_TPair.Create;
   end;
 end;
 
-procedure THashMap.Add(key: K; Value: V);
+procedure THashMap<K, V>.Add(Key: K; Value: V);
 var
   hashcode: integer;
 begin
-  hashcode := __hash(key);
+  hashcode := __hash(Key);
 
-  if ContainsKey(key) then
+  if ContainsKey(Key) then
     Exit;
 
-  _data[hashcode].AddLast(TPair.Create(key, Value));
-  _size += 1;
+  _data[hashcode].AddLast(TPair.Create(Key, Value));
+  _size := _size + 1;
 end;
 
-procedure THashMap.AddAll(map: THashMap_K_V);
+procedure THashMap<K, V>.AddAll(map: THashMap_K_V);
 var
   e: TPair;
 begin
@@ -120,11 +117,11 @@ begin
   end;
 end;
 
-procedure THashMap.Clear;
+procedure THashMap<K, V>.Clear;
 var
   i: integer;
 begin
-  for i := 0 to High(_data) do
+  for i := 0 to high(_data) do
   begin
     _data[i].Clear;
   end;
@@ -132,7 +129,7 @@ begin
   _size := 0;
 end;
 
-function THashMap.Clone: THashMap_K_V;
+function THashMap<K, V>.Clone: THashMap_K_V;
 var
   res: THashMap_K_V;
   e: TPair;
@@ -147,26 +144,26 @@ begin
   Result := res;
 end;
 
-function THashMap.ContainsKey(key: K): boolean;
+function THashMap<K, V>.ContainsKey(Key: K): boolean;
 var
   hashcode, i: integer;
 begin
-  hashcode := __hash(key);
+  hashcode := __hash(Key);
 
   for i := 0 to _data[hashcode].Count - 1 do
   begin
-    if _cmp_K.Compare(key, _data[hashcode].Items[i].Key) = 0 then
+    if _cmp_K.Compare(Key, _data[hashcode].Items[i].Key) = 0 then
       Exit(true);
   end;
 
   Result := false;
 end;
 
-function THashMap.ContainsValue(Value: V): boolean;
+function THashMap<K, V>.ContainsValue(Value: V): boolean;
 var
   i, j: integer;
 begin
-  for i := 0 to High(_data) do
+  for i := 0 to high(_data) do
   begin
     for j := 0 to _data[i].Count - 1 do
     begin
@@ -178,16 +175,16 @@ begin
   Result := false;
 end;
 
-function THashMap.Count: integer;
+function THashMap<K, V>.Count: integer;
 begin
   Result := _size;
 end;
 
-destructor THashMap.Destroy;
+destructor THashMap<K, V>.Destroy;
 var
   i: integer;
 begin
-  for i := 0 to High(_data) do
+  for i := 0 to high(_data) do
   begin
     _data[i].Free;
   end;
@@ -195,18 +192,18 @@ begin
   inherited Destroy;
 end;
 
-function THashMap.GetItem(key: K): TPtr_V;
+function THashMap<K, V>.GetItem(Key: K): TPtr_V;
 var
   hashcode, i: integer;
   Value: V;
   res: TPtr_V;
 begin
   res.PValue := nil;
-  hashcode := __hash(key);
+  hashcode := __hash(Key);
 
   for i := 0 to _data[hashcode].Count - 1 do
   begin
-    if _cmp_K.Compare(key, _data[hashcode].Items[i].Key) = 0 then
+    if _cmp_K.Compare(Key, _data[hashcode].Items[i].Key) = 0 then
     begin
       Value := _data[hashcode].Items[i].Value;
       res.PValue := @Value;
@@ -217,19 +214,19 @@ begin
   Result := res;
 end;
 
-function THashMap.IsEmpty: boolean;
+function THashMap<K, V>.IsEmpty: boolean;
 begin
   Result := _size = 0;
 end;
 
-function THashMap.Keys: TImpl_K.TArr;
+function THashMap<K, V>.Keys: TImpl_K.TArr;
 var
   list: TLinkedList_K;
   i, j: integer;
 begin
   list := TLinkedList_K.Create;
   try
-    for i := 0 to High(_data) do
+    for i := 0 to high(_data) do
     begin
       for j := 0 to _data[i].Count - 1 do
       begin
@@ -243,14 +240,14 @@ begin
   end;
 end;
 
-function THashMap.Pairs: TImpl_TPair.TArr;
+function THashMap<K, V>.Pairs: TImpl_TPair.TArr;
 var
   list: TLinkedList_TPair;
   i, j: integer;
 begin
   list := TLinkedList_TPair.Create;
   try
-    for i := 0 to High(_data) do
+    for i := 0 to high(_data) do
     begin
       for j := 0 to _data[i].Count - 1 do
       begin
@@ -264,20 +261,20 @@ begin
   end;
 end;
 
-function THashMap.Remove(key: K): TPtr_V;
+function THashMap<K, V>.Remove(Key: K): TPtr_V;
 var
   hashcode, i: integer;
   res: TPair;
 begin
   res := nil;
-  hashcode := __hash(key);
+  hashcode := __hash(Key);
 
   for i := 0 to _data[hashcode].Count - 1 do
   begin
-    if _cmp_K.Compare(key, _data[hashcode].Items[i].Key) = 0 then
+    if _cmp_K.Compare(Key, _data[hashcode].Items[i].Key) = 0 then
     begin
       res := _data[hashcode].Remove(i);
-      _size -= 1;
+      _size := _size - 1;
       Break;
     end;
   end;
@@ -288,15 +285,15 @@ begin
     Result.PValue := @res.Value;
 end;
 
-procedure THashMap.SetItem(key: K; Value: V);
+procedure THashMap<K, V>.SetItem(Key: K; Value: V);
 var
   hashcode, i: integer;
 begin
-  hashcode := __hash(key);
+  hashcode := __hash(Key);
 
   for i := 0 to _data[hashcode].Count - 1 do
   begin
-    if _cmp_K.Compare(key, _data[hashcode].Items[i].Key) = 0 then
+    if _cmp_K.Compare(Key, _data[hashcode].Items[i].Key) = 0 then
     begin
       _data[hashcode].Items[i].Value := Value;
       Break;
@@ -304,14 +301,14 @@ begin
   end;
 end;
 
-function THashMap.Values: TImpl_V.TArr;
+function THashMap<K, V>.Values: TImpl_V.TArr;
 var
   list: TLinkedList_V;
   i, j: integer;
 begin
   list := TLinkedList_V.Create;
   try
-    for i := 0 to High(_data) do
+    for i := 0 to high(_data) do
     begin
       for j := 0 to _data[i].Count - 1 do
       begin
@@ -325,22 +322,22 @@ begin
   end;
 end;
 
-function THashMap.__getItem(key: K): V;
+function THashMap<K, V>.__getItem(key: K): V;
 begin
-  Result := GetItem(Key).PValue^;
+  Result := Self.GetItem(key).PValue^;
 end;
 
-function THashMap.__hash(key: K): integer;
+function THashMap<K, V>.__hash(Key: K): integer;
 var
   Value: TValue;
 begin
-  TValue.Make(@key, TypeInfo(K), Value);
+  TValue.Make(@Key, TypeInfo(K), Value);
   Result := (Value.ToString.GetHashCode and $7FFFFFFF) mod _capacity;
 end;
 
-procedure THashMap.__setItem(key: K; value: V);
+procedure THashMap<K, V>.__setItem(key: K; const Value: V);
 begin
-  SetItem(key, value);
+  Self.SetItem(key, Value);
 end;
 
 end.

@@ -15,8 +15,8 @@ interface
 
 uses
   System.SysUtils,
-  System.Generics.Collections,
-  LQA.Utils;
+  LQA.Utils,
+  DeepStar.DSA.Hash.HashMap;
 
 procedure Main;
 
@@ -47,7 +47,7 @@ var
   k: integer;
   map, map2: TMap_str_int;
   key: UString;
-  e: TPair<UString, integer>;
+  e: TMap_str_int.TPair;
 begin
   map := TMap_str_int.Create;
 
@@ -57,7 +57,7 @@ begin
     if map.ContainsKey(key) = False then
       map.Add(key, 1)
     else
-      map.AddOrSetValue(key, map[key] + 1);
+      map.SetItem(key, map[key] + 1);
   end;
 
   map2 := TMap_str_int.Create;
@@ -68,10 +68,10 @@ begin
     if map2.ContainsKey(key) = False then
       map2.Add(key, 1)
     else
-      map2.AddOrSetValue(key, map2[key] + 1);
+      map2.SetItem(key, map2[key] + 1);
   end;
 
-  for e in map.ToArray do
+  for e in map.Pairs do
   begin
     if (map2.ContainsKey(e.key) = False) or (map2[e.key] < e.Value) then
     begin

@@ -70,12 +70,12 @@ begin
     begin
       if i = high(arr) then
       begin
-        list.Add(-1);
-        list.Add(1);
+        list.AddLast(-1);
+        list.AddLast(1);
       end
       else
       begin
-        list.Add(-1);
+        list.AddLast(-1);
         Inc(arr[i + 1]);
       end;
     end
@@ -83,17 +83,17 @@ begin
     begin
       if i = high(arr) then
       begin
-        list.Add(0);
-        list.Add(1);
+        list.AddLast(0);
+        list.AddLast(1);
       end
       else
       begin
-        list.Add(0);
+        list.AddLast(0);
         Inc(arr[i + 1]);
       end;
     end
     else
-      list.Add(StrToInt(arr[i]));
+      list.AddLast(StrToInt(arr[i]));
   end;
 
   SetLength(arr1, list.Count);

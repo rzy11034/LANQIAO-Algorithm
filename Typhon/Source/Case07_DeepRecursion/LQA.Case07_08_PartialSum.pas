@@ -87,11 +87,11 @@ function TPartialSum.Solution(const arr: TArr_int; k: integer): UString;
     if (k < 0) or (cur = Length(arr)) then
       Exit;
 
-    _list.Add(arr[cur]);
+    _list.AddLast(arr[cur]);
     __solution(sum - arr[cur], cur + 1);
 
     // 回溯
-    _list.Delete(_list.Count - 1);
+    _list.Remove(_list.Count - 1);
     __solution(sum, cur + 1);
   end;
 

@@ -31,7 +31,7 @@ var
     // 排好了一种情况,递归的支路走到底了
     if k = Length(arr) then
     begin
-      res.Add(UString.Create(arr));
+      res.AddLast(UString.Create(arr));
       Exit;
     end;
 
