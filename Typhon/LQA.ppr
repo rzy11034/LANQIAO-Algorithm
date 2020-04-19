@@ -127,7 +127,8 @@ uses
   LQA.Case09_13_CatDogAsylum,
   DeepStar.DSA.Hash.HashMap,
   DeepStar.DSA.Hash.Test.HashMap,
-  DeepStar.DSA.Hash.HashSet;
+  DeepStar.DSA.Hash.HashSet,
+  DeepStar.DSA.Tree.MyTree;
 
 begin
   try
