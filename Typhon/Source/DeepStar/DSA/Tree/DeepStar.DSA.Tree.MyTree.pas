@@ -9,6 +9,7 @@ uses
   SysUtils,
   Math,
   DeepStar.DSA.Linear.ArrayList,
+  DeepStar.DSA.Linear.Queue,
   DeepStar.DSA.Interfaces,
   DeepStar.Utils.UString;
 
@@ -18,6 +19,7 @@ type
     TTreeNode = class;
     TImpl_T = specialize TImpl<T>;
     TList_TreeNode = specialize TArrayList<TTreeNode>;
+    TQueue_TreeNode = specialize TQueue<TTreeNode>;
 
   public type
     TTreeNode = class(TObject)
@@ -147,10 +149,37 @@ begin
 end;
 
 function TMyTree.LevelOrder(node: TTreeNode): TList_TreeNode;
+var
+  res: TList_TreeNode;
+  queue: TQueue_TreeNode;
+  temp: TTreeNode;
+  i: integer;
 begin
   if node = nil then
     Exit(nil);
 
+  res := TList_TreeNode.Create;
+  queue := TQueue_TreeNode.Create;
+
+  try
+    queue.EnQueue(node);
+
+    while not queue.IsEmpty do
+    begin
+      temp := queue.DeQueue;
+
+      for i := 0 to temp.Children.Count - 1 do
+      begin
+        queue.EnQueue(temp.Children[i]);
+      end;
+
+      res.AddLast(temp);
+    end;
+
+    Result := res;
+  finally
+    queue.Free;
+  end;
 end;
 
 function TMyTree.LevelOrder: TList_TreeNode;
@@ -160,10 +189,11 @@ end;
 
 function TMyTree.PosCtOrder: TList_TreeNode;
 begin
-  Result := nil
+  Result := nil;
 end;
 
 function TMyTree.PreOrder: TList_TreeNode;
+
 begin
   Result := nil;
 end;
