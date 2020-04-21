@@ -75,7 +75,11 @@ end;
 
 procedure TMyTree.DeleteChild(parent: TTreeNode; i: integer);
 begin
+  if parent.Children.Count = 0 then
+    Exit;
 
+  parent.Children.Remove(i);
+  _size -= 1;
 end;
 
 destructor TMyTree.Destroy;
@@ -135,27 +139,33 @@ end;
 
 procedure TMyTree.InsertChild(parent, child: TTreeNode);
 begin
+  if parent.Children = nil then
+    parent.Children := TList_TreeNode.Create;
 
+  parent.Children.AddLast(child);
+  _size += 1;
 end;
 
 function TMyTree.LevelOrder(node: TTreeNode): TList_TreeNode;
 begin
+  if node = nil then
+    Exit(nil);
 
 end;
 
 function TMyTree.LevelOrder: TList_TreeNode;
 begin
-
+  Result := LevelOrder(_root);
 end;
 
 function TMyTree.PosCtOrder: TList_TreeNode;
 begin
-
+  Result := nil
 end;
 
 function TMyTree.PreOrder: TList_TreeNode;
 begin
-
+  Result := nil;
 end;
 
 { TMyTree.TTreeNode }
