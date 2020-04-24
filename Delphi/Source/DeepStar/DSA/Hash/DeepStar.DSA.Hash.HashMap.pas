@@ -323,8 +323,15 @@ begin
 end;
 
 function THashMap<K, V>.__getItem(key: K): V;
+var
+  res: TPtr_V;
 begin
-  Result := Self.GetItem(key).PValue^;
+  res := GetItem(Key);
+
+  if res.PValue = nil then
+    raise Exception.Create('The hash-table does not contain this key');
+
+  Result := res.PValue^;
 end;
 
 function THashMap<K, V>.__hash(Key: K): integer;

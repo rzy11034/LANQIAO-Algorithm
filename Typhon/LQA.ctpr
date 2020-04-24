@@ -585,6 +585,15 @@
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.MyTree.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
+      <Unit>
+        <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BstNode.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="DeepStar.DSA.Tree.BSTNode"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

@@ -128,7 +128,9 @@ uses
   DeepStar.DSA.Hash.HashMap,
   DeepStar.DSA.Hash.Test.HashMap,
   DeepStar.DSA.Hash.HashSet,
-  DeepStar.DSA.Tree.MyTree;
+  DeepStar.DSA.Tree.MyTree,
+  DeepStar.DSA.Tree.BSTNode,
+  DeepStar.DSA.Tree.BSTTree;
 
 begin
   try
