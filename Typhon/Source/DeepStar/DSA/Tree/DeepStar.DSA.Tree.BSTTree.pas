@@ -7,6 +7,7 @@ interface
 uses
   Classes,
   SysUtils,
+  Math,
   DeepStar.DSA.Tree.BstNode,
   DeepStar.DSA.Interfaces,
   DeepStar.DSA.Linear.ArrayList;
@@ -14,18 +15,19 @@ uses
 type
   generic TBSTTree<K, V> = class(TInterfacedObject, specialize IMap<K, V>)
   private type
-    TBSTTree_K_V = specialize TBSTTree<K, V>;
+    TBstNode_K_V = specialize TBstNode<K, V>;
     TImpl_K = specialize TImpl<K>;
     TImpl_V = specialize TImpl<V>;
     TList_K = specialize TArrayList<K>;
     TPtr_V = specialize TPtr_V<V>;
 
   private
-    _root: TBSTTree_K_V;
-    _cmp: TImpl_K;
+    _root: TBstNode_K_V;
+    _cmp: TImpl_K.ICmp;
     _size: integer;
 
-    procedure __updataHeight(node: TBSTTree_K_V);
+    function __add(parent, cur: TBstNode_K_V; key: K; Value: V): TBstNode_K_V;
+    function __getHeight(node: TBstNode_K_V): integer;
 
   public
     constructor Create;
@@ -56,10 +58,8 @@ begin
 end;
 
 procedure TBSTTree.Add(key: K; Value: V);
-var
-  parent, cur: TBSTTree_K_V;
 begin
-  parent := nil;
+  __add(nil, _root, key, Value);
 end;
 
 procedure TBSTTree.Clear;
@@ -117,9 +117,42 @@ begin
 
 end;
 
-procedure TBSTTree.__updataHeight(node: TBSTTree_K_V);
+function TBSTTree.__add(parent, cur: TBstNode_K_V; key: K; Value: V): TBstNode_K_V;
+var
+  res: TBstNode_K_V;
 begin
+  if cur = nil then
+  begin
+    _size += 1;
+    Result := TBstNode_K_V.Create(key, Value, parent);
+    Exit;
+  end;
 
+  if _cmp.Compare(key, cur.key) < 0 then
+  begin
+    cur.LChild := __add(cur, cur.LChild, key, Value);
+  end
+  else if _cmp.Compare(key, cur.key) > 0 then
+  begin
+    cur.LChild := __add(cur, cur.LChild, key, Value);
+  end
+  else
+  begin
+    cur.Value := Value;
+  end;
+
+  cur.Height := 1 + Max(__getHeight(cur.LChild), __getHeight(cur.RChild));
+
+  Result := cur;
+end;
+
+function TBSTTree.__getHeight(node: TBstNode_K_V): integer;
+begin
+  if node = nil then
+    Exit(0);
+
+  node.Height := 1 + Max(__getHeight(node.LChild), __getHeight(node.RChild));
+  Result := node.Height;
 end;
 
 end.

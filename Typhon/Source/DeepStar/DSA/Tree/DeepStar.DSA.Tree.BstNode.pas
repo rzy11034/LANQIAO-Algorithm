@@ -24,8 +24,7 @@ type
     Num: integer;
     IsRed: boolean;
 
-    constructor Create(AKey: K; AValue: V; ALChild: TBstNode_K_V = nil;
-      ARChild: TBstNode_K_V = nil; AParent: TBstNode_K_V = nil);
+    constructor Create(AKey: K; AValue: V; AParent: TBstNode_K_V);
 
     function IsLeft: boolean;
     function IsRight: boolean;
@@ -35,13 +34,12 @@ implementation
 
 { TBstNode }
 
-constructor TBstNode.Create(AKey: K; AValue: V; ALChild: TBstNode_K_V; ARChild: TBstNode_K_V;
-  AParent: TBstNode_K_V);
+constructor TBstNode.Create(AKey: K; AValue: V; AParent: TBstNode_K_V);
 begin
   Key := AKey;
   Value := AValue;
-  LChild := ALChild;
-  RChild := ARChild;
+  LChild := nil;
+  RChild := nil;
   Parent := AParent;
   Height := 0;
   Num := 0;
