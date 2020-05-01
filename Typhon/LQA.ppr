@@ -129,7 +129,7 @@ uses
   DeepStar.DSA.Hash.Test.HashMap,
   DeepStar.DSA.Hash.HashSet,
   DeepStar.DSA.Tree.MyTree,
-  DeepStar.DSA.Tree.BSTTree, DeepStar.DSA.Tree.BSTNode;
+  DeepStar.DSA.Tree.BSTTree, DeepStar.DSA.Tree.BSTNode, DeepStar.DSA.Tree.Test.BSTTree;
 
 begin
   try

@@ -59,7 +59,7 @@ end;
 
 procedure TBSTTree.Add(key: K; Value: V);
 begin
-  __add(nil, _root, key, Value);
+  _root := __add(nil, _root, key, Value);
 end;
 
 procedure TBSTTree.Clear;
@@ -131,10 +131,12 @@ begin
   if _cmp.Compare(key, cur.key) < 0 then
   begin
     cur.LChild := __add(cur, cur.LChild, key, Value);
+    cur.LChild.IsLeftChild := true;
   end
   else if _cmp.Compare(key, cur.key) > 0 then
   begin
-    cur.LChild := __add(cur, cur.LChild, key, Value);
+    cur.RChild := __add(cur, cur.RChild, key, Value);
+    cur.RChild.IsLeftChild := false;
   end
   else
   begin
