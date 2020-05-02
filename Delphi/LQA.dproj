@@ -299,6 +299,8 @@
         <DCCReference Include="Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashMap.pas"/>
         <DCCReference Include="Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashSet.pas"/>
         <DCCReference Include="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
+        <DCCReference Include="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTNode.pas"/>
+        <DCCReference Include="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

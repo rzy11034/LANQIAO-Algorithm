@@ -1,29 +1,23 @@
 ﻿unit DeepStar.DSA.Tree.BSTTree;
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
-  Classes,
-  SysUtils,
-  Math,
+  System.SysUtils,
+  System.Math,
   DeepStar.DSA.Tree.BstNode,
   DeepStar.DSA.Interfaces,
   DeepStar.DSA.Linear.ArrayList;
 
 type
-
-  { TBSTTree }
-
-  generic TBSTTree<K, V> = class(TInterfacedObject, specialize IMap<K, V>)
+  TBSTTree<K, V> = class(TInterfacedObject, IMap<K, V>)
   private type
-    TBSTNode_K_V = specialize TBSTNode<K, V>;
-    TImpl_K = specialize TImpl<K>;
-    TImpl_V = specialize TImpl<V>;
-    TList_K = specialize TArrayList<K>;
-    TList_V = specialize TArrayList<V>;
-    TPtr_V = specialize TPtr_V<V>;
+    TBSTNode_K_V = TBSTNode<K, V>;
+    TImpl_K = TImpl<K>;
+    TImpl_V = TImpl<V>;
+    TList_K = TArrayList<K>;
+    TList_V = TArrayList<V>;
+    TPtr_V = TPtr_V<V>;
 
   private
     _root: TBSTNode_K_V;
@@ -33,8 +27,8 @@ type
     function __add(parent, cur: TBSTNode_K_V; key: K; Value: V): TBSTNode_K_V;
     function __getHeight(node: TBSTNode_K_V): integer;
 
-    procedure __inOrderForKey(node: TBSTNode_K_V; list: TList_K);
-    procedure __inOrderForValue(node: TBSTNode_K_V; list: TList_V);
+    procedure __inOrder(node: TBSTNode_K_V; list: TList_K); overload;
+    procedure __inOrder(node: TBSTNode_K_V; list: TList_V); overload;
 
   public
     constructor Create;
@@ -57,54 +51,54 @@ implementation
 
 { TBSTTree }
 
-constructor TBSTTree.Create;
+constructor TBSTTree<K, V>.Create;
 begin
   _root := nil;
   _size := 0;
   _cmp := TImpl_K.TCmp.Default;
 end;
 
-procedure TBSTTree.Add(key: K; Value: V);
+procedure TBSTTree<K, V>.Add(key: K; Value: V);
 begin
   _root := __add(nil, _root, key, Value);
 end;
 
-procedure TBSTTree.Clear;
+procedure TBSTTree<K, V>.Clear;
 begin
 
 end;
 
-function TBSTTree.ContainsKey(key: K): boolean;
+function TBSTTree<K, V>.ContainsKey(key: K): boolean;
 begin
 
 end;
 
-function TBSTTree.ContainsValue(Value: V): boolean;
+function TBSTTree<K, V>.ContainsValue(Value: V): boolean;
 begin
 
 end;
 
-function TBSTTree.Count: integer;
+function TBSTTree<K, V>.Count: integer;
 begin
   Result := _size;
 end;
 
-destructor TBSTTree.Destroy;
+destructor TBSTTree<K, V>.Destroy;
 begin
   inherited Destroy;
 end;
 
-function TBSTTree.GetItem(key: K): TPtr_V;
+function TBSTTree<K, V>.GetItem(key: K): TPtr_V;
 begin
 
 end;
 
-function TBSTTree.IsEmpty: boolean;
+function TBSTTree<K, V>.IsEmpty: boolean;
 begin
   Result := _size = 0;
 end;
 
-function TBSTTree.Keys: TImpl_K.TArr;
+function TBSTTree<K, V>.Keys: TImpl_K.TArr;
 var
   list: TList_K;
 begin
@@ -117,17 +111,17 @@ begin
   end;
 end;
 
-function TBSTTree.Remove(key: K): TPtr_V;
+function TBSTTree<K, V>.Remove(key: K): TPtr_V;
 begin
 
 end;
 
-procedure TBSTTree.SetItem(key: K; Value: V);
+procedure TBSTTree<K, V>.SetItem(key: K; Value: V);
 begin
 
 end;
 
-function TBSTTree.Values: TImpl_V.TArr;
+function TBSTTree<K, V>.Values: TImpl_V.TArr;
 var
   list: TList_V;
 begin
@@ -140,11 +134,11 @@ begin
   end;
 end;
 
-function TBSTTree.__add(parent, cur: TBSTNode_K_V; key: K; Value: V): TBSTNode_K_V;
+function TBSTTree<K, V>.__add(parent, cur: TBSTNode_K_V; key: K; Value: V): TBSTNode_K_V;
 begin
   if cur = nil then
   begin
-    _size += 1;
+    _size := _size + 1;
     Result := TBSTNode_K_V.Create(key, Value, parent);
     Exit;
   end;
@@ -169,7 +163,7 @@ begin
   Result := cur;
 end;
 
-function TBSTTree.__getHeight(node: TBSTNode_K_V): integer;
+function TBSTTree<K, V>.__getHeight(node: TBSTNode_K_V): integer;
 begin
   if node = nil then
     Exit(0);
@@ -178,12 +172,12 @@ begin
   Result := node.Height;
 end;
 
-procedure TBSTTree.__inOrder(node: TBSTNode_K_V; list: TList_K);
+procedure TBSTTree<K, V>.__inOrder(node: TBSTNode_K_V; list: TList_V);
 begin
 
 end;
 
-procedure TBSTTree.__inOrders(node: TBSTNode_K_V; list: TList_V);
+procedure TBSTTree<K, V>.__inOrder(node: TBSTNode_K_V; list: TList_K);
 begin
 
 end;

@@ -1,17 +1,14 @@
 ﻿unit DeepStar.DSA.Tree.BSTNode;
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
-  Classes,
-  SysUtils;
+  System.SysUtils;
 
 type
-  generic TBSTNode<K, V> = class(TObject)
+  TBSTNode<K, V> = class(TObject)
   private type
-    TBSTNode_K_V = specialize TBSTNode<K, V>;
+    TBSTNode_K_V = TBSTNode<K, V>;
 
   public
     Key: K;
@@ -34,7 +31,7 @@ implementation
 
 { TBstNode }
 
-constructor TBSTNode.Create(AKey: K; AValue: V; AParent: TBSTNode_K_V);
+constructor TBSTNode<K, V>.Create(AKey: K; AValue: V; AParent: TBSTNode_K_V);
 begin
   Key := AKey;
   Value := AValue;
@@ -47,12 +44,12 @@ begin
   IsRed := true;
 end;
 
-function TBSTNode.IsLeft: boolean;
+function TBSTNode<K, V>.IsLeft: boolean;
 begin
   Result := IsLeftChild;
 end;
 
-function TBSTNode.IsRight: boolean;
+function TBSTNode<K, V>.IsRight: boolean;
 begin
   Result := not IsLeftChild;
 end;

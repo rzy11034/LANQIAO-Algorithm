@@ -126,7 +126,9 @@ uses
   LQA.Case09_13_猫狗收容所 in 'Source\Case09_线性结构\LQA.Case09_13_猫狗收容所.pas',
   DeepStar.DSA.Hash.HashMap in 'Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashMap.pas',
   DeepStar.DSA.Hash.HashSet in 'Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashSet.pas',
-  DeepStar.DSA.Hash.Test.HashMap in 'Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas';
+  DeepStar.DSA.Hash.Test.HashMap in 'Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas',
+  DeepStar.DSA.Tree.BSTNode in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTNode.pas',
+  DeepStar.DSA.Tree.BSTTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas';
 
 begin
   try
