@@ -21,8 +21,7 @@ type
     TBSTNode_K_V = specialize TBSTNode<K, V>;
     TImpl_K = specialize TImpl<K>;
     TImpl_V = specialize TImpl<V>;
-    TList_K = specialize TArrayList<K>;
-    TList_V = specialize TArrayList<V>;
+    TList_node = specialize TArrayList<TBSTNode_K_V>;
     TPtr_V = specialize TPtr_V<V>;
 
   private
@@ -32,9 +31,9 @@ type
 
     function __add(parent, cur: TBSTNode_K_V; key: K; Value: V): TBSTNode_K_V;
     function __getHeight(node: TBSTNode_K_V): integer;
-
-    procedure __inOrderForKey(node: TBSTNode_K_V; list: TList_K);
-    procedure __inOrderForValue(node: TBSTNode_K_V; list: TList_V);
+    function __maxNode(node: TBSTNode_K_V): TBSTNode_K_V;
+    function __minNode(node: TBSTNode_K_V): TBSTNode_K_V;
+    procedure __inOrder(node: TBSTNode_K_V; list: TList_node);
 
   public
     constructor Create;
@@ -75,8 +74,19 @@ begin
 end;
 
 function TBSTTree.ContainsKey(key: K): boolean;
+var
+  cur: TBSTNode_K_V;
 begin
+  cur := _root;
 
+  while cur <> nil do
+  begin
+    if _cmp.Compare(key, cur.Key) < 0 then
+      cur := cur.LChild
+    else if _cmp.Compare(key, cur.Key) > 0 then
+      cur := cur.RChild
+
+  end;
 end;
 
 function TBSTTree.ContainsValue(Value: V): boolean;
@@ -106,12 +116,21 @@ end;
 
 function TBSTTree.Keys: TImpl_K.TArr;
 var
-  list: TList_K;
+  list: TList_node;
+  res: TImpl_K.TArr;
+  i: integer;
 begin
-  list := TList_K.Create;
+  list := TList_node.Create;
   try
     __inOrder(_root, list);
-    Result := list.ToArray;
+    SetLength(res, list.Count);
+
+    for i := 0 to list.Count do
+    begin
+      res[i] := list[i].Key;
+    end;
+
+    Result := res;
   finally
     list.Free;
   end;
@@ -129,12 +148,22 @@ end;
 
 function TBSTTree.Values: TImpl_V.TArr;
 var
-  list: TList_V;
+  list: TList_node;
+  res: TImpl_V.TArr;
+  i: integer;
 begin
-  list := TList_V.Create;
+  list := TList_node.Create;
   try
     __inOrder(_root, list);
-    Result := list.ToArray;
+
+    SetLength(res, list.Count);
+
+    for i := 0 to list.Count do
+    begin
+      res[i] := list[i].Value;
+    end;
+
+    Result := res;
   finally
     list.Free;
   end;
@@ -178,14 +207,48 @@ begin
   Result := node.Height;
 end;
 
-procedure TBSTTree.__inOrder(node: TBSTNode_K_V; list: TList_K);
+procedure TBSTTree.__inOrder(node: TBSTNode_K_V; list: TList_node);
 begin
+  if node = nil then
+    Exit;
 
+  __inOrder(node.LChild, list);
+  list.AddLast(node);
+  __inOrder(node.RChild, list);
 end;
 
-procedure TBSTTree.__inOrders(node: TBSTNode_K_V; list: TList_V);
+function TBSTTree.__maxNode(node: TBSTNode_K_V): TBSTNode_K_V;
+var
+  cur: TBSTNode_K_V;
 begin
+  if node = nil then
+    Exit(nil);
 
+  cur := node;
+
+  while cur.RChild <> nil do
+  begin
+    cur := cur.RChild;
+  end;
+
+  Result := cur;
+end;
+
+function TBSTTree.__minNode(node: TBSTNode_K_V): TBSTNode_K_V;
+var
+  cur: TBSTNode_K_V;
+begin
+  if node = nil then
+    Exit(nil);
+
+  cur := node;
+
+  while cur.LChild <> nil do
+  begin
+    cur := cur.LChild;
+  end;
+
+  Result := cur;
 end;
 
 end.
