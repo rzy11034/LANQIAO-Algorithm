@@ -29,6 +29,11 @@ begin
 
   TArrayUtils_int.Print(tree.Keys);
   TArrayUtils_int.Print(tree.Values);
+  writeln('ContainKey(3): ', tree.ContainsKey(3));
+  writeln('ContainKey(4): ', tree.ContainsKey(4));
+  writeln('ContainsValue(3): ', tree.ContainsValue(3));
+  writeln('ContainsValue(4): ', tree.ContainsValue(4));
+  WriteLn(tree.GetItem(1).PValue^);
 end;
 
 end.

@@ -128,7 +128,8 @@ uses
   DeepStar.DSA.Hash.HashSet in 'Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashSet.pas',
   DeepStar.DSA.Hash.Test.HashMap in 'Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas',
   DeepStar.DSA.Tree.BSTNode in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTNode.pas',
-  DeepStar.DSA.Tree.BSTTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas';
+  DeepStar.DSA.Tree.BSTTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas',
+  DeepStar.DSA.Tree.MyTree in 'Source\Case11_树结构\DeepStar.DSA.Tree.MyTree.pas';
 
 begin
   try
