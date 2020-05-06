@@ -11,25 +11,28 @@ uses
   DeepStar.Utils.UString;
 
 type
-  TMyTree<T> = class(TObject)
-  type
-  TTreeNode = class;
+  TTreeNode<T> = class(TObject)
   private type
-
+    TTreeNode = TTreeNode<T>;
     TImpl_T = TImpl<T>;
     TList_TreeNode = TArrayList<TTreeNode>;
     TQueue_TreeNode = TQueue<TTreeNode>;
 
-  public type
-    TTreeNode = class(TObject)
-    public
-      Key: T;
-      Parent: TTreeNode;
-      Children: TList_TreeNode;
+  public
+    Key: T;
+    Parent: TTreeNode;
+    Children: TList_TreeNode;
 
-      constructor Create(newKey: T; newParent: TTreeNode = nil);
-      destructor Destroy; override;
-    end;
+    constructor Create(newKey: T; newParent: TTreeNode = nil);
+    destructor Destroy; override;
+  end;
+
+  TMyTree<T> = class(TObject)
+  private type
+    TTreeNode = TTreeNode<T>;
+    TImpl_T = TImpl<T>;
+    TList_TreeNode = TArrayList<TTreeNode>;
+    TQueue_TreeNode = TQueue<TTreeNode>;
 
   private
     _size: cardinal;
@@ -197,15 +200,15 @@ begin
   Result := nil;
 end;
 
-{ TMyTree<T>.TTreeNode }
+{ TTreeNode<T> }
 
-constructor TMyTree<T>.TTreeNode.Create(newKey: T; newParent: TTreeNode);
+constructor TTreeNode<T>.Create(newKey: T; newParent: TTreeNode);
 begin
   Key := newKey;
   Parent := newParent;
 end;
 
-destructor TMyTree<T>.TTreeNode.Destroy;
+destructor TTreeNode<T>.Destroy;
 begin
   inherited Destroy;
 end;

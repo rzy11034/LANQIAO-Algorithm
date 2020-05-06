@@ -27,7 +27,6 @@
         <Filename Value="Source\LQA.Utils.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="91"/>
         <CursorPos X="3" Y="105"/>
         <UsageCount Value="300"/>
         <Loaded Value="True"/>
@@ -539,11 +538,10 @@
       <Unit>
         <Filename Value="Source\DeepStar\DSA\DeepStar.DSA.Interfaces.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="46"/>
         <FoldState Value=" T7i6E731"/>
         <UsageCount Value="252"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DeepStar\DSA\Linear\DeepStar.DSA.Linear.ArrayList.pas"/>
@@ -557,8 +555,8 @@
         <Filename Value="Source\DeepStar\DSA\Linear\DeepStar.DSA.Linear.DoubleLinkedList.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="41"/>
-        <CursorPos X="14" Y="53"/>
+        <TopLine Value="53"/>
+        <CursorPos X="14" Y="50"/>
         <UsageCount Value="252"/>
       </Unit>
       <Unit>
@@ -748,7 +746,8 @@
         <Filename Value="Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashMap.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="41" Y="335"/>
+        <TopLine Value="193"/>
+        <CursorPos X="28" Y="212"/>
         <UsageCount Value="205"/>
       </Unit>
       <Unit>
@@ -770,20 +769,19 @@
       <Unit>
         <Filename Value="Source\Case11_Tree\DeepStar.DSA.Tree.MyTree.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="5"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="96"/>
         <CursorPos X="16" Y="37"/>
         <UsageCount Value="203"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="266"/>
-        <CursorPos Y="280"/>
-        <UsageCount Value="194"/>
+        <TopLine Value="189"/>
+        <CursorPos X="5" Y="188"/>
+        <UsageCount Value="201"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -792,74 +790,67 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="33"/>
         <CursorPos X="5" Y="60"/>
-        <UsageCount Value="194"/>
+        <UsageCount Value="201"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.BSTTree.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="7"/>
-        <TopLine Value="23"/>
-        <CursorPos Y="36"/>
-        <UsageCount Value="66"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="16"/>
+        <CursorPos X="27" Y="22"/>
+        <UsageCount Value="122"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.HashSet.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="35" Y="15"/>
-        <UsageCount Value="237"/>
+        <UsageCount Value="231"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Strings\LQA.DSA.Strings.RabinKarp.pas"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="5"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Strings\LQA.DSA.Strings.KMP.pas"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="5"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Math\LQA.DSA.Math.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="10"/>
         <CursorPos X="50" Y="22"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="5"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Tree\LQA.DSA.Tree.HashSet.pas"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="5"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\DeepStar.DSA.Interfaces.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="48" Y="19"/>
         <FoldState Value=" T7MDMi"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="5"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Linear\DeepStar.DSA.ArrayList.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="55" Y="23"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="5"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\LQA.DSA.UString.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="106"/>
         <CursorPos X="49" Y="18"/>
-        <UsageCount Value="7"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\DSA\Linear\DeepStar.DSA.LinkedList.pas"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="39" Y="317"/>
         <UsageCount Value="1"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DSA\Linear\Test\DeepStar.DSA.Test.ArrayList.pas"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="33" Y="10"/>
-        <UsageCount Value="7"/>
+        <UsageCount Value="1"/>
       </Unit>
       <Unit>
         <Filename Value="..\..\Data-Structures-and-Algorithms\Typhon\Source\Tree\DSA.Tree.AVLTree.pas"/>
@@ -867,7 +858,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="94"/>
         <CursorPos X="26" Y="144"/>
-        <UsageCount Value="15"/>
+        <UsageCount Value="9"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\packages\rtl-generics\src\generics.defaults.pas"/>
@@ -876,129 +867,85 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="11"/>
         <CursorPos X="15" Y="25"/>
-        <UsageCount Value="8"/>
+        <UsageCount Value="2"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="29">
+    <JumpHistory HistoryIndex="18">
       <Position>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="148" TopLine="133"/>
+        <Caret Line="144" TopLine="139"/>
       </Position>
       <Position>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="146" Column="17" TopLine="134"/>
+        <Caret Line="145" TopLine="139"/>
       </Position>
       <Position>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="50" Column="14" TopLine="37"/>
+        <Caret Line="150" Column="3" TopLine="141"/>
       </Position>
       <Position>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="278" Column="7" TopLine="279"/>
+        <Caret Line="152" Column="5" TopLine="136"/>
       </Position>
       <Position>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="258" Column="10" TopLine="244"/>
+        <Caret Line="150" TopLine="136"/>
       </Position>
       <Position>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="142" TopLine="131"/>
+        <Caret Line="151" TopLine="136"/>
       </Position>
       <Position>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="143" TopLine="131"/>
+        <Caret Line="155" TopLine="146"/>
       </Position>
       <Position>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="144" TopLine="131"/>
+        <Caret Line="140" TopLine="130"/>
       </Position>
       <Position>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="147" Column="6" TopLine="132"/>
+        <Caret Line="156" TopLine="147"/>
       </Position>
       <Position>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="150" TopLine="134"/>
+        <Caret Line="136" Column="22" TopLine="130"/>
       </Position>
       <Position>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="142" TopLine="134"/>
+        <Caret Line="140" Column="42" TopLine="133"/>
       </Position>
       <Position>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="151" TopLine="135"/>
+        <Caret Line="179" Column="11" TopLine="170"/>
       </Position>
       <Position>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="146" Column="17" TopLine="145"/>
+        <Caret Line="75" Column="3" TopLine="60"/>
       </Position>
       <Position>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="267" TopLine="256"/>
+        <Caret Line="35" Column="20" TopLine="24"/>
       </Position>
       <Position>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="268" TopLine="256"/>
+        <Caret Line="324" Column="3" TopLine="319"/>
       </Position>
       <Position>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="270" TopLine="256"/>
+        <Caret Line="35" Column="14" TopLine="22"/>
       </Position>
       <Position>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="268" TopLine="256"/>
+        <Caret Line="324" Column="3" TopLine="319"/>
       </Position>
       <Position>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="272" TopLine="256"/>
+        <Caret Line="58" Column="70" TopLine="45"/>
       </Position>
       <Position>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="278" TopLine="270"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="280" TopLine="269"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="148" TopLine="205"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="265" TopLine="253"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="266" TopLine="253"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="268" TopLine="253"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="270" TopLine="267"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="266" TopLine="256"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="268" TopLine="256"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="272" TopLine="256"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Caret Line="278" TopLine="270"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\Case11_Tree\DeepStar.DSA.Tree.MyTree.pas"/>
-        <Caret Line="180" Column="39"/>
+        <Caret Line="264" Column="34" TopLine="248"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -1007,15 +954,6 @@
     </RunParams>
   </ProjectSession>
   <Debugging>
-    <BreakPoints>
-      <Item>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <Line Value="265"/>
-      </Item>
-    </BreakPoints>
     <Watches>
       <Item>
         <Expression Value="tree._root"/>

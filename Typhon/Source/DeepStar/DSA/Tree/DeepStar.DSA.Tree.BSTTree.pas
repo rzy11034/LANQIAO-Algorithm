@@ -15,9 +15,6 @@ uses
   DeepStar.DSA.Linear.Queue;
 
 type
-
-  { TBSTTree }
-
   generic TBSTTree<K, V> = class(TInterfacedObject, specialize IMap<K, V>)
   private type
     TBSTNode_K_V = specialize TBSTNode<K, V>;
@@ -34,11 +31,13 @@ type
 
     function __add(parent, cur: TBSTNode_K_V; key: K; Value: V): TBSTNode_K_V;
     function __getHeight(node: TBSTNode_K_V): integer;
+    function __getItem(key: K): V;
     function __getNode(node: TBSTNode_K_V; Key: K): TBSTNode_K_V;
     function __maxNode(node: TBSTNode_K_V): TBSTNode_K_V;
     function __minNode(node: TBSTNode_K_V): TBSTNode_K_V;
     procedure __inOrder(node: TBSTNode_K_V; list: TList_node);
     procedure __levelOrder(node: TBSTNode_K_V; list: TList_node);
+    procedure __setItem(key: K; const newItem: V);
 
   public
     constructor Create;
@@ -55,6 +54,8 @@ type
     procedure Add(key: K; Value: V);
     procedure Clear;
     procedure SetItem(key: K; newValue: V);
+
+    property Item[key: K]: V read __getItem write __setItem; Default;
   end;
 
 implementation
@@ -137,16 +138,14 @@ function TBSTTree.GetItem(key: K): TPtr_V;
 var
   Value: TValue;
   temp: TBSTNode_K_V;
-  res: TPtr_V;
 begin
   TValue.Make(@key, TypeInfo(K), Value);
   if not (ContainsKey(key)) then
     raise Exception.Create('There is no ''' + Value.ToString + '''');
 
   temp := __getNode(_root, key);
-  res.PValue := @temp.Value;
 
-  Result := res;
+  Result.PValue := @temp.Value;
 end;
 
 function TBSTTree.IsEmpty: boolean;
@@ -177,8 +176,14 @@ begin
 end;
 
 function TBSTTree.Remove(key: K): TPtr_V;
+var
+  Value: TValue;
 begin
-  //Result.PValue := @key;
+  TValue.Make(@key, TypeInfo(K), Value);
+  if not (ContainsKey(key)) then
+    raise Exception.Create('There is no ''' + Value.ToString + '''');
+
+
 end;
 
 procedure TBSTTree.SetItem(key: K; newValue: V);
@@ -255,26 +260,27 @@ begin
   Result := node.Height;
 end;
 
+function TBSTTree.__getItem(key: K): V;
+begin
+  Result := GetItem(key).PValue^;
+end;
+
 function TBSTTree.__getNode(node: TBSTNode_K_V; Key: K): TBSTNode_K_V;
-var
-  cur: TBSTNode_K_V;
 begin
   if node = nil then
     Exit(nil);
 
-  cur := node;
-
-  if _cmp.Compare(key, cur.Key) < 0 then
+  if _cmp.Compare(key, node.Key) < 0 then
   begin
-    cur := __getNode(cur.LChild, key);
+    Result := __getNode(node.LChild, key);
   end
-  else if _cmp.Compare(key, cur.Key) > 0 then
+  else if _cmp.Compare(key, node.Key) > 0 then
   begin
-    cur := __getNode(cur.RChild, key);
+    Result := __getNode(node.RChild, key);
   end
   else
   begin
-    Exit(cur);
+    Result := node;
   end;
 end;
 
@@ -346,6 +352,11 @@ begin
   end;
 
   Result := cur;
+end;
+
+procedure TBSTTree.__setItem(key: K; const newItem: V);
+begin
+  SetItem(key, newItem);
 end;
 
 end.

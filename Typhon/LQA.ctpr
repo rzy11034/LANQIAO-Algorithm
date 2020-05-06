@@ -45,7 +45,7 @@
           </CodeGeneration>
           <Linking>
             <Debugging>
-              <DebugInfoType Value="dsDwarf3"/>
+              <DebugInfoType Value="dsDwarf2Set"/>
               <TrashVariables Value="True"/>
               <UseValgrind Value="True"/>
               <StripSymbols Value="True"/>
