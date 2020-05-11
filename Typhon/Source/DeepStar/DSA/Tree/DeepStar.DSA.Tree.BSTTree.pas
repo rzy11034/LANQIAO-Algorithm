@@ -35,6 +35,7 @@ type
     function __getNode(node: TBSTNode_K_V; Key: K): TBSTNode_K_V;
     function __maxNode(node: TBSTNode_K_V): TBSTNode_K_V;
     function __minNode(node: TBSTNode_K_V): TBSTNode_K_V;
+    function __removeNode(parent, node: TBSTNode_K_V; key: K): TPtr_V;
     procedure __inOrder(node: TBSTNode_K_V; list: TList_node);
     procedure __levelOrder(node: TBSTNode_K_V; list: TList_node);
     procedure __setItem(key: K; const newItem: V);
@@ -55,7 +56,7 @@ type
     procedure Clear;
     procedure SetItem(key: K; newValue: V);
 
-    property Item[key: K]: V read __getItem write __setItem; Default;
+    property Item[key: K]: V read __getItem write __setItem; default;
   end;
 
 implementation
@@ -178,12 +179,13 @@ end;
 function TBSTTree.Remove(key: K): TPtr_V;
 var
   Value: TValue;
+  node: TBSTNode_K_V;
 begin
   TValue.Make(@key, TypeInfo(K), Value);
   if not (ContainsKey(key)) then
     raise Exception.Create('There is no ''' + Value.ToString + '''');
 
-
+  Result := __removeNode(nil, _root, key);
 end;
 
 procedure TBSTTree.SetItem(key: K; newValue: V);
@@ -352,6 +354,27 @@ begin
   end;
 
   Result := cur;
+end;
+
+function TBSTTree.__removeNode(parent, node: TBSTNode_K_V; key: K): TPtr_V;
+var
+  successor: TBSTNode_K_V;
+begin
+  if node = nil then
+    Exit(nil);
+
+  if _cmp.Compare(key, node.Key) > 0 then
+  begin
+    node := __removeNode(node, node.LChild, key);
+  end
+  else if _cmp.Compare(key, node.Key) < 0 then
+  begin
+    node := __removeNode(node, node.RChild, key);
+  end
+  else
+  begin
+
+  end;
 end;
 
 procedure TBSTTree.__setItem(key: K; const newItem: V);
