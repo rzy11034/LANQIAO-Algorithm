@@ -16,7 +16,7 @@ uses
 
 type
   generic TBSTTree<K, V> = class(TInterfacedObject, specialize IMap<K, V>)
-  private type
+  protected type
     TBSTNode_K_V = specialize TBSTNode<K, V>;
     TImpl_K = specialize TImpl<K>;
     TImpl_V = specialize TImpl<V>;
@@ -24,21 +24,21 @@ type
     TQueue_node = specialize TQueue<TBSTNode_K_V>;
     TPtr_V = specialize TPtr_V<V>;
 
-  private
+  protected
     _root: TBSTNode_K_V;
     _cmp: TImpl_K.ICmp;
     _size: integer;
 
-    function __add(parent, cur: TBSTNode_K_V; key: K; Value: V): TBSTNode_K_V;
     function __getHeight(node: TBSTNode_K_V): integer;
     function __getItem(key: K): V;
     function __getNode(node: TBSTNode_K_V; Key: K): TBSTNode_K_V;
     function __maxNode(node: TBSTNode_K_V): TBSTNode_K_V;
     function __minNode(node: TBSTNode_K_V): TBSTNode_K_V;
-    function __removeNode(parent, node: TBSTNode_K_V; key: K): TPtr_V;
+    function __removeNode(parent, node: TBSTNode_K_V; key: K): TBSTNode_K_V;
     procedure __inOrder(node: TBSTNode_K_V; list: TList_node);
     procedure __levelOrder(node: TBSTNode_K_V; list: TList_node);
     procedure __setItem(key: K; const newItem: V);
+    procedure __updataHeight(node: TBSTNode_K_V);
 
   public
     constructor Create;
@@ -55,6 +55,7 @@ type
     procedure Add(key: K; Value: V);
     procedure Clear;
     procedure SetItem(key: K; newValue: V);
+    function Height: integer;
 
     property Item[key: K]: V read __getItem write __setItem; default;
   end;
@@ -71,8 +72,48 @@ begin
 end;
 
 procedure TBSTTree.Add(key: K; Value: V);
+var
+  parent, cur: TBSTNode_K_V;
 begin
-  _root := __add(nil, _root, key, Value);
+  parent := nil;
+  cur := _root;
+
+  while cur <> nil do
+  begin
+    parent := cur;
+    if _cmp.Compare(key, cur.Key) < 0 then
+    begin
+      cur := cur.LChild;
+    end
+    else if _cmp.Compare(key, cur.Key) > 0 then
+    begin
+      cur := cur.RChild;
+    end
+    else
+    begin
+      cur.Value := Value;
+      Exit;
+    end;
+  end;
+
+  cur := TBSTNode_K_V.Create(key, Value, parent);
+  if parent = nil then
+  begin
+    _root := cur;
+  end
+  else if _cmp.Compare(key, parent.Key) < 0 then
+  begin
+    parent.LChild := cur;
+    cur.IsLeftChild := true;
+  end
+  else if _cmp.Compare(key, parent.Key) > 0 then
+  begin
+    parent.RChild := cur;
+    cur.IsLeftChild := false;
+  end;
+
+  _size += 1;
+  __updataHeight(cur);
 end;
 
 procedure TBSTTree.Clear;
@@ -149,6 +190,11 @@ begin
   Result.PValue := @temp.Value;
 end;
 
+function TBSTTree.Height: integer;
+begin
+  Result := __getHeight(_root);
+end;
+
 function TBSTTree.IsEmpty: boolean;
 begin
   Result := _size = 0;
@@ -179,13 +225,12 @@ end;
 function TBSTTree.Remove(key: K): TPtr_V;
 var
   Value: TValue;
-  node: TBSTNode_K_V;
 begin
   TValue.Make(@key, TypeInfo(K), Value);
   if not (ContainsKey(key)) then
     raise Exception.Create('There is no ''' + Value.ToString + '''');
 
-  Result := __removeNode(nil, _root, key);
+  Result.PValue := @__removeNode(nil, _root, key).Value;
 end;
 
 procedure TBSTTree.SetItem(key: K; newValue: V);
@@ -224,42 +269,12 @@ begin
   end;
 end;
 
-function TBSTTree.__add(parent, cur: TBSTNode_K_V; key: K; Value: V): TBSTNode_K_V;
-begin
-  if cur = nil then
-  begin
-    _size += 1;
-    Result := TBSTNode_K_V.Create(key, Value, parent);
-    Exit;
-  end;
-
-  if _cmp.Compare(key, cur.key) < 0 then
-  begin
-    cur.LChild := __add(cur, cur.LChild, key, Value);
-    cur.LChild.IsLeftChild := true;
-  end
-  else if _cmp.Compare(key, cur.key) > 0 then
-  begin
-    cur.RChild := __add(cur, cur.RChild, key, Value);
-    cur.RChild.IsLeftChild := false;
-  end
-  else
-  begin
-    cur.Value := Value;
-  end;
-
-  cur.Height := 1 + Max(__getHeight(cur.LChild), __getHeight(cur.RChild));
-
-  Result := cur;
-end;
-
 function TBSTTree.__getHeight(node: TBSTNode_K_V): integer;
 begin
   if node = nil then
     Exit(0);
 
-  node.Height := 1 + Max(__getHeight(node.LChild), __getHeight(node.RChild));
-  Result := node.Height;
+  Result := 1 + Max(__getHeight(node.LChild), __getHeight(node.RChild));
 end;
 
 function TBSTTree.__getItem(key: K): V;
@@ -356,12 +371,15 @@ begin
   Result := cur;
 end;
 
-function TBSTTree.__removeNode(parent, node: TBSTNode_K_V; key: K): TPtr_V;
+function TBSTTree.__removeNode(parent, node: TBSTNode_K_V; key: K): TBSTNode_K_V;
 var
   successor: TBSTNode_K_V;
 begin
   if node = nil then
-    Exit(nil);
+  begin
+    Result := nil;
+    Exit;
+  end;
 
   if _cmp.Compare(key, node.Key) > 0 then
   begin
@@ -380,6 +398,15 @@ end;
 procedure TBSTTree.__setItem(key: K; const newItem: V);
 begin
   SetItem(key, newItem);
+end;
+
+procedure TBSTTree.__updataHeight(node: TBSTNode_K_V);
+begin
+  if node.Parent = nil then
+    Exit;
+
+  node.Parent.Height := node.Height + 1;
+  __updataHeight(node.Parent);
 end;
 
 end.

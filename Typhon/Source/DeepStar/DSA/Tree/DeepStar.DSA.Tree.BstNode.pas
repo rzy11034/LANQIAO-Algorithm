@@ -41,7 +41,7 @@ begin
   LChild := nil;
   RChild := nil;
   Parent := AParent;
-  Height := 0;
+  Height := 1;
   Num := 0;
   IsLeftChild := false;
   IsRed := true;
