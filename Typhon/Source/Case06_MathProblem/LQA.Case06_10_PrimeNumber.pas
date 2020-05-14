@@ -46,7 +46,7 @@ begin
       if not map.ContainsKey(i) then
         map.Add(i, 1)
       else
-        map.SetItem(i, map.GetItem(i).PValue^ + 1);
+        map.SetItem(i, map.GetItem(i) + 1);
 
       num := num div i;
     end;

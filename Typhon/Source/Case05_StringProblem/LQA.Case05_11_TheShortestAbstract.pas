@@ -60,7 +60,7 @@ begin
     if map.ContainsKey(key) = false then
       map.Add(key, 1)
     else
-      map.SetItem(key, map.GetItem(key).PValue^ + 1);
+      map.SetItem(key, map.GetItem(key) + 1);
   end;
 
   map2 := TMap_str_int.Create;
@@ -71,12 +71,12 @@ begin
     if map2.ContainsKey(key) = false then
       map2.add(key, 1)
     else
-      map2.SetItem(key, map2.GetItem(key).PValue^ + 1);
+      map2.SetItem(key, map2.GetItem(key) + 1);
   end;
 
   for e in map.Pairs do
   begin
-    if (map2.ContainsKey(e.Key) = false) or (map2.GetItem(e.Key).PValue^ < e.Value) then
+    if (map2.ContainsKey(e.Key) = false) or (map2.GetItem(e.Key) < e.Value) then
     begin
       Result := false;
       Exit;

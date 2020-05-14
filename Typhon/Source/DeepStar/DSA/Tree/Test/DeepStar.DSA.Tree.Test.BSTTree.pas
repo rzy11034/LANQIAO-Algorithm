@@ -27,7 +27,8 @@ begin
   tree.Add(2, 2);
   tree.Add(3, 3);
 
-  tree.SetItem(1, 5);
+  //tree.Clear;
+  tree.Remove(3);
 
   TArrayUtils_int.Print(tree.Keys);
   TArrayUtils_int.Print(tree.Values);
@@ -35,7 +36,7 @@ begin
   writeln('ContainKey(4): ', tree.ContainsKey(4));
   writeln('ContainsValue(3): ', tree.ContainsValue(3));
   writeln('ContainsValue(4): ', tree.ContainsValue(4));
-  writeln('tree.GetItem(1).PValue^: ', tree.GetItem(1).PValue^);
+  writeln('tree.GetItem(2): ', tree.GetItem(2));
   writeln('tree.Height: ', tree.Height);
 end;
 

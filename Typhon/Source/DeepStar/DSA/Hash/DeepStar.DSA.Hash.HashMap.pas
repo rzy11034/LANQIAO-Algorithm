@@ -38,9 +38,8 @@ type
     _cmp_K: TImpl_K.ICmp;
     _cmp_V: TImpl_V.ICmp;
 
-    function __getItem(key: K): V;
+    function __getItem(key: K): TPtr_V;
     function __hash(key: K): integer;
-    procedure __setItem(key: K; value: V);
 
   public
     constructor Create(newCapacity: integer = 20);
@@ -50,11 +49,11 @@ type
     function ContainsKey(key: K): boolean;
     function ContainsValue(Value: V): boolean;
     function Count: integer;
-    function GetItem(key: K): TPtr_V;
+    function GetItem(key: K): V;
     function IsEmpty: boolean;
     function Keys: TImpl_K.TArr;
     function Pairs: TImpl_TPair.TArr;
-    function Remove(key: K): TPtr_V;
+    function Remove(key: K): V;
     function Values: TImpl_V.TArr;
     procedure Add(key: K; Value: V);
     procedure AddAll(map: THashMap_K_V);
@@ -63,7 +62,7 @@ type
 
     property Comparer_K: TImpl_K.ICmp read _cmp_K write _cmp_K;
     property Comparer_V: TImpl_V.ICmp read _cmp_V write _cmp_V;
-    property Item[key: K]: V read __getItem write __setItem; default;
+    property Item[key: K]: V read GetItem write SetItem; default;
   end;
 
 implementation
@@ -195,26 +194,16 @@ begin
   inherited Destroy;
 end;
 
-function THashMap.GetItem(key: K): TPtr_V;
+function THashMap.GetItem(key: K): V;
 var
-  hashcode, i: integer;
-  Value: V;
   res: TPtr_V;
 begin
-  res.PValue := nil;
-  hashcode := __hash(key);
+  res := __getItem(Key);
 
-  for i := 0 to _data[hashcode].Count - 1 do
-  begin
-    if _cmp_K.Compare(key, _data[hashcode].Items[i].Key) = 0 then
-    begin
-      Value := _data[hashcode].Items[i].Value;
-      res.PValue := @Value;
-      Break;
-    end;
-  end;
+  if res.PValue = nil then
+    raise Exception.Create('The hash-table does not contain this key');
 
-  Result := res;
+  Result := res.PValue^;
 end;
 
 function THashMap.IsEmpty: boolean;
@@ -264,28 +253,16 @@ begin
   end;
 end;
 
-function THashMap.Remove(key: K): TPtr_V;
+function THashMap.Remove(key: K): V;
 var
-  hashcode, i: integer;
-  res: TPair;
+  res: TPtr_V;
 begin
-  res := nil;
-  hashcode := __hash(key);
+  res := __getItem(Key);
 
-  for i := 0 to _data[hashcode].Count - 1 do
-  begin
-    if _cmp_K.Compare(key, _data[hashcode].Items[i].Key) = 0 then
-    begin
-      res := _data[hashcode].Remove(i);
-      _size -= 1;
-      Break;
-    end;
-  end;
+  if res.PValue = nil then
+    raise Exception.Create('The hash-table does not contain this key');
 
-  if res = nil then
-    Result.PValue := nil
-  else
-    Result.PValue := @res.Value;
+  Result := res.PValue^;
 end;
 
 procedure THashMap.SetItem(key: K; Value: V);
@@ -325,16 +302,26 @@ begin
   end;
 end;
 
-function THashMap.__getItem(key: K): V;
+function THashMap.__getItem(key: K): TPtr_V;
 var
+  hashcode, i: integer;
+  Value: V;
   res: TPtr_V;
 begin
-  res := GetItem(Key);
+  res.PValue := nil;
+  hashcode := __hash(key);
 
-  if res.PValue = nil then
-    raise Exception.Create('The hash-table does not contain this key');
+  for i := 0 to _data[hashcode].Count - 1 do
+  begin
+    if _cmp_K.Compare(key, _data[hashcode].Items[i].Key) = 0 then
+    begin
+      Value := _data[hashcode].Items[i].Value;
+      res.PValue := @Value;
+      Break;
+    end;
+  end;
 
-  Result := res.PValue^;
+  Result := res;
 end;
 
 function THashMap.__hash(key: K): integer;
@@ -343,11 +330,6 @@ var
 begin
   TValue.Make(@key, TypeInfo(K), Value);
   Result := (Value.ToString.GetHashCode and $7FFFFFFF) mod _capacity;
-end;
-
-procedure THashMap.__setItem(key: K; value: V);
-begin
-  SetItem(key, value);
 end;
 
 end.
