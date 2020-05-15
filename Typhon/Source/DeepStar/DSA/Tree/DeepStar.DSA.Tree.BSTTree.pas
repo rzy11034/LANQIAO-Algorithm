@@ -26,7 +26,8 @@ type
 
   protected
     _root: TBSTNode_K_V;
-    _cmp: TImpl_K.ICmp;
+    _cmp_K: TImpl_K.ICmp;
+    _cmp_V: TImpl_V.ICmp;
     _size: integer;
 
     function __getHeight(node: TBSTNode_K_V): integer;
@@ -55,6 +56,8 @@ type
     procedure SetItem(key: K; newValue: V);
     function Height: integer;
 
+    property Comparer_K: TImpl_K.ICmp read _cmp_K write _cmp_K;
+    property Comparer_V: TImpl_V.ICmp read _cmp_V write _cmp_V;
     property Item[key: K]: V read GetItem write SetItem; default;
   end;
 
@@ -66,7 +69,8 @@ constructor TBSTTree.Create;
 begin
   _root := nil;
   _size := 0;
-  _cmp := TImpl_K.TCmp.Default;
+  _cmp_K := TImpl_K.TCmp.Default;
+  _cmp_V := TImpl_V.TCmp.Default;
 end;
 
 procedure TBSTTree.Add(key: K; Value: V);
@@ -79,11 +83,11 @@ begin
   while cur <> nil do
   begin
     parent := cur;
-    if _cmp.Compare(key, cur.Key) < 0 then
+    if _cmp_K.Compare(key, cur.Key) < 0 then
     begin
       cur := cur.LChild;
     end
-    else if _cmp.Compare(key, cur.Key) > 0 then
+    else if _cmp_K.Compare(key, cur.Key) > 0 then
     begin
       cur := cur.RChild;
     end
@@ -99,12 +103,12 @@ begin
   begin
     _root := cur;
   end
-  else if _cmp.Compare(key, parent.Key) < 0 then
+  else if _cmp_K.Compare(key, parent.Key) < 0 then
   begin
     parent.LChild := cur;
     cur.IsLeftChild := true;
   end
-  else if _cmp.Compare(key, parent.Key) > 0 then
+  else if _cmp_K.Compare(key, parent.Key) > 0 then
   begin
     parent.RChild := cur;
     cur.IsLeftChild := false;
@@ -132,9 +136,9 @@ begin
 
   while cur <> nil do
   begin
-    if _cmp.Compare(key, cur.Key) < 0 then
+    if _cmp_K.Compare(key, cur.Key) < 0 then
       cur := cur.LChild
-    else if _cmp.Compare(key, cur.Key) > 0 then
+    else if _cmp_K.Compare(key, cur.Key) > 0 then
       cur := cur.RChild
     else
       Exit(true);
@@ -176,6 +180,7 @@ end;
 
 destructor TBSTTree.Destroy;
 begin
+  _root.Free;
   inherited Destroy;
 end;
 
@@ -295,11 +300,11 @@ begin
   if node = nil then
     Exit(nil);
 
-  if _cmp.Compare(key, node.Key) < 0 then
+  if _cmp_K.Compare(key, node.Key) < 0 then
   begin
     Result := __getNode(node.LChild, key);
   end
-  else if _cmp.Compare(key, node.Key) > 0 then
+  else if _cmp_K.Compare(key, node.Key) > 0 then
   begin
     Result := __getNode(node.RChild, key);
   end
@@ -389,12 +394,12 @@ begin
     Exit;
   end;
 
-  if _cmp.Compare(key, node.Key) < 0 then
+  if _cmp_K.Compare(key, node.Key) < 0 then
   begin
     node.LChild := __removeNode(node, node.LChild, key);
     res := node;
   end
-  else if _cmp.Compare(key, node.Key) > 0 then
+  else if _cmp_K.Compare(key, node.Key) > 0 then
   begin
     node.RChild := __removeNode(node, node.RChild, key);
     res := node;
