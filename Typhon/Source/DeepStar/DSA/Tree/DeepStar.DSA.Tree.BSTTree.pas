@@ -15,6 +15,9 @@ uses
   DeepStar.DSA.Linear.Queue;
 
 type
+
+  { TBSTTree }
+
   generic TBSTTree<K, V> = class(TInterfacedObject, specialize IMap<K, V>)
   protected type
     TBSTNode_K_V = specialize TBSTNode<K, V>;
@@ -34,7 +37,9 @@ type
     function __getNode(node: TBSTNode_K_V; Key: K): TBSTNode_K_V;
     function __maxNode(node: TBSTNode_K_V): TBSTNode_K_V;
     function __minNode(node: TBSTNode_K_V): TBSTNode_K_V;
+    function __getPredecessor(key: K): TBSTNode_K_V;
     function __removeNode(parent, node: TBSTNode_K_V; key: K): TBSTNode_K_V;
+    function __getSuccessor(key: K): TBSTNode_K_V;
     procedure __inOrder(node: TBSTNode_K_V; list: TList_node);
     procedure __levelOrder(node: TBSTNode_K_V; list: TList_node);
     procedure __updataHeight(node: TBSTNode_K_V);
@@ -47,14 +52,16 @@ type
     function ContainsValue(Value: V): boolean;
     function Count: integer;
     function GetItem(key: K): V;
+    function Height: integer;
     function IsEmpty: boolean;
     function Keys: TImpl_K.TArr;
+    function Predecessor(key: K): K;
     function Remove(key: K): V;
+    function Successor(key: K): K;
     function Values: TImpl_V.TArr;
     procedure Add(key: K; Value: V);
     procedure Clear;
     procedure SetItem(key: K; newValue: V);
-    function Height: integer;
 
     property Comparer_K: TImpl_K.ICmp read _cmp_K write _cmp_K;
     property Comparer_V: TImpl_V.ICmp read _cmp_V write _cmp_V;
@@ -106,12 +113,12 @@ begin
   else if _cmp_K.Compare(key, parent.Key) < 0 then
   begin
     parent.LChild := cur;
-    cur.IsLeftChild := true;
+    cur.IsLeftChild := True;
   end
   else if _cmp_K.Compare(key, parent.Key) > 0 then
   begin
     parent.RChild := cur;
-    cur.IsLeftChild := false;
+    cur.IsLeftChild := False;
   end;
 
   _size += 1;
@@ -141,10 +148,10 @@ begin
     else if _cmp_K.Compare(key, cur.Key) > 0 then
       cur := cur.RChild
     else
-      Exit(true);
+      Exit(True);
   end;
 
-  Result := false;
+  Result := False;
 end;
 
 function TBSTTree.ContainsValue(Value: V): boolean;
@@ -163,11 +170,11 @@ begin
     begin
       if _cmpV.Compare(Value, list[i].Value) = 0 then
       begin
-        Exit(true);
+        Exit(True);
       end;
     end;
 
-    Result := false;
+    Result := False;
   finally
     list.Free;
   end;
@@ -200,6 +207,27 @@ end;
 function TBSTTree.Height: integer;
 begin
   Result := __getHeight(_root);
+end;
+
+function TBSTTree.Predecessor(key: K): K;
+begin
+
+end;
+
+function TBSTTree.Successor(key: K): K;
+var
+  cur: TBSTNode_K_V;
+  Value: TValue;
+begin
+  cur := __getSuccessor(key);
+
+  if cur = nil then
+  begin
+    TValue.Make(@key, TypeInfo(K), Value);
+    raise Exception.Create('There is no ''' + Value.ToString + '''');
+  end;
+
+  Result := cur.Key;
 end;
 
 function TBSTTree.IsEmpty: boolean;
@@ -452,6 +480,39 @@ begin
 
   node.Parent.Height := node.Height + 1;
   __updataHeight(node.Parent);
+end;
+
+function TBSTTree.__getSuccessor(key: K): TBSTNode_K_V;
+var
+  cur, parent: TBSTNode_K_V;
+begin
+  cur := __getNode(_root, key);
+
+  if cur = nil then
+  begin
+    Result := nil;
+    Exit;
+  end;
+
+  if cur.RChild <> nil then
+  begin
+    Result := __minNode(cur.RChild);
+    Exit;
+  end;
+
+  parent := cur.Parent;
+  while (Parent <> nil) and (parent.RChild = cur) do
+  begin
+    cur := cur.Parent;
+    parent := cur.Parent;
+  end;
+
+  Result := parent;
+end;
+
+function TBSTTree.__getPredecessor(key: K): TBSTNode_K_V;
+begin
+
 end;
 
 end.
