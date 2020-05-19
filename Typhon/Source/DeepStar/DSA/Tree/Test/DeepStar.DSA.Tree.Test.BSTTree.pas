@@ -20,6 +20,7 @@ type
 procedure Main;
 var
   tree: TBSTTree_int_int;
+  arr: tarr
 begin
   tree := TBSTTree_int_int.Create;
 
@@ -38,6 +39,12 @@ begin
   writeln('ContainsValue(4): ', tree.ContainsValue(4));
   writeln('tree.GetItem(2): ', tree.GetItem(2));
   writeln('tree.Height: ', tree.Height);
+
+  tree.Clear;
+
+  DrawLineBlockEnd;
+
+
 end;
 
 end.

@@ -113,12 +113,12 @@ begin
   else if _cmp_K.Compare(key, parent.Key) < 0 then
   begin
     parent.LChild := cur;
-    cur.IsLeftChild := True;
+    cur.IsLeftChild := true;
   end
   else if _cmp_K.Compare(key, parent.Key) > 0 then
   begin
     parent.RChild := cur;
-    cur.IsLeftChild := False;
+    cur.IsLeftChild := false;
   end;
 
   _size += 1;
@@ -148,10 +148,10 @@ begin
     else if _cmp_K.Compare(key, cur.Key) > 0 then
       cur := cur.RChild
     else
-      Exit(True);
+      Exit(true);
   end;
 
-  Result := False;
+  Result := false;
 end;
 
 function TBSTTree.ContainsValue(Value: V): boolean;
@@ -170,11 +170,11 @@ begin
     begin
       if _cmpV.Compare(Value, list[i].Value) = 0 then
       begin
-        Exit(True);
+        Exit(true);
       end;
     end;
 
-    Result := False;
+    Result := false;
   finally
     list.Free;
   end;
@@ -210,8 +210,19 @@ begin
 end;
 
 function TBSTTree.Predecessor(key: K): K;
+var
+  cur: TBSTNode_K_V;
+  Value: TValue;
 begin
+  cur := __getPredecessor(key);
 
+  if cur = nil then
+  begin
+    TValue.Make(@key, TypeInfo(K), Value);
+    raise Exception.Create('There is no ''' + Value.ToString + '''');
+  end;
+
+  Result := cur.Key;
 end;
 
 function TBSTTree.Successor(key: K): K;
@@ -511,8 +522,31 @@ begin
 end;
 
 function TBSTTree.__getPredecessor(key: K): TBSTNode_K_V;
+var
+  cur, parent: TBSTNode_K_V;
 begin
+  cur := __getNode(_root, key);
 
+  if cur = nil then
+  begin
+    Result := nil;
+    Exit;
+  end;
+
+  if cur.LChild <> nil then
+  begin
+    Result := __minNode(cur);
+    Exit;
+  end;
+
+  parent := cur.Parent;
+  while (parent <> nil) and (parent.RChild = cur) do
+  begin
+    cur := cur.Parent;
+    parent := cur.Parent;
+  end;
+
+  Result := parent;
 end;
 
 end.
