@@ -219,7 +219,7 @@ begin
   if cur = nil then
   begin
     TValue.Make(@key, TypeInfo(K), Value);
-    raise Exception.Create('There is no ''' + Value.ToString + '''');
+    raise Exception.Create('There is no ''' + Value.ToString + ''' Predecessor');
   end;
 
   Result := cur.Key;
@@ -235,7 +235,7 @@ begin
   if cur = nil then
   begin
     TValue.Make(@key, TypeInfo(K), Value);
-    raise Exception.Create('There is no ''' + Value.ToString + '''');
+    raise Exception.Create('There is no ''' + Value.ToString + ''' Successor');
   end;
 
   Result := cur.Key;
@@ -476,6 +476,7 @@ begin
       succesor := TBSTNode_K_V.Create(min.key, min.Value, parent);
       succesor.RChild := __removeNode(succesor, node.RChild, succesor.Key);
       succesor.LChild := node.LChild;
+      succesor.IsLeftChild := node.IsLeftChild;
       FreeAndNil(node);
       res := succesor;
     end;
@@ -535,12 +536,12 @@ begin
 
   if cur.LChild <> nil then
   begin
-    Result := __minNode(cur);
+    Result := __maxNode(cur.LChild);
     Exit;
   end;
 
   parent := cur.Parent;
-  while (parent <> nil) and (parent.RChild = cur) do
+  while (parent <> nil) and (parent.LChild = cur) do
   begin
     cur := cur.Parent;
     parent := cur.Parent;

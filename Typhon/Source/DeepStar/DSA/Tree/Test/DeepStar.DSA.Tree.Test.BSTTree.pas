@@ -20,7 +20,8 @@ type
 procedure Main;
 var
   tree: TBSTTree_int_int;
-  arr: tarr
+  arr: TArr_int;
+  i: integer;
 begin
   tree := TBSTTree_int_int.Create;
 
@@ -44,7 +45,16 @@ begin
 
   DrawLineBlockEnd;
 
+  arr := [4, 2, 3, 1, 8, 6, 7, 5, 9, 10];
 
+  for i := 0 to High(arr) do
+  begin
+    tree.Add(arr[i], i);
+  end;
+
+  TArrayUtils_int.Print(tree.Keys);
+  writeln('Successor(3): ', tree.Successor(3));
+  writeln('Predecessor(9): ', tree.Predecessor(9));
 end;
 
 end.
