@@ -15,9 +15,6 @@ uses
   DeepStar.DSA.Linear.Queue;
 
 type
-
-  { TBSTTree }
-
   generic TBSTTree<K, V> = class(TInterfacedObject, specialize IMap<K, V>)
   protected type
     TBSTNode_K_V = specialize TBSTNode<K, V>;

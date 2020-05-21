@@ -45,7 +45,7 @@
           </CodeGeneration>
           <Linking>
             <Debugging>
-              <DebugInfoType Value="dsDwarf2Set"/>
+              <DebugInfoType Value="dsDwarf3"/>
               <TrashVariables Value="True"/>
               <UseValgrind Value="True"/>
               <StripSymbols Value="True"/>
@@ -595,6 +595,14 @@
       </Unit>
       <Unit>
         <Filename Value="Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.BSTTree.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.AVLTree.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.AVLTree.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
     </Units>

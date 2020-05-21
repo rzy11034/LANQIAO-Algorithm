@@ -32,7 +32,7 @@ var
   i: integer;
 begin
   if s1.Length <> s2.Length then
-  begin Exit(False); end;
+  begin Exit(false); end;
 
   tmp1 := '';
   tmp2 := '';
@@ -73,7 +73,7 @@ begin
     end
     else
     begin
-      Result := False;
+      Result := false;
       Exit;
     end;
   end;
@@ -82,12 +82,12 @@ begin
   begin
     if aux[i] > 0 then
     begin
-      Result := False;
+      Result := false;
       Exit;
     end;
   end;
 
-  Result := True;
+  Result := true;
 end;
 
 procedure Main;

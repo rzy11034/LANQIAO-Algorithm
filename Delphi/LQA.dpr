@@ -130,7 +130,8 @@ uses
   DeepStar.DSA.Tree.BSTNode in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTNode.pas',
   DeepStar.DSA.Tree.BSTTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas',
   DeepStar.DSA.Tree.MyTree in 'Source\Case11_树结构\DeepStar.DSA.Tree.MyTree.pas',
-  DeepStar.DSA.Tree.Test.BSTTree in 'Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.BSTTree.pas';
+  DeepStar.DSA.Tree.Test.BSTTree in 'Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.BSTTree.pas',
+  DeepStar.DSA.Tree.AVLTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.AVLTree.pas';
 
 begin
   try

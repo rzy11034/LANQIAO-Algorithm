@@ -22,7 +22,7 @@ begin
   c := 0;
   rowBottom := Length(matrix);
   colBottom := Length(matrix[0]);
-  isL2R := True;
+  isL2R := true;
 
   while (r < rowBottom) and (c < colBottom) do
   begin

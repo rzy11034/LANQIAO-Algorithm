@@ -24,10 +24,10 @@ end;
 // 判断奇偶数
 function IsOdd(n: integer): boolean;
 begin
-  Result := True;
+  Result := true;
 
   if (n and 1) = 0 then
-    Result := False;
+    Result := false;
 end;
 
 // 获取二进制数是 1 还是 0 （两种解决方案）

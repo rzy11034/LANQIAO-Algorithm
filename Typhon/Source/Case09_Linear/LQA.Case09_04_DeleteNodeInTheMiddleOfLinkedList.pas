@@ -43,7 +43,7 @@ implementation
 function TDeleteNodeInTheMiddleOfLinkedList.Solution(node: TNode): boolean;
 var
   del: TNode;
-  res: Boolean;
+  res: boolean;
 begin
   if node.Next = nil then
   begin

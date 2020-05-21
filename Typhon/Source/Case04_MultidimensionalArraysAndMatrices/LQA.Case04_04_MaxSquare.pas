@@ -60,7 +60,7 @@ function MaxSquareADV(const matrix: TArr2D_int; out aux: TArr3D_int): integer;
 
   function __check(r, l, n: integer; const aux: TArr3D_int): boolean;
   begin
-    Result := False;
+    Result := false;
 
     // 左上角那个点往下数的1的数目要 >= n
     // 左上角那个点往右数的1的数目要 >= n
@@ -69,7 +69,7 @@ function MaxSquareADV(const matrix: TArr2D_int; out aux: TArr3D_int): integer;
     if (aux[r, l][0] >= n) and (aux[r, l][1] >= n)
       and (aux[r, l + n - 1][0] >= n) and (aux[r + n - 1, l][1] >= n) then
     begin
-      Result := True;
+      Result := true;
       Exit;
     end;
   end;

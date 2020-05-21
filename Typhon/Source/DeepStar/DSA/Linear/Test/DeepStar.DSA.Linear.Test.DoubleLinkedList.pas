@@ -20,7 +20,7 @@ uses
 type
   TImpl = specialize TImpl<integer>;
   TList = specialize TDoubleLinkedList<integer>;
-  //TList = TDoubleLinkedList;
+//TList = TDoubleLinkedList;
 
 procedure Main;
 var

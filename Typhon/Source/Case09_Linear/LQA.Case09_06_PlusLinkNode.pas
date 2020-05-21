@@ -181,7 +181,7 @@ function TPlusLinkNode.Solution_Recursion(const a, b: TNode): TNode;
   end;
 
 begin
-  Result := __solution_Recursion(a, b,  0);
+  Result := __solution_Recursion(a, b, 0);
 end;
 
 { TNode }

@@ -22,12 +22,12 @@ begin
   while i * i <= num do
   begin
     if num mod i = 0 then
-      Exit(False);
+      Exit(false);
 
     Inc(i);
   end;
 
-  Result := True;
+  Result := true;
 end;
 
 //质因数分解 =====>  8: 2*2*2

@@ -78,7 +78,7 @@ begin
   aList := TList_TArr_int.Create;
   dList := TList_int.Create;
 
-  while True do
+  while true do
   begin
     SetLength(a, 3);
     ReadLn(a[0], a[1], a[2], d);

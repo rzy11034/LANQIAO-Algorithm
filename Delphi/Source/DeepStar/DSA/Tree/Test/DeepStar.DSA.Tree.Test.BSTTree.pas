@@ -16,25 +16,42 @@ type
 
 procedure Main;
 var
-  Tree: TBSTTree_int_int;
-  n:integer;
+  tree: TBSTTree_int_int;
+  arr: TArr_int;
+  i: integer;
 begin
-  Tree := TBSTTree_int_int.Create;
+  tree := TBSTTree_int_int.Create;
 
-  Tree.Add(2, 1);
-  Tree.Add(1, 3);
-  Tree.Add(3, 2);
+  tree.Add(1, 1);
+  tree.Add(2, 2);
+  tree.Add(3, 3);
 
-  tree.SetItem(1, 5);
+  //tree.Clear;
+  tree.Remove(3);
 
-  TArrayUtils_int.Print(Tree.Keys);
-  TArrayUtils_int.Print(Tree.Values);
-  writeln('ContainKey(3): ', Tree.ContainsKey(3));
-  writeln('ContainKey(4): ', Tree.ContainsKey(4));
-  writeln('ContainsValue(3): ', Tree.ContainsValue(3));
-  writeln('ContainsValue(4): ', Tree.ContainsValue(4));
-  writeln('tree.GetItem(1).PValue^: ', tree.GetItem(1).PValue^);
-  
+  TArrayUtils_int.Print(tree.Keys);
+  TArrayUtils_int.Print(tree.Values);
+  writeln('ContainKey(3): ', tree.ContainsKey(3));
+  writeln('ContainKey(4): ', tree.ContainsKey(4));
+  writeln('ContainsValue(3): ', tree.ContainsValue(3));
+  writeln('ContainsValue(4): ', tree.ContainsValue(4));
+  writeln('tree.GetItem(2): ', tree.GetItem(2));
+  writeln('tree.Height: ', tree.Height);
+
+  tree.Clear;
+
+  DrawLineBlockEnd;
+
+  arr := [4, 2, 3, 1, 8, 6, 7, 5, 9, 10];
+
+  for i := 0 to High(arr) do
+  begin
+    tree.Add(arr[i], i);
+  end;
+
+  TArrayUtils_int.Print(tree.Keys);
+  writeln('Successor(9): ', tree.Successor(9));
+  writeln('Predecessor(9): ', tree.Predecessor(9));
 end;
 
 end.

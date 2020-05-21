@@ -186,9 +186,9 @@ begin
   ret := #0;
 
   if (n >= 0) and (n <= 9) then
-    ret := chr(n + Ord('0'))
+    ret := Chr(n + Ord('0'))
   else if (n >= 10) and (n <= 35) then
-    ret := chr(n + Ord('A') - 10);
+    ret := Chr(n + Ord('A') - 10);
 
   Result := ret;
 end;

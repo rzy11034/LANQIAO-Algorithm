@@ -53,7 +53,7 @@ begin
   end;
 
   TArrayUtils_int.Print(tree.Keys);
-  writeln('Successor(3): ', tree.Successor(3));
+  writeln('Successor(9): ', tree.Successor(9));
   writeln('Predecessor(9): ', tree.Predecessor(9));
 end;
 

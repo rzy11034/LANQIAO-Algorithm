@@ -26,7 +26,7 @@ procedure Main;
 var
   n: integer;
 begin
-  while True do
+  while true do
   begin
     Write('输入阶梯数：');
     ReadLn(n);

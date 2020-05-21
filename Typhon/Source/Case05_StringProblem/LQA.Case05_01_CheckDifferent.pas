@@ -34,10 +34,10 @@ begin
     if arr[j] = 0 then
       arr[j] += 1
     else
-      Exit(False);
+      Exit(false);
   end;
 
-  Result := True;
+  Result := true;
 end;
 
 procedure Main;

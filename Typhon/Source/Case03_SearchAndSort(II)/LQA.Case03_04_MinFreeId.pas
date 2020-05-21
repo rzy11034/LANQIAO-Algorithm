@@ -24,7 +24,7 @@ var
 begin
   i := 1;
 
-  while True do
+  while true do
   begin
     if TArrayUtils_int.indexOf(arr, i) = -1 then
     begin
@@ -107,7 +107,7 @@ function Find4(arr: TArr_int; l, r: integer): integer;
 
     i := l + 1;
     j := r;
-    while True do
+    while true do
     begin
       while (i <= r) and (arr[i] < e) do
         Inc(i);

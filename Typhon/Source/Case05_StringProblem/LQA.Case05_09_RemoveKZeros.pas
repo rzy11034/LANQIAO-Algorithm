@@ -19,7 +19,7 @@ var
   reg: TRegExpr;
 begin
   reg := TRegExpr.Create('0{' + k.ToString + '}');
-  Result := reg.Replace(src, '', False);
+  Result := reg.Replace(src, '', false);
   reg.Free;
 end;
 

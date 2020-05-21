@@ -29,7 +29,7 @@ begin
 
   i := l + 1;
   j := r;
-  while True do
+  while true do
   begin
     while (i <= r) and (arr[i] < e) do
       Inc(i);

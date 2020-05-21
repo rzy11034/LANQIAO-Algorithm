@@ -32,12 +32,12 @@ begin
 
     if ret = -1 then
     begin
-      Result := False;
+      Result := false;
       Exit;
     end;
   end;
 
-  Result := True;
+  Result := true;
 end;
 
 procedure Main;

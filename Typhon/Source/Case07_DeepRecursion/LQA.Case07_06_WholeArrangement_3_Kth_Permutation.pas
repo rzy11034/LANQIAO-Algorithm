@@ -80,7 +80,7 @@ var
     i: integer;
     isFinished: boolean;
   begin
-    isFinished := False;
+    isFinished := false;
 
     // 前缀的长度==字符集的长度,一个排列就完成了
     if prefix.Length = Length(chrArr) then
@@ -90,7 +90,7 @@ var
       if _kCount = k then
       begin
         WriteLn('====', _kCount, ': ', prefix);
-        Exit(True);
+        Exit(true);
       end;
 
       WriteLn('----', _kCount, ': ', prefix);

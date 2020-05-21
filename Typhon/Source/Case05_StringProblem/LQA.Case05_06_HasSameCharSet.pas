@@ -35,12 +35,12 @@ begin
     if aux[Ord(s2.Chars[i])] = 0 then
 
     begin
-      Result := False;
+      Result := false;
       Exit;
     end;
   end;
 
-  Result := True;
+  Result := true;
 end;
 
 procedure Main;

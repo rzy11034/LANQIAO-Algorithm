@@ -24,7 +24,7 @@ var
   ret: UString;
 begin
   if s1.Length <> s2.Length then
-    Exit(False);
+    Exit(false);
 
   sb := TStringBuilder.Create(s1).Append(s2);
 
