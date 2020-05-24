@@ -16,7 +16,7 @@ uses
 
 type
   generic TBSTTree<K, V> = class(TInterfacedObject, specialize IMap<K, V>)
-  protected type
+  strict private type
     TBSTNode_K_V = specialize TBSTNode<K, V>;
     TImpl_K = specialize TImpl<K>;
     TImpl_V = specialize TImpl<V>;
@@ -110,12 +110,12 @@ begin
   else if _cmp_K.Compare(key, parent.Key) < 0 then
   begin
     parent.LChild := cur;
-    cur.IsLeftChild := true;
+    cur.IsLeftChild := True;
   end
   else if _cmp_K.Compare(key, parent.Key) > 0 then
   begin
     parent.RChild := cur;
-    cur.IsLeftChild := false;
+    cur.IsLeftChild := False;
   end;
 
   _size += 1;
@@ -145,10 +145,10 @@ begin
     else if _cmp_K.Compare(key, cur.Key) > 0 then
       cur := cur.RChild
     else
-      Exit(true);
+      Exit(True);
   end;
 
-  Result := false;
+  Result := False;
 end;
 
 function TBSTTree.ContainsValue(Value: V): boolean;
@@ -167,11 +167,11 @@ begin
     begin
       if _cmpV.Compare(Value, list[i].Value) = 0 then
       begin
-        Exit(true);
+        Exit(True);
       end;
     end;
 
-    Result := false;
+    Result := False;
   finally
     list.Free;
   end;

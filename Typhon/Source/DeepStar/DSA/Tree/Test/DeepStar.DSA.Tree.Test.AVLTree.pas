@@ -21,6 +21,7 @@ var
   avl: TAVLTree_int_int;
 begin
   avl := TAVLTree_int_int.Create;
+  avl.Add(1, 1);
 end;
 
 end.

@@ -14,7 +14,7 @@ procedure Run;
 implementation
 
 uses
-  DeepStar.DSA.Tree.Test.BSTTree;
+  DeepStar.DSA.Tree.Test.AVLTree;
 
 procedure Run;
 begin
