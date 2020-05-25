@@ -25,6 +25,8 @@ type
     IsRed: boolean;
 
     constructor Create(AKey: K; AValue: V; AParent: TBSTNode_K_V);
+    function IsLeft: boolean;
+    function IsRight: boolean;
   end;
 
 implementation
@@ -40,8 +42,18 @@ begin
   Parent := AParent;
   Height := 1;
   Num := 0;
-  IsLeftChild := false;
-  IsRed := true;
+  IsLeftChild := False;
+  IsRed := True;
+end;
+
+function TBSTNode.IsLeft: boolean;
+begin
+  Result := self.IsLeftChild;
+end;
+
+function TBSTNode.IsRight: boolean;
+begin
+  Result := not self.IsLeftChild;
 end;
 
 end.
