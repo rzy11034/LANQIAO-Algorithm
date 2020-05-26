@@ -132,7 +132,7 @@ uses
   DeepStar.DSA.Tree.BSTTree,
   DeepStar.DSA.Tree.BSTNode,
   DeepStar.DSA.Tree.Test.BSTTree, DeepStar.DSA.Tree.AVLTree,
-DeepStar.DSA.Tree.Test.AVLTree;
+DeepStar.DSA.Tree.Test.AVLTree, DeepStar.DSA.Tree.RBTree;
 
 begin
   try
