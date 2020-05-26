@@ -7,11 +7,7 @@ interface
 uses
   Classes,
   SysUtils,
-  DeepStar.DSA.Tree.BSTTree,
-  DeepStar.DSA.Tree.BstNode,
-  DeepStar.DSA.Interfaces,
-  DeepStar.DSA.Linear.ArrayList,
-  DeepStar.DSA.Linear.Queue;
+  DeepStar.DSA.Tree.BSTTree;
 
 type
   generic TAVLtree<K, V> = class(specialize TBSTTree<K, V>)
@@ -20,11 +16,11 @@ type
 
   private
     function __firstUnbalance(n: TBSTNode_K_V): TArr_TBSNode;
-    procedure __leftRotate(p, q: TBSTNode_K_V);
-    procedure __rightRotate(p, q: TBSTNode_K_V);
     function __unBalance(g: TBSTNode_K_V): boolean;
-    procedure __reBalance(pqs: TArr_TBSNode);
+    procedure __leftRotate(p, q: TBSTNode_K_V);
     procedure __reBalance(node: TBSTNode_K_V);
+    procedure __reBalance(pqs: TArr_TBSNode);
+    procedure __rightRotate(p, q: TBSTNode_K_V);
 
   public
     constructor Create;
@@ -52,6 +48,7 @@ var
 begin
   // 先按bst的方式来插入，再调整
   nnode := __add(key, Value);
+  __getHeight(_root);
 
   // 向上找到第一个不平衡的祖先p
   pqs := __firstUnbalance(nnode);
@@ -81,35 +78,38 @@ begin
   node := __getNode(_root, key);
 
   if (node = nil) then
-    exit;
+    Exit;
 
   parent := node.parent;
   LChild := node.LChild;
   RChild := node.RChild;
 
   if (LChild = nil) and (RChild = nil) then
-  begin //leaf node
-    __removeNode(node.Parent, node, node.Key);
+  begin // leaf node
+    __removeNode(node);
     __reBalance(parent);
   end
-  else if RChild = nil then
-  begin //has only LChild child.左孩子替换自身
+  else if LChild <> nil then
+  begin // 有左孩子,找到左子树的最大替换自身
     _predecessor := __maxNode(LChild);
     parentOfPredecessor := _predecessor.parent;
-    __removeNode(parentOfPredecessor, _predecessor, _predecessor.Key);
     node.key := _predecessor.key;
     node.Value := _predecessor.Value;
+    __removeNode(_predecessor);
     __reBalance(parentOfPredecessor);
   end
   else
-  begin //有右孩子,找到右子树的最小
+  begin // 有右孩子,找到右子树的最小替换自身
     _successor := __minNode(RChild);
     parentOfSuccessor := _successor.parent;
-    //  minNode must be leaf node
-    __removeNode(parentOfSuccessor, _successor, _successor.Key);
     node.key := _successor.key;
+    node.Value := _successor.Value;
+    //  minNode must be leaf node
+    __removeNode(_successor);
     __reBalance(parentOfSuccessor);
   end;
+
+  _size -= 1;
 end;
 
 function TAVLtree.__firstUnbalance(n: TBSTNode_K_V): TArr_TBSNode;
@@ -120,7 +120,7 @@ begin
   if (n = nil) then
   begin
     Result := nil;
-    exit;
+    Exit;
   end;
 
   s := n;
@@ -128,14 +128,14 @@ begin
   if p = nil then
   begin
     Result := nil;
-    exit;
+    Exit;
   end;
 
   g := p.parent;
   if g = nil then
   begin
     Result := nil;
-    exit;
+    Exit;
   end;
 
   if __unBalance(g) then
@@ -164,13 +164,13 @@ begin
   if B <> nil then
   begin
     B.parent := p;
-    B.isLeftChild := False;
+    B.isLeftChild := false;
   end;
 
   // p，q的关系
   q.LChild := p;
   p.parent := q;
-  p.isLeftChild := True;
+  p.isLeftChild := true;
 
   // p 和 pp 的关系
   q.parent := pp;
@@ -178,18 +178,18 @@ begin
   if pp = nil then
   begin
     _root := q;
-    exit;
+    Exit;
   end;
 
   if pIsLeft then
   begin
     pp.LChild := q;
-    q.isLeftChild := True;
+    q.isLeftChild := true;
   end
   else
   begin
     pp.RChild := q;
-    q.isLeftChild := False;
+    q.isLeftChild := false;
   end;
 end;
 
@@ -197,7 +197,7 @@ procedure TAVLtree.__reBalance(pqs: TArr_TBSNode);
 var
   p, q, s: TBSTNode_K_V;
 begin
-  if (pqs = nil) then exit;
+  if (pqs = nil) then Exit;
   p := pqs[0];//不平衡的那个祖先
   q := pqs[1];//p的子节点
   s := pqs[2];//q的子节点
@@ -227,7 +227,7 @@ var
   LChild, RChild: TBSTNode_K_V;
   hOfRight, hOfleft: integer;
 begin
-  if node = nil then exit;
+  if node = nil then Exit;
 
   RChild := node.RChild;
   LChild := node.LChild;
@@ -263,12 +263,12 @@ begin
   if x <> nil then
   begin
     x.parent := p;
-    x.isLeftChild := True;
+    x.isLeftChild := true;
   end;
 
   q.RChild := p;
   p.parent := q;
-  p.isLeftChild := False;
+  p.isLeftChild := false;
 
 
   //设定 p和 gg 的关系
@@ -276,18 +276,18 @@ begin
   if pp = nil then
   begin
     _root := q;
-    exit;
+    Exit;
   end;
 
   if pIsLeft then
   begin
     pp.LChild := q;
-    q.isLeftChild := True;
+    q.isLeftChild := true;
   end
   else
   begin
     pp.RChild := q;
-    q.IsLeftChild := False;
+    q.IsLeftChild := false;
   end;
 end;
 
@@ -296,7 +296,7 @@ var
   minus: integer;
 begin
   if g = nil then
-    exit(False);
+    Exit(false);
 
   minus := __getHeight(g.LChild) - __getHeight(g.RChild);
   Result := (Abs(minus) > 1) or (__unBalance(g.RChild)) or (__unBalance(g.LChild));

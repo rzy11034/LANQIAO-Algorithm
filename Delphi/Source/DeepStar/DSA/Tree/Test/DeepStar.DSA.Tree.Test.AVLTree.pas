@@ -1,12 +1,9 @@
 ﻿unit DeepStar.DSA.Tree.Test.AVLTree;
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
-  Classes,
-  SysUtils,
+  System.SysUtils,
   DeepStar.DSA.Tree.AVLTree,
   DeepStar.DSA.Interfaces,
   LQA.Utils;
@@ -16,8 +13,8 @@ procedure Main;
 implementation
 
 type
-  TAVLTree_int_int = specialize TAVLtree<integer, TObject>;
-  TImpl_int = specialize TImpl<integer>;
+  TAVLTree_int_int = TAVLtree<integer, TObject>;
+  TImpl_int = TImpl<integer>;
 
 procedure Main;
 var

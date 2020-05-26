@@ -27,13 +27,14 @@ type
     _cmp_V: TImpl_V.ICmp;
     _size: integer;
 
+    function __add(key: K; Value: V): TBSTNode_K_V;
     function __getHeight(node: TBSTNode_K_V): integer;
-    function __getNode(node: TBSTNode_K_V; Key: K): TBSTNode_K_V;
+    function __getNode(node: TBSTNode_K_V; key: K): TBSTNode_K_V;
+    function __getPredecessor(key: K): TBSTNode_K_V;
+    function __getSuccessor(key: K): TBSTNode_K_V;
     function __maxNode(node: TBSTNode_K_V): TBSTNode_K_V;
     function __minNode(node: TBSTNode_K_V): TBSTNode_K_V;
-    function __getPredecessor(Key: K): TBSTNode_K_V;
-    function __removeNode(parent, node: TBSTNode_K_V; Key: K): TBSTNode_K_V;
-    function __getSuccessor(Key: K): TBSTNode_K_V;
+    procedure __removeNode(x: TBSTNode_K_V);
     procedure __inOrder(node: TBSTNode_K_V; list: TList_node);
     procedure __levelOrder(node: TBSTNode_K_V; list: TList_node);
     procedure __updataHeight(node: TBSTNode_K_V);
@@ -42,24 +43,24 @@ type
     constructor Create;
     destructor Destroy; override;
 
-    function ContainsKey(Key: K): boolean;
+    function ContainsKey(key: K): boolean;
     function ContainsValue(Value: V): boolean;
     function Count: integer;
-    function GetItem(Key: K): V;
+    function GetItem(key: K): V;
     function Height: integer;
     function IsEmpty: boolean;
     function Keys: TImpl_K.TArr;
-    function Predecessor(Key: K): K;
-    function Remove(Key: K): V;
-    function Successor(Key: K): K;
+    function Predecessor(key: K): K;
+    function Remove(key: K): V;
+    function Successor(key: K): K;
     function Values: TImpl_V.TArr;
-    procedure Add(Key: K; Value: V);
+    procedure Add(key: K; Value: V);
     procedure Clear;
-    procedure SetItem(Key: K; newValue: V);
+    procedure SetItem(key: K; newValue: V);
 
     property Comparer_K: TImpl_K.ICmp read _cmp_K write _cmp_K;
     property Comparer_V: TImpl_V.ICmp read _cmp_V write _cmp_V;
-    property Item[Key: K]: V read GetItem write SetItem; default;
+    property Item[key: K]: V read GetItem write SetItem; default;
   end;
 
 implementation
@@ -74,62 +75,22 @@ begin
   _cmp_V := TImpl_V.TCmp.Default;
 end;
 
-procedure TBSTTree<K, V>.Add(Key: K; Value: V);
-var
-  parent, cur: TBSTNode_K_V;
+procedure TBSTTree<K, V>.Add(key: K; Value: V);
 begin
-  parent := nil;
-  cur := _root;
-
-  while cur <> nil do
-  begin
-    parent := cur;
-    if _cmp_K.Compare(Key, cur.Key) < 0 then
-    begin
-      cur := cur.LChild;
-    end
-    else if _cmp_K.Compare(Key, cur.Key) > 0 then
-    begin
-      cur := cur.RChild;
-    end
-    else
-    begin
-      cur.Value := Value;
-      Exit;
-    end;
-  end;
-
-  cur := TBSTNode_K_V.Create(Key, Value, parent);
-  if parent = nil then
-  begin
-    _root := cur;
-  end
-  else if _cmp_K.Compare(Key, parent.Key) < 0 then
-  begin
-    parent.LChild := cur;
-    cur.IsLeftChild := true;
-  end
-  else if _cmp_K.Compare(Key, parent.Key) > 0 then
-  begin
-    parent.RChild := cur;
-    cur.IsLeftChild := false;
-  end;
-
-  _size := _size + 1;
-  __updataHeight(cur);
+  __add(key, Value);
 end;
 
 procedure TBSTTree<K, V>.Clear;
 var
-  Key: K;
+  key: K;
 begin
-  for Key in Keys do
+  for key in Keys do
   begin
-    Remove(Key);
+    Remove(key);
   end;
 end;
 
-function TBSTTree<K, V>.ContainsKey(Key: K): boolean;
+function TBSTTree<K, V>.ContainsKey(key: K): boolean;
 var
   cur: TBSTNode_K_V;
 begin
@@ -137,9 +98,9 @@ begin
 
   while cur <> nil do
   begin
-    if _cmp_K.Compare(Key, cur.Key) < 0 then
+    if _cmp_K.Compare(key, cur.key) < 0 then
       cur := cur.LChild
-    else if _cmp_K.Compare(Key, cur.Key) > 0 then
+    else if _cmp_K.Compare(key, cur.key) > 0 then
       cur := cur.RChild
     else
       Exit(true);
@@ -185,16 +146,16 @@ begin
   inherited Destroy;
 end;
 
-function TBSTTree<K, V>.GetItem(Key: K): V;
+function TBSTTree<K, V>.GetItem(key: K): V;
 var
   Value: TValue;
   temp: TBSTNode_K_V;
 begin
-  TValue.Make(@Key, TypeInfo(K), Value);
-  if not(ContainsKey(Key)) then
+  TValue.Make(@key, TypeInfo(K), Value);
+  if not(ContainsKey(key)) then
     raise Exception.Create('There is no ''' + Value.ToString + '''');
 
-  temp := __getNode(_root, Key);
+  temp := __getNode(_root, key);
   Result := temp.Value;
 end;
 
@@ -203,36 +164,36 @@ begin
   Result := __getHeight(_root);
 end;
 
-function TBSTTree<K, V>.Predecessor(Key: K): K;
+function TBSTTree<K, V>.Predecessor(key: K): K;
 var
   cur: TBSTNode_K_V;
   Value: TValue;
 begin
-  cur := __getPredecessor(Key);
+  cur := __getPredecessor(key);
 
   if cur = nil then
   begin
-    TValue.Make(@Key, TypeInfo(K), Value);
+    TValue.Make(@key, TypeInfo(K), Value);
     raise Exception.Create('There is no ''' + Value.ToString + ''' Predecessor');
   end;
 
-  Result := cur.Key;
+  Result := cur.key;
 end;
 
-function TBSTTree<K, V>.Successor(Key: K): K;
+function TBSTTree<K, V>.Successor(key: K): K;
 var
   cur: TBSTNode_K_V;
   Value: TValue;
 begin
-  cur := __getSuccessor(Key);
+  cur := __getSuccessor(key);
 
   if cur = nil then
   begin
-    TValue.Make(@Key, TypeInfo(K), Value);
+    TValue.Make(@key, TypeInfo(K), Value);
     raise Exception.Create('There is no ''' + Value.ToString + ''' Successor');
   end;
 
-  Result := cur.Key;
+  Result := cur.key;
 end;
 
 function TBSTTree<K, V>.IsEmpty: boolean;
@@ -253,7 +214,7 @@ begin
 
     for i := 0 to list.Count - 1 do
     begin
-      res[i] := list[i].Key;
+      res[i] := list[i].key;
     end;
 
     Result := res;
@@ -262,37 +223,37 @@ begin
   end;
 end;
 
-function TBSTTree<K, V>.Remove(Key: K): V;
+function TBSTTree<K, V>.Remove(key: K): V;
 var
   Value: TValue;
   temp: TBSTNode_K_V;
   res: V;
 begin
-  temp := __getNode(_root, Key);
+  temp := __getNode(_root, key);
 
   if temp = nil then
   begin
-    TValue.Make(@Key, TypeInfo(K), Value);
-    if not(ContainsKey(Key)) then
+    TValue.Make(@key, TypeInfo(K), Value);
+    if not(ContainsKey(key)) then
       raise Exception.Create('There is no ''' + Value.ToString + '''');
   end;
 
   res := temp.Value;
-  _root := __removeNode(nil, _root, Key);
-  __getHeight(_root);
+  __removeNode(temp);
+  _size := _size - 1;
   Result := res;
 end;
 
-procedure TBSTTree<K, V>.SetItem(Key: K; newValue: V);
+procedure TBSTTree<K, V>.SetItem(key: K; newValue: V);
 var
   Value: TValue;
   temp: TBSTNode_K_V;
 begin
-  TValue.Make(@Key, TypeInfo(K), Value);
-  if not(ContainsKey(Key)) then
+  TValue.Make(@key, TypeInfo(K), Value);
+  if not(ContainsKey(key)) then
     raise Exception.Create('There is no ''' + Value.ToString + '''');
 
-  temp := __getNode(_root, Key);
+  temp := __getNode(_root, key);
   temp.Value := newValue;
 end;
 
@@ -319,6 +280,51 @@ begin
   end;
 end;
 
+function TBSTTree<K, V>.__add(key: K; Value: V): TBSTNode_K_V;
+var
+  parent, cur: TBSTNode_K_V;
+begin
+  parent := nil;
+  cur := _root;
+
+  while cur <> nil do
+  begin
+    parent := cur;
+    if _cmp_K.Compare(key, cur.key) < 0 then
+    begin
+      cur := cur.LChild;
+    end
+    else if _cmp_K.Compare(key, cur.key) > 0 then
+    begin
+      cur := cur.RChild;
+    end
+    else
+    begin
+      cur.Value := Value;
+      Exit;
+    end;
+  end;
+
+  cur := TBSTNode_K_V.Create(key, Value, parent);
+  if parent = nil then
+  begin
+    _root := cur;
+  end
+  else if _cmp_K.Compare(key, parent.key) < 0 then
+  begin
+    parent.LChild := cur;
+    cur.IsLeftChild := true;
+  end
+  else if _cmp_K.Compare(key, parent.key) > 0 then
+  begin
+    parent.RChild := cur;
+    cur.IsLeftChild := false;
+  end;
+
+  _size := _size + 1;
+  Result := cur;
+end;
+
 function TBSTTree<K, V>.__getHeight(node: TBSTNode_K_V): integer;
 begin
   if node = nil then
@@ -328,18 +334,18 @@ begin
   Result := node.Height;
 end;
 
-function TBSTTree<K, V>.__getNode(node: TBSTNode_K_V; Key: K): TBSTNode_K_V;
+function TBSTTree<K, V>.__getNode(node: TBSTNode_K_V; key: K): TBSTNode_K_V;
 begin
   if node = nil then
     Exit(nil);
 
-  if _cmp_K.Compare(Key, node.Key) < 0 then
+  if _cmp_K.Compare(key, node.key) < 0 then
   begin
-    Result := __getNode(node.LChild, Key);
+    Result := __getNode(node.LChild, key);
   end
-  else if _cmp_K.Compare(Key, node.Key) > 0 then
+  else if _cmp_K.Compare(key, node.key) > 0 then
   begin
-    Result := __getNode(node.RChild, Key);
+    Result := __getNode(node.RChild, key);
   end
   else
   begin
@@ -417,66 +423,86 @@ begin
   Result := cur;
 end;
 
-function TBSTTree<K, V>.__removeNode(parent, node: TBSTNode_K_V; Key: K): TBSTNode_K_V;
+procedure TBSTTree<K, V>.__removeNode(x: TBSTNode_K_V);
 var
-  res, temp, min, succesor: TBSTNode_K_V;
+  c, parent, minOfRight: TBSTNode_K_V;
 begin
-  if node = nil then
-  begin
-    Result := nil;
+  if x = nil then
     Exit;
-  end;
 
-  if _cmp_K.Compare(Key, node.Key) < 0 then
-  begin
-    node.LChild := __removeNode(node, node.LChild, Key);
-    res := node;
-  end
-  else if _cmp_K.Compare(Key, node.Key) > 0 then
-  begin
-    node.RChild := __removeNode(node, node.RChild, Key);
-    res := node;
-  end
-  else
-  begin
-    if node.LChild = nil then
+  if (x.LChild = nil) and (x.RChild = nil) then
+  begin // 没有子节点
+    if x.parent = nil then
     begin
-      temp := node.RChild;
-      FreeAndNil(node);
-      _size := _size - 1;
+      _root := nil;
+      Exit;
+    end;
 
-      if temp <> nil then
-        temp.parent := parent;
-
-      res := temp;
-    end
-    else if node.RChild = nil then
+    if x.IsLeftChild then
     begin
-      temp := node.LChild;
-      FreeAndNil(node);
-      _size := _size - 1;
-
-      if temp <> nil then
-        temp.parent := parent;
-
-      res := temp;
+      x.parent.LChild := nil;
     end
     else
     begin
-      // 待删除节点左右子树均不空的情况
-      // 找到比待删除节点大的最小节点，即待删除节点右子树的最小节点
-      // 用这个节点顶替待删除节点的位置
-      min := __minNode(node.RChild);
-      succesor := TBSTNode_K_V.Create(min.Key, min.Value, parent);
-      succesor.RChild := __removeNode(succesor, node.RChild, succesor.Key);
-      succesor.LChild := node.LChild;
-      succesor.IsLeftChild := node.IsLeftChild;
-      FreeAndNil(node);
-      res := succesor;
+      x.parent.RChild := nil;
     end;
-  end;
 
-  Result := res;
+    FreeAndNil(x);
+  end
+  else if x.LChild = nil then
+  begin // 有子节点,但左子为空,有右孩子
+    if x.IsLeftChild then
+    begin
+      c := x.RChild;
+      parent := x.parent;
+      parent.LChild := c;
+      c.IsLeftChild := true;
+      c.parent := parent;
+    end
+    else
+    begin
+      if x.parent <> nil then
+      begin
+        x.parent.RChild := x.RChild;
+        x.RChild.parent := x.parent;
+      end
+      else
+      begin // 根节点
+        _root := x.RChild;
+      end;
+    end;
+
+    FreeAndNil(x);
+  end
+  else if x.RChild = nil then
+  begin // 有子节点,但右子为空，有左孩子
+    if x.IsLeftChild then
+    begin
+      x.parent.LChild := x.LChild;
+      x.LChild.parent := x.parent;
+    end
+    else
+    begin
+      if x.parent <> nil then
+      begin
+        x.parent.RChild := x.LChild;
+        x.LChild.IsLeftChild := false;
+        x.LChild.parent := x.parent;
+      end
+      else
+      begin // 根节点
+        _root := x.LChild;
+      end;
+    end;
+
+    FreeAndNil(x);
+  end
+  else
+  begin // 都不为空
+    minOfRight := __minNode(x.RChild);
+    x.key := minOfRight.key; // 更换x的内容
+    __removeNode(minOfRight); // 删掉右子树种最小的元素
+  end;
 end;
 
 procedure TBSTTree<K, V>.__updataHeight(node: TBSTNode_K_V);
@@ -488,11 +514,11 @@ begin
   __updataHeight(node.parent);
 end;
 
-function TBSTTree<K, V>.__getSuccessor(Key: K): TBSTNode_K_V;
+function TBSTTree<K, V>.__getSuccessor(key: K): TBSTNode_K_V;
 var
   cur, parent: TBSTNode_K_V;
 begin
-  cur := __getNode(_root, Key);
+  cur := __getNode(_root, key);
 
   if cur = nil then
   begin
@@ -516,11 +542,11 @@ begin
   Result := parent;
 end;
 
-function TBSTTree<K, V>.__getPredecessor(Key: K): TBSTNode_K_V;
+function TBSTTree<K, V>.__getPredecessor(key: K): TBSTNode_K_V;
 var
   cur, parent: TBSTNode_K_V;
 begin
-  cur := __getNode(_root, Key);
+  cur := __getNode(_root, key);
 
   if cur = nil then
   begin

@@ -37,7 +37,7 @@ type
     function __getSuccessor(key: K): TBSTNode_K_V;
     function __maxNode(node: TBSTNode_K_V): TBSTNode_K_V;
     function __minNode(node: TBSTNode_K_V): TBSTNode_K_V;
-    function __removeNode(parent, node: TBSTNode_K_V; key: K): TBSTNode_K_V;
+    procedure __removeNode(x: TBSTNode_K_V);
     procedure __inOrder(node: TBSTNode_K_V; list: TList_node);
     procedure __levelOrder(node: TBSTNode_K_V; list: TList_node);
     procedure __updataHeight(node: TBSTNode_K_V);
@@ -107,10 +107,10 @@ begin
     else if _cmp_K.Compare(key, cur.Key) > 0 then
       cur := cur.RChild
     else
-      Exit(True);
+      Exit(true);
   end;
 
-  Result := False;
+  Result := false;
 end;
 
 function TBSTTree.ContainsValue(Value: V): boolean;
@@ -129,11 +129,11 @@ begin
     begin
       if _cmpV.Compare(Value, list[i].Value) = 0 then
       begin
-        Exit(True);
+        Exit(true);
       end;
     end;
 
-    Result := False;
+    Result := false;
   finally
     list.Free;
   end;
@@ -243,8 +243,8 @@ begin
   end;
 
   res := temp.Value;
-  _root := __removeNode(nil, _root, key);
-  __getHeight(_root);
+  __removeNode(temp);
+  _size -= 1;
   Result := res;
 end;
 
@@ -317,17 +317,15 @@ begin
   else if _cmp_K.Compare(key, parent.Key) < 0 then
   begin
     parent.LChild := cur;
-    cur.IsLeftChild := True;
+    cur.IsLeftChild := true;
   end
   else if _cmp_K.Compare(key, parent.Key) > 0 then
   begin
     parent.RChild := cur;
-    cur.IsLeftChild := False;
+    cur.IsLeftChild := false;
   end;
 
   _size += 1;
-  __updataHeight(cur);
-
   Result := cur;
 end;
 
@@ -429,66 +427,86 @@ begin
   Result := cur;
 end;
 
-function TBSTTree.__removeNode(parent, node: TBSTNode_K_V; key: K): TBSTNode_K_V;
+procedure TBSTTree.__removeNode(x: TBSTNode_K_V);
 var
-  res, temp, min, succesor: TBSTNode_K_V;
+  c, parent, minOfRight: TBSTNode_K_V;
 begin
-  if node = nil then
-  begin
-    Result := nil;
+  if x = nil then
     Exit;
-  end;
 
-  if _cmp_K.Compare(key, node.Key) < 0 then
-  begin
-    node.LChild := __removeNode(node, node.LChild, key);
-    res := node;
-  end
-  else if _cmp_K.Compare(key, node.Key) > 0 then
-  begin
-    node.RChild := __removeNode(node, node.RChild, key);
-    res := node;
-  end
-  else
-  begin
-    if node.LChild = nil then
+  if (x.LChild = nil) and (x.RChild = nil) then
+  begin // 没有子节点
+    if x.parent = nil then
     begin
-      temp := node.RChild;
-      FreeAndNil(node);
-      _size -= 1;
+      _root := nil;
+      Exit;
+    end;
 
-      if temp <> nil then
-        temp.Parent := parent;
-
-      res := temp;
-    end
-    else if node.RChild = nil then
+    if x.IsLeftChild then
     begin
-      temp := node.LChild;
-      FreeAndNil(node);
-      _size -= 1;
-
-      if temp <> nil then
-        temp.Parent := parent;
-
-      res := temp;
+      x.parent.LChild := nil;
     end
     else
     begin
-      // 待删除节点左右子树均不空的情况
-      // 找到比待删除节点大的最小节点，即待删除节点右子树的最小节点
-      // 用这个节点顶替待删除节点的位置
-      min := __minNode(node.RChild);
-      succesor := TBSTNode_K_V.Create(min.key, min.Value, parent);
-      succesor.RChild := __removeNode(succesor, node.RChild, succesor.Key);
-      succesor.LChild := node.LChild;
-      succesor.IsLeftChild := node.IsLeftChild;
-      FreeAndNil(node);
-      res := succesor;
+      x.parent.RChild := nil;
     end;
-  end;
 
-  Result := res;
+    FreeAndNil(x);
+  end
+  else if x.LChild = nil then
+  begin // 有子节点,但左子为空,有右孩子
+    if x.IsLeftChild then
+    begin
+      c := x.RChild;
+      parent := x.parent;
+      parent.LChild := c;
+      c.IsLeftChild := true;
+      c.parent := parent;
+    end
+    else
+    begin
+      if x.parent <> nil then
+      begin
+        x.parent.RChild := x.RChild;
+        x.RChild.parent := x.parent;
+      end
+      else
+      begin// 根节点
+        _root := x.RChild;
+      end;
+    end;
+
+    FreeAndNil(x);
+  end
+  else if x.RChild = nil then
+  begin // 有子节点,但右子为空，有左孩子
+    if x.IsLeftChild then
+    begin
+      x.parent.LChild := x.LChild;
+      x.LChild.parent := x.parent;
+    end
+    else
+    begin
+      if x.parent <> nil then
+      begin
+        x.parent.RChild := x.LChild;
+        x.LChild.IsLeftChild := false;
+        x.LChild.parent := x.parent;
+      end
+      else
+      begin // 根节点
+        _root := x.LChild;
+      end;
+    end;
+
+    FreeAndNil(x);
+  end
+  else
+  begin // 都不为空
+    minOfRight := __minNode(x.RChild);
+    x.key := minOfRight.key;// 更换x的内容
+    __removeNode(minOfRight); // 删掉右子树种最小的元素
+  end;
 end;
 
 procedure TBSTTree.__updataHeight(node: TBSTNode_K_V);
