@@ -53,7 +53,7 @@ type
     function IsEmpty: boolean;
     function Keys: TImpl_K.TArr;
     function Pairs: TImpl_TPair.TArr;
-    function Remove(key: K): V;
+    procedure Remove(key: K);
     function Values: TImpl_V.TArr;
     procedure Add(key: K; Value: V);
     procedure AddAll(map: THashMap_K_V);
@@ -253,7 +253,7 @@ begin
   end;
 end;
 
-function THashMap.Remove(key: K): V;
+procedure THashMap.Remove(key: K);
 var
   res: TPtr_V;
 begin
@@ -262,7 +262,7 @@ begin
   if res.PValue = nil then
     raise Exception.Create('The hash-table does not contain this key');
 
-  Result := res.PValue^;
+  //Result := res.PValue^;
 end;
 
 procedure THashMap.SetItem(key: K; Value: V);
