@@ -8,11 +8,14 @@ uses
 
 type
   TBinarySearchTree<K, V> = class(TBinaryTree<K, V>)
-  private type
-    TNode_K_V = TNode<K, V>;
+  protected type
+    TBinaryTree = TBinaryTree<K, V>;
+    TNode = TBinaryTree.TNode;
 
-  private
-    procedure __remove(node: TNode_K_V);
+  protected
+    procedure __afterAdd(node: TNode); virtual;
+    procedure __afterremove(node: TNode); virtual;
+    procedure __remove(node: TNode);
 
   public
     constructor Create;
@@ -33,7 +36,7 @@ end;
 
 procedure TBinarySearchTree<K, V>.Add(key: K; Value: V);
 var
-  parent, cur: TNode_K_V;
+  parent, cur: TNode;
   cmp: integer;
 begin
   parent := nil;
@@ -53,20 +56,29 @@ begin
       Exit;
   end;
 
-  cur := TNode_K_V.Create(key, Value, parent);
+  cur := __CreateNode(key, Value, parent);
   if parent = nil then
-    _root := cur
+  begin
+    _root := cur;
+    __afterAdd(cur);
+  end
   else if cmp < 0 then
-    parent.Left := cur
+  begin
+    parent.Left := cur;
+    __afterAdd(cur);
+  end
   else if cmp > 0 then
+  begin
     parent.Right := cur;
+    __afterAdd(cur);
+  end;
 
   _size := _size + 1;
 end;
 
 destructor TBinarySearchTree<K, V>.Destroy;
 var
-  a: TNode_K_V;
+  a: TNode;
 begin
   inherited Destroy;
 end;
@@ -76,9 +88,19 @@ begin
   __remove(__getNode(_root, key));
 end;
 
-procedure TBinarySearchTree<K, V>.__remove(node: TNode_K_V);
+procedure TBinarySearchTree<K, V>.__afterAdd(node: TNode);
+begin
+
+end;
+
+procedure TBinarySearchTree<K, V>.__afterremove(node: TNode);
+begin
+
+end;
+
+procedure TBinarySearchTree<K, V>.__remove(node: TNode);
 var
-  min, replace: TNode_K_V;
+  min, replace: TNode;
 begin
   if node = nil then
     Exit;

@@ -11,7 +11,9 @@ uses
 
 type
   generic TBinarySearchTree<K, V> = class(specialize TBinaryTree<K, V>)
-  private
+  protected
+    procedure __afterAdd(node: TNode); virtual;
+    procedure __afterremove(node: TNode); virtual;
     procedure __remove(node: TNode);
 
   public
@@ -53,13 +55,22 @@ begin
       Exit;
   end;
 
-  cur := TNode.Create(key, Value, parent);
+  cur := __CreateNode(key, Value, parent);
   if parent = nil then
-    _root := cur
+  begin
+    _root := cur;
+    __afterAdd(cur);
+  end
   else if cmp < 0 then
-    parent.Left := cur
+  begin
+    parent.Left := cur;
+    __afterAdd(cur);
+  end
   else if cmp > 0 then
+  begin
     parent.Right := cur;
+    __afterAdd(cur);
+  end;
 
   _size += 1;
 end;
@@ -72,6 +83,16 @@ end;
 procedure TBinarySearchTree.Remove(key: K);
 begin
   __remove(__getNode(_root, key));
+end;
+
+procedure TBinarySearchTree.__afterAdd(node: TNode);
+begin
+  Exit;
+end;
+
+procedure TBinarySearchTree.__afterremove(node: TNode);
+begin
+  Exit;
 end;
 
 procedure TBinarySearchTree.__remove(node: TNode);

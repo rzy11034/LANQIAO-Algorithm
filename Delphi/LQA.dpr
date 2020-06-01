@@ -130,7 +130,8 @@ uses
   DeepStar.DSA.Tree.Test.BinarySearchTree in 'Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.BinarySearchTree.pas',
   DeepStar.DSA.Tree.Test.AVLTree in 'Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.AVLTree.pas',
   DeepStar.DSA.Tree.BinarySearchTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BinarySearchTree.pas',
-  DeepStar.DSA.Tree.BinaryTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BinaryTree.pas';
+  DeepStar.DSA.Tree.BinaryTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BinaryTree.pas',
+  DeepStar.DSA.Tree.AVLTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.AVLTree.pas';
 
 begin
   try

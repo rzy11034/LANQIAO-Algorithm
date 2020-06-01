@@ -14,7 +14,7 @@ uses
   DeepStar.DSA.Linear.Queue;
 
 type
-  generic TBinaryTree<K, V> = class (TInterfacedObject, specialize IMap<K, V>)
+  generic TBinaryTree<K, V> = class abstract (TInterfacedObject, specialize IMap<K, V>)
   protected type
     TNode = class(TObject)
     public
@@ -47,6 +47,7 @@ type
     _cmp_V: TImpl_V.ICmp;
     _size: integer;
 
+    function __CreateNode(newKey: K; newValue: V; newParent: TNode): TNode; virtual;
     function __getHeight(node: TNode): integer;
     function __getNode(key: K): TNode; overload;
     function __getNode(node: TNode; key: K): TNode; overload;
@@ -144,10 +145,10 @@ begin
     else if cmp > 0 then
       cur := cur.Right
     else
-      Exit(true);
+      Exit(True);
   end;
 
-  Result := false;
+  Result := False;
 end;
 
 function TBinaryTree.ContainsValue(Value: V): boolean;
@@ -163,11 +164,11 @@ begin
     begin
       if _cmp_V.Compare(Value, list[i].Value) = 0 then
       begin
-        Exit(true);
+        Exit(True);
       end;
     end;
 
-    Result := false;
+    Result := False;
   finally
     list.Free;
   end;
@@ -206,20 +207,20 @@ var
 begin
   if _root = nil then
   begin
-    Exit(false);
+    Exit(False);
   end;
 
   queue := TQueue_node.Create;
   queue.EnQueue(_root);
 
-  leaf := false;
+  leaf := False;
   while not queue.IsEmpty do
   begin
     node := queue.DeQueue;
 
     if leaf and not (node.IsLeaf) then // 要求是叶子结点，但是当前节点不是叶子结点
     begin
-      Exit(false);
+      Exit(False);
     end;
 
     if node.left <> nil then
@@ -228,7 +229,7 @@ begin
     end
     else if node.right <> nil then
     begin
-      Exit(false);
+      Exit(False);
     end;
 
     if node.right <> nil then
@@ -237,11 +238,11 @@ begin
     end
     else
     begin
-      leaf := true; // 要求后面都是叶子节点
+      leaf := True; // 要求后面都是叶子节点
     end;
   end;
 
-  Result := true;
+  Result := True;
 end;
 
 function TBinaryTree.GetHeight: integer;
@@ -330,6 +331,11 @@ begin
   end;
 
   FreeAndNil(node);
+end;
+
+function TBinaryTree.__CreateNode(newKey: K; newValue: V; newParent: TNode): TNode;
+begin
+  Result := TNode.Create(newKey, newValue, newParent);
 end;
 
 function TBinaryTree.__getPredecessor(key: K): TNode;
