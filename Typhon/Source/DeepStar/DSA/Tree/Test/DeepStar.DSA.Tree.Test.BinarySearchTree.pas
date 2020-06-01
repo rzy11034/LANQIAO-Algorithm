@@ -1,4 +1,4 @@
-﻿unit DeepStar.DSA.Tree.Test.BSTTree;
+﻿unit DeepStar.DSA.Tree.Test.BinarySearchTree;
 
 {$mode objfpc}{$H+}
 
@@ -7,7 +7,7 @@ interface
 uses
   Classes,
   SysUtils,
-  DeepStar.DSA.Tree.BSTTree,
+  DeepStar.DSA.Tree.BinarySearchTree,
   LQA.Utils;
 
 procedure Main;
@@ -15,7 +15,7 @@ procedure Main;
 implementation
 
 type
-  TBSTTree_int_int = specialize TBSTTree<integer, integer>;
+  TBSTTree_int_int = specialize TBinarySearchTree<integer, integer>;
 
 procedure Main;
 var
@@ -29,8 +29,7 @@ begin
   tree.Add(2, 2);
   tree.Add(3, 3);
 
-  //tree.Clear;
-  tree.Remove(3);
+  //tree.Remove(1);
 
   TArrayUtils_int.Print(tree.Keys);
   TArrayUtils_int.Print(tree.Values);
@@ -39,7 +38,7 @@ begin
   writeln('ContainsValue(3): ', tree.ContainsValue(3));
   writeln('ContainsValue(4): ', tree.ContainsValue(4));
   writeln('tree.GetItem(2): ', tree.GetItem(2));
-  writeln('tree.Height: ', tree.Height);
+  writeln('tree.GetHeight: ', tree.GetHeight);
 
   tree.Clear;
 
@@ -53,8 +52,12 @@ begin
   end;
 
   TArrayUtils_int.Print(tree.Keys);
-  writeln('Successor(9): ', tree.Successor(9));
-  writeln('Predecessor(9): ', tree.Predecessor(9));
+
+  DrawLineBlockEnd;
+
+  tree.Remove(1);
+  TArrayUtils_int.Print(tree.Keys);
+  writeln('tree.IsComplete: ', tree.IsComplete);
 end;
 
 end.

@@ -1,10 +1,10 @@
-﻿unit DeepStar.DSA.Tree.Test.BSTTree;
+﻿unit DeepStar.DSA.Tree.Test.BinarySearchTree;
 
 interface
 
 uses
   System.SysUtils,
-  DeepStar.DSA.Tree.BSTTree,
+  DeepStar.DSA.Tree.BinarySearchTree,
   LQA.Utils;
 
 procedure Main;
@@ -12,7 +12,7 @@ procedure Main;
 implementation
 
 type
-  TBSTTree_int_int = TBSTTree<integer, integer>;
+  TBSTTree_int_int = TBinarySearchTree<Integer, Integer>;
 
 procedure Main;
 var
@@ -26,8 +26,7 @@ begin
   tree.Add(2, 2);
   tree.Add(3, 3);
 
-  //tree.Clear;
-  tree.Remove(3);
+  //tree.Remove(1);
 
   TArrayUtils_int.Print(tree.Keys);
   TArrayUtils_int.Print(tree.Values);
@@ -50,8 +49,6 @@ begin
   end;
 
   TArrayUtils_int.Print(tree.Keys);
-  writeln('Successor(9): ', tree.Successor(9));
-  writeln('Predecessor(9): ', tree.Predecessor(9));
 end;
 
 end.

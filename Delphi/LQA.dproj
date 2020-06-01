@@ -299,12 +299,11 @@
         <DCCReference Include="Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashMap.pas"/>
         <DCCReference Include="Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashSet.pas"/>
         <DCCReference Include="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <DCCReference Include="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTNode.pas"/>
-        <DCCReference Include="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
         <DCCReference Include="Source\Case11_树结构\DeepStar.DSA.Tree.MyTree.pas"/>
-        <DCCReference Include="Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.BSTTree.pas"/>
-        <DCCReference Include="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.AVLTree.pas"/>
+        <DCCReference Include="Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.BinarySearchTree.pas"/>
         <DCCReference Include="Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.AVLTree.pas"/>
+        <DCCReference Include="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BinarySearchTree.pas"/>
+        <DCCReference Include="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BinaryTree.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

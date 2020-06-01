@@ -4,7 +4,6 @@
 
 {$R *.res}
 
-
 uses
   System.SysUtils,
   LQA.Main in 'Source\LQA.Main.pas',
@@ -127,12 +126,11 @@ uses
   DeepStar.DSA.Hash.HashMap in 'Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashMap.pas',
   DeepStar.DSA.Hash.HashSet in 'Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashSet.pas',
   DeepStar.DSA.Hash.Test.HashMap in 'Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas',
-  DeepStar.DSA.Tree.BSTNode in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTNode.pas',
-  DeepStar.DSA.Tree.BSTTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas',
   DeepStar.DSA.Tree.MyTree in 'Source\Case11_树结构\DeepStar.DSA.Tree.MyTree.pas',
-  DeepStar.DSA.Tree.Test.BSTTree in 'Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.BSTTree.pas',
-  DeepStar.DSA.Tree.AVLTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.AVLTree.pas',
-  DeepStar.DSA.Tree.Test.AVLTree in 'Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.AVLTree.pas';
+  DeepStar.DSA.Tree.Test.BinarySearchTree in 'Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.BinarySearchTree.pas',
+  DeepStar.DSA.Tree.Test.AVLTree in 'Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.AVLTree.pas',
+  DeepStar.DSA.Tree.BinarySearchTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BinarySearchTree.pas',
+  DeepStar.DSA.Tree.BinaryTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BinaryTree.pas';
 
 begin
   try

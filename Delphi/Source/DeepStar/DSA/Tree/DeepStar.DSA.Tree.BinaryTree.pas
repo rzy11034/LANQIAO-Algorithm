@@ -1,62 +1,63 @@
 ﻿unit DeepStar.DSA.Tree.BinaryTree;
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
-  Classes,
-  SysUtils,
-  Math,
-  {%H-}Rtti,
+  System.SysUtils,
+  System.Math,
+  System.Rtti,
   DeepStar.DSA.Interfaces,
   DeepStar.DSA.Linear.ArrayList,
   DeepStar.DSA.Linear.Queue;
 
 type
-  generic TBinaryTree<K, V> = class (TInterfacedObject, specialize IMap<K, V>)
+  TNode<K, V> = class(TObject)
+  private type
+    TNode_K_V = TNode<K, V>;
+
+  public
+    Key: K;
+    Value: V;
+    Left: TNode_K_V;
+    Right: TNode_K_V;
+    Parent: TNode_K_V;
+
+    constructor Create(newKey: K; newValue: V; newParent: TNode_K_V);
+
+    /// <summary> 是否叶子节点 </summary>
+    function IsLeaf: boolean;
+    /// <summary> 是否有两个子节点 </summary>
+    function HasTwoChildren: boolean;
+    /// <summary> 判断自己是不是左子树 </summary>
+    function IsLeftChild: boolean;
+    /// <summary> 判断自己是不是右子树 </summary>
+    function IsRightChild: boolean;
+  end;
+
+  TBinaryTree<K, V> = class abstract(TInterfacedObject, IMap<K, V>)
   protected type
-    TNode = class(TObject)
-    public
-      Key: K;
-      Value: V;
-      Left: TNode;
-      Right: TNode;
-      Parent: TNode;
-
-      constructor Create(newKey: K; newValue: V; newParent: TNode);
-
-      /// <summary> 是否叶子节点 </summary>
-      function IsLeaf: boolean;
-      /// <summary> 是否有两个子节点 </summary>
-      function HasTwoChildren: boolean;
-      /// <summary> 判断自己是不是左子树 </summary>
-      function IsLeftChild: boolean;
-      /// <summary> 判断自己是不是右子树 </summary>
-      function IsRightChild: boolean;
-    end;
-
-    TImpl_K = specialize TImpl<K>;
-    TImpl_V = specialize TImpl<V>;
-    TList_node = specialize TArrayList<TNode>;
-    TQueue_node = specialize TQueue<TNode>;
+    TNode_K_V = TNode<K, V>;
+    TImpl_K = TImpl<K>;
+    TImpl_V = TImpl<V>;
+    TList_node = TArrayList<TNode_K_V>;
+    TQueue_node = TQueue<TNode_K_V>;
 
   protected
-    _root: TNode;
+    _root: TNode_K_V;
     _cmp_K: TImpl_K.ICmp;
     _cmp_V: TImpl_V.ICmp;
     _size: integer;
 
-    function __getHeight(node: TNode): integer;
-    function __getNode(key: K): TNode; overload;
-    function __getNode(node: TNode; key: K): TNode; overload;
-    function __getPredecessor(key: K): TNode;
-    function __getSuccessor(key: K): TNode;
-    function __maxNode(node: TNode): TNode;
-    function __minNode(node: TNode): TNode;
-    procedure __clear(node: TNode);
-    procedure __inOrder(node: TNode; list: TList_node);
-    procedure __levelOrder(node: TNode; list: TList_node);
+    function __getHeight(node: TNode_K_V): integer;
+    function __getNode(key: K): TNode_K_V; overload;
+    function __getNode(node: TNode_K_V; key: K): TNode_K_V; overload;
+    function __getPredecessor(key: K): TNode_K_V;
+    function __getSuccessor(key: K): TNode_K_V;
+    function __maxNode(node: TNode_K_V): TNode_K_V;
+    function __minNode(node: TNode_K_V): TNode_K_V;
+    procedure __clear(node: TNode_K_V);
+    procedure __inOrder(node: TNode_K_V; list: TList_node);
+    procedure __levelOrder(node: TNode_K_V; list: TList_node);
 
   public
     constructor Create;
@@ -66,8 +67,7 @@ type
     function ContainsValue(Value: V): boolean;
     function Count: integer;
     function GetItem(key: K): V;
-    function GetHeight: integer;
-    function IsComplete: boolean;
+    function Height: integer;
     function IsEmpty: boolean;
     function Keys: TImpl_K.TArr;
     function Values: TImpl_V.TArr;
@@ -83,38 +83,9 @@ type
 
 implementation
 
-{ TBinaryTree.TNode }
-
-constructor TBinaryTree.TNode.Create(newKey: K; newValue: V; newParent: TNode);
-begin
-  Key := newKey;
-  Value := newValue;
-  Parent := newParent;
-end;
-
-function TBinaryTree.TNode.HasTwoChildren: boolean;
-begin
-  Result := (Left <> nil) and (Right <> nil);
-end;
-
-function TBinaryTree.TNode.IsLeaf: boolean;
-begin
-  Result := (Left = nil) and (Right = nil);
-end;
-
-function TBinaryTree.TNode.IsLeftChild: boolean;
-begin
-  Result := (Parent <> nil) and (Parent.Left = Self);
-end;
-
-function TBinaryTree.TNode.IsRightChild: boolean;
-begin
-  Result := (Parent <> nil) and (Parent.Right = Self);
-end;
-
 { TBinaryTree }
 
-constructor TBinaryTree.Create;
+constructor TBinaryTree<K, V>.Create;
 begin
   _root := nil;
   _size := 0;
@@ -122,16 +93,16 @@ begin
   _cmp_V := TImpl_V.TCmp.Default;
 end;
 
-procedure TBinaryTree.Clear;
+procedure TBinaryTree<K, V>.Clear;
 begin
   __clear(_root);
   _root := nil;
   _size := 0;
 end;
 
-function TBinaryTree.ContainsKey(key: K): boolean;
+function TBinaryTree<K, V>.ContainsKey(key: K): boolean;
 var
-  cur: TNode;
+  cur: TNode_K_V;
   cmp: integer;
 begin
   cur := _root;
@@ -144,13 +115,13 @@ begin
     else if cmp > 0 then
       cur := cur.Right
     else
-      Exit(true);
+      Exit(True);
   end;
 
-  Result := false;
+  Result := False;
 end;
 
-function TBinaryTree.ContainsValue(Value: V): boolean;
+function TBinaryTree<K, V>.ContainsValue(Value: V): boolean;
 var
   list: TList_node;
   i: integer;
@@ -163,31 +134,32 @@ begin
     begin
       if _cmp_V.Compare(Value, list[i].Value) = 0 then
       begin
-        Exit(true);
+        Exit(True);
       end;
     end;
 
-    Result := false;
+    Result := False;
   finally
     list.Free;
   end;
 end;
 
-function TBinaryTree.Count: integer;
+function TBinaryTree<K, V>.Count: integer;
 begin
   Result := _size;
 end;
 
-destructor TBinaryTree.Destroy;
+destructor TBinaryTree<K, V>.Destroy;
 begin
   Clear;
+  _root.Free;
   inherited Destroy;
 end;
 
-function TBinaryTree.GetItem(key: K): V;
+function TBinaryTree<K, V>.GetItem(key: K): V;
 var
   Value: TValue;
-  temp: TNode;
+  temp: TNode_K_V;
 begin
   temp := __getNode(_root, key);
   TValue.Make(@key, TypeInfo(K), Value);
@@ -198,63 +170,17 @@ begin
   Result := temp.Value;
 end;
 
-function TBinaryTree.IsComplete: boolean;
-var
-  queue: TQueue_node;
-  leaf: boolean;
-  node: TNode;
-begin
-  if _root = nil then
-  begin
-    Exit(false);
-  end;
-
-  queue := TQueue_node.Create;
-  queue.EnQueue(_root);
-
-  leaf := false;
-  while not queue.IsEmpty do
-  begin
-    node := queue.DeQueue;
-
-    if leaf and not (node.IsLeaf) then // 要求是叶子结点，但是当前节点不是叶子结点
-    begin
-      Exit(false);
-    end;
-
-    if node.left <> nil then
-    begin
-      queue.EnQueue(node.left);
-    end
-    else if node.right <> nil then
-    begin
-      Exit(false);
-    end;
-
-    if node.right <> nil then
-    begin
-      queue.EnQueue(node.right);
-    end
-    else
-    begin
-      leaf := true; // 要求后面都是叶子节点
-    end;
-  end;
-
-  Result := true;
-end;
-
-function TBinaryTree.GetHeight: integer;
+function TBinaryTree<K, V>.Height: integer;
 begin
   Result := __getHeight(_root);
 end;
 
-function TBinaryTree.IsEmpty: boolean;
+function TBinaryTree<K, V>.IsEmpty: boolean;
 begin
   Result := _size = 0;
 end;
 
-function TBinaryTree.Keys: TImpl_K.TArr;
+function TBinaryTree<K, V>.Keys: TImpl_K.TArr;
 var
   list: TList_node;
   res: TImpl_K.TArr;
@@ -276,10 +202,10 @@ begin
   end;
 end;
 
-procedure TBinaryTree.SetItem(key: K; newValue: V);
+procedure TBinaryTree<K, V>.SetItem(key: K; newValue: V);
 var
   Value: TValue;
-  temp: TNode;
+  temp: TNode_K_V;
 begin
   temp := __getNode(_root, key);
   TValue.Make(@key, TypeInfo(K), Value);
@@ -290,7 +216,7 @@ begin
   temp.Value := newValue;
 end;
 
-function TBinaryTree.Values: TImpl_V.TArr;
+function TBinaryTree<K, V>.Values: TImpl_V.TArr;
 var
   list: TList_node;
   res: TImpl_V.TArr;
@@ -313,7 +239,7 @@ begin
   end;
 end;
 
-procedure TBinaryTree.__clear(node: TNode);
+procedure TBinaryTree<K, V>.__clear(node: TNode_K_V);
 begin
   if node = nil then
     Exit;
@@ -332,9 +258,9 @@ begin
   FreeAndNil(node);
 end;
 
-function TBinaryTree.__getPredecessor(key: K): TNode;
+function TBinaryTree<K, V>.__getPredecessor(key: K): TNode_K_V;
 var
-  cur, parent: TNode;
+  cur, parent: TNode_K_V;
 begin
   cur := __getNode(_root, key);
 
@@ -360,9 +286,9 @@ begin
   Result := parent;
 end;
 
-function TBinaryTree.__getSuccessor(key: K): TNode;
+function TBinaryTree<K, V>.__getSuccessor(key: K): TNode_K_V;
 var
-  cur, parent: TNode;
+  cur, parent: TNode_K_V;
 begin
   cur := __getNode(_root, key);
 
@@ -388,7 +314,7 @@ begin
   Result := parent;
 end;
 
-function TBinaryTree.__getHeight(node: TNode): integer;
+function TBinaryTree<K, V>.__getHeight(node: TNode_K_V): integer;
 begin
   if node = nil then
     Exit(0);
@@ -396,12 +322,12 @@ begin
   Result := 1 + Max(__getHeight(node.Left), __getHeight(node.Right));
 end;
 
-function TBinaryTree.__getNode(key: K): TNode;
+function TBinaryTree<K, V>.__getNode(key: K): TNode_K_V;
 begin
   Result := __getNode(_root, key);
 end;
 
-function TBinaryTree.__getNode(node: TNode; key: K): TNode;
+function TBinaryTree<K, V>.__getNode(node: TNode_K_V; key: K): TNode_K_V;
 var
   cmp: integer;
 begin
@@ -423,7 +349,7 @@ begin
   end;
 end;
 
-procedure TBinaryTree.__inOrder(node: TNode; list: TList_node);
+procedure TBinaryTree<K, V>.__inOrder(node: TNode_K_V; list: TList_node);
 begin
   if node = nil then
     Exit;
@@ -433,10 +359,10 @@ begin
   __inOrder(node.Right, list);
 end;
 
-procedure TBinaryTree.__levelOrder(node: TNode; list: TList_node);
+procedure TBinaryTree<K, V>.__levelOrder(node: TNode_K_V; list: TList_node);
 var
   queue: TQueue_node;
-  cur, temp: TNode;
+  cur, temp: TNode_K_V;
 begin
   if node = nil then
     Exit;
@@ -463,9 +389,9 @@ begin
   end;
 end;
 
-function TBinaryTree.__maxNode(node: TNode): TNode;
+function TBinaryTree<K, V>.__maxNode(node: TNode_K_V): TNode_K_V;
 var
-  cur: TNode;
+  cur: TNode_K_V;
 begin
   if node = nil then
     Exit(nil);
@@ -480,9 +406,9 @@ begin
   Result := cur;
 end;
 
-function TBinaryTree.__minNode(node: TNode): TNode;
+function TBinaryTree<K, V>.__minNode(node: TNode_K_V): TNode_K_V;
 var
-  cur: TNode;
+  cur: TNode_K_V;
 begin
   if node = nil then
     Exit(nil);
@@ -495,6 +421,35 @@ begin
   end;
 
   Result := cur;
+end;
+
+{ TNode }
+
+constructor TNode<K, V>.Create(newKey: K; newValue: V; newParent: TNode_K_V);
+begin
+  Key := newKey;
+  Value := newValue;
+  Parent := newParent;
+end;
+
+function TNode<K, V>.HasTwoChildren: boolean;
+begin
+  Result := (Left <> nil) and (Right <> nil);
+end;
+
+function TNode<K, V>.IsLeaf: boolean;
+begin
+  Result := (Left = nil) and (Right = nil);
+end;
+
+function TNode<K, V>.IsLeftChild: boolean;
+begin
+  Result := (Parent <> nil) and (Parent.Left = Self);
+end;
+
+function TNode<K, V>.IsRightChild: boolean;
+begin
+  Result := (Parent <> nil) and (Parent.Right = Self);
 end;
 
 end.

@@ -1,18 +1,18 @@
 ﻿unit DeepStar.DSA.Tree.BinarySearchTree;
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
-  Classes,
-  SysUtils,
+  System.SysUtils,
   DeepStar.DSA.Tree.BinaryTree;
 
 type
-  generic TBinarySearchTree<K, V> = class(specialize TBinaryTree<K, V>)
+  TBinarySearchTree<K, V> = class(TBinaryTree<K, V>)
+  private type
+    TNode_K_V = TNode<K, V>;
+
   private
-    procedure __remove(node: TNode);
+    procedure __remove(node: TNode_K_V);
 
   public
     constructor Create;
@@ -26,14 +26,14 @@ implementation
 
 { TBinarySearchTree }
 
-constructor TBinarySearchTree.Create;
+constructor TBinarySearchTree<K, V>.Create;
 begin
   inherited Create;
 end;
 
-procedure TBinarySearchTree.Add(key: K; Value: V);
+procedure TBinarySearchTree<K, V>.Add(key: K; Value: V);
 var
-  parent, cur: TNode;
+  parent, cur: TNode_K_V;
   cmp: integer;
 begin
   parent := nil;
@@ -53,7 +53,7 @@ begin
       Exit;
   end;
 
-  cur := TNode.Create(key, Value, parent);
+  cur := TNode_K_V.Create(key, Value, parent);
   if parent = nil then
     _root := cur
   else if cmp < 0 then
@@ -61,22 +61,24 @@ begin
   else if cmp > 0 then
     parent.Right := cur;
 
-  _size += 1;
+  _size := _size + 1;
 end;
 
-destructor TBinarySearchTree.Destroy;
+destructor TBinarySearchTree<K, V>.Destroy;
+var
+  a: TNode_K_V;
 begin
   inherited Destroy;
 end;
 
-procedure TBinarySearchTree.Remove(key: K);
+procedure TBinarySearchTree<K, V>.Remove(key: K);
 begin
   __remove(__getNode(_root, key));
 end;
 
-procedure TBinarySearchTree.__remove(node: TNode);
+procedure TBinarySearchTree<K, V>.__remove(node: TNode_K_V);
 var
-  min, replace: TNode;
+  min, replace: TNode_K_V;
 begin
   if node = nil then
     Exit;
@@ -99,23 +101,23 @@ begin
   else
     replace := node.Right;
 
-  if replace <> nil then
-  begin // node是度为1的节点
+  if replace <> nil then // node是度为1的节点
+  begin
 
     // 更改parent
     replace.parent := node.parent;
 
     // 更改parent的left、right的指向
-    if node.parent = nil then // node是度为1的节点并且是根节点
-    begin
+    if node.parent = nil then
+    begin // node是度为1的节点并且是根节点
       _root := replace;
     end
     else if node.IsLeftChild then
     begin
       node.parent.left := replace;
     end
-    else // node = node.parent.right
-    begin
+    else
+    begin // node = node.parent.right
       node.parent.right := replace;
     end;
   end
@@ -135,7 +137,7 @@ begin
     end;
   end;
 
-  _size -= 1;
+  _size := _size - 1;
   FreeAndNil(node);
 end;
 

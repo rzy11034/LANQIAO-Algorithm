@@ -43,19 +43,19 @@ type
     destructor Destroy; override;
 
     function Clone: THashMap_K_V;
-    function ContainsKey(Key: K): boolean;
+    function ContainsKey(key: K): boolean;
     function ContainsValue(Value: V): boolean;
     function Count: integer;
-    function GetItem(Key: K): V;
+    function GetItem(key: K): V;
     function IsEmpty: boolean;
     function Keys: TImpl_K.TArr;
     function Pairs: TImpl_TPair.TArr;
-    function Remove(Key: K): V;
     function Values: TImpl_V.TArr;
-    procedure Add(Key: K; Value: V);
+    procedure Add(key: K; Value: V);
     procedure AddAll(map: THashMap_K_V);
     procedure Clear;
-    procedure SetItem(Key: K; Value: V);
+    procedure Remove(key: K);
+    procedure SetItem(key: K; Value: V);
 
     property Comparer_K: TImpl_K.ICmp read _cmp_K write _cmp_K;
     property Comparer_V: TImpl_V.ICmp read _cmp_V write _cmp_V;
@@ -250,7 +250,7 @@ begin
   end;
 end;
 
-function THashMap<K, V>.Remove(Key: K): V;
+procedure THashMap<K, V>.Remove(Key: K);
 var
   res: TPtr_V;
 begin
@@ -259,7 +259,7 @@ begin
   if res.PValue = nil then
     raise Exception.Create('The hash-table does not contain this key');
 
-  Result := res.PValue^;
+  //Result := res.PValue^;
 end;
 
 procedure THashMap<K, V>.SetItem(Key: K; Value: V);

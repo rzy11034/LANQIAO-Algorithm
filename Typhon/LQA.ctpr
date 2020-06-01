@@ -45,7 +45,6 @@
           </CodeGeneration>
           <Linking>
             <Debugging>
-              <DebugInfoType Value="dsDwarf3"/>
               <TrashVariables Value="True"/>
               <UseValgrind Value="True"/>
               <StripSymbols Value="True"/>
@@ -586,16 +585,7 @@
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
-        <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BstNode.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="DeepStar.DSA.Tree.BSTNode"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.BSTTree.pas"/>
+        <Filename Value="Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.BinarySearchTree.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
@@ -604,10 +594,6 @@
       </Unit>
       <Unit>
         <Filename Value="Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.AVLTree.pas"/>
-        <IsPartOfProject Value="True"/>
-      </Unit>
-      <Unit>
-        <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.RBTree.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit>
       <Unit>
