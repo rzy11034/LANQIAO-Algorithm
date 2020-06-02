@@ -28,8 +28,8 @@ begin
   tree.Add(1, 1);
   WriteLn(tree.Height);
   tree.Add(2, 2);
-  tree.Add(3, 3);
-
+  TArrayUtils_int.Print(tree.Keys);
+  TArrayUtils_int.Print(tree.Values);
 end;
 
 end.

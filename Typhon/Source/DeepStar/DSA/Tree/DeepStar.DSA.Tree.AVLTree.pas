@@ -12,13 +12,15 @@ uses
 
 type
   generic TAVLTree<K, V> = class(specialize TBinarySearchTree<K, V>)
-  private type
+  protected type
     TAVLNode = class(TNode)
+    private
+      procedure __getAllChildHeight(out leftHeight, rightHeight: integer);
+
     public
       Height: integer;
 
       constructor Create(newKey: K; newValue: V; newParent: TAVLNode);
-
       // 获取该节点平衡因子
       function BalanceFactor: integer;
       // 比较高的子节点
@@ -31,10 +33,10 @@ type
     function __CreateNode(newKey: K; newValue: V; newParent: TNode): TNode; override;
     // 判断传入节点是否平衡（平衡因子的绝对值 <= 1）
     function __isBalanced(node: TAVLNode): boolean;
+    procedure __afterAdd(node: TNode); override;
+    procedure __afterRemove(node: TNode); override;
     // 恢复平衡:  grand--高度最低的那个不平衡节点
     procedure __rebalance(grand: TAVLNode);
-    procedure __afterRemove(node: TNode); override;
-    procedure __afterAdd(node: TNode); override;
     procedure __updataHeight(node: TAVLNode);
 
   public
@@ -65,6 +67,7 @@ end;
 procedure TAVLTree.__afterAdd(node: TNode);
 begin
   node := node.Parent;
+
   while node <> nil do
   begin
     if __isBalanced(node as TAVLNode) then // 如果平衡
@@ -76,12 +79,15 @@ begin
       __rebalance(node as TAVLNode);
       Break;
     end;
+
+    node := node.Parent;
   end;
 end;
 
 procedure TAVLTree.__afterRemove(node: TNode);
 begin
   node := node.Parent;
+
   while node <> nil do
   begin
     if __isBalanced(node as TAVLNode) then // 如果平衡
@@ -92,6 +98,8 @@ begin
     begin
       __rebalance(node as TAVLNode);
     end;
+
+    node := node.Parent;
   end;
 end;
 
@@ -127,8 +135,8 @@ function TAVLTree.TAVLNode.BalanceFactor: integer;
 var
   leftHeight, rightHeight: integer;
 begin
-  leftHeight := IfThen(Left = nil, 0, (Left as TAVLNode).Height);
-  rightHeight := IfThen(Right = nil, 0, (Right as TAVLNode).Height);
+  __getAllChildHeight(leftHeight, rightHeight);
+
   Result := leftHeight - rightHeight;
 end;
 
@@ -137,8 +145,7 @@ var
   leftHeight, rightHeight: integer;
   res: TAVLNode;
 begin
-  leftHeight := IfThen(left = nil, 0, (Left as TAVLNode).Height);
-  rightHeight := IfThen(Right = nil, 0, (Right as TAVLNode).Height);
+  __getAllChildHeight(leftHeight, rightHeight);
 
   if leftHeight > rightHeight then
     res := Left as TAVLNode
@@ -159,9 +166,22 @@ procedure TAVLTree.TAVLNode.UpdateHeight;
 var
   leftHeight, rightHeight: integer;
 begin
-  leftHeight := IfThen(left = nil, 0, (Left as TAVLNode).Height);
-  rightHeight := IfThen(Right = nil, 0, (Right as TAVLNode).Height);
+  __getAllChildHeight(leftHeight, rightHeight);
+
   Height := 1 + Max(leftHeight, rightHeight);
+end;
+
+procedure TAVLTree.TAVLNode.__getAllChildHeight(out leftHeight, rightHeight: integer);
+begin
+  if Left = nil then
+    leftHeight := 0
+  else
+    leftHeight := (Left as TAVLNode).Height;
+
+  if Right = nil then
+    rightHeight := 0
+  else
+    rightHeight := (Right as TAVLNode).Height;
 end;
 
 end.

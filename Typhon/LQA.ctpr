@@ -39,18 +39,18 @@
               <StackChecks Value="True"/>
             </Checks>
             <VerifyObjMethodCallValidity Value="True"/>
-            <Optimizations>
-              <OptimizationLevel Value="0"/>
-            </Optimizations>
           </CodeGeneration>
           <Linking>
             <Debugging>
+              <DebugInfoType Value="dsDwarf2Set"/>
+              <UseHeaptrc Value="True"/>
               <TrashVariables Value="True"/>
               <UseValgrind Value="True"/>
               <StripSymbols Value="True"/>
             </Debugging>
           </Linking>
           <Other>
+            <WriteFPCLogo Value="False"/>
             <CompilerMessages>
               <IgnoredMessages idx4105="True" idx4104="True"/>
             </CompilerMessages>

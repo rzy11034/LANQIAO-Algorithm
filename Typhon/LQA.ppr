@@ -128,10 +128,10 @@ uses {$IFDEF UNIX}
   DeepStar.DSA.Hash.HashSet,
   DeepStar.DSA.Tree.MyTree,
   DeepStar.DSA.Tree.Test.BinarySearchTree,
-  DeepStar.DSA.Tree.AVLTree,
-  DeepStar.DSA.Tree.Test.AVLTree,
   DeepStar.DSA.Tree.BinaryTree,
-  DeepStar.DSA.Tree.BinarySearchTree;
+  DeepStar.DSA.Tree.BinarySearchTree,
+  DeepStar.DSA.Tree.AVLTree,
+  DeepStar.DSA.Tree.Test.AVLTree;
 
 begin
   try
