@@ -3,14 +3,14 @@
 interface
 
 uses
-System.  SysUtils,
-System.  Math,
+  System.SysUtils,
+  System.Math,
   DeepStar.DSA.Tree.BinarySearchTree;
 
 type
   TAVLTree<K, V> = class(TBinarySearchTree<K, V>)
   private type
-    TNode = TBinarySearchTree<K,V>.TNode;
+    TNode = TBinarySearchTree<K, V>.TNode;
 
     TAVLNode = class(TNode)
     public
@@ -32,7 +32,7 @@ type
   public
     constructor Create;
     destructor Destroy; override;
-    function Height:integer;
+    function Height: integer;
   end;
 
 implementation
@@ -85,7 +85,7 @@ procedure TAVLTree<K, V>.TAVLNode.UpdateHeight;
 var
   leftHeight, rightHeight: integer;
 begin
-  leftHeight := IfThen(left = nil, 0, (Left as TAVLNode).Height);
+  leftHeight := IfThen(Left = nil, 0, (Left as TAVLNode).Height);
   rightHeight := IfThen(Right = nil, 0, (Right as TAVLNode).Height);
   Height := 1 + Max(leftHeight, rightHeight);
 end;

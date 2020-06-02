@@ -6,6 +6,12 @@ uses
   System.SysUtils,
   LQA.Utils;
 
+type
+
+  TT<T> = class(TObject)
+    node: TT<T>;
+  end;
+
 procedure Run;
 
 implementation

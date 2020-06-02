@@ -12,8 +12,10 @@ uses
 type
   generic TBinarySearchTree<K, V> = class(specialize TBinaryTree<K, V>)
   protected
+    // 增加节点后的调整
     procedure __afterAdd(node: TNode); virtual;
-    procedure __afterremove(node: TNode); virtual;
+    // 删除节点后的调整
+    procedure __afterRemove(node: TNode); virtual;
     procedure __remove(node: TNode);
 
   public
@@ -90,7 +92,7 @@ begin
   Exit;
 end;
 
-procedure TBinarySearchTree.__afterremove(node: TNode);
+procedure TBinarySearchTree.__afterRemove(node: TNode);
 begin
   Exit;
 end;

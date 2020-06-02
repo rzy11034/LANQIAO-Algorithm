@@ -145,10 +145,10 @@ begin
     else if cmp > 0 then
       cur := cur.Right
     else
-      Exit(True);
+      Exit(true);
   end;
 
-  Result := False;
+  Result := false;
 end;
 
 function TBinaryTree.ContainsValue(Value: V): boolean;
@@ -164,11 +164,11 @@ begin
     begin
       if _cmp_V.Compare(Value, list[i].Value) = 0 then
       begin
-        Exit(True);
+        Exit(true);
       end;
     end;
 
-    Result := False;
+    Result := false;
   finally
     list.Free;
   end;
@@ -207,20 +207,20 @@ var
 begin
   if _root = nil then
   begin
-    Exit(False);
+    Exit(false);
   end;
 
   queue := TQueue_node.Create;
   queue.EnQueue(_root);
 
-  leaf := False;
+  leaf := false;
   while not queue.IsEmpty do
   begin
     node := queue.DeQueue;
 
     if leaf and not (node.IsLeaf) then // 要求是叶子结点，但是当前节点不是叶子结点
     begin
-      Exit(False);
+      Exit(false);
     end;
 
     if node.left <> nil then
@@ -229,7 +229,7 @@ begin
     end
     else if node.right <> nil then
     begin
-      Exit(False);
+      Exit(false);
     end;
 
     if node.right <> nil then
@@ -238,11 +238,11 @@ begin
     end
     else
     begin
-      leaf := True; // 要求后面都是叶子节点
+      leaf := true; // 要求后面都是叶子节点
     end;
   end;
 
-  Result := True;
+  Result := true;
 end;
 
 function TBinaryTree.GetHeight: integer;
