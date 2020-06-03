@@ -122,9 +122,8 @@ begin
   else
     replace := node.Right;
 
-  if replace <> nil then
-  begin // node是度为1的节点
-
+  if replace <> nil then // node是度为1的节点
+  begin
     // 更改parent
     replace.parent := node.parent;
 
@@ -141,10 +140,16 @@ begin
     begin
       node.parent.right := replace;
     end;
+
+    // 删除节点后的调整
+    __afterRemove(node);
   end
   else if node.parent = nil then // node是叶子节点并且是根节点
   begin
     _root := nil;
+
+    // 删除节点后的调整
+    __afterRemove(node);
   end
   else // node是叶子节点，但不是根节点
   begin
@@ -156,6 +161,9 @@ begin
     begin
       node.parent.right := nil;
     end;
+
+    // 删除节点后的调整
+    __afterRemove(node);
   end;
 
   _size -= 1;
