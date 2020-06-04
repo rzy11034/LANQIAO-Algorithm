@@ -34,6 +34,8 @@ type
       function IsLeftChild: boolean;
       /// <summary> 判断自己是不是右子树 </summary>
       function IsRightChild: boolean;
+      // 返回兄弟节点
+      function Sibling: TNode;
     end;
 
     TImpl_K = specialize TImpl<K>;
@@ -111,6 +113,20 @@ end;
 function TBinaryTree.TNode.IsRightChild: boolean;
 begin
   Result := (Parent <> nil) and (Parent.Right = Self);
+end;
+
+function TBinaryTree.TNode.Sibling: TNode;
+var
+  res: TNode;
+begin
+  if IsLeftChild then
+    res := Parent.Right
+  else if IsRightChild then
+    res := Parent.Left
+  else
+    res := nil;
+
+  Result := res;
 end;
 
 { TBinaryTree }
