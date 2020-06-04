@@ -8,15 +8,12 @@ uses
   Classes,
   SysUtils,
   Math,
-  DeepStar.DSA.Tree.BinarySearchTree;
+  DeepStar.DSA.Tree.BalanceBinarySearchTree;
 
 type
-  generic TAVLTree<K, V> = class(specialize TBinarySearchTree<K, V>)
-  protected type
+  generic TAVLTree<K, V> = class(specialize TBalanceBinarySearchTree<K, V>)
+  private type
     TAVLNode = class(TNode)
-    private
-      procedure __getAllChildHeight(out leftHeight, rightHeight: integer);
-
     public
       Height: integer;
 
@@ -27,6 +24,7 @@ type
       function TallerChild: TAVLNode;
       // 更新高度
       procedure UpdateHeight;
+      procedure __getAllChildHeight(out leftHeight, rightHeight: integer);
     end;
 
   protected
@@ -38,9 +36,7 @@ type
     // 恢复平衡:  grand--高度最低的那个不平衡节点
     procedure __rebalance(grand: TAVLNode);
     procedure __updateHeight(node: TAVLNode);
-    procedure __rotateLeft(grand: TAVLNode);
-    procedure __rotateRight(grand: TAVLNode);
-    procedure __afterRotate(grand, parent, child: TAVLNode);
+    procedure __afterRotate(grand, parent, child: TNode); override;
 
   public
     constructor Create;
@@ -106,36 +102,13 @@ begin
   end;
 end;
 
-procedure TAVLTree.__afterRotate(grand, parent, child: TAVLNode);
+procedure TAVLTree.__afterRotate(grand, parent, child: TNode);
 begin
-  // 让parent成为子树的根节点
-  parent.parent := grand.parent;
-
-  if grand.IsLeftChild then
-  begin
-    grand.parent.left := parent;
-  end
-  else if grand.IsRightChild then
-  begin
-    grand.parent.right := parent;
-  end
-  else // grand是 root节点
-  begin
-    _root := parent;
-  end;
-
-  // 更新 child 的 parent
-  if child <> nil then
-  begin
-    child.parent := grand;
-  end;
-
-  // 更新 grand 的 parent
-  grand.parent := parent;
+  inherited __afterRotate(grand, parent, child);
 
   // 更新高度
-  __updateHeight(grand);
-  __updateHeight(parent);
+  __updateHeight(grand as TAVLNode);
+  __updateHeight(parent as TAVLNode);
 end;
 
 function TAVLTree.__CreateNode(newKey: K; newValue: V; newParent: TNode): TNode;
@@ -179,30 +152,6 @@ begin
       __rotateLeft(grand);
     end;
   end;
-end;
-
-procedure TAVLTree.__rotateLeft(grand: TAVLNode);
-var
-  parent, child: TAVLNode;
-begin
-  parent := grand.right as TAVLNode;
-  child := parent.left as TAVLNode;
-  grand.right := child;
-  parent.left := grand;
-
-  __afterRotate(grand, parent, child);
-end;
-
-procedure TAVLTree.__rotateRight(grand: TAVLNode);
-var
-  parent, child: TAVLNode;
-begin
-  parent := grand.left as TAVLNode;
-  child := parent.right as TAVLNode;
-  grand.left := child;
-  parent.right := grand;
-
-  __afterRotate(grand, parent, child);
 end;
 
 procedure TAVLTree.__updateHeight(node: TAVLNode);
