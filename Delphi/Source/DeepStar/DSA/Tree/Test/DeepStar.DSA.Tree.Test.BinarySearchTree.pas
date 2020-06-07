@@ -3,7 +3,8 @@
 interface
 
 uses
-  System.SysUtils,
+ System. Classes,
+ System. SysUtils,
   DeepStar.DSA.Tree.BinarySearchTree,
   LQA.Utils;
 
@@ -12,7 +13,7 @@ procedure Main;
 implementation
 
 type
-  TBSTTree_int_int = TBinarySearchTree<Integer, Integer>;
+  TBSTTree_int_int = TBinarySearchTree<integer, integer>;
 
 procedure Main;
 var
@@ -35,7 +36,7 @@ begin
   writeln('ContainsValue(3): ', tree.ContainsValue(3));
   writeln('ContainsValue(4): ', tree.ContainsValue(4));
   writeln('tree.GetItem(2): ', tree.GetItem(2));
-  writeln('tree.Height: ', tree.Height);
+  writeln('tree.GetHeight: ', tree.GetHeight);
 
   tree.Clear;
 
@@ -49,6 +50,12 @@ begin
   end;
 
   TArrayUtils_int.Print(tree.Keys);
+
+  DrawLineBlockEnd;
+
+  tree.Remove(1);
+  TArrayUtils_int.Print(tree.Keys);
+  writeln('tree.IsComplete: ', tree.IsComplete);
 end;
 
 end.

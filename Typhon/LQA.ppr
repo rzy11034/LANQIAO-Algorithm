@@ -132,7 +132,7 @@ uses {$IFDEF UNIX}
   DeepStar.DSA.Tree.BinarySearchTree,
   DeepStar.DSA.Tree.AVLTree,
   DeepStar.DSA.Tree.Test.AVLTree, DeepStar.DSA.Tree.RBTree,
-DeepStar.DSA.Tree.BalanceBinarySearchTree, DeepStar.DSA.Tree.Test.RBTree;
+DeepStar.DSA.Tree.BalanceBinarySearchTree, DeepStar.DSA.Tree.Test.RBTree, DeepStar.DSA.Tree.TreeMap;
 
 begin
   try

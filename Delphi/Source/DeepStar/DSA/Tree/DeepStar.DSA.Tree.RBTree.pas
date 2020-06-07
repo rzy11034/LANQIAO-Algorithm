@@ -1,21 +1,20 @@
 ﻿unit DeepStar.DSA.Tree.RBTree;
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
-  Classes,
-  SysUtils,
+System.  SysUtils,
   DeepStar.DSA.Tree.BalanceBinarySearchTree;
 
 type
-  generic TRBTree<K, V> = class(specialize TBalanceBinarySearchTree<K, V>)
+  TRBTree<K, V> = class(TBalanceBinarySearchTree<K, V>)
   private const
     RED = False;
     BLACK = True;
 
   private type
+    TNode = TBalanceBinarySearchTree<K, V>.TNode;
+
     TRBNode = class(TNode)
     public
       Color: boolean;
@@ -50,27 +49,27 @@ type
 
 implementation
 
-{ TRBTree.TRBNode }
+{ TRBTree<K,V>.TRBNode }
 
-constructor TRBTree.TRBNode.Create(newKey: K; newValue: V; newParent: TRBNode);
+constructor TRBTree<K,V>.TRBNode.Create(newKey: K; newValue: V; newParent: TRBNode);
 begin
   inherited Create(newKey, newValue, newParent);
   Color := RED;
 end;
 
-{ TRBTree }
+{ TRBTree<K,V> }
 
-constructor TRBTree.Create;
+constructor TRBTree<K,V>.Create;
 begin
   inherited Create;
 end;
 
-destructor TRBTree.Destroy;
+destructor TRBTree<K,V>.Destroy;
 begin
   inherited Destroy;
 end;
 
-procedure TRBTree.__afterAdd(node: TNode);
+procedure TRBTree<K,V>.__afterAdd(node: TNode);
 var
   parent, uncle, grand: TNode;
 begin
@@ -132,7 +131,7 @@ begin
   end;
 end;
 
-procedure TRBTree.__afterRemove(node: TNode);
+procedure TRBTree<K,V>.__afterRemove(node: TNode);
 var
   parent, sibling: TNode;
   isLeft, isParentBlack: boolean;
@@ -235,12 +234,12 @@ begin
   end;
 end;
 
-function TRBTree.__CreateNode(newKey: K; newValue: V; newParent: TNode): TNode;
+function TRBTree<K,V>.__CreateNode(newKey: K; newValue: V; newParent: TNode): TNode;
 begin
   Result := TRBNode.Create(newKey, newValue, newParent as TRBNode);
 end;
 
-function TRBTree.__GetColor(node: TNode): boolean;
+function TRBTree<K,V>.__GetColor(node: TNode): boolean;
 begin
   if node = nil then
   begin
@@ -251,22 +250,22 @@ begin
   Result := (node as TRBNode).Color;
 end;
 
-function TRBTree.__isBlack(node: TNode): boolean;
+function TRBTree<K,V>.__isBlack(node: TNode): boolean;
 begin
   Result := __GetColor(node) = BLACK;
 end;
 
-function TRBTree.__isRed(node: TNode): boolean;
+function TRBTree<K,V>.__isRed(node: TNode): boolean;
 begin
   Result := __GetColor(node) = RED;
 end;
 
-function TRBTree.__setBlack(node: TNode): TNode;
+function TRBTree<K,V>.__setBlack(node: TNode): TNode;
 begin
   Result := __setColor(node, BLACK);
 end;
 
-function TRBTree.__setColor(node: TNode; color: boolean): TNode;
+function TRBTree<K,V>.__setColor(node: TNode; color: boolean): TNode;
 begin
   if node = nil then
   begin
@@ -278,7 +277,7 @@ begin
   Result := node;
 end;
 
-function TRBTree.__setRed(node: TNode): TNode;
+function TRBTree<K,V>.__setRed(node: TNode): TNode;
 begin
   Result := __setColor(node, RED);
 end;

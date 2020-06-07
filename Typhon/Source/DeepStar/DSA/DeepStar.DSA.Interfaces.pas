@@ -85,13 +85,13 @@ type
     function ContainsKey(key: K): boolean;
     function ContainsValue(value: V): boolean;
     function Count: integer;
-    function GetItem(key: K):V;
+    function GetItem(key: K): V;
     function IsEmpty: boolean;
     function Keys: TImpl<K>.TArr;
+    function Remove(key: K): V;
     function Values: TImpl<V>.TArr;
     procedure Add(key: K; Value: V);
     procedure Clear;
-    procedure Remove(key: K);
     procedure SetItem(key: K; Value: V);
   end;
 

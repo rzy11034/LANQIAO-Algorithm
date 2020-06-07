@@ -131,7 +131,10 @@ uses
   DeepStar.DSA.Tree.Test.AVLTree in 'Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.AVLTree.pas',
   DeepStar.DSA.Tree.BinarySearchTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BinarySearchTree.pas',
   DeepStar.DSA.Tree.BinaryTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BinaryTree.pas',
-  DeepStar.DSA.Tree.AVLTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.AVLTree.pas';
+  DeepStar.DSA.Tree.AVLTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.AVLTree.pas',
+  DeepStar.DSA.Tree.BalanceBinarySearchTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BalanceBinarySearchTree.pas',
+  DeepStar.DSA.Tree.RBTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.RBTree.pas',
+  DeepStar.DSA.Tree.Test.RBTree in 'Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.RBTree.pas';
 
 begin
   try

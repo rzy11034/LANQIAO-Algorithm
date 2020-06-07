@@ -6,18 +6,12 @@ uses
   System.SysUtils,
   LQA.Utils;
 
-type
-
-  TT<T> = class(TObject)
-    node: TT<T>;
-  end;
-
 procedure Run;
 
 implementation
 
 uses
-  DeepStar.DSA.Tree.Test.AVLTree;
+  DeepStar.DSA.Tree.Test.RBTree;
 
 procedure Run;
 begin

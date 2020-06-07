@@ -9,7 +9,7 @@ uses
   DeepStar.DSA.Linear.LinkedList;
 
 type
-  THashMap<K, V> = class(TInterfacedObject, IMap<K, V>)
+  THashMap<K, V> = class
   public type
     TPair = class
       Key: K;

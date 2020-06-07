@@ -8,13 +8,14 @@ uses
 
 type
   TBinarySearchTree<K, V> = class(TBinaryTree<K, V>)
-  protected type
-    TBinaryTree = TBinaryTree<K, V>;
-    TNode = TBinaryTree.TNode;
+  private type
+    TNode = TBinaryTree<K, V>.TNode;
 
   protected
+    /// <summary> 增加节点后的调整 </summary>
     procedure __afterAdd(node: TNode); virtual;
-    procedure __afterremove(node: TNode); virtual;
+    /// <summary> 删除节点后的调整 </summary>
+    procedure __afterRemove(node: TNode); virtual;
     procedure __remove(node: TNode);
 
   public
@@ -77,8 +78,6 @@ begin
 end;
 
 destructor TBinarySearchTree<K, V>.Destroy;
-var
-  a: TNode;
 begin
   inherited Destroy;
 end;
@@ -90,12 +89,12 @@ end;
 
 procedure TBinarySearchTree<K, V>.__afterAdd(node: TNode);
 begin
-
+  Exit;
 end;
 
-procedure TBinarySearchTree<K, V>.__afterremove(node: TNode);
+procedure TBinarySearchTree<K, V>.__afterRemove(node: TNode);
 begin
-
+  Exit;
 end;
 
 procedure TBinarySearchTree<K, V>.__remove(node: TNode);
@@ -125,27 +124,32 @@ begin
 
   if replace <> nil then // node是度为1的节点
   begin
-
     // 更改parent
     replace.parent := node.parent;
 
     // 更改parent的left、right的指向
-    if node.parent = nil then
-    begin // node是度为1的节点并且是根节点
+    if node.parent = nil then // node是度为1的节点并且是根节点
+    begin
       _root := replace;
     end
     else if node.IsLeftChild then
     begin
       node.parent.left := replace;
     end
-    else
-    begin // node = node.parent.right
+    else // node = node.parent.right
+    begin
       node.parent.right := replace;
     end;
+
+    // 删除节点后的调整
+    __afterRemove(replace);
   end
   else if node.parent = nil then // node是叶子节点并且是根节点
   begin
     _root := nil;
+
+    // 删除节点后的调整
+    __afterRemove(node);
   end
   else // node是叶子节点，但不是根节点
   begin
@@ -157,6 +161,9 @@ begin
     begin
       node.parent.right := nil;
     end;
+
+    // 删除节点后的调整
+    __afterRemove(node);
   end;
 
   _size := _size - 1;

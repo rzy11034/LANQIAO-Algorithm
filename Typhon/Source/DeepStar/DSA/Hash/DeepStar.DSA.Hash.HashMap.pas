@@ -12,7 +12,7 @@ uses
   DeepStar.DSA.Linear.LinkedList;
 
 type
-  generic THashMap<K, V> = class(TInterfacedObject, specialize IMap<K, V>)
+  generic THashMap<K, V> = class
   public type
     TPair = class
       Key: K;

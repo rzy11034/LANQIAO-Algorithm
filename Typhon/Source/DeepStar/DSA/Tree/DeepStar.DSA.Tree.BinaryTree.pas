@@ -14,7 +14,7 @@ uses
   DeepStar.DSA.Linear.Queue;
 
 type
-  generic TBinaryTree<K, V> = class abstract (TInterfacedObject, specialize IMap<K, V>)
+  generic TBinaryTree<K, V> = class abstract
   protected type
     TNode = class(TObject)
     public
@@ -26,13 +26,13 @@ type
 
       constructor Create(newKey: K; newValue: V; newParent: TNode);
 
-      /// <summary> 是否叶子节点 </summary>
+      // 是否叶子节点
       function IsLeaf: boolean;
-      /// <summary> 是否有两个子节点 </summary>
+      // 是否有两个子节点
       function HasTwoChildren: boolean;
-      /// <summary> 判断自己是不是左子树 </summary>
+      // 判断自己是不是左子树
       function IsLeftChild: boolean;
-      /// <summary> 判断自己是不是右子树 </summary>
+      // 判断自己是不是右子树
       function IsRightChild: boolean;
       // 返回兄弟节点
       function Sibling: TNode;
@@ -59,7 +59,6 @@ type
     function __minNode(node: TNode): TNode;
     procedure __clear(node: TNode);
     procedure __inOrder(node: TNode; list: TList_node);
-    procedure __levelOrder(node: TNode; list: TList_node);
 
   public
     constructor Create;
@@ -161,32 +160,45 @@ begin
     else if cmp > 0 then
       cur := cur.Right
     else
-      Exit(true);
+      Exit(True);
   end;
 
-  Result := false;
+  Result := False;
 end;
 
 function TBinaryTree.ContainsValue(Value: V): boolean;
 var
-  list: TList_node;
-  i: integer;
+  queue: TQueue_node;
+  cur: TNode;
 begin
-  list := TList_node.Create;
-  try
-    __levelOrder(_root, list);
+  if _root = nil then
+    Exit(False);
 
-    for i := 0 to list.Count - 1 do
+  cur := _root;
+
+  queue := TQueue_node.Create;
+  try
+    queue.EnQueue(cur);
+
+    while not queue.IsEmpty do
     begin
-      if _cmp_V.Compare(Value, list[i].Value) = 0 then
+      cur := queue.DeQueue;
+
+      if _cmp_V.Compare(Value, cur.Value) = 0 then
       begin
-        Exit(true);
+        Result := True;
+        Exit;
       end;
+
+      if cur.Left <> nil then
+        queue.EnQueue(cur.Left);
+      if cur.Right <> nil then
+        queue.EnQueue(cur.Right);
     end;
 
-    Result := false;
+    Result := False;
   finally
-    list.Free;
+    queue.Free;
   end;
 end;
 
@@ -223,20 +235,20 @@ var
 begin
   if _root = nil then
   begin
-    Exit(false);
+    Exit(False);
   end;
 
   queue := TQueue_node.Create;
   queue.EnQueue(_root);
 
-  leaf := false;
+  leaf := False;
   while not queue.IsEmpty do
   begin
     node := queue.DeQueue;
 
     if leaf and not (node.IsLeaf) then // 要求是叶子结点，但是当前节点不是叶子结点
     begin
-      Exit(false);
+      Exit(False);
     end;
 
     if node.left <> nil then
@@ -245,7 +257,7 @@ begin
     end
     else if node.right <> nil then
     begin
-      Exit(false);
+      Exit(False);
     end;
 
     if node.right <> nil then
@@ -254,11 +266,11 @@ begin
     end
     else
     begin
-      leaf := true; // 要求后面都是叶子节点
+      leaf := True; // 要求后面都是叶子节点
     end;
   end;
 
-  Result := true;
+  Result := True;
 end;
 
 function TBinaryTree.GetHeight: integer;
@@ -410,6 +422,16 @@ begin
   Result := parent;
 end;
 
+procedure TBinaryTree.__inOrder(node: TNode; list: TList_node);
+begin
+  if node = nil then
+    Exit;
+
+  __inOrder(node.Left, list);
+  list.AddLast(node);
+  __inOrder(node.Right, list);
+end;
+
 function TBinaryTree.__getHeight(node: TNode): integer;
 begin
   if node = nil then
@@ -442,46 +464,6 @@ begin
   else
   begin
     Result := node;
-  end;
-end;
-
-procedure TBinaryTree.__inOrder(node: TNode; list: TList_node);
-begin
-  if node = nil then
-    Exit;
-
-  __inOrder(node.Left, list);
-  list.AddLast(node);
-  __inOrder(node.Right, list);
-end;
-
-procedure TBinaryTree.__levelOrder(node: TNode; list: TList_node);
-var
-  queue: TQueue_node;
-  cur, temp: TNode;
-begin
-  if node = nil then
-    Exit;
-
-  cur := node;
-
-  queue := TQueue_node.Create;
-  try
-    queue.EnQueue(cur);
-
-    while not queue.IsEmpty do
-    begin
-      temp := queue.DeQueue;
-
-      if temp.Left <> nil then
-        queue.EnQueue(temp.Left);
-      if temp.Right <> nil then
-        queue.EnQueue(temp.Right);
-
-      list.AddLast(temp);
-    end;
-  finally
-    queue.Free;
   end;
 end;
 

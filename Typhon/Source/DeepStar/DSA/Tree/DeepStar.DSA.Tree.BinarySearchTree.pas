@@ -142,7 +142,7 @@ begin
     end;
 
     // 删除节点后的调整
-    __afterRemove(node);
+    __afterRemove(replace);
   end
   else if node.parent = nil then // node是叶子节点并且是根节点
   begin

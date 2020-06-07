@@ -1,12 +1,9 @@
 ﻿unit DeepStar.DSA.Tree.Test.RBTree;
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
-  Classes,
-  SysUtils,
+System.  SysUtils,
   DeepStar.DSA.Tree.RBTree,
   LQA.Utils;
 
@@ -15,7 +12,7 @@ procedure Main;
 implementation
 
 type
-  TRBT_int_int = specialize TRBTree<integer, integer>;
+  TRBT_int_int = TRBTree<integer, integer>;
 
 procedure Main;
 var

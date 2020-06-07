@@ -76,18 +76,18 @@ type
     PValue: ^V;
   end;
 
- IMap<K, V> = interface
+  IMap<K, V> = interface
     ['{4D344A23-A724-4120-80D8-C7F07F33D367}']
     function ContainsKey(key: K): boolean;
     function ContainsValue(value: V): boolean;
     function Count: integer;
-    function GetItem(key: K):V;
+    function GetItem(key: K): V;
     function IsEmpty: boolean;
     function Keys: TImpl<K>.TArr;
+    function Remove(key: K): V;
     function Values: TImpl<V>.TArr;
     procedure Add(key: K; Value: V);
     procedure Clear;
-    procedure Remove(key: K);
     procedure SetItem(key: K; Value: V);
   end;
 
