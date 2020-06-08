@@ -16,8 +16,8 @@ type
   // 用红黑树实现
   generic TTreeMap<K, V> = class(TInterfacedObject, specialize IMap<K, V>)
   private const
-    RED = False;
-    BLACK = True;
+    RED = false;
+    BLACK = true;
 
   private type
     TNode = class(TObject)
@@ -43,6 +43,7 @@ type
       function Sibling: TNode;
     end;
 
+    TPtr_V = specialize TPtr_V<V>;
     TImpl_K = specialize TImpl<K>;
     TImpl_V = specialize TImpl<V>;
     TList_node = specialize TArrayList<TNode>;
@@ -77,15 +78,15 @@ type
     constructor Create;
     destructor Destroy; override;
 
+    function Add(key: K; Value: V): TPtr_V;
     function ContainsKey(key: K): boolean;
     function ContainsValue(Value: V): boolean;
     function Count: integer;
     function GetItem(key: K): V;
     function IsEmpty: boolean;
     function Keys: TImpl_K.TArr;
-    function Remove(key: K): V;
+    function Remove(key: K): TPtr_V;
     function Values: TImpl_V.TArr;
-    procedure Add(key: K; Value: V);
     procedure Clear;
     procedure SetItem(key: K; Value: V);
 
@@ -106,14 +107,16 @@ begin
   _cmp_V := TImpl_V.TCmp.Default;
 end;
 
-procedure TTreeMap.Add(key: K; Value: V);
+function TTreeMap.Add(key: K; Value: V): TPtr_V;
 var
   parent, cur: TNode;
   cmp: integer;
+  res: TPtr_V;
 begin
   parent := nil;
   cur := _root;
   cmp := 0;
+  res.PValue := nil;
 
   while cur <> nil do
   begin
@@ -125,7 +128,11 @@ begin
     else if cmp > 0 then
       cur := cur.Right
     else
+    begin
+      res.PValue := @cur.Value;
+      cur.Value := Value;
       Exit;
+    end;
   end;
 
   cur := __CreateNode(key, Value, parent);
@@ -146,6 +153,7 @@ begin
   end;
 
   _size += 1;
+  Result := res;
 end;
 
 procedure TTreeMap.Clear;
@@ -170,10 +178,10 @@ begin
     else if cmp > 0 then
       cur := cur.Right
     else
-      Exit(True);
+      Exit(true);
   end;
 
-  Result := False;
+  Result := false;
 end;
 
 function TTreeMap.ContainsValue(Value: V): boolean;
@@ -182,7 +190,7 @@ var
   cur: TNode;
 begin
   if _root = nil then
-    Exit(False);
+    Exit(false);
 
   cur := _root;
 
@@ -196,7 +204,7 @@ begin
 
       if _cmp_V.Compare(Value, cur.Value) = 0 then
       begin
-        Result := True;
+        Result := true;
         Exit;
       end;
 
@@ -206,7 +214,7 @@ begin
         queue.EnQueue(cur.Right);
     end;
 
-    Result := False;
+    Result := false;
   finally
     queue.Free;
   end;
@@ -264,9 +272,21 @@ begin
   end;
 end;
 
-function TTreeMap.Remove(key: K): V;
+function TTreeMap.Remove(key: K): TPtr_V;
+var
+  cur: TNode;
+  res: TPtr_V;
 begin
-  __remove(__getNode(_root, key));
+  res.PValue := nil;
+  cur := __getNode(_root, key);
+
+  if cur <> nil then
+  begin
+    res.PValue := @cur.Value;
+    __remove(cur);
+  end;
+
+  Result := res;
 end;
 
 procedure TTreeMap.SetItem(key: K; Value: V);

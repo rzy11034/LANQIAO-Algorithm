@@ -12,7 +12,7 @@ uses
   DeepStar.DSA.Linear.LinkedList;
 
 type
-  generic THashMap<K, V> = class
+  generic THashMap<K, V> = class(TInterfacedObject, specialize IMap<K, V>)
   public type
     TPair = class
       Key: K;
@@ -42,9 +42,10 @@ type
     function __hash(key: K): integer;
 
   public
-    constructor Create(newCapacity: integer = 20);
+    constructor Create(newCapacity: integer = 31);
     destructor Destroy; override;
 
+    function Add(key: K; Value: V): TPtr_V;
     function Clone: THashMap_K_V;
     function ContainsKey(key: K): boolean;
     function ContainsValue(Value: V): boolean;
@@ -53,9 +54,8 @@ type
     function IsEmpty: boolean;
     function Keys: TImpl_K.TArr;
     function Pairs: TImpl_TPair.TArr;
-    procedure Remove(key: K);
+    function Remove(key: K): TPtr_V;
     function Values: TImpl_V.TArr;
-    procedure Add(key: K; Value: V);
     procedure AddAll(map: THashMap_K_V);
     procedure Clear;
     procedure SetItem(key: K; Value: V);
@@ -93,17 +93,27 @@ begin
   end;
 end;
 
-procedure THashMap.Add(key: K; Value: V);
+function THashMap.Add(key: K; Value: V): TPtr_V;
 var
   hashcode: integer;
+  res: TPtr_V;
+  temp: V;
 begin
-  hashcode := __hash(key);
+  res := __getItem(key);
 
-  if ContainsKey(key) then
+  if res.PValue <> nil then
+  begin
+    temp := res.PValue^;
+    SetItem(key, Value);
+    Result.PValue := @temp;
     Exit;
+  end;
 
+  hashcode := __hash(key);
   _data[hashcode].AddLast(TPair.Create(key, Value));
   _size += 1;
+
+  Result.PValue := nil;
 end;
 
 procedure THashMap.AddAll(map: THashMap_K_V);
@@ -253,16 +263,30 @@ begin
   end;
 end;
 
-procedure THashMap.Remove(key: K);
+function THashMap.Remove(key: K): TPtr_V;
 var
   res: TPtr_V;
+  hashcode, i: integer;
+  temp: V;
 begin
   res := __getItem(Key);
 
   if res.PValue = nil then
     raise Exception.Create('The hash-table does not contain this key');
 
-  //Result := res.PValue^;
+  hashcode := __hash(key);
+  temp := res.PValue^;
+
+  for i := 0 to _data[hashcode].Count - 1 do
+  begin
+    if _cmp_K.Compare(key, _data[hashcode].Items[i].Key) = 0 then
+    begin
+      _data[hashcode].Remove(i);
+      _size -= 1;
+    end;
+  end;
+
+  Result.PValue := @temp;
 end;
 
 procedure THashMap.SetItem(key: K; Value: V);
@@ -321,7 +345,7 @@ begin
     end;
   end;
 
-  Result := res;
+  Result.PValue := res.PValue;
 end;
 
 function THashMap.__hash(key: K): integer;
