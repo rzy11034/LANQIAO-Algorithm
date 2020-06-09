@@ -18,8 +18,8 @@
         <Filename Value="Source\LQA.Main.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="12"/>
-        <CursorPos Y="28"/>
+        <TopLine Value="5"/>
+        <CursorPos X="34" Y="17"/>
         <UsageCount Value="300"/>
         <Loaded Value="True"/>
       </Unit>
@@ -27,7 +27,7 @@
         <Filename Value="Source\LQA.Utils.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="67"/>
+        <TopLine Value="91"/>
         <CursorPos X="3" Y="105"/>
         <UsageCount Value="300"/>
         <Loaded Value="True"/>
@@ -36,9 +36,10 @@
         <Filename Value="目录.txt"/>
         <FRMtype Value="0"/>
         <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="94"/>
-        <CursorPos X="44" Y="98"/>
+        <TopLine Value="81"/>
+        <CursorPos X="21" Y="106"/>
         <SyntaxHighlighter Value="PO"/>
         <UsageCount Value="300"/>
         <Loaded Value="True"/>
@@ -539,11 +540,10 @@
       <Unit>
         <Filename Value="Source\DeepStar\DSA\DeepStar.DSA.Interfaces.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="6"/>
-        <TopLine Value="22"/>
-        <CursorPos X="29"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="7"/>
+        <CursorPos X="20" Y="104"/>
         <UsageCount Value="252"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DeepStar\DSA\Linear\DeepStar.DSA.Linear.ArrayList.pas"/>
@@ -749,20 +749,18 @@
       <Unit>
         <Filename Value="Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashMap.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="101"/>
-        <CursorPos Y="106"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="324"/>
+        <CursorPos Y="326"/>
         <UsageCount Value="205"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="27"/>
-        <CursorPos Y="41"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="26"/>
+        <CursorPos X="3" Y="44"/>
         <UsageCount Value="201"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashSet.pas"/>
@@ -825,14 +823,14 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="64" Y="282"/>
-        <UsageCount Value="103"/>
+        <UsageCount Value="111"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BalanceBinarySearchTree.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="11" Y="13"/>
-        <UsageCount Value="99"/>
+        <UsageCount Value="107"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.RBTree.pas"/>
@@ -840,25 +838,23 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="13"/>
         <CursorPos Y="26"/>
-        <UsageCount Value="96"/>
+        <UsageCount Value="104"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.TreeMap.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="270"/>
-        <CursorPos X="10" Y="275"/>
-        <UsageCount Value="37"/>
+        <TopLine Value="533"/>
+        <CursorPos Y="494"/>
+        <UsageCount Value="45"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.TreeMap.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="7"/>
-        <TopLine Value="13"/>
-        <CursorPos X="62" Y="26"/>
-        <UsageCount Value="31"/>
-        <Loaded Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="31"/>
+        <CursorPos X="31" Y="34"/>
+        <UsageCount Value="39"/>
       </Unit>
       <Unit>
         <Filename Value="Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BSTTree.pas"/>
@@ -934,17 +930,17 @@
         <FRMtype Value="0"/>
         <UnitName Value="Generics.Collections"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="3799"/>
-        <CursorPos X="66" Y="3820"/>
-        <UsageCount Value="9"/>
+        <TopLine Value="184"/>
+        <CursorPos X="3" Y="198"/>
+        <UsageCount Value="10"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\packages\rtl-generics\src\inc\generics.dictionariesh.inc"/>
         <FRMtype Value="0"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="169"/>
-        <CursorPos X="3" Y="174"/>
-        <UsageCount Value="9"/>
+        <TopLine Value="639"/>
+        <CursorPos X="3" Y="654"/>
+        <UsageCount Value="10"/>
       </Unit>
       <Unit>
         <Filename Value="C:\codetyphon\fpcsrc\rtl\inc\objpash.inc"/>
@@ -1011,126 +1007,90 @@
         <UsageCount Value="10"/>
       </Unit>
     </Units>
-    <JumpHistory HistoryIndex="29">
+    <JumpHistory HistoryIndex="20">
       <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <Caret Line="38" TopLine="27"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="23" Column="21" TopLine="7"/>
       </Position>
       <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <Caret Line="40" TopLine="27"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="21" Column="51" TopLine="7"/>
       </Position>
       <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashMap.pas"/>
-        <Caret Line="106" TopLine="96"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="23" Column="23" TopLine="7"/>
       </Position>
       <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <Caret Line="33" TopLine="27"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="21" Column="42" TopLine="11"/>
       </Position>
       <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <Caret Line="35" TopLine="27"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="23" Column="34" TopLine="7"/>
       </Position>
       <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashMap.pas"/>
-        <Caret Line="106" TopLine="96"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="41" Column="3" TopLine="21"/>
       </Position>
       <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashMap.pas"/>
-        <Caret Line="107" TopLine="96"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="21" Column="51" TopLine="7"/>
       </Position>
       <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashMap.pas"/>
-        <Caret Line="108" TopLine="96"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="39" Column="20" TopLine="16"/>
       </Position>
       <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashMap.pas"/>
-        <Caret Line="109" TopLine="96"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="41" Column="19" TopLine="16"/>
       </Position>
       <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashMap.pas"/>
-        <Caret Line="117" TopLine="108"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="23" Column="17" TopLine="16"/>
       </Position>
       <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <Caret Line="38" TopLine="27"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="41" Column="3" TopLine="16"/>
       </Position>
       <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <Caret Line="40" TopLine="27"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="23" Column="23" TopLine="16"/>
       </Position>
       <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <Caret Line="33" TopLine="27"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="41" Column="13" TopLine="16"/>
       </Position>
       <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <Caret Line="35" TopLine="27"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="33" Column="16" TopLine="23"/>
       </Position>
       <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <Caret Line="38" TopLine="27"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="35" Column="16" TopLine="27"/>
       </Position>
       <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <Caret Line="43" TopLine="27"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="21" Column="22" TopLine="7"/>
       </Position>
       <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <Caret Line="33" TopLine="27"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="18" Column="11" TopLine="7"/>
       </Position>
       <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <Caret Line="35" TopLine="27"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="17" Column="25" TopLine="4"/>
       </Position>
       <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashMap.pas"/>
-        <Caret Line="106" TopLine="99"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="18" Column="24" TopLine="4"/>
       </Position>
       <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashMap.pas"/>
-        <Caret Line="107" TopLine="99"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="35" Column="34" TopLine="16"/>
       </Position>
       <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashMap.pas"/>
-        <Caret Line="108" TopLine="99"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\DeepStar.DSA.Hash.HashMap.pas"/>
-        <Caret Line="109" TopLine="99"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <Caret Line="40" Column="9" TopLine="27"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <Caret Line="33" TopLine="27"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <Caret Line="35" TopLine="27"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <Caret Line="39" TopLine="27"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <Caret Line="41" TopLine="27"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <Caret Line="40" Column="7" TopLine="27"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <Caret Line="39" TopLine="27"/>
-      </Position>
-      <Position>
-        <Filename Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <Caret Line="40" TopLine="27"/>
+        <Filename Value="Source\LQA.Main.pas"/>
+        <Caret Line="24" Column="17" TopLine="11"/>
       </Position>
     </JumpHistory>
     <RunParams>
@@ -1139,15 +1099,6 @@
     </RunParams>
   </ProjectSession>
   <Debugging>
-    <BreakPoints>
-      <Item>
-        <Kind Value="bpkSource"/>
-        <WatchScope Value="wpsLocal"/>
-        <WatchKind Value="wpkWrite"/>
-        <Source Value="Source\DeepStar\DSA\Hash\Test\DeepStar.DSA.Hash.Test.HashMap.pas"/>
-        <Line Value="39"/>
-      </Item>
-    </BreakPoints>
     <Watches>
       <Item>
         <Expression Value="tree._root"/>

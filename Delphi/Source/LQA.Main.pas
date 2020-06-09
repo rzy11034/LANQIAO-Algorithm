@@ -11,7 +11,7 @@ procedure Run;
 implementation
 
 uses
-  DeepStar.DSA.Tree.Test.RBTree;
+  DeepStar.DSA.Hash.Test.HashMap;
 
 procedure Run;
 begin

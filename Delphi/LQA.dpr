@@ -134,7 +134,9 @@ uses
   DeepStar.DSA.Tree.AVLTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.AVLTree.pas',
   DeepStar.DSA.Tree.BalanceBinarySearchTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.BalanceBinarySearchTree.pas',
   DeepStar.DSA.Tree.RBTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.RBTree.pas',
-  DeepStar.DSA.Tree.Test.RBTree in 'Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.RBTree.pas';
+  DeepStar.DSA.Tree.Test.RBTree in 'Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.RBTree.pas',
+  DeepStar.DSA.Tree.TreeMap in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.TreeMap.pas',
+  DeepStar.DSA.Tree.Test.TreeMap in 'Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.TreeMap.pas';
 
 begin
   try

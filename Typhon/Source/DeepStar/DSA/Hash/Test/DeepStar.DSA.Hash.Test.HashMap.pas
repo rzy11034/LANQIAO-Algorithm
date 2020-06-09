@@ -22,29 +22,26 @@ type
 procedure Main;
 var
   map, mm: TMap;
-  i, j: integer;
+  i: integer;
   arr: TArr_int;
   p: TPtr_int;
 begin
   map := TMap.Create;
   arr := [55, 55, 56, 74, 96, 22, 62, 20, 70, 68, 90, 50];
-  j := -1;
 
   for i := 0 to High(arr) do
   begin
-    p.PValue := map.Add(arr[i], i + 100).PValue;
+    p := map.Add(arr[i], i + 100);
 
-    if p.PValue <> nil then
+    if p <> nil then
     begin
-      j := p.PValue^;
-      WriteLn(p.PValue^);
-      WriteLn(j);
+      WriteLn(p.Value);
     end
     else
       WriteLn('nil');
   end;
 
-  WriteLn(map.Remove(55).PValue^);
+  WriteLn(map.Remove(55).Value);
 
   WriteLn(map.Count);
   WriteLn(map.IsEmpty);

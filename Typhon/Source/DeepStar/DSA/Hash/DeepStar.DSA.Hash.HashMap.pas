@@ -97,15 +97,13 @@ function THashMap.Add(key: K; Value: V): TPtr_V;
 var
   hashcode: integer;
   res: TPtr_V;
-  temp: V;
 begin
   res := __getItem(key);
 
-  if res.PValue <> nil then
+  if res <> nil then
   begin
-    temp := res.PValue^;
     SetItem(key, Value);
-    Result.PValue := @temp;
+    Result := res;
     Exit;
   end;
 
@@ -113,7 +111,7 @@ begin
   _data[hashcode].AddLast(TPair.Create(key, Value));
   _size += 1;
 
-  Result.PValue := nil;
+  Result := nil;
 end;
 
 procedure THashMap.AddAll(map: THashMap_K_V);
@@ -180,7 +178,7 @@ begin
     for j := 0 to _data[i].Count - 1 do
     begin
       if _cmp_V.Compare(Value, _data[i].Items[j].Value) = 0 then
-        Exit;
+        Exit(true);
     end;
   end;
 
@@ -210,10 +208,10 @@ var
 begin
   res := __getItem(Key);
 
-  if res.PValue = nil then
+  if res = nil then
     raise Exception.Create('The hash-table does not contain this key');
 
-  Result := res.PValue^;
+  Result := res.Value;
 end;
 
 function THashMap.IsEmpty: boolean;
@@ -267,15 +265,13 @@ function THashMap.Remove(key: K): TPtr_V;
 var
   res: TPtr_V;
   hashcode, i: integer;
-  temp: V;
 begin
   res := __getItem(Key);
 
-  if res.PValue = nil then
+  if res = nil then
     raise Exception.Create('The hash-table does not contain this key');
 
   hashcode := __hash(key);
-  temp := res.PValue^;
 
   for i := 0 to _data[hashcode].Count - 1 do
   begin
@@ -283,10 +279,11 @@ begin
     begin
       _data[hashcode].Remove(i);
       _size -= 1;
+      Break;
     end;
   end;
 
-  Result.PValue := @temp;
+  Result := res;
 end;
 
 procedure THashMap.SetItem(key: K; Value: V);
@@ -332,7 +329,7 @@ var
   Value: V;
   res: TPtr_V;
 begin
-  res.PValue := nil;
+  res := nil;
   hashcode := __hash(key);
 
   for i := 0 to _data[hashcode].Count - 1 do
@@ -340,12 +337,12 @@ begin
     if _cmp_K.Compare(key, _data[hashcode].Items[i].Key) = 0 then
     begin
       Value := _data[hashcode].Items[i].Value;
-      res.PValue := @Value;
+      res := TPtr_V.Create(Value);
       Break;
     end;
   end;
 
-  Result.PValue := res.PValue;
+  Result := res;
 end;
 
 function THashMap.__hash(key: K): integer;

@@ -1,20 +1,17 @@
 ﻿unit DeepStar.DSA.Tree.TreeMap;
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
-  Classes,
-  SysUtils,
-  {%H-}Rtti,
+  System.SysUtils,
+  System.Rtti,
   DeepStar.DSA.Interfaces,
   DeepStar.DSA.Linear.Queue,
   DeepStar.DSA.Linear.ArrayList;
 
 type
   // 用红黑树实现
-  generic TTreeMap<K, V> = class(TInterfacedObject, specialize IMap<K, V>)
+  TTreeMap<K, V> = class(TInterfacedObject, IMap<K, V>)
   private const
     RED = false;
     BLACK = true;
@@ -43,11 +40,11 @@ type
       function Sibling: TNode;
     end;
 
-    TPtr_V = specialize TPtr_V<V>;
-    TImpl_K = specialize TImpl<K>;
-    TImpl_V = specialize TImpl<V>;
-    TList_node = specialize TArrayList<TNode>;
-    TQueue_node = specialize TQueue<TNode>;
+    TPtr_V = TPtr_V<V>;
+    TImpl_K = TImpl<K>;
+    TImpl_V = TImpl<V>;
+    TList_node = TArrayList<TNode>;
+    TQueue_node = TQueue<TNode>;
 
   private
     _cmp_K: TImpl_K.ICmp;
@@ -57,17 +54,17 @@ type
 
     function __CreateNode(newKey: K; newValue: V; newParent: TNode): TNode;
     function __GetColor(node: TNode): boolean;
-    function __getNode(node: TNode; key: K): TNode;
-    function __getSuccessor(key: K): TNode;
+    function __getNode(node: TNode; Key: K): TNode;
+    function __getSuccessor(Key: K): TNode;
     function __isBlack(node: TNode): boolean;
     function __isRed(node: TNode): boolean;
     function __minNode(node: TNode): TNode;
     function __setBlack(node: TNode): TNode;
-    function __setColor(node: TNode; color: boolean): TNode;
+    function __setColor(node: TNode; Color: boolean): TNode;
     function __setRed(node: TNode): TNode;
     procedure __afterAdd(node: TNode);
     procedure __afterRemove(node: TNode);
-    procedure __afterRotate(grand, parent, child: TNode);
+    procedure __afterRotate(grand, Parent, child: TNode);
     procedure __clear(node: TNode);
     procedure __inOrder(node: TNode; list: TList_node);
     procedure __remove(node: TNode);
@@ -78,28 +75,28 @@ type
     constructor Create;
     destructor Destroy; override;
 
-    function Add(key: K; Value: V): TPtr_V;
-    function ContainsKey(key: K): boolean;
+    function Add(Key: K; Value: V): TPtr_V;
+    function ContainsKey(Key: K): boolean;
     function ContainsValue(Value: V): boolean;
     function Count: integer;
-    function GetItem(key: K): V;
+    function GetItem(Key: K): V;
     function IsEmpty: boolean;
     function Keys: TImpl_K.TArr;
-    function Remove(key: K): TPtr_V;
+    function Remove(Key: K): TPtr_V;
     function Values: TImpl_V.TArr;
     procedure Clear;
-    procedure SetItem(key: K; Value: V);
+    procedure SetItem(Key: K; Value: V);
 
     property Comparer_K: TImpl_K.ICmp read _cmp_K write _cmp_K;
     property Comparer_V: TImpl_V.ICmp read _cmp_V write _cmp_V;
-    property Item[key: K]: V read GetItem write SetItem; default;
+    property Item[Key: K]: V read GetItem write SetItem; default;
   end;
 
 implementation
 
-{ TTreeMap }
+{ TTreeMap<K, V> }
 
-constructor TTreeMap.Create;
+constructor TTreeMap<K, V>.Create;
 begin
   _root := nil;
   _size := 0;
@@ -107,21 +104,21 @@ begin
   _cmp_V := TImpl_V.TCmp.Default;
 end;
 
-function TTreeMap.Add(key: K; Value: V): TPtr_V;
+function TTreeMap<K, V>.Add(Key: K; Value: V): TPtr_V;
 var
-  parent, cur: TNode;
+  Parent, cur: TNode;
   cmp: integer;
   res: TPtr_V;
 begin
-  parent := nil;
+  Parent := nil;
   cur := _root;
   cmp := 0;
   res := nil;
 
   while cur <> nil do
   begin
-    parent := cur;
-    cmp := _cmp_K.Compare(key, cur.Key);
+    Parent := cur;
+    cmp := _cmp_K.Compare(Key, cur.Key);
 
     if cmp < 0 then
       cur := cur.Left
@@ -129,41 +126,41 @@ begin
       cur := cur.Right
     else
     begin
-      res :=TPtr_V.Create(cur.Value);
+      res := TPtr_V.Create(cur.Value);
       cur.Value := Value;
       Exit;
     end;
   end;
 
-  cur := __CreateNode(key, Value, parent);
-  if parent = nil then
+  cur := __CreateNode(Key, Value, Parent);
+  if Parent = nil then
   begin
     _root := cur;
     __afterAdd(cur);
   end
   else if cmp < 0 then
   begin
-    parent.Left := cur;
+    Parent.Left := cur;
     __afterAdd(cur);
   end
   else if cmp > 0 then
   begin
-    parent.Right := cur;
+    Parent.Right := cur;
     __afterAdd(cur);
   end;
 
-  _size += 1;
+  _size := _size + 1;
   Result := res;
 end;
 
-procedure TTreeMap.Clear;
+procedure TTreeMap<K, V>.Clear;
 begin
   __clear(_root);
   _root := nil;
   _size := 0;
 end;
 
-function TTreeMap.ContainsKey(key: K): boolean;
+function TTreeMap<K, V>.ContainsKey(Key: K): boolean;
 var
   cur: TNode;
   cmp: integer;
@@ -172,7 +169,7 @@ begin
 
   while cur <> nil do
   begin
-    cmp := _cmp_K.Compare(key, cur.Key);
+    cmp := _cmp_K.Compare(Key, cur.Key);
     if cmp < 0 then
       cur := cur.Left
     else if cmp > 0 then
@@ -184,9 +181,9 @@ begin
   Result := false;
 end;
 
-function TTreeMap.ContainsValue(Value: V): boolean;
+function TTreeMap<K, V>.ContainsValue(Value: V): boolean;
 var
-  queue: TQueue_node;
+  Queue: TQueue_node;
   cur: TNode;
 begin
   if _root = nil then
@@ -194,13 +191,13 @@ begin
 
   cur := _root;
 
-  queue := TQueue_node.Create;
+  Queue := TQueue_node.Create;
   try
-    queue.EnQueue(cur);
+    Queue.EnQueue(cur);
 
-    while not queue.IsEmpty do
+    while not Queue.IsEmpty do
     begin
-      cur := queue.DeQueue;
+      cur := Queue.DeQueue;
 
       if _cmp_V.Compare(Value, cur.Value) = 0 then
       begin
@@ -209,35 +206,35 @@ begin
       end;
 
       if cur.Left <> nil then
-        queue.EnQueue(cur.Left);
+        Queue.EnQueue(cur.Left);
       if cur.Right <> nil then
-        queue.EnQueue(cur.Right);
+        Queue.EnQueue(cur.Right);
     end;
 
     Result := false;
   finally
-    queue.Free;
+    Queue.Free;
   end;
 end;
 
-function TTreeMap.Count: integer;
+function TTreeMap<K, V>.Count: integer;
 begin
   Result := _size;
 end;
 
-destructor TTreeMap.Destroy;
+destructor TTreeMap<K, V>.Destroy;
 begin
   Clear;
   inherited Destroy;
 end;
 
-function TTreeMap.GetItem(key: K): V;
+function TTreeMap<K, V>.GetItem(Key: K): V;
 var
   Value: TValue;
   temp: TNode;
 begin
-  temp := __getNode(_root, key);
-  TValue.Make(@key, TypeInfo(K), Value);
+  temp := __getNode(_root, Key);
+  TValue.Make(@Key, TypeInfo(K), Value);
 
   if temp = nil then
     raise Exception.Create('There is no ''' + Value.ToString + '''');
@@ -245,12 +242,12 @@ begin
   Result := temp.Value;
 end;
 
-function TTreeMap.IsEmpty: boolean;
+function TTreeMap<K, V>.IsEmpty: boolean;
 begin
   Result := _size = 0;
 end;
 
-function TTreeMap.Keys: TImpl_K.TArr;
+function TTreeMap<K, V>.Keys: TImpl_K.TArr;
 var
   list: TList_node;
   res: TImpl_K.TArr;
@@ -272,30 +269,30 @@ begin
   end;
 end;
 
-function TTreeMap.Remove(key: K): TPtr_V;
+function TTreeMap<K, V>.Remove(Key: K): TPtr_V;
 var
   cur: TNode;
   res: TPtr_V;
 begin
   res := nil;
-  cur := __getNode(_root, key);
+  cur := __getNode(_root, Key);
 
   if cur <> nil then
   begin
-    res :=TPtr_V.Create(cur.Value);
+    res := TPtr_V.Create(cur.Value);
     __remove(cur);
   end;
 
   Result := res;
 end;
 
-procedure TTreeMap.SetItem(key: K; Value: V);
+procedure TTreeMap<K, V>.SetItem(Key: K; Value: V);
 var
   val: TValue;
   temp: TNode;
 begin
-  temp := __getNode(_root, key);
-  TValue.Make(@key, TypeInfo(K), Val);
+  temp := __getNode(_root, Key);
+  TValue.Make(@Key, TypeInfo(K), val);
 
   if temp = nil then
     raise Exception.Create('There is no ''' + val.ToString + '''');
@@ -303,7 +300,7 @@ begin
   temp.Value := Value;
 end;
 
-function TTreeMap.Values: TImpl_V.TArr;
+function TTreeMap<K, V>.Values: TImpl_V.TArr;
 var
   list: TList_node;
   res: TImpl_V.TArr;
@@ -326,31 +323,31 @@ begin
   end;
 end;
 
-procedure TTreeMap.__afterAdd(node: TNode);
+procedure TTreeMap<K, V>.__afterAdd(node: TNode);
 var
-  parent, uncle, grand: TNode;
+  Parent, uncle, grand: TNode;
 begin
-  parent := node.Parent;
+  Parent := node.Parent;
 
   // 添加的是根节点 或者 上溢到达了根节点
-  if parent = nil then
+  if Parent = nil then
   begin
     __setBlack(node);
     Exit;
   end;
 
   // 如果父节点是黑色，直接返回
-  if __isBlack(parent) then
+  if __isBlack(Parent) then
     Exit;
 
   // 叔父节点
-  uncle := parent.Sibling;
+  uncle := Parent.Sibling;
 
   // 祖父节点
-  grand := __setRed(parent.parent);
+  grand := __setRed(Parent.Parent);
   if __isRed(uncle) then // 叔父节点是红色【B树节点上溢】
   begin
-    __setBlack(parent);
+    __setBlack(Parent);
     __setBlack(uncle);
     // 把祖父节点当做是新添加的节点
     __afterAdd(grand);
@@ -358,17 +355,17 @@ begin
   end;
 
   // 叔父节点不是红色
-  if parent.IsLeftChild then  // L
+  if Parent.IsLeftChild then // L
   begin
     if node.IsLeftChild then // LL
     begin
-      __setBlack(parent);
+      __setBlack(Parent);
       __rotateRight(grand);
     end
     else // LR
     begin
       __setBlack(node);
-      __rotateLeft(parent);
+      __rotateLeft(Parent);
       __rotateRight(grand);
     end;
   end
@@ -377,20 +374,20 @@ begin
     if node.IsLeftChild then // RL
     begin
       __setBlack(node);
-      __rotateRight(parent);
+      __rotateRight(Parent);
     end
     else // RR
     begin
-      __setBlack(parent);
+      __setBlack(Parent);
     end;
 
     __rotateLeft(grand);
   end;
 end;
 
-procedure TTreeMap.__afterRemove(node: TNode);
+procedure TTreeMap<K, V>.__afterRemove(node: TNode);
 var
-  parent, sibling: TNode;
+  Parent, Sibling: TNode;
   isLeft, isParentBlack: boolean;
 begin
   // 如果删除的节点是红色
@@ -401,125 +398,125 @@ begin
     Exit;
   end;
 
-  parent := node.parent;
+  Parent := node.Parent;
 
   // 删除的是根节点
-  if parent = nil then
+  if Parent = nil then
     Exit;
 
   // 删除的是黑色叶子节点【下溢】
   // 判断被删除的node是左还是右
-  isLeft := (parent.Left = nil) or (node.isLeftChild);
+  isLeft := (Parent.Left = nil) or (node.IsLeftChild);
   if isLeft then
-    sibling := parent.Right
+    Sibling := Parent.Right
   else
-    sibling := parent.Left;
+    Sibling := Parent.Left;
 
   if isLeft then // 被删除的节点在左边，兄弟节点在右边
   begin
-    if __isRed(sibling) then // 兄弟节点是红色
+    if __isRed(Sibling) then // 兄弟节点是红色
     begin
-      __setBlack(sibling);
-      __setRed(parent);
-      __rotateLeft(parent);
+      __setBlack(Sibling);
+      __setRed(Parent);
+      __rotateLeft(Parent);
       // 更换兄弟
-      sibling := parent.right;
+      Sibling := Parent.Right;
     end;
 
     // 兄弟节点必然是黑色
-    if __isBlack(sibling.Left) and __isBlack(sibling.right) then
+    if __isBlack(Sibling.Left) and __isBlack(Sibling.Right) then
     begin
       // 兄弟节点没有1个红色子节点，父节点要向下跟兄弟节点合并
-      isParentBlack := __isBlack(parent);
-      __setBlack(parent);
-      __setRed(sibling);
+      isParentBlack := __isBlack(Parent);
+      __setBlack(Parent);
+      __setRed(Sibling);
 
       if (isParentBlack) then
-        __afterRemove(parent);
+        __afterRemove(Parent);
     end
     else // 兄弟节点至少有1个红色子节点，向兄弟节点借元素
     begin
       // 兄弟节点的左边是黑色，兄弟要先旋转
-      if __isBlack(sibling.right) then
+      if __isBlack(Sibling.Right) then
       begin
-        __rotateRight(sibling);
-        sibling := parent.Right;
+        __rotateRight(Sibling);
+        Sibling := Parent.Right;
       end;
 
-      __setColor(sibling, __GetColor(parent));
-      __setBlack(sibling.Right);
-      __setBlack(parent);
-      __rotateLeft(parent);
+      __setColor(Sibling, __GetColor(Parent));
+      __setBlack(Sibling.Right);
+      __setBlack(Parent);
+      __rotateLeft(Parent);
     end;
   end
   else // 被删除的节点在右边，兄弟节点在左边
   begin
-    if __isRed(sibling) then // 兄弟节点是红色
+    if __isRed(Sibling) then // 兄弟节点是红色
     begin
-      __setBlack(sibling);
-      __setRed(parent);
-      __rotateRight(parent);
+      __setBlack(Sibling);
+      __setRed(Parent);
+      __rotateRight(Parent);
       // 更换兄弟
-      sibling := parent.Left;
+      Sibling := Parent.Left;
     end;
 
     // 兄弟节点必然是黑色
-    if __isBlack(sibling.Left) and __isBlack(sibling.right) then
+    if __isBlack(Sibling.Left) and __isBlack(Sibling.Right) then
     begin
       // 兄弟节点没有1个红色子节点，父节点要向下跟兄弟节点合并
-      isParentBlack := __isBlack(parent);
-      __setBlack(parent);
-      __setRed(sibling);
+      isParentBlack := __isBlack(Parent);
+      __setBlack(Parent);
+      __setRed(Sibling);
 
       if isParentBlack then
-        __afterRemove(parent);
+        __afterRemove(Parent);
     end
-    else  // 兄弟节点至少有1个红色子节点，向兄弟节点借元素
+    else // 兄弟节点至少有1个红色子节点，向兄弟节点借元素
     begin
       // 兄弟节点的左边是黑色，兄弟要先旋转
-      if __isBlack(sibling.Left) then
+      if __isBlack(Sibling.Left) then
       begin
-        __rotateLeft(sibling);
-        sibling := parent.Left;
+        __rotateLeft(Sibling);
+        Sibling := Parent.Left;
       end;
 
-      __setColor(sibling, __GetColor(parent));
-      __setBlack(sibling.Left);
-      __setBlack(parent);
-      __rotateRight(parent);
+      __setColor(Sibling, __GetColor(Parent));
+      __setBlack(Sibling.Left);
+      __setBlack(Parent);
+      __rotateRight(Parent);
     end;
   end;
 end;
 
-procedure TTreeMap.__afterRotate(grand, parent, child: TNode);
+procedure TTreeMap<K, V>.__afterRotate(grand, Parent, child: TNode);
 begin
   // 让parent成为子树的根节点
-  parent.parent := grand.parent;
+  Parent.Parent := grand.Parent;
 
   if grand.IsLeftChild then
   begin
-    grand.parent.left := parent;
+    grand.Parent.Left := Parent;
   end
   else if grand.IsRightChild then
   begin
-    grand.parent.right := parent;
+    grand.Parent.Right := Parent;
   end
   else // grand是 root节点
   begin
-    _root := parent;
+    _root := Parent;
   end;
 
   // 更新 child 的 parent
   if child <> nil then
   begin
-    child.parent := grand;
+    child.Parent := grand;
   end;
 
   // 更新 grand 的 parent
-  grand.parent := parent;
+  grand.Parent := Parent;
 end;
 
-procedure TTreeMap.__clear(node: TNode);
+procedure TTreeMap<K, V>.__clear(node: TNode);
 begin
   if node = nil then
     Exit;
@@ -538,12 +535,12 @@ begin
   FreeAndNil(node);
 end;
 
-function TTreeMap.__CreateNode(newKey: K; newValue: V; newParent: TNode): TNode;
+function TTreeMap<K, V>.__CreateNode(newKey: K; newValue: V; newParent: TNode): TNode;
 begin
   Result := TNode.Create(newKey, newValue, newParent);
 end;
 
-function TTreeMap.__GetColor(node: TNode): boolean;
+function TTreeMap<K, V>.__GetColor(node: TNode): boolean;
 begin
   if node = nil then
   begin
@@ -554,21 +551,21 @@ begin
   Result := node.Color;
 end;
 
-function TTreeMap.__getNode(node: TNode; key: K): TNode;
+function TTreeMap<K, V>.__getNode(node: TNode; Key: K): TNode;
 var
   cmp: integer;
 begin
   if node = nil then
     Exit(nil);
 
-  cmp := _cmp_K.Compare(key, node.Key);
+  cmp := _cmp_K.Compare(Key, node.Key);
   if cmp < 0 then
   begin
-    Result := __getNode(node.Left, key);
+    Result := __getNode(node.Left, Key);
   end
   else if cmp > 0 then
   begin
-    Result := __getNode(node.Right, key);
+    Result := __getNode(node.Right, Key);
   end
   else
   begin
@@ -576,11 +573,11 @@ begin
   end;
 end;
 
-function TTreeMap.__getSuccessor(key: K): TNode;
+function TTreeMap<K, V>.__getSuccessor(Key: K): TNode;
 var
-  cur, parent: TNode;
+  cur, Parent: TNode;
 begin
-  cur := __getNode(_root, key);
+  cur := __getNode(_root, Key);
 
   if cur = nil then
   begin
@@ -594,17 +591,17 @@ begin
     Exit;
   end;
 
-  parent := cur.Parent;
-  while (Parent <> nil) and (parent.Right = cur) do
+  Parent := cur.Parent;
+  while (Parent <> nil) and (Parent.Right = cur) do
   begin
     cur := cur.Parent;
-    parent := cur.Parent;
+    Parent := cur.Parent;
   end;
 
-  Result := parent;
+  Result := Parent;
 end;
 
-procedure TTreeMap.__inOrder(node: TNode; list: TList_node);
+procedure TTreeMap<K, V>.__inOrder(node: TNode; list: TList_node);
 begin
   if node = nil then
     Exit;
@@ -614,17 +611,17 @@ begin
   __inOrder(node.Right, list);
 end;
 
-function TTreeMap.__isBlack(node: TNode): boolean;
+function TTreeMap<K, V>.__isBlack(node: TNode): boolean;
 begin
   Result := __GetColor(node) = BLACK;
 end;
 
-function TTreeMap.__isRed(node: TNode): boolean;
+function TTreeMap<K, V>.__isRed(node: TNode): boolean;
 begin
   Result := __GetColor(node) = RED;
 end;
 
-function TTreeMap.__minNode(node: TNode): TNode;
+function TTreeMap<K, V>.__minNode(node: TNode): TNode;
 var
   cur: TNode;
 begin
@@ -641,7 +638,7 @@ begin
   Result := cur;
 end;
 
-procedure TTreeMap.__remove(node: TNode);
+procedure TTreeMap<K, V>.__remove(node: TNode);
 var
   min, replace: TNode;
 begin
@@ -669,26 +666,26 @@ begin
   if replace <> nil then // node是度为1的节点
   begin
     // 更改parent
-    replace.parent := node.parent;
+    replace.Parent := node.Parent;
 
     // 更改parent的left、right的指向
-    if node.parent = nil then // node是度为1的节点并且是根节点
+    if node.Parent = nil then // node是度为1的节点并且是根节点
     begin
       _root := replace;
     end
     else if node.IsLeftChild then
     begin
-      node.parent.left := replace;
+      node.Parent.Left := replace;
     end
     else // node = node.parent.right
     begin
-      node.parent.right := replace;
+      node.Parent.Right := replace;
     end;
 
     // 删除节点后的调整
     __afterRemove(replace);
   end
-  else if node.parent = nil then // node是叶子节点并且是根节点
+  else if node.Parent = nil then // node是叶子节点并且是根节点
   begin
     _root := nil;
 
@@ -699,51 +696,51 @@ begin
   begin
     if node.IsLeftChild then
     begin
-      node.parent.left := nil;
+      node.Parent.Left := nil;
     end
     else // node = node.parent.right
     begin
-      node.parent.right := nil;
+      node.Parent.Right := nil;
     end;
 
     // 删除节点后的调整
     __afterRemove(node);
   end;
 
-  _size -= 1;
+  _size := _size - 1;
   FreeAndNil(node);
 end;
 
-procedure TTreeMap.__rotateLeft(grand: TNode);
+procedure TTreeMap<K, V>.__rotateLeft(grand: TNode);
 var
-  parent, child: TNode;
+  Parent, child: TNode;
 begin
-  parent := grand.right;
-  child := parent.left;
-  grand.right := child;
-  parent.left := grand;
+  Parent := grand.Right;
+  child := Parent.Left;
+  grand.Right := child;
+  Parent.Left := grand;
 
-  __afterRotate(grand, parent, child);
+  __afterRotate(grand, Parent, child);
 end;
 
-procedure TTreeMap.__rotateRight(grand: TNode);
+procedure TTreeMap<K, V>.__rotateRight(grand: TNode);
 var
-  parent, child: TNode;
+  Parent, child: TNode;
 begin
-  parent := grand.left;
-  child := parent.right;
-  grand.left := child;
-  parent.right := grand;
+  Parent := grand.Left;
+  child := Parent.Right;
+  grand.Left := child;
+  Parent.Right := grand;
 
-  __afterRotate(grand, parent, child);
+  __afterRotate(grand, Parent, child);
 end;
 
-function TTreeMap.__setBlack(node: TNode): TNode;
+function TTreeMap<K, V>.__setBlack(node: TNode): TNode;
 begin
   Result := __setColor(node, BLACK);
 end;
 
-function TTreeMap.__setColor(node: TNode; color: boolean): TNode;
+function TTreeMap<K, V>.__setColor(node: TNode; Color: boolean): TNode;
 begin
   if node = nil then
   begin
@@ -751,18 +748,18 @@ begin
     Exit;
   end;
 
-  node.Color := color;
+  node.Color := Color;
   Result := node;
 end;
 
-function TTreeMap.__setRed(node: TNode): TNode;
+function TTreeMap<K, V>.__setRed(node: TNode): TNode;
 begin
   Result := __setColor(node, RED);
 end;
 
-{ TTreeMap.TNode }
+{ TTreeMap<K, V>.TNode }
 
-constructor TTreemap.TNode.Create(newKey: K; newValue: V; newParent: TNode);
+constructor TTreeMap<K, V>.TNode.Create(newKey: K; newValue: V; newParent: TNode);
 begin
   Key := newKey;
   Value := newValue;
@@ -770,27 +767,27 @@ begin
   Color := RED;
 end;
 
-function TTreemap.TNode.HasTwoChildren: boolean;
+function TTreeMap<K, V>.TNode.HasTwoChildren: boolean;
 begin
   Result := (Left <> nil) and (Right <> nil);
 end;
 
-function TTreemap.TNode.IsLeaf: boolean;
+function TTreeMap<K, V>.TNode.IsLeaf: boolean;
 begin
   Result := (Left = nil) and (Right = nil);
 end;
 
-function TTreemap.TNode.IsLeftChild: boolean;
+function TTreeMap<K, V>.TNode.IsLeftChild: boolean;
 begin
   Result := (Parent <> nil) and (Parent.Left = Self);
 end;
 
-function TTreemap.TNode.IsRightChild: boolean;
+function TTreeMap<K, V>.TNode.IsRightChild: boolean;
 begin
   Result := (Parent <> nil) and (Parent.Right = Self);
 end;
 
-function TTreemap.TNode.Sibling: TNode;
+function TTreeMap<K, V>.TNode.Sibling: TNode;
 var
   res: TNode;
 begin
