@@ -14,71 +14,70 @@ uses
 type
   generic TArrayList<T> = class(TInterfacedObject, specialize IList<T>)
   private type
-    TArr = array of T;
     TImpl = specialize TImpl<T>;
+    TArr = TImpl.TArr;
 
   private
-    _data: array of T;
+    _data: TArr;
     _size: integer;
     _cmp: TImpl.ICmp;
 
     procedure __quickSort(l, r: integer);
     procedure __reSize(newCapacity: integer);
 
-
   public
-    ///<summary>
-    ///构造函数，传入数组的容量capacity构造Array。
-    ///默认数组的容量capacity:=10
-    ///</summary>
+    // 构造函数，传入数组的容量 capacity 构造 TArrayList
+    // 默认数组的容量capacity:=10
     constructor Create(capacity: integer = 10);
-    ///<summary>
-    ///构造函数，传入TComparisonFunc。
-    ///</summary>
+    // 构造函数，传入数组构造 TArrayList
+    constructor Create(const arr: TArr);
+    // 构造函数，传入 TComparisonFunc。
     constructor Create(comparisonFunc: TImpl.TComparisonFuncs);
-    ///<summary>
-    ///构造函数，传入TOnComparisons。
-    ///</summary>
+    // 构造函数，传入 TOnComparisons。
     constructor Create(onComparison: TImpl.TOnComparisons);
-    ///<summary> 获取数组中的元数个数 </summary>
+    destructor Destroy; override;
+
+    // 获取数组中的元数个数
     function GetSize: integer;
-    ///<summary> 获取数组的容量 </summary>
+    // 获取数组的容量
     function GetCapacity: integer;
-    ///<summary> 返回数组是否有空 </summary>
+    // 返回数组是否有空
     function IsEmpty: boolean;
-    ///<summary> 获取index索引位置元素 </summary>
+    // 获取index索引位置元素
     function GetItem(index: integer): T;
-    ///<summary> 获取第一个元素</summary>
+    // 获取第一个元素
     function GetFirst: T;
-    ///<summary> 获取最后一个元素</summary>
+    // 获取最后一个元素
     function GetLast: T;
-    ///<summary> 修改index索引位置元素 </summary>
+    // 修改index索引位置元素
     procedure SetItem(index: integer; e: T);
-    ///<summary> 向所有元素后添加一个新元素 </summary>
+    // 向所有元素后添加一个新元素
     procedure AddLast(e: T);
-    ///<summary> 在第index个位置插入一个新元素e </summary>
+    // 在第index个位置插入一个新元素e
     procedure Add(index: integer; e: T);
-    ///<summary> 在所有元素前添加一个新元素 </summary>
+    // 在所有元素前添加一个新元素
     procedure AddFirst(e: T);
-    ///<summary> 添加数组所有元素 </summary>
+    // 添加数组所有元素
     procedure AddRange(const arr: array of T);
-    ///<summary> 查找数组中是否有元素e </summary>
+    // 查找数组中是否有元素e
     function Contains(e: T): boolean;
-    ///<summary> 查找数组中元素e忆的索引，如果不存在元素e，则返回-1 </summary>
+    // 查找数组中元素e忆的索引，如果不存在元素e，则返回-1
     function IndexOf(e: T): integer;
-    ///<summary> 从数组中删除index位置的元素，返回删除的元素 </summary>
+    // 从数组中删除index位置的元素，返回删除的元素
     function Remove(index: integer): T;
-    ///<summary> 从数组中删除第一个元素，返回删除的元素 </summary>
+    // 从数组中删除第一个元素，返回删除的元素
     function RemoveFirst: T;
-    ///<summary> 从数组中删除i最后一个元素，返回删除的元素 </summary>
+    // 从数组中删除i最后一个元素，返回删除的元素
     function RemoveLast: T;
-    ///<summary> 从数组中删除元素e </summary>
+    // 从数组中删除元素e
     procedure RemoveElement(e: T);
+    // 排序
     procedure Sort;
-    ///<summary> 返回一个数组 </summary>
+    // 返回一个数组
     function ToArray: TArr;
-    function ToString: UString; reintroduce;
+    // 清空列表
     procedure Clear;
+    function ToString: UString; reintroduce;
 
     property Count: integer read GetSize;
     property Comparer: TImpl.ICmp read _cmp write _cmp;
@@ -146,10 +145,28 @@ begin
   Result := false;
 end;
 
+destructor TArrayList.Destroy;
+begin
+  _data := nil;
+  inherited Destroy;
+end;
+
 constructor TArrayList.Create(capacity: integer);
 begin
   SetLength(_data, capacity);
   _cmp := TImpl.TCmp.Default;
+end;
+
+constructor TArrayList.Create(const arr: TArr);
+var
+  i: integer;
+begin
+  SetLength(_data, Length(arr));
+
+  for i := 0 to Length(arr) - 1 do
+    _data[i] := arr[i];
+
+  _size := Length(arr);
 end;
 
 constructor TArrayList.Create(comparisonFunc: TImpl.TComparisonFuncs);

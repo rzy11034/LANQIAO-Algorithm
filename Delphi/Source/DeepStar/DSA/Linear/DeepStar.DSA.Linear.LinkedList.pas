@@ -12,6 +12,7 @@ type
   TLinkedList<T> = class(TInterfacedObject, IList<T>)
   private type
     TImpl = TImpl<T>;
+    TArr = TImpl.TArr;
 
   public type
     TNode = class(TObject)
@@ -31,7 +32,7 @@ type
 
   public
     constructor Create; overload;
-    constructor Create(const arr: array of T); overload;
+    constructor Create(const arr: TArr); overload;
     destructor Destroy; override;
 
     function Contains(e: T): boolean;
@@ -49,7 +50,7 @@ type
     procedure Add(index: integer; e: T);
     procedure AddFirst(e: T);
     procedure AddLast(e: T);
-    procedure AddRange(const arr: array of T);
+    procedure AddRange(const arr: TArr);
     procedure Clear;
     procedure RemoveElement(e: T);
     procedure SetItem(index: integer; e: T);
@@ -63,7 +64,7 @@ implementation
 
 { TLinkedList<T> }
 
-constructor TLinkedList<T>.Create(const arr: array of T);
+constructor TLinkedList<T>.Create(const arr: TArr);
 begin
   Self.Create;
   Self.AddRange(arr);
@@ -102,7 +103,7 @@ begin
   Self.Add(_size, e);
 end;
 
-procedure TLinkedList<T>.AddRange(const arr: array of T);
+procedure TLinkedList<T>.AddRange(const arr: TArr);
 var
   i: integer;
   prev, tmp: TNode;

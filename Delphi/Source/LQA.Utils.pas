@@ -59,8 +59,7 @@ type
     class procedure Sort(var arr: array of T; const cmp: TComparison<T>); overload;
     /// <summary> 二分查找法 </summary>
     class function BinarySearch(const arr: TArr_T; const e: T): integer; overload;
-    class function BinarySearch(const arr: TArr_T; const e: T;
-      const cmp: TComparison<T>): integer; overload;
+    class function BinarySearch(const arr: TArr_T; const e: T; const cmp: TComparison<T>): integer; overload;
     /// <summary> 顺序查找，返回元素e的下标，元素不存在则返回 -1 </summary>
     class function IndexOf(const arr: array of T; e: T): integer;
     /// <summary>  输出一维数组 </summary>

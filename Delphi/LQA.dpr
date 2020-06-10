@@ -136,7 +136,10 @@ uses
   DeepStar.DSA.Tree.RBTree in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.RBTree.pas',
   DeepStar.DSA.Tree.Test.RBTree in 'Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.RBTree.pas',
   DeepStar.DSA.Tree.TreeMap in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.TreeMap.pas',
-  DeepStar.DSA.Tree.Test.TreeMap in 'Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.TreeMap.pas';
+  DeepStar.DSA.Tree.Test.TreeMap in 'Source\DeepStar\DSA\Tree\Test\DeepStar.DSA.Tree.Test.TreeMap.pas',
+  DeepStar.DSA.Strings.Test.KMP in 'Source\DeepStar\DSA\Strings\Test\DeepStar.DSA.Strings.Test.KMP.pas',
+  DeepStar.DSA.Strings.Test.RabinKarp in 'Source\DeepStar\DSA\Strings\Test\DeepStar.DSA.Strings.Test.RabinKarp.pas',
+  DeepStar.DSA.Tree.Heap in 'Source\DeepStar\DSA\Tree\DeepStar.DSA.Tree.Heap.pas';
 
 begin
   try

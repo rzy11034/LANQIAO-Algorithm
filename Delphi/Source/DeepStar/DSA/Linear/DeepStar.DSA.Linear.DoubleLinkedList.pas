@@ -12,6 +12,7 @@ type
   TDoubleLinkedList<T> = class(TInterfacedObject, IList<T>)
   private type
     TImpl = TImpl<T>;
+    TArr = TImpl.TArr;
 
   public type
     TNode = class(TObject)
@@ -50,7 +51,7 @@ type
     procedure Add(index: integer; e: T);
     procedure AddFirst(e: T);
     procedure AddLast(e: T);
-    procedure AddRange(const arr: array of T);
+    procedure AddRange(const arr: TArr);
     procedure Clear;
     procedure RemoveElement(e: T);
     procedure SetItem(index: integer; e: T);
@@ -152,7 +153,7 @@ begin
   Self.Add(_size, e);
 end;
 
-procedure TDoubleLinkedList<T>.AddRange(const arr: array of T);
+procedure TDoubleLinkedList<T>.AddRange(const arr: TArr);
 var
   i: integer;
 begin

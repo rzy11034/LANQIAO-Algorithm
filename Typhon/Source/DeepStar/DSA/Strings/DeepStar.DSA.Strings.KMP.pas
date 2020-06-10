@@ -18,20 +18,7 @@ type
     class function IndexOf(s, p: UString): TArr_int;
   end;
 
-procedure Main;
-
 implementation
-
-procedure Main;
-var
-  s, p: UString;
-begin
-  s := 'ABABABA';
-  p := 'ABA';
-
-  TArrayUtils_int.Print(TKMP.IndexOf_Simplicity(s, p));
-  TArrayUtils_int.Print(TKMP.IndexOf(s, p));
-end;
 
 { TKMP }
 

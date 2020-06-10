@@ -11,11 +11,11 @@ uses
 type
   TArrayList<T> = class(TInterfacedObject, IList<T>)
   private type
-    TArr = array of T;
     TImpl = TImpl<T>;
+    TArr = TImpl.TArr;
 
   private
-    _data: array of T;
+    _data: TArr;
     _size: integer;
     _cmp: TImpl.ICmp;
 
@@ -28,6 +28,10 @@ type
     ///默认数组的容量capacity:=10
     ///</summary>
     constructor Create(capacity: integer = 10); overload;
+    /// <summary>
+    /// 构造函数，传入数组构造 TArrayList
+    /// </summary>
+    constructor Create(const arr: TArr); overload;
     ///<summary>
     ///构造函数，传入TComparisonFunc。
     ///</summary>
@@ -54,7 +58,7 @@ type
     ///<summary> 在所有元素前添加一个新元素 </summary>
     procedure AddFirst(e: T);
     ///<summary> 添加数组所有元素 </summary>
-    procedure AddRange(const arr: array of T);
+    procedure AddRange(const arr: TArr);
     ///<summary> 查找数组中是否有元素e </summary>
     function Contains(e: T): boolean;
     ///<summary> 查找数组中元素e忆的索引，如果不存在元素e，则返回-1 </summary>
@@ -67,11 +71,13 @@ type
     function RemoveLast: T;
     ///<summary> 从数组中删除元素e </summary>
     procedure RemoveElement(e: T);
+    /// <summary> 排序 </summary>
     procedure Sort;
-    ///<summary> 返回一个数组 </summary>
+    /// <summary> 清空列表 </summary>
+    procedure Clear;
+    /// <summary> 返回一个数组 </summary>
     function ToArray: TArr;
     function ToString: UString; reintroduce;
-    procedure Clear;
 
     property Count: integer read GetSize;
     property Comparer: TImpl.ICmp read _cmp write _cmp;
@@ -109,7 +115,7 @@ begin
   Add(_size, e);
 end;
 
-procedure TArrayList<T>.AddRange(const arr: array of T);
+procedure TArrayList<T>.AddRange(const arr: TArr);
 var
   i: integer;
 begin
@@ -139,6 +145,18 @@ begin
   Result := false;
 end;
 
+constructor TArrayList<T>.Create(const arr: TArr);
+var
+  i: integer;
+begin
+  SetLength(_data, Length(arr));
+
+  for i := 0 to Length(arr) - 1 do
+    _data[i] := arr[i];
+
+  _size := Length(arr);
+end;
+
 constructor TArrayList<T>.Create(ComparisonFunc: TImpl.TComparison);
 begin
   Self.Create;
@@ -157,7 +175,7 @@ var
 begin
   for i := 0 to _size - 1 do
   begin
-    if _Cmp.Compare(_data[i], e) = 0 then
+    if _cmp.Compare(_data[i], e) = 0 then
       Exit(i);
   end;
 

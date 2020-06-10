@@ -15,6 +15,7 @@ type
   generic TLinkedList<T> = class(TInterfacedObject, specialize IList<T>)
   private type
     TImpl = specialize TImpl<T>;
+    TArr = TImpl.TArr;
 
   public type
     TNode = class(TObject)
@@ -34,7 +35,7 @@ type
 
   public
     constructor Create;
-    constructor Create(const arr: array of T);
+    constructor Create(const arr: TArr);
     destructor Destroy; override;
 
     function Contains(e: T): boolean;
@@ -84,7 +85,7 @@ end;
 
 { TLinkedList }
 
-constructor TLinkedList.Create(const arr: array of T);
+constructor TLinkedList.Create(const arr: TArr);
 begin
   Self.Create;
   Self.AddRange(arr);

@@ -40,20 +40,7 @@ type
     class function Match(src, p: UString): TArr_int;
   end;
 
-procedure Main;
-
 implementation
-
-procedure Main;
-var
-  s, p: UString;
-begin
-  s := 'ABABABA';
-  p := 'ABA';
-
-  TArrayUtils_int.Print(TRabinKarp.Match_Simplicity(s, p));
-  TArrayUtils_int.Print(TRabinKarp.Match(s, p));
-end;
 
 { TRabinKarp }
 
