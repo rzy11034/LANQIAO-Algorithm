@@ -11,10 +11,10 @@ uses
 
 type
   UString = UnicodeString;
+  UChar = UnicodeChar;
 
   TUStringHelper = type Helper for UString
   private type
-    UChar = UnicodeChar;
     TArr_chr = array of UChar;
     TArr_str = array of UString;
 

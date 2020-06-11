@@ -43,7 +43,7 @@ type
       function Sibling: TNode;
     end;
 
-    TPtr_V = specialize TPtr_V<V>;
+    TPtrValue = specialize TPtrValue<V>;
     TImpl_K = specialize TImpl<K>;
     TImpl_V = specialize TImpl<V>;
     TList_node = specialize TArrayList<TNode>;
@@ -78,14 +78,14 @@ type
     constructor Create;
     destructor Destroy; override;
 
-    function Add(key: K; Value: V): TPtr_V;
+    function Add(key: K; Value: V): TPtrValue;
     function ContainsKey(key: K): boolean;
     function ContainsValue(Value: V): boolean;
     function Count: integer;
     function GetItem(key: K): V;
     function IsEmpty: boolean;
     function Keys: TImpl_K.TArr;
-    function Remove(key: K): TPtr_V;
+    function Remove(key: K): TPtrValue;
     function Values: TImpl_V.TArr;
     procedure Clear;
     procedure SetItem(key: K; Value: V);
@@ -107,11 +107,11 @@ begin
   _cmp_V := TImpl_V.TCmp.Default;
 end;
 
-function TTreeMap.Add(key: K; Value: V): TPtr_V;
+function TTreeMap.Add(key: K; Value: V): TPtrValue;
 var
   parent, cur: TNode;
   cmp: integer;
-  res: TPtr_V;
+  res: TPtrValue;
 begin
   parent := nil;
   cur := _root;
@@ -129,7 +129,7 @@ begin
       cur := cur.Right
     else
     begin
-      res :=TPtr_V.Create(cur.Value);
+      res := TPtrValue.Create(cur.Value);
       cur.Value := Value;
       Exit;
     end;
@@ -272,17 +272,17 @@ begin
   end;
 end;
 
-function TTreeMap.Remove(key: K): TPtr_V;
+function TTreeMap.Remove(key: K): TPtrValue;
 var
   cur: TNode;
-  res: TPtr_V;
+  res: TPtrValue;
 begin
   res := nil;
   cur := __getNode(_root, key);
 
   if cur <> nil then
   begin
-    res :=TPtr_V.Create(cur.Value);
+    res := TPtrValue.Create(cur.Value);
     __remove(cur);
   end;
 

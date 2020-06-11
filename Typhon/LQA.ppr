@@ -53,7 +53,8 @@ uses {$IFDEF UNIX}
   DeepStar.DSA.Tree.BinarySearchTree, DeepStar.DSA.Tree.AVLTree, DeepStar.DSA.Tree.Test.AVLTree,
   DeepStar.DSA.Tree.RBTree, DeepStar.DSA.Tree.BalanceBinarySearchTree,
   DeepStar.DSA.Tree.Test.RBTree, DeepStar.DSA.Tree.TreeMap, DeepStar.DSA.Tree.Test.TreeMap,
-DeepStar.DSA.Strings.Test.KMP, DeepStar.DSA.Strings.Test.RabinKarp, DeepStar.DSA.Tree.Heap;
+DeepStar.DSA.Strings.Test.KMP, DeepStar.DSA.Strings.Test.RabinKarp, DeepStar.DSA.Tree.Heap,
+DeepStar.DSA.Tree.PriorityQueue, DeepStar.DSA.Tree.Trie;
 
 begin
   try

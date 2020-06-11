@@ -17,14 +17,14 @@ implementation
 
 type
   TMap = specialize THashMap<integer, integer>;
-  TPtr_int = specialize TPtr_V<integer>;
+  TPtrValue = specialize TPtrValue<integer>;
 
 procedure Main;
 var
   map, mm: TMap;
   i: integer;
   arr: TArr_int;
-  p: TPtr_int;
+  p: TPtrValue;
 begin
   map := TMap.Create;
   arr := [55, 55, 56, 74, 96, 22, 62, 20, 70, 68, 90, 50];

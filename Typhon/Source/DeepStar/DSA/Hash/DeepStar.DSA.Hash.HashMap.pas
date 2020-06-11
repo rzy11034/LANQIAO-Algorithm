@@ -21,7 +21,7 @@ type
     end;
 
   private type
-    TPtr_V = specialize TPtr_V<V>;
+    TPtrValue = specialize TPtrValue<V>;
     TImpl_K = specialize TImpl<K>;
     TImpl_V = specialize TImpl<V>;
     TImpl_TPair = specialize TImpl<TPair>;
@@ -38,14 +38,14 @@ type
     _cmp_K: TImpl_K.ICmp;
     _cmp_V: TImpl_V.ICmp;
 
-    function __getItem(key: K): TPtr_V;
+    function __getItem(key: K): TPtrValue;
     function __hash(key: K): integer;
 
   public
     constructor Create(newCapacity: integer = 31);
     destructor Destroy; override;
 
-    function Add(key: K; Value: V): TPtr_V;
+    function Add(key: K; Value: V): TPtrValue;
     function Clone: THashMap_K_V;
     function ContainsKey(key: K): boolean;
     function ContainsValue(Value: V): boolean;
@@ -54,7 +54,7 @@ type
     function IsEmpty: boolean;
     function Keys: TImpl_K.TArr;
     function Pairs: TImpl_TPair.TArr;
-    function Remove(key: K): TPtr_V;
+    function Remove(key: K): TPtrValue;
     function Values: TImpl_V.TArr;
     procedure AddAll(map: THashMap_K_V);
     procedure Clear;
@@ -93,10 +93,10 @@ begin
   end;
 end;
 
-function THashMap.Add(key: K; Value: V): TPtr_V;
+function THashMap.Add(key: K; Value: V): TPtrValue;
 var
   hashcode: integer;
-  res: TPtr_V;
+  res: TPtrValue;
 begin
   res := __getItem(key);
 
@@ -204,7 +204,7 @@ end;
 
 function THashMap.GetItem(key: K): V;
 var
-  res: TPtr_V;
+  res: TPtrValue;
 begin
   res := __getItem(Key);
 
@@ -261,9 +261,9 @@ begin
   end;
 end;
 
-function THashMap.Remove(key: K): TPtr_V;
+function THashMap.Remove(key: K): TPtrValue;
 var
-  res: TPtr_V;
+  res: TPtrValue;
   hashcode, i: integer;
 begin
   res := __getItem(Key);
@@ -323,11 +323,11 @@ begin
   end;
 end;
 
-function THashMap.__getItem(key: K): TPtr_V;
+function THashMap.__getItem(key: K): TPtrValue;
 var
   hashcode, i: integer;
   Value: V;
-  res: TPtr_V;
+  res: TPtrValue;
 begin
   res := nil;
   hashcode := __hash(key);
@@ -337,7 +337,7 @@ begin
     if _cmp_K.Compare(key, _data[hashcode].Items[i].Key) = 0 then
     begin
       Value := _data[hashcode].Items[i].Value;
-      res := TPtr_V.Create(Value);
+      res := TPtrValue.Create(Value);
       Break;
     end;
   end;
